@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"path": "C:/Program Files/Git"
+		},
+		{
+			"path": "../HTML"
+		},
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "HTML"
+	}
+}
