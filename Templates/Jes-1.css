@@ -1,0 +1,187 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+.row1{
+    width: 100%;
+    height: 100px;
+    background: black;
+    overflow: auto;
+}
+#header{
+    width: 800px;
+    height: 100px;
+    margin: auto;
+
+}
+.basic{
+    width: 300px;
+    height: 100px;
+    margin: auto;
+    float: left;
+    background-color: black;
+    color: white;
+}
+.basic h1{
+    font-size: 30px;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+.basic p{
+    font-size: 15px;
+    margin-left: 10px;}
+
+nav{
+    width: 420px;
+    height: 20px;
+    margin: auto;
+    float: right;
+    padding: 20px;
+    margin-top: 15px;
+    background: black;
+}
+nav ul li{
+    display: inline;
+    font-size: 15px;
+    color: white;
+}
+ ul li a{
+   text-decoration: none;
+   color: white;
+   padding: 10px;
+}
+
+ul li a:hover{
+    color: yellow;
+}
+
+.Jeswanth{
+    width: 800px;
+    height: 360px;
+    margin: auto;
+    border: 4px solid;
+    margin-top: 50px;
+}
+.Jeswanth img{
+    width: 800px;
+    height: 360px;
+    /* margin: auto;
+    border: 4px solid; */
+    
+}
+.Slide{
+    width: 800px;
+    height: 180px;
+    margin: auto;
+    margin-top: 50px;
+    
+}
+#One{
+    width: 240px;
+    height: 180px;
+    border: 4px solid;
+    float: left;
+}
+#One img{
+    width: 240px;
+    height: 180px;
+}
+#Two{
+    width: 240px;
+    height: 180px;
+    border: 4px solid;
+    float: left;
+    margin-left: 30px;
+}
+#Two img{
+    width: 240px;
+    height: 180px;
+}
+#Three{
+    width: 240px;
+    height: 180px;
+    border: 4px solid;
+    float: right;
+}
+#Three img{
+    width: 240px;
+    height: 180px;
+}
+.Slide h2{
+    text-align: center;
+    margin-top: 85px;
+}
+.Slide a{
+   float: right;
+   color: orangered;
+}
+.Slide-1 a{
+    float: right;
+    color: orangered;
+}
+.Slide-1{
+    width: 800px;
+    height: 180px;
+    margin: auto;
+    margin-top: 50px;
+    
+}
+#One-1{
+    width: 380px;
+    height: 250px;
+    float: left;
+}
+#Two-1{
+    width: 380px;
+    height: 250px;
+    border: 4px solid;
+    float: right;
+    margin-left: 30px;
+}
+#Two-1 img{
+    width: 380px;
+    height: 250px;
+}
+.Slide-2 {
+    width: 100%;
+    height: 170px;
+    background: black;
+}
+#Jachu {
+    display: inline-block;
+    color: white;
+}
+.Abc-1{
+    width: 150px;
+    height: 100px;
+    margin: auto;
+    padding: 50px;
+    float: left;
+    margin-left: 150px;
+    color: orangered;
+}
+.Abc-2{
+    width: 150px;
+    height: 100px;
+    margin: auto;
+    padding: 50px;
+    float: left;
+    color: orangered;
+}
+.Abc-3{
+    width: 150px;
+    height: 100px;
+    margin: auto;
+    padding: 50px;
+    float: left;
+    color: orangered;
+}
+.Abc-4{
+    width: 150px;
+    height: 100px;
+    margin: auto;
+    padding: 50px;
+    float: right;
+    margin-right: 150px;
+    color: orangered;
+}
