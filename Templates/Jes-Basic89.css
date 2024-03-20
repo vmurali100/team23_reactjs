@@ -157,7 +157,9 @@ figcaption {
 .posts ul li.last {
     margin-bottom: 0;
 }
-
+.posts p{
+    text-align: left;
+}
 .posts ul li article figure img {
     float: left;
     width: 180px;
@@ -173,6 +175,8 @@ figcaption {
 }
 .posts ul li article figure h2 {
     font-size: 14px;
+    text-align: left;
+    text-transform: uppercase;
 }
 .right_column{
     width: 280px;
@@ -187,6 +191,7 @@ figcaption {
     list-style: none;
 }
 .right_column h2 title {
+    margin-top: 15px;
     margin-bottom: 15px;
     padding-bottom: 15px;
     border-bottom: 1px solid wheat;
@@ -230,15 +235,14 @@ figcaption {
     position: absolute;
     width: 400px;
     height: 20px;
-    margin-left: 200px;
+    margin-left: 250px;
     padding: 20px;
     color: antiquewhite;
 }
 .right-msg {
-    /* width: 00px; */
     height: 20px;
     float: right;
-    margin-right: 200px;
+    margin-right: 230px;
     padding: 20px;
     color: antiquewhite;
 }
