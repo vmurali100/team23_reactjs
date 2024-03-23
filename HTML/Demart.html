@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dmart</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header, nav, footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        nav a {
+            color: #42b22c;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        .image-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .item {
+            text-align: center;
+            width: 200px;
+            margin: 10px;
+        }
+
+        .item img {
+            width: 100%;
+            max-width: 100%;
+            height: 150px; /* Set a fixed height */
+            object-fit: cover; 
+        }
+
+        .item p {
+            margin-top: 5px;
+        }
+
+        h1 {
+            color: blue;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        footer {
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        @media only screen and (max-width: 600px) {
+            .item {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1><b>Welcome to Dmart Place</b></h1>
+    </header>
+    <nav>
+        <a href="#">Home</a>
+        <a href="http://127.0.0.1:5500/Services.html">Services</a>
+        <a href="http://127.0.0.1:5500/Contactus.html">Contact us</a>
+        <a href="http://127.0.0.1:5500/Help.html">Help</a>
+    </nav>
+    <main>
+        <section>
+            <h2>Available Items</h2>
+            <p>Explore our selection of quality products below. Click on an image to learn more.</p>
+            <div class="image-container">
+                <div class="item">
+                    <img src="https://thegraingrocer.com.au/wp-content/uploads/2019/03/brown-rice-long.jpg" alt="Brown Rice">
+                    <p>Brown Rice</p>
+                </div>
+                <div class="item">
+                    <img src="https://5.imimg.com/data5/SELLER/Default/2022/11/MC/BT/DO/14102093/yellow-toor-dal-500x500.jpg" alt="Yellow Toor Dal">
+                    <p>Yellow Toor Dal</p>
+                </div>
+                <div class="item">
+                    <img src="https://nuts.com/images/auto/801x534/assets/88eba384e7d9cefb.jpg" alt="Mixed Nuts">
+                    <p>Mixed Nuts</p>
+                </div>
+                <div class="item">
+                    <img src="https://5.imimg.com/data5/SELLER/Default/2021/8/IB/HN/PG/218089/tea-powder-1000x1000.jpg" alt="Tea Powder">
+                    <p>Tea Powder</p>
+                </div>
+                <div class="item">
+                    <img src="https://www.health06.com/uploads/posts/2021-09/1630488121_tomatoes.jpg" alt="Tomatoes">
+                    <p>Tomatoes</p>
+                </div>
+                <div class="item">
+                    <img src="https://images5.alphacoders.com/367/367412.jpg" alt="Apples">
+                    <p>Apples</p>
+                </div>
+                <div class="item">
+                    <img src="https://pluspng.com/img-png/onion-hd-png-home-onion-png-image-more-view-487.png" alt="Onions">
+                    <p>Onions</p>
+                </div>
+                <div class="item">
+                    <img src="https://www.almanac.com/sites/default/files/image_nodes/garlic-growing-guide.jpg" alt="Garlic">
+                    <p>Garlic</p>
+                </div>
+                <div class="item">
+                    <img src="https://tiimg.tistatic.com/fp/1/007/153/organic-natural-and-healthy-green-mung-beans-622.jpg" alt="Whole Moong dal">
+                    <p>Whole Moong dal</p>
+                </div>
+                <div class="item">
+                    <img src="https://static.wixstatic.com/media/cf420e_e102e3736c4841b395a34cef723aa10b~mv2.jpg/v1/fill/w_1000,h_711,al_c,q_90,usm_0.66_1.00_0.01/cf420e_e102e3736c4841b395a34cef723aa10b~mv2.jpg" alt="Black dal">
+                    <p>Black dal</p>
+                </div>
+                <div class="item">
+                    <img src="https://starindojapan.com/wp-content/uploads/2020/02/Urad-White-Whole-1kg-Urad-Safed-Sabut.jpg" alt="Urad White">
+                    <p>Urad_White</p>
+                </div>
+                <div class="item">
+                    <img src="https://img2.exportersindia.com/product_images/bc-full/2019/9/6581394/split-white-urad-dal-1568024407-5072616.jpeg" alt="Split White Urad">
+                    <p>Split White Urad</p>
+                </div>
+                <div class="item">
+                    <img src="https://dicencook.com/storage/2018/07/lrm_export_20180710_122751-e1531219084514.jpg?w=850" alt="Chana dal">
+                    <p>Chana dal</p>
+                </div>
+                <div class="item">
+                    <img src="https://www.almanac.com/sites/default/files/image_nodes/garlic-growing-guide.jpg" alt="Garlic">
+                    <p>Garlic</p>
+                </div>
+                <div class="item">
+                    <img src="https://www.almanac.com/sites/default/files/image_nodes/garlic-growing-guide.jpg" alt="Garlic">
+                    <p>Garlic</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Dmart. All rights reserved.</p>
+    </footer>
+</body>
+</html>
