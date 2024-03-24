@@ -14,7 +14,6 @@
 }
 #header .basic {
     float: left;
-    margin: 20px;
     cursor: pointer;
 }
 #header form {
@@ -153,7 +152,7 @@ figure {
     text-decoration: none;
     margin-top: 10px;
 }
-.container .intro {
+.intro {
     width: 100%;
     margin-top: 30px;
     margin-bottom: 30px;
@@ -175,8 +174,6 @@ figure {
 .intro section article h2 {
     margin-bottom: 15px;
 }
-.intro section article p {
-}
 p {
     display: block;
     margin-block-start: 1em;
@@ -189,32 +186,30 @@ p {
     width: 470px;
     display: block;
     float: left;
-    /* margin: 20px; */
 }
-
-.container .intro section article figure ul {
+section article figure ul {
     display: block;
     width: 100%;
     margin: 0;
     padding: 0;
     list-style: none;
 }
-.container .intro section article figure ul li{
+section article figure ul li{
     display:inline-block; 
     float:left; 
     margin:0 25px 0 0;
 }
-.container .intro section article figure ul li.last{
+section article figure ul li.last{
     margin:0;
 }
-.container .intro section article figure ul li img{
+section article figure ul li img{
     width:130px; 
     height:130px; 
     margin:0; 
     padding:4px; 
     border:1px solid white;
 }
-.container .intro section article figure figcaption{
+section article figure figcaption{
     display:block; 
     width:100%; 
     margin-top:20px; 
@@ -244,7 +239,6 @@ a {
     width:100%; 
     line-height:1.6em;
     display: flex;
-    margin: 20px;
 }
 .homepage section{
     margin-bottom:0;
@@ -259,14 +253,12 @@ a {
 }
 .testing-1{
     width: 225px;
-    display:block; 
-    /* float:left;  */
+    display:block;
     margin:0 20px 0 0;
 }
 .testing-2{
     width: 225px;
     display:block; 
-    /* float:left;  */
     margin:0 20px 0 0;
 }
 .homepage section footer{
@@ -289,7 +281,7 @@ a {
 }
 .homepage section nav a{
     padding:0 0 0 10px;
-    /* background:url("./Tirupati-1.jpg") left center no-repeat */
+    
 }
 .imgl{
     float:left; 
