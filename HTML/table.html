@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tables with Colspan and Rowspan</title>
+</head>
+<body>
+
+<!-- Table with Colspan -->
+<table border="1">
+  <caption>Monthly Sales Report</caption>
+  <tr>
+    <th colspan="2">Month</th>
+    <th>Sales</th>
+  </tr>
+  <tr>
+    <td colspan="2">January</td>
+    <td>$1000</td>
+  </tr>
+  <tr>
+    <td colspan="2">February</td>
+    <td>$1200</td>
+  </tr>
+</table>
+
+<!-- Table with Rowspan -->
+<table border="1">
+  <caption>Sales by Region</caption>
+  <tr>
+    <th rowspan="2">Product</th>
+    <th colspan="2">Sales</th>
+  </tr>
+  <tr>
+    <th>North</th>
+    <th>South</th>
+  </tr>
+  <tr>
+    <td>Product A</td>
+    <td>$500</td>
+    <td>$300</td>
+  </tr>
+  <tr>
+    <td>Product B</td>
+    <td>$700</td>
+    <td>-</td>
+  </tr>
+</table>
+
+<!-- Table with Colspan and Rowspan -->
+<table border="1">
+  <caption>Quarterly Report</caption>
+  <tr>
+    <th colspan="2">Product</th>
+    <th rowspan="2">Sales</th>
+  </tr>
+  <tr>
+    <th>Product</th>
+    <th>Sales</th>
+  </tr>
+  <tr>
+    <td rowspan="2">Product A</td>
+    <td>January</td>
+    <td>$1500</td>
+  </tr>
+  <tr>
+    <td>February</td>
+    <td>$1200</td>
+  </tr>
+  <tr>
+    <td>Product B</td>
+    <td>Overall</td>
+    <td>$2000</td>
+  </tr>
+</table>
+
+</body>
+</html>
+        
