@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        * {
+            padding: 0px;
+        }
+
+        #whole {
+            width: 480px;
+            border: 5px solid green;
+            margin: auto;
+            padding: ;
+        
+        }
+
+        #one {
+            width: 450px;
+            margin: auto;
+            background-color: burlywood;
+            border: 6px solid red;
+            height: 300px;
+            padding: 10px; /* Added padding for better appearance */
+        }
+
+        #demo {
+            width: 450px;
+            margin: auto;
+            background-color: chartreuse;
+            border: 6px solid red;
+            height: 150px;
+            padding: 10px; /* Added padding for better appearance */
+        }
+        
+
+        #one td {
+            padding-right: 60px;
+            padding: 10px;
+        }
+
+        #demo td {
+            padding-right: 60px;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="whole">
+        <div id="one">
+            <form action="">
+                <table style="margin: auto; ">
+                    <tr>
+                        <td><label for="customerName">Customer Name:</label></td>
+                        <td><input type="text" id="customerName" name="customerName"></td>
+                    </tr>
+    
+                    <tr>
+                        <td><label for="partName">Part Name:</label></td>
+                        <td><input type="text" id="partName" name="partName"></td>
+                    </tr>
+    
+                    <tr>
+                        <td><label for="partPrintNumber">Part Print Number:</label></td>
+                        <td><input type="text" id="partPrintNumber" name="partPrintNumber"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="revision">Revision:</label></td>
+                        <td><input type="text" id="revision" name="revision"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="dateOfEstimate">Date of Estimate:</label></td>
+                        <td><input type="date" id="dateOfEstimate" name="dateOfEstimate"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="estimatorName">Estimator Name:</label></td>
+                        <td><input type="text" id="estimatorName" name="estimatorName"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="buyerName">Buyer Name:</label></td>
+                        <td><input type="text" id="buyerName" name="buyerName"></td>
+                    </tr>
+                </table>
+            </form>
+        </div><br style="background-color:blue;">
+    
+        <div id="demo">
+            <form action="">
+                <table style="margin: auto;">
+                    <tr>
+                        <td><label for="estimateBaseQuantity">Estimate Quantity:</label></td>
+                        <td><input type="number" id="estimateBaseQuantity" name="estimateBaseQuantity"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="scrapPercentage">Scrap Percentage:</label></td>
+                        <td><input type="number" id="scrapPercentage" name="scrapPercentage"></td>
+                    </tr>
+                </table>
+            </form>
+            <p style="text-align: center;"><button type="submit">Submit</button></p>
+        </div>
+    </div>
+</body>
+
+</html>

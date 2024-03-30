@@ -4,8 +4,106 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        body {
+            background-color: antiquewhite;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        header, footer {
+            background-color: rgb(36, 20, 20);
+            color: #fff;
+            text-align: center;
+            padding: 1px 0; 
+        }
+
+        nav {
+            background-color: #444;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: solid;
+            margin: 0 10px;
+        }
+
+        .Image-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .Item {
+            text-align: center;
+            width: 200px;
+            margin: 10px;
+        }
+        
+        .Item img {
+            width: 100%;
+            max-width: 100;
+            height: 150px;
+            object-fit: cover;
+        }
+
+        .Item p {
+            margin-top: 5px;
+        }
+        .ha{
+            background-color: blue;
+            color: white;
+            display: flex;
+            justify-content:space-around;
+        }
+    </style>
 </head>
 <body>
-    <header><h1>Marketing Place</h1></header>
+    <header id="pageHeader">
+        <h1>Premium Plus Visiting Cards</h1>
+    </header>
+    <nav>
+        <a href="">Home 1</a>
+        <a href="">Contact Us</a>
+        <a href="">About Us</a>
+        <a href="">Help</a>
+    </nav>
+    <hr>
+    <main>
+        <section>
+            <div class="demo">
+                <div class="ha">
+                    <h1>High-Quality Paper Stock</h1>
+                    <h1>Advanced Printing Techniques</h1>
+                    <h1>Customization Options</h1>
+                </div>
+            </div>
+            <div class="Image-container">
+                <div class="Item">
+                    <img src="./Cards/1553947383.webp" alt="Image-1">
+                    <p>Image-1</p>
+                </div>
+                <!-- Rest of the Image items -->
+            </div>
+        </section>
+    </main>
+    <footer>&copy; All the right reserved by public</footer>
+
+    <script>
+        // JavaScript function to change header background color on hover
+        const header = document.getElementById('pageHeader');
+
+        header.addEventListener('mouseenter', function() {
+            header.style.backgroundColor = 'darkred';
+        });
+
+        header.addEventListener('mouseleave', function() {
+            header.style.backgroundColor = 'rgb(36, 20, 20)';
+        });
+    </script>
 </body>
 </html>

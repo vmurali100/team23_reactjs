@@ -16,7 +16,7 @@
             background-color: rgb(36, 20, 20);
             color: #fff;
             text-align: center;
-            padding: 1px 0;
+            padding: 1px 0; 
         }
 
         nav {
@@ -63,10 +63,29 @@
             justify-content:space-around;
         }
 
+        .demo {
+            background-color: #f0f0f0; /* Change background color of the demo section */
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        
+        .demo h1 {
+            margin: 10px 0;
+            color: #333; /* Default color for headings */
+            transition: color 0.3s ease, background-color 0.3s ease; /* Smooth transition effect */
+        }
+        
+        .demo:hover h1 {
+            color: #fff; /* Change text color on hover */
+            background-color: #007bff; /* Change background color on hover */
+        }
+        
+
     </style>
 </head>
 <body>
-    <header>
+    <header id="pageHeader">
         <h1>Premium Plus Visiting Cards</h1>
     </header>
     <nav>
@@ -150,5 +169,47 @@
         </section>
     </main>
     <footer>&copy; All the right reserved by public</footer>
+    <script>
+        const header = document.getElementById('pageHeader');
+
+        header.addEventListener('mouseenter', function() {
+            header.style.backgroundColor = 'darkred';
+        });
+
+        header.addEventListener('mouseleave', function() {
+            header.style.backgroundColor = 'rgb(36, 20, 20)';
+        });
+    </script>
+
+    <script>
+        const nav = document.querySelector('nav');
+    
+        nav.addEventListener('mouseenter', function() {
+            nav.style.backgroundColor = 'darkblue';
+        });
+    
+        nav.addEventListener('mouseleave', function() {
+            nav.style.backgroundColor = '#444';
+        });
+    </script>
+
+    <script>
+        const demo = document.querySelector('.demo');
+
+// Add event listeners for mouse enter and leave
+demo.addEventListener('mouseenter', function() {
+    demo.style.backgroundColor = '#007bff'; // Change background color on mouse enter
+});
+
+demo.addEventListener('mouseleave', function() {
+    demo.style.backgroundColor = '#f0f0f0'; // Change background color back on mouse leave
+});
+    </script>
+
+    <div class="popup-img" id="popupImg">
+        <img src="" alt="Popup Image">
+    </div>
+
+    
 </body>
 </html>

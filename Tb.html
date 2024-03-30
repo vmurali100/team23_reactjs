@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Complex Table</title>
+<style>
+    table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+    th, td {
+        border: 1px solid black;
+        padding: 8px;
+        text-align: left;
+    }
+    th {
+        background-color: #f2f2f2;
+    }
+</style>
+</head>
+<body>
+
+<table>
+    <thead>
+        <tr>
+            <th rowspan="2">Header 1</th>
+            <th colspan="2">Header 2</th>
+            <th colspan="2">Header 3</th>
+        </tr>
+        <tr>
+            <th>Subheader 1</th>
+            <th>Subheader 2</th>
+            <th>Subheader 1</th>
+            <th>Subheader 2</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td rowspan="3">Row 1</td>
+            <td>1A</td>
+            <td>1B</td>
+            <td rowspan="2">1C</td>
+            <td>1D</td>
+        </tr>
+        <tr>
+            <td>2A</td>
+            <td>2B</td>
+            <td>2D</td>
+        </tr>
+        <tr>
+            <td>3A</td>
+            <td>3B</td>
+            <td>3D</td>
+        </tr>
+        <tr>
+            <td>Row 2</td>
+            <td>4A</td>
+            <td>4B</td>
+            <td>4C</td>
+            <td>4D</td>
+        </tr>
+        <tr>
+            <td>Row 3</td>
+            <td colspan="4">5A - 5B - 5C - 5D</td>
+        </tr>
+    </tbody>
+</table>
+
+</body>
+</html>

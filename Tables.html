@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Complex Table</title>
+<style>
+    table {
+        border-collapse: collapse;
+        
+    }
+    th, td {
+        border: 1px solid black;
+        padding: 8px;
+        text-align: center ;
+    }
+    th {
+        background-color: #f2f2f2;
+    }
+</style>
+</head>
+<body>
+
+    <h2>Cell that spans two columns</h2>
+    <p>To make a cell span more than one column, use the colspan attribute.</p>
+    <table>
+        <tr>
+            <th>Header</th>
+            <th>Header</th>
+            <th>Header</th>
+            <th>Header</th>
+        </tr>
+        <tr>
+            <td rowspan="5">Span Row</td>
+            <td colspan="3">Span columns</td>
+        </tr>
+        <tr>
+            <td colspan="2">Span columns</td>
+            <td rowspan="4">Span row</td>
+        </tr>
+        <tr>
+            <td rowspan="3">Span row</td>
+            <td>Span column</td>
+        </tr>
+        <tr>
+            <td rowspan="2">Span both</td>
+        </tr>
+    </table>
+    <hr>
+     <table>
+        <tr>
+            <th>Subject</th>
+            <th>Code</th>
+            <th>Test</th>'
+            <th>Class</th>
+        </tr>
+        <tr>
+            <td rowspan="4">Maths</td>
+            <td rowspan="4">9</td>
+            <td>ABC</td>
+            <td>D1</td>
+        </tr>
+        <tr>
+            <td>ABD</td>
+            <td>D2</td>
+        </tr>
+        <tr>
+            <td>ABE</td>
+            <td>D3</td>
+        </tr>
+        <tr>
+            <td>ABF</td>
+            <td>D4</td>
+        </tr>
+        <tr>
+            <td rowspan="3">Science</td>
+            <td rowspan="3">91</td>
+            <td>ABG</td>
+            <td>D1</td>
+        </tr>
+        <tr>
+            <td>ABH</td>
+            <td>D2</td>
+        </tr>
+        <tr>
+            <td>ABI</td>
+            <td>D2</td>
+        </tr>
+        <tr>
+            <td>English</td>
+            <td>191</td>
+            <td>ABJ</td>
+            <td>D1</td>
+        </tr>
+     </table>
+
+
+     <hr>
+
+     <table>
+        <tr>
+            <th>Team</th>
+            <th>Player</th>
+            <th colspan="2">Statistics</th>
+        </tr>
+        <tr>
+            <td rowspan="2">Team A</td>
+            <td>Player 1</td>
+            <td>Goals 4</td>
+            <td>Assists: 7</td>
+        </tr>
+        <tr>
+        <td>Player 2</td>
+            <td>Goals 6</td>
+            <td>Assists: 5</td>
+        </tr>
+        <tr>
+            <td rowspan="2">Team A</td>
+            <td>Player 3</td>
+            <td>Goals 5</td>
+            <td>Assists: 6</td>
+        </tr>
+        <tr>
+        <td>Player 4</td>
+            <td>Goals 3</td>
+            <td>Assists: 8</td>
+        </tr>
+     </table>
+     <hr>
+     <hr>
+
+     <table>
+        <tr>
+            <td colspan="3">Date:</td>
+            <td colspan="2"></td>
+            <td colspan="2"></td>
+            <td colspan="2"></td>
+        </tr>
+        <tr>
+            <td colspan="3">Green Kit Lession:</td>
+            <td colspan="2">Lession 9</td>
+            <td colspan="2">Lession 19</td>
+            <td colspan="2">Lession 29</td>
+        </tr>
+        <tr>
+            <td colspan="3">level:</td>
+            <td colspan="2">A</td>
+            <td colspan="2">A</td>
+            <td colspan="2">B</td>
+        </tr>
+        <tr>
+            <td colspan="3">Title:</td>
+            <td colspan="2">Where things grow</td>
+            <td colspan="2">Family Piturs</td>
+            <td colspan="2">Boots and shoes</td>
+        </tr>
+        <tr>
+            <td colspan="3">Students Name:</td>
+            <td>Accuracy</td>
+            <td>Compt</td>
+            <td>Accuracy</td>
+            <td>Compt</td>
+            <td>Accuracy</td>
+            <td>Compt</td>
+        </tr>
+        <tr>
+            <td colspan="3">Name 1:</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td colspan="3">Name 2:</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td colspan="3">Name 3:</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td colspan="3">Name 4:</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td colspan="3">Name 5:</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+     </table>
+     <hr>
+     <hr>
+     
+     <table>
+        <tr>
+            <th rowspan="3">Day</th>
+            <th colspan="3">Seminer</th>
+        </tr>
+        <tr>
+            <th colspan="2">Schedule</th>
+            <th rowspan="2">Topic</th>
+        </tr>
+        <tr>
+            <td>Begin</td>
+            <td>End</td>
+        </tr>
+        <tr>
+            <td rowspan="2">Monday</td>
+            <td rowspan="2">8:00 Am</td>
+            <td rowspan="2">5:00 Pm</td>
+            <td>Introductin to HTML</td>
+        </tr>
+        <tr>
+            <td>Validity DTD and relax NG</td>
+        </tr>
+        <tr>
+            <td rowspan="3">Tuesday</td>
+            <td>8:00 Am</td>
+            <td>11:00 Am</td>
+            <td rowspan="2">Xpath</td>
+        </tr>
+        <tr>
+            <td>11:00 Am</td>
+            <td>2:00 Pm</td>
+        </tr>
+        <tr>
+            <td>2:00 Pm</td>
+            <td>5:00 Pm</td>
+            <td>XSL Transaction</td>
+        </tr>
+        <tr>
+            <td>Wednesday</td>
+            <td>8:00 Am</td>
+            <td>12:00 Pm</td>
+            <td>XSL Formating Objects</td>
+        </tr>
+
+
+     </table>
+
+</body>
+</html>

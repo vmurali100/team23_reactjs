@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registration Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 20px;
+    }
+    
+    .container {
+      width: 600px;
+      margin: auto;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      padding: 40px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    h1 {
+      margin-top: 0;
+      color: #333;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    
+    .form-group {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    
+    label {
+      flex: 0 0 150px;
+      font-weight: bold;
+      text-align: right;
+      margin-right: 15px;
+    }
+    
+    input[type="text"],
+    input[type="number"],
+    select,
+    input[type="url"],
+    textarea {
+      flex: 1;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      box-sizing: border-box;
+      margin-top: 5px;
+      font-size: 16px;
+    }
+    
+    input[type="radio"],
+    input[type="checkbox"] {
+      margin-right: 5px;
+    }
+    
+    .radio-group {
+      display: flex;
+      align-items: center;
+    }
+    
+    button[type="submit"] {
+      width: 100%;
+      padding: 12px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s;
+    }
+    
+    button[type="submit"]:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Registration Details</h1>
+    <form>
+      <div class="form-group">
+        <label for="university">University:</label>
+        <input type="text" id="university" name="university" required>
+      </div>
+      <div class="form-group">
+        <label for="institute">Institute:</label>
+        <input type="text" id="institute" name="institute" required>
+      </div>
+      <div class="form-group">
+        <label for="branch">Branch:</label>
+        <select name="branch" id="branch">
+          <option value="">-- Select Branch --</option>
+          <option value="CSE">Computer Science Engineering</option>
+          <option value="ECE">Electronics and Communication Engineering</option>
+          <option value="MECH">Mechanical Engineering</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="degree">Degree:</label>
+        <select name="degree" id="degree">
+          <option value="">-- Select Degree --</option>
+          <option value="BE">Bachelor of Engineering</option>
+          <option value="ME">Master of Engineering</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="degreeStatus">Degree Status:</label>
+        <div class="radio-group">
+          <input type="radio" id="pursuing" name="degreeStatus" value="pursuing">
+          <label for="pursuing">Pursuing</label>
+          <input type="radio" id="completed" name="degreeStatus" value="completed">
+          <label for="completed">Completed</label>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="cpi">Average CPI:</label>
+        <input type="number" id="cpi" name="cpi" min="0" max="10" step="0.01">
+        <span>up to</span>
+        <input type="number" id="semester" name="semester" min="1" max="8">
+        <span>Semesters</span>
+      </div>
+      <div class="form-group">
+        <label for="experience">Experience:</label>
+        <input type="number" id="experience" name="experience" min="0">
+        <span>Years</span>
+      </div>
+      <div class="form-group">
+        <label for="website">Your Website or Blog:</label>
+        <input type="url" id="website" name="website" placeholder="http://">
+      </div>
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+</body>
+</html>

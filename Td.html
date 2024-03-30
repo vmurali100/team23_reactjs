@@ -3,30 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Timetable</title>
+    <title>Document</title>
     <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            text-align: center;
+            margin-top: 20px;
+        }
         table {
             width: 100%;
             border-collapse: collapse;
+            margin-top: 20px;
         }
         th, td {
-            border: 1px solid black;
-            padding: 8px;
+            border: 1px solid #dddddd;
+            padding: 10px;
             text-align: center;
         }
-        h1 {
-            background-color: blanchedalmond;
-            text-align: center;
-            padding: 20px;
+        th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
         }
     </style>
 </head>
 <body>
-    <h1>My Timetable</h1>
+    <h1>My TimeTable</h1>
     <table>
         <tr>
             <th rowspan="2">Day</th>
-            <th colspan="8">Time</th>
+            <th colspan="8"></th>
         </tr>
         <tr>
             <th>8:00 - 9:00</th>
@@ -42,11 +54,11 @@
             <td>Monday</td>
             <td>Maths</td>
             <td>Physics</td>
-            <td rowspan="7">Short Break</td>
+            <td rowspan="6"></td>
             <td>Chemistry</td>
-            <td>Computer Science</td>
-            <td rowspan="7">Lunch Break</td>
-            <td colspan="2">Computer Science Lab</td>
+            <td>Comp Sci</td>
+            <td rowspan="6"></td>
+            <td colspan="2">CompSci lab</td>
         </tr>
         <tr>
             <td>Tuesday</td>
@@ -54,11 +66,11 @@
             <td>Maths</td>
             <td>Chemistry</td>
             <td>English</td>
-            <td colspan="2">Physics Lab</td>
+            <td colspan="2">Physics</td>
         </tr>
         <tr>
             <td>Wednesday</td>
-            <td>Computer Science</td>
+            <td>Comp Sci</td>
             <td>Physics</td>
             <td>Maths</td>
             <td>Kannada</td>
@@ -69,29 +81,26 @@
             <td>Maths</td>
             <td>Kannada</td>
             <td>Physics</td>
-            <td>Computer Science</td>
-            <td colspan="2">Computer Science Lab</td>
+            <td>English</td>
+            <td colspan="2">Comp Sci Lab</td>
         </tr>
         <tr>
-            <td>Friday</td>
+            <td>Friday</td> 
             <td>English</td>
             <td>Maths</td>
             <td>Physics</td>
-            <td>Computer Science</td>
+            <td>Comp Sci</td>
             <td>Chemistry</td>
             <td>Kannada</td>
-            <td></td>
         </tr>
         <tr>
             <td>Saturday</td>
             <td>Maths</td>
             <td>English</td>
             <td>Chemistry</td>
-            <td>Computer Science</td>
+            <td>Comp Sci</td>
             <td colspan="2">Special Class</td>
         </tr>
     </table>
 </body>
 </html>
-
-
