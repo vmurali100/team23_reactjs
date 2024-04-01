@@ -1,134 +1,96 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-  <title>Personal Details Form</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif; /* Use a common sans-serif font */
-      background-color: #f4f4f4; /* Light background color */
-      margin: 0; /* Remove default margin */
-      padding: 20px; /* Add some padding for better spacing */
-    }
-    
-    #ven {
-      width: 500px; /* Increase width for better readability */
-      margin: auto;
-      background-color:antiquewhite; /* White background color */
-      border: 2px solid #ccc; /* Light border */
-      border-radius: 5px; /* Rounded corners */
-      padding: 20px; /* Add padding for better spacing */
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
-    }
+    <style>
+        * {
+            padding: 5px;
+        }
 
-    h2 {
-      margin-top: 0; /* Remove default margin for h2 */
-      color: #333; /* Dark text color */
-    }
+        #one {
+            width: 480px;
+            margin: auto;
+            background-color: burlywood;
+            border: 2px solid red;
+            padding-left: 20px;
 
-    table {
-      width: 100%; /* Full width */
-    }
+        }
 
-    td {
-      padding: 10px 0; /* Add padding top and bottom for table cells */
-    }
-
-    .label {
-      padding-right: 20px; /* Add right padding for labels */
-      font-weight: bold; /* Make labels bold */
-    }
-
-    input[type="text"],
-    input[type="password"],
-    input[type="email"],
-    input[type="number"],
-    select,
-    textarea {
-      width: 100%; /* Full width */
-      padding: 10px; /* Add padding */
-      border: 1px solid #ccc; /* Light border */
-      border-radius: 3px; /* Rounded corners */
-      box-sizing: border-box; /* Include padding and border in width calculation */
-    }
-
-    input[type="submit"] {
-      width: auto; /* Auto width for submit button */
-      padding: 10px 20px; /* Add padding for button size */
-      background-color: #4CAF50; /* Green background color */
-      color: white; /* White text color */
-      border: none; /* No border */
-      border-radius: 4px; /* Rounded corners */
-      cursor: pointer; /* Cursor on hover */
-    }
-
-    input[type="submit"]:hover {
-      background-color: #45a049; /* Darker green background color */
-    }
-  </style>
+        table td.label {
+          padding-right: 500px; /* Adjust as needed */
+          text-align: right; /* Align label text to the right */
+      }
+        
+    </style>
 </head>
+
 <body>
-  <div id="ven">
-    <h2>Personal Details</h2>
-    <form>
-      <table>
-        <tr>
-          <td class="label"><label for="name">Name:</label></td>
-          <td><input type="text" id="name" name="name" placeholder="Your Name"></td>
-        </tr>
-        <tr>
-          <td class="label"><label for="password">Password:</label></td>
-          <td><input type="password" id="password" name="password" placeholder="Your Password"></td>
-        </tr>
-        <tr>
-          <td class="label"><label for="email">E-mail id:</label></td>
-          <td><input type="email" id="email" name="email" placeholder="Your Email"></td>
-        </tr>
-        <tr>
-          <td class="label"><label for="gender">Gender:</label></td>
-          <td>
-            <input type="radio" id="male" name="gender" value="male">
-            <label for="male">Male</label>
-            <input type="radio" id="female" name="gender" value="female">
-            <label for="female">Female</label>
-          </td>
-        </tr>
-        <tr>
-          <td class="label"><label for="contact">Contact#:</label></td>
-          <td><input type="tel" id="contact" name="contact" placeholder="Your Contact Number"></td>
-        </tr>
-        <tr>
-          <td class="label"><label for="qualification">Educational Qualification:</label></td>
-          <td>
-            <select id="degree" name="degree">
-              <option value="">Select Degree</option>
-              <option value="Engineering">Engineering</option>
-              <option value="Other">Other</option>
-            </select>
-          </td>
-        </tr>
-        <tr>
-          <td class="label"><label for="hobbies">Hobbies:</label></td>
-          <td>
-            <input type="checkbox" id="hobby1" name="hobby[]" value="Playing chess">
-            <label for="hobby1">Playing chess</label>
-            <input type="checkbox" id="hobby2" name="hobby[]" value="Reading Books">
-            <label for="hobby2">Reading Books</label>
-          </td>
-        </tr>
-        <tr>
-          <td class="label"><label for="address">Address:</label></td>
-          <td><textarea id="address" name="address" rows="4" placeholder="Your Address"></textarea></td>
-        </tr>
-        <tr>
-          <td class="label"><label for="resume">Attach Resume:</label></td>
-          <td><input type="file" id="resume" name="resume"></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td><input type="submit" value="Submit"></td>
-        </tr>
-      </table>
-    </form>
-  </div>
+
+    <div id="one">
+        <form>
+            <h1 style="text-align: center; margin-top:auto; color:blueviolet;">Input Data</h1>
+            <table>
+                <tr>
+                    <td><label for="customerName">Customer Name:</label></td>
+                    <td><input type="text" id="customerName" name="customerName"></td>
+                </tr>
+
+                <tr>
+                    <td><label for="partName">Part Name:</label></td>
+                    <td><input type="text" id="partName" name="partName"></td>
+                </tr>
+
+                <tr>
+                    <td><label for="partPrintNumber">Part Print Number:</label></td>
+                    <td><input type="text" id="partPrintNumber" name="partPrintNumber"></td>
+                </tr>
+                <tr>
+                    <td><label for="revision">Revision:</label></td>
+                    <td><input type="text" id="revision" name="revision"></td>
+                </tr>
+                <tr>
+                    <td><label for="dateOfEstimate">Date of Estimate:</label></td>
+                    <td><input type="date" id="dateOfEstimate" name="dateOfEstimate"></td>
+                </tr>
+                <tr>
+                    <td><label for="estimatorName">Estimator Name:</label></td>
+                    <td><input type="text" id="estimatorName" name="estimatorName"></td>
+                </tr>
+                <tr>
+                    <td><label for="buyerName">Buyer Name:</label></td>
+                    <td><input type="text" id="buyerName" name="buyerName"></td>
+                </tr>
+            </table>
+            <table>
+              <tr>
+                  <td><label for="estimateBaseQuantity">Estimate Quantity:</label></td>
+                  <td><input type="number" id="estimateBaseQuantity" name="estimateBaseQuantity"></td>
+              </tr>
+              <tr>
+                  <td><label for="scrapPercentage">Scrap Percentage:</label></td>
+                  <td><input type="number" id="scrapPercentage" name="scrapPercentage"></td>
+              </tr>
+          </table>
+          <table>
+            <tr>
+              <td><label for="hobby1">Cast Estimated Value:</label></td>
+            </tr>
+          </table>
+          <table>
+            <tr>
+              <td><input type="checkbox" id="material1" name="material1[]" value="Material"></td>
+              <td><label for="hobby1">Material</label></td>
+              <td><input type="checkbox" id="material2" name="material[]" value="Tooling"></td>
+              <td><label for="hobby2">Toolling</label></td>
+              <td><input type="checkbox" id="material1" name="material1[]" value="Labor"></td>
+              <td><label for="hobby1">Labor</label></td>
+              <td><input type="checkbox" id="material2" name="material[]" value="Non Maching"></td>
+              <td><label for="hobby2">Non Maching</label></td>
+            </tr>
+          </table>
+            <p style="text-align:center;"><button type="submit">Submit</button></p>
+        </form>
+    </div>
 </body>
+
 </html>
