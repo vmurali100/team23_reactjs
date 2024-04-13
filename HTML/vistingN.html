@@ -15,7 +15,7 @@
         header, footer {
             background-color:blue;
             color: #fff;
-            text-align: center;
+            text-align: center;  
             padding: 10px 0; 
         }
 
@@ -25,7 +25,7 @@
             padding: 10px 0;
 
         }
-
+ 
         nav a {
             color: white;
             text-decoration: solid;
@@ -33,7 +33,7 @@
         }
 
         nav a:hover {
-            background-color:aqua; /* Changing background color on hover */
+            background-color:rgb(43, 156, 156); /* Changing background color on hover */
         }
 
         .Image-container {
@@ -46,14 +46,14 @@
         .Item {
             text-align: center;
             width: 200px;
-            margin: 10px;
+            margin: 10px;   
         }
         
         .Item img {
             width: 100%;
-            max-width: 100;
+            max-width: 100%;
             height: 150px;
-            object-fit: cover;
+            object-fit: cover;     
 
         }
 
@@ -188,32 +188,5 @@
         </section>
     </main>
     <footer>&copy; All the right reserved by public</footer>
-    <script>
-        // JavaScript code to highlight header text on mouseover
-        const header = document.getElementById('pageHeader');
-
-        header.addEventListener('mouseover', function() {
-            this.style.color = 'orange'; // Change text color to yellow on mouseover
-        });
-
-        header.addEventListener('mouseout', function() {
-            this.style.color = '#fff'; // Change text color back to white on mouseout
-        });
-    </script>
-
-    <script>
-        // JavaScript code to change background color of navigation links on hover
-        const navLinks = document.querySelectorAll('nav a');
-
-        navLinks.forEach(link => {
-            link.addEventListener('mouseover', function() {
-                this.style.backgroundColor = '#6666'; // Change background color on mouseover
-            });
-
-            link.addEventListener('mouseout', function() {
-                this.style.backgroundColor = '#4444'; // Change background color back on mouseout
-            });
-        });
-    </script>
 </body>
 </html>
