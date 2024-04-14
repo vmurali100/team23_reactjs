@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .main{
+        display: flex;
+        /* grid-template-columns: auto auto auto;
+        width: 100%; */
+
+    }
+    #one{
+        width: 1000px;
+        height: 200px;
+        border: 2px solid;
+        margin-left: 5px;
+    }
+    #two{
+        width: 1000px;
+        height: 200px;
+        border: 2px solid;
+        margin-left: 5px;
+    }
+    #three{
+        width: 1000px;
+        height: 200px;
+        border: 2px solid;
+        margin-left: 5px;
+    }
+    @media screen and (max-width: 720px) {
+        .main{
+            display: block;
+        }
+
+        #two{
+            margin-top: 5px;
+        }
+        #three{
+            margin-top: 5px;
+        }
+            
+        }
+
+        @media screen and (max-width:420px) {
+            #one{
+                width: 100%;
+                height: 200px;
+
+            }
+            #two{
+                width: 100%;
+                height: 200px;
+                margin-top: 5px;
+            }
+            #three{
+                width: 100%;
+                height: 200px;
+                margin-top: 5px;
+            }
+        }
+</style>
+<body>
+    <div class="main">
+        <div id="one">
+
+        </div>
+        <div id="two">
+    
+        </div>
+        <div id="three">
+    
+        </div>
+    </div>
+</body>
+</html>
