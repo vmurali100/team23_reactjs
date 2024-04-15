@@ -1,0 +1,178 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+.row1{
+    width: 100%;
+    height: 100px;
+    background: darkslategrey;
+    overflow: auto;
+}
+#header{
+    width: 800px;
+    height: 100px;
+    margin: auto;
+
+}
+.basic{
+    width: 300px;
+    height: 100px;
+    margin: auto;
+    float: left;
+    background-color: darkslategrey;
+    color: white;
+}
+.basic h1{
+    font-size: 30px;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+.basic p{
+    font-size: 15px;
+    margin-left: 10px;}
+
+nav{
+    width: 420px;
+    height: 20px;
+    margin: auto;
+    float: right;
+    padding: 20px;
+    margin-top: 15px;
+    background: black;
+}
+nav ul li{
+    display: inline;
+    font-size: 15px;
+    color: white;
+}
+ ul li a{
+   text-decoration: none;
+   color: white;
+   padding: 10px;
+}
+
+ul li a:hover{
+    color: yellow;
+}
+
+.Jeswanth{
+    width: 800px;
+    height: 360px;
+    margin: auto;
+    margin-top: 50px;
+}
+.Jeswanth img{
+    width: 800px;
+    height: 360px;    
+}
+.Slide{
+    width: 800px;
+    height: 180px;
+    margin: auto;
+    margin-top: 50px;
+    
+}
+#One{
+    width: 240px;
+    height: 180px;
+    float: left;
+}
+#One img{
+    width: 240px;
+    height: 180px;
+}
+#Two{
+    width: 240px;
+    height: 180px;
+    float: left;
+    margin-left: 30px;
+}
+#Two img{
+    width: 240px;
+    height: 180px;
+}
+#Three{
+    width: 240px;
+    height: 180px;
+    float: right;
+}
+#Three img{
+    width: 240px;
+    height: 180px;
+}
+.Slide h2{
+    text-align: center;
+    margin-top: 85px;
+}
+.Slide a{
+   float: right;
+   color: orangered;
+}
+.Slide-1 a{
+    float: right;
+    color: orangered;
+}
+.Slide-1{
+    width: 800px;
+    height: 180px;
+    margin: auto;
+    margin-top: 50px;
+    
+}
+#One-1{
+    width: 380px;
+    height: 250px;
+    float: left;
+}
+#Two-1{
+    width: 380px;
+    height: 250px;
+    float: right;
+    margin-left: 30px;
+}
+#Two-1 img{
+    width: 380px;
+    height: 250px;
+}
+.Slide-2 {
+    width: 100%;
+    height: 200px;
+    background: darkslategrey;
+}
+#Jachu {
+    display: inline-block;
+}
+#Jachu h3{
+    color: white;
+    margin: 6px;
+
+}
+#Jachu{
+    display: flex;
+    width: 800px;
+    height: 180px;
+    text-align: center;
+    margin: auto;
+}
+.Abc{
+    color: orangered;
+    margin: auto;
+}
+footer {
+    width: 100%;
+    /* height: 60px; */
+    background: black;
+   
+}
+.left-msg {
+    /* position: absolute; */
+    width: 400px;
+    padding: 20px;
+    color: antiquewhite;
+}
+.right-msg {
+    float: right;
+    margin-right: 300px;
+    padding: 20px;
+    color: antiquewhite;
+}
