@@ -8,12 +8,9 @@
         * {
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
         }
-
         body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
+            background-color: antiquewhite;
         }
 
         #header {
@@ -26,7 +23,7 @@
         #hgroup {
             max-width: 960px;
             margin: 0 auto;
-            overflow: auto;
+            overflow: auto; 
         }
 
         #basic {
@@ -37,28 +34,21 @@
             background-color: rgb(19, 39, 54);
             margin-top: 20px;
             float: right;
-            height: 50px;
+            height: 30px;
             margin-bottom: 1%;
-
-        }
-
-        nav ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         nav ul li {
-            display: inline-block;
-            margin-right: 20px;
-            margin-top: 14px;
+            display: inline;
         }
 
         nav ul li a {
             color: white;
             text-decoration: none;
             margin: 30px;
-            
         }
 
         #slider img {
@@ -105,6 +95,99 @@
         .intro footer a {
             color: #007bff;
             text-decoration: none;
+        }
+
+        #contain2 {
+            max-width: 960px;
+            margin: 20px auto;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .intro1 {
+            flex: 0 0 calc(50% - 20px);
+            margin-bottom: 20px;
+        }
+
+        .intro1 img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+        }
+
+        .intro1 h2 {
+            margin-top: 10px;
+            font-size: 20px;
+        }
+
+        .intro1 p {
+            margin-top: 10px;
+            font-size: 16px;
+        }
+
+        .intro1 footer {
+            margin-top: 10px;
+        }
+
+        .intro1 footer a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .banner3 {
+            width: 100%;
+            height: 200px;
+            background: darkslategrey;
+            margin-top: 20px;
+        }
+
+        #item {
+            display: inline-block;
+        }
+
+        #item h3{
+            color: white;
+            margin: 6px;
+        }
+
+        #item {
+            display: flex;
+            width: 800px;
+            height: 180px;
+            text-align: center;
+            margin: auto;
+        }
+
+        .Abc {
+            color: orangered;
+            margin: auto;
+        }
+        .banner4 {
+            background-color: black;
+        }
+
+        footer {
+            width: 100%;
+            height: 60px;
+            color: #fff;
+            text-align: center;
+            bottom: 0;   
+            left: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px; 
+        }
+
+        footer .left-msg {
+            text-align: left;
+            margin-left: 300px; /* Adjusted margin */
+        }
+
+        footer .right-msg {
+            text-align: right;
+            margin-right: 300px; /* Adjusted margin */
         }
     </style>
 </head>
@@ -155,6 +238,69 @@
                 <footer><a href="#">Read More &raquo;</a></footer>
             </article>
         </div>
+        <div id="contain2">
+            <div class="intro1">
+                <article>
+                    <h2>Chittoor District</h2>
+                    <p>Chittoor is a city and district headquarters in Chittoor district of the Indian state of Andhra Pradesh. It is also the mandal and divisional headquarters of Chittoor mandal and Chittoor revenue division respectively. The city has a population of 153,756 and that of the agglomeration is 175,647.</p>
+                    <footer><a href="#">Read More &raquo;</a></footer>
+                </article>
+            </div>
+            <div class="intro1">
+                <img src="./images/IN_Magnetic-Visiting-Cards_Hero-image_01.webp" alt="">
+            </div>
+        </div>
     </div> 
+    <div class="banner3">
+        <div id="item">
+            <div class="Abc">
+                <h3>LINK BLOCK</h3>
+                <ul>
+                    <p>ABCDEFGH</p>
+                    <p>ABCDEFGH</p>
+                    <p>ABCDEFGH</p>
+                    <p>ABCDEFGH</p>
+                    <p>ABCDEFGH</p>
+                </ul>
+            </div>
+
+            <div class="Abc">
+                <h3>LINK BLOCK</h3>
+                <ul>
+                    <p>ABCDEFGH</p>
+                    <p>ABCDEFGH</p>
+                    <p>ABCDEFGH</p>
+                    <p>ABCDEFGH</p>
+                    <p>ABCDEFGH</p>
+                </ul>
+            </div>
+
+            <div class="Abc">
+                <h3>LINK BLOCK</h3>
+                <ul>
+                    <p>ABCDEFGH</p>
+                    <p>ABCDEFGH</p>
+                    <p>ABCDEFGH</p>
+                    <p>ABCDEFGH</p>
+                    <p>ABCDEFGH</p>
+                </ul>
+            </div>
+
+            <div class="Abc">
+                <h3>LINK BLOCK</h3>
+                <ul>
+                    <p>ABCDEFGH</p>
+                    <p>ABCDEFGH</p>
+                    <p>ABCDEFGH</p>
+                    <p>ABCDEFGH</p>
+                    <p>ABCDEFGH</p>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <footer class="banner4">
+        <div class="left-msg">Copyright &copy; 2018 - All Rights Reserved - Domain Name.</div>
+        <div class="right-msg">Template by OS Template.</div>
+    </footer>
 </body>
 </html>
