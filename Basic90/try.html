@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .header {
+            width: 100%;
+            background-color: #333;
+            color: white;
+            padding: 20px 0;
+        }
+
+        .hgroup {
+            width: 960px;
+            margin: auto;
+            overflow: auto;
+        }
+
+        .basic {
+            float: left;
+            width: 50%;
+        }
+
+        .form {
+            float: right;
+            width: 50%;
+            text-align: right;
+            padding-top: 20px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .scend {
+            width: 960px;
+            margin: auto;
+            overflow: auto;
+            margin-top: 20px;
+        }
+
+        .spara {
+            width: 332px;
+            float: left;
+            height: 300px;
+            background-color: antiquewhite;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .image {
+            float: right;
+            width: calc(100% - 332px);
+            height: 300px;
+        }
+
+        .image img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .third {
+            width: 960px;
+            margin: auto;
+            overflow: auto;
+            margin-top: 20px;
+        }
+
+        .thpara {
+            width: 398px;
+            float: left;
+            background-color: aqua;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .thcon {
+            width: 560px;
+            float: right;
+            padding-left: 20px;
+            box-sizing: border-box;
+        }
+
+        .thimg img {
+            width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+        }
+
+        .fourth {
+            width: 960px;
+            margin: auto;
+            overflow: auto;
+            margin-top: 20px;
+        }
+
+        .forpara1,
+        .forpara2 {
+            width: 200px;
+            float: left;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .forpara3 {
+            width: 560px;
+            float: right;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+
+        .forpara2 ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .forpara2 ul li {
+            margin-bottom: 10px;
+        }
+
+        .forpara2 ul li:last-child {
+            margin-bottom: 0;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="hgroup">
+            <div class="basic">
+                <h1>basic</h1>
+                <p>Information</p>
+                <nav>
+                    <ul>
+                        <li><a href="">Home</a></li>
+                        <li><a href="">Contacts Us</a></li>
+                        <li><a href="">About Us</a></li>
+                        <li><a href="">Help</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="form">
+                <form action="">
+                    <input type="text">
+                    <button>Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="scend">
+        <div class="spara">
+            <h1>Eu justo augue estas</h1>
+            <p>
+                Nullamlacus dui ipsum conseque loborttis non euisque morbi penas
+                dapibulum orna. Urnaultrices quis curabitur phasellentesque congue
+                magnis vestibulum quismodo nulla et feugiat adipiscinia pellentum leo.
+            </p>
+            <p><a href="">Readmore>></a></p>
+        </div>
+        <div class="image">
+            <img src="./Cards/20220417_184757679952_9bb281_Spot_UV.webp" alt="">
+        </div>
+    </div>
+    <div class="third">
+        <div class="thpara">
+            <h1>Lorum ipsum dolor</h1>
+            <p>
+                This is a W3C compliant free website template from OS Templates. For
+                full terms of use of this template please read our website template
+                licence.
+            </p>
+            <p>You can use and modify the template for both personal and commercial use.
+                You must keep all copyright information and credit links in the template and associated files.
+                For more HTML5 templates visit free website templates.</p>
+        </div>
+        <div class="thcon">
+            <div class="thimg">
+                <div class="image1">
+                    <img src="./Cards/IN_Classic-Visiting-Cards_Hero-image_01.webp" alt="">
+                </div>
+                <div class="image2">
+                    <img src="./Cards/IN_Glossy-Visiting-Cards_Hero-image_01.webp" alt="">
+                </div>
+                <div id="image3">
+                    <img src="./Cards/IN_Magnetic-Visiting-Cards_Hero-image_01.webp" alt="">
+                </div>
+            </div>
+            <p><a href="" style="text-decoration: none;">VIEW OUR IMAAGE GALLERY HERE</a></p>
+        </div>
+    </div>
+    <div class="fourth">
+        <div class="forpara1">
+            <h3>FROM THE BLOG</h3>
+            <h4>Post Title</h4>
+            <p id="so">Admin, domainname.com</p>
+            <p id="go">Friday, 6th April 2000</p>
+            <p class="went">Nulla facilisi. Ut fringilla. Suspendisse potenti.
+                Nunc feugiat mi a tellus consequat imperdiet.</p>
+            <p><a href="">Readmore>></a></p>
+        </div>
+        <div class="forpara2">
+            <h3>QUICK LINKS</h3>
+            <ul>
+                <li>Lorem ipsum dolor sit</li>
+                <li>Amet consectetur</li>
+                <li>Praesent vel sem id</li>
+                <li>Curabitur hendrerit est</li>
+                <li>Sed a nulla urna</li>
+            </ul>
+        </div>
+        <div class="forpara3">
+            <h3>ABOUT US</h3>
+            <div id="image">
+                <img src="./Cards/IN_Raised-Foil-Visiting-Cards_Hero-image_01.jpg" alt="">
+            </div>
+            <div id="forimpara">
+                <p>
+                    Nam nec ante. Sed lacinia, urna non tincidunt mattis, tortor neque adipiscing diam,
+                    a cursus ipsum ante quis turpis. Nulla facilisi. Ut fringilla. Suspendisse potenti.
+                    Nunc feugiat mi a tellus consequat imperdiet. Vestibulum sapien. Proin quam. Etiam ultrices.
+                    Suspendisse in justo eu magna luctus suscipit.
+                </p>
+                <p><a href="">Readmore>></a></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
