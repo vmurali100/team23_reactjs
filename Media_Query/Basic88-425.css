@@ -167,18 +167,17 @@ footer{
     background: black;
    
 }
+.bottom{
+    width: 800px;
+    margin: auto;
+    padding: 20px;
+}
 .left-msg {
-    /* position: absolute; */
-    width: 400px;
-    height: 20px;
-    margin-left: 250px;
-    /* padding: 20px; */
     color: antiquewhite;
+    float: left;
+    
 }
 .right-msg {
-    height: 20px;
     float: right;
-    margin-right: 230px;
-    padding: 20px;
     color: antiquewhite;
 }

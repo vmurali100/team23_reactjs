@@ -236,18 +236,17 @@ nav li a {
     background-color: darkslategrey;
    
 }
-.left-msg {
-    /* position: absolute; */
-    width: 400px;
-    height: 20px;
-    margin-left: 250px;
+.bottom{
+    width: 960px;
+    margin: auto;
     padding: 20px;
+}
+.left-msg {
     color: antiquewhite;
+    float: left;
+    
 }
 .right-msg {
-    height: 20px;
     float: right;
-    margin-right: 230px;
-    padding: 20px;
     color: antiquewhite;
 }

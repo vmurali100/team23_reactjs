@@ -9,6 +9,7 @@
 #header {
     display: block;
     width: 960px;
+    height: 145px;
     margin: 0 auto;
     padding: 20px;
 }
@@ -60,17 +61,13 @@ input, textarea, select {
     display: block;
     width: 100%;
     margin: 0;
-    padding: 20px 0;
     color: wheat;
     background-color: black;
     clear: both;
 }
-#header nav ul {
-    padding: 0 20px;
-}
 nav ul {
     margin: 0;
-    padding: 0;
+    padding: 20px;
     list-style: none;
 }
 ul {
@@ -91,6 +88,10 @@ li {
     margin-right: 25px;
     text-transform: uppercase;
 }
+#bt{
+    color: wheat;
+    background-color: orange;
+}
 nav li a {
     color: wheat;
     background-color: black;
@@ -110,11 +111,13 @@ nav ul li a:hover {
     background-color: white;
     display: block;
 }
-.Jes-img{
+.Jes{
     display: block;
     float: right;
-    /* margin-block-start: 1em;
-    margin-block-end: 1em; */
+}
+.Jes img{
+    width: 620px;
+    height: 300px;
 }
 .Jes-msg{
     display: block;
@@ -233,18 +236,17 @@ nav li a {
     background-color: darkslategrey;
    
 }
-.left-msg {
-    position: absolute;
-    width: 400px;
-    height: 20px;
-    margin-left: 250px;
+.bottom{
+    width: 960px;
+    margin: auto;
     padding: 20px;
+}
+.left-msg {
     color: antiquewhite;
+    float: left;
+    
 }
 .right-msg {
-    height: 20px;
     float: right;
-    margin-right: 230px;
-    padding: 20px;
     color: antiquewhite;
 }
