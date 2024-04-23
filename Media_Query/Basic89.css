@@ -143,6 +143,7 @@ figcaption {
 }
 .content{
     width: 630px;
+    height: 360px;
 }
 .posts ul {
     margin: 0;
@@ -152,6 +153,7 @@ figcaption {
 .posts ul li {
     display: block;
     width: 100%;
+    height: auto;
     margin-bottom: 30px;
 }
 .posts ul li.last {
@@ -172,6 +174,7 @@ figcaption {
     display: block;
     float: right;
     width: 410px;
+    height: auto;
 }
 .posts ul li article figure h2 {
     font-size: 14px;
@@ -180,6 +183,7 @@ figcaption {
 }
 .right_column{
     width: 280px;
+    height: auto;
 }
 .right_column div {
     display: block;
