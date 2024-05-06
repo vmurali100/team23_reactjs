@@ -1,0 +1,551 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.main {
+    width: 1366px;
+    height: 600px;
+    margin: 0 auto;
+    background: linear-gradient(180deg, #6F7DFB 0%, #26308C 100%);
+    padding-top: 42px;
+}
+
+.top {
+    width: 1130px;
+    height: 150px;
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: space-between;
+    margin: auto;
+}
+
+.head h1 {
+    color: white;
+    margin-top: 50px;
+}
+
+.head1 ul li {
+    display: inline-block;
+    padding: 20px;
+    margin-top: 40px;
+    color: white;
+}
+
+.enroll-btn {
+    display: inline-flex;
+    align-items: flex-start;
+    gap: 10px;
+    border-radius: 24px;
+    background: darkolivegreen;
+    color: white;
+    margin-left: 40px;
+}
+
+.Content {
+    width: 1134px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    height: 72%;
+    margin-top: 13px;
+}
+
+.left-box {
+    padding: 10px;
+    width: 450px;
+}
+
+.right-box {
+    width: 200px;
+}
+
+.left-box h2 {
+    color: whitesmoke;
+    font-family: Raleway;
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 125%;
+    width: 457px;
+    margin-bottom: 18px;
+}
+
+.left-box p {
+    color: whitesmoke;
+    font-family: Poppins;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 200%;
+    width: 457px;
+    margin-bottom: 30px;
+}
+
+.left-box button {
+    display: inline-flex;
+    padding: 16px 32px;
+    align-items: center;
+    gap: 10px;
+    border-radius: 24px;
+    background: darkorange;
+    color: whitesmoke;
+    font-family: Poppins;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    border: none;
+}
+
+.students {
+    width: 170px;
+    height: 70px;
+    border-radius: 24px;
+    background: whitesmoke;
+    border: none;
+    margin-top: 80px;
+    margin-left: 30px;
+    display: grid;
+    justify-content: center;
+}
+
+.vking {
+    height: 430px;
+    width: 300px;
+    margin-right: 160px;
+}
+
+.rating {
+    width: 170px;
+    height: 70px;
+    border-radius: 24px;
+    background: whitesmoke;
+    border: none;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    margin-top: 120px;
+}
+
+.students h2 {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 30px;
+}
+
+.students p {
+    margin-bottom: 30px;
+}
+
+.rating h2 {
+    font-size: 30px;
+}
+
+.rating p {
+    margin-top: 0px;
+    margin-bottom: 30px;
+}
+
+.row1 {
+    width: 1366px;
+    height: 600px;
+    margin: 0 auto;
+}
+
+.first {
+    width: 1136px;
+    height: 500px;
+    margin: auto;
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: space-between;
+}
+
+
+.one {
+    width: 500px;
+    height: 500px;
+    position: absolute;
+
+}
+
+.bigline {
+    width: 10px;
+    height: 500px;
+    border-radius: 20px;
+    margin-left: 70px;
+    background-color: black;
+}
+
+.two {
+    width: 400px;
+    height: 200px;
+    margin-top: 30px;
+    border-radius: 20px;
+    position: absolute;
+    background-color: white;
+    box-shadow: 0px 9px 36px 0px rgba(0, 0, 0, 0.40);
+}
+
+.two button {
+    width: 400px;
+    padding: 30px;
+    border-radius: 20px;
+    background-color: blueviolet;
+    border: none;
+    color: white;
+}
+
+.two h2 {
+    margin-top: 30px;
+    margin-left: 30px;
+    font-size: 30px;
+
+
+}
+
+.two h3 {
+    margin-top: 10px;
+    margin-left: 30px;
+}
+
+.four {
+    width: 400px;
+    height: 200px;
+    margin-top: 270px;
+    border-radius: 20px;
+    margin-left: 35px;
+    position: absolute;
+    background-color: aliceblue;
+    box-shadow: 0px 9px 36px 0px rgba(0, 0, 0, 0.40);
+}
+
+.four button {
+    width: 400px;
+    padding: 30px;
+    border-radius: 20px;
+    background-color: orangered;
+    border: none;
+    color: white;
+}
+
+.four h2 {
+    margin-top: 30px;
+    margin-left: 30px;
+    font-size: 30px;
+}
+
+.four h3 {
+    margin-top: 10px;
+    margin-left: 30px;
+}
+
+.three {
+    width: 550px;
+    height: 500px;
+}
+
+.three h1 {
+    font-size: 50px;
+    margin-top: 90px;
+
+}
+
+.three p {
+    margin-top: 10px;
+
+}
+
+.three button {
+    width: 120px;
+    margin-top: 30px;
+    border-radius: 15px;
+    border: none;
+    background-color: orangered;
+    padding: 15px;
+    color: white;
+
+}
+
+.girlimg {
+    position: absolute;
+
+}
+
+
+.row2 {
+    width: 1365px;
+    /* height: 520px; */
+    border: 1px solid white;
+    margin: auto;
+    background: linear-gradient(180deg, #6F7DFB 0%, #26308C 100%);
+}
+
+.row2 h1 {
+    color: white;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.cartoon {
+    /* height: 350px; */
+    width: 1134px;
+    margin: auto;
+    margin-top: 40px;
+}
+
+.micky {
+    height: 250px;
+    width: 500px;
+    float: left;
+    border-radius: 20px;
+    background-color: white;
+}
+
+.micky h4 {
+    margin-top: 10px;
+    margin-left: 50px;
+}
+
+.game {
+    width: 500px;
+    height: 250px;
+    float: right;
+    border-radius: 20px;
+    background-color: white;
+}
+
+.cartoon button {
+    color: white;
+    background-color: orangered;
+    width: 130px;
+    border-radius: 20px;
+    border: none;
+}
+
+.bt {
+    /* height: 60px; */
+    width: 1134px;
+    margin: auto;
+    margin-top: 270px;
+    display: grid;
+    justify-content: end;
+}
+
+.bt button {
+    height: 50px;
+    margin-top: 30px;
+}
+
+.class1 {
+    height: 150px;
+    width: 400px;
+    margin: auto;
+    border-radius: 20px;
+}
+
+.class2 {
+    height: 8px;
+    width: 400px;
+    margin: auto;
+    border-radius: 10px;
+    background-color: black;
+    margin-top: 40px;
+}
+
+.game1 {
+    height: 150px;
+    width: 400px;
+    margin: auto;
+    border-radius: 20px;
+}
+
+.game2 {
+    height: 8px;
+    width: 400px;
+    margin: auto;
+    border-radius: 10px;
+    background-color: black;
+    margin-top: 22px;
+}
+
+.game h4 {
+    margin-top: 10px;
+    margin-left: 50px;
+}
+
+.google {
+    width: 1366px;
+    /* height: 280px; */
+    margin: auto;
+    background-color: white;
+}
+
+.app {
+    height: 200px;
+    width: 700px;
+    margin: auto;
+    margin-top: 50px;
+}
+
+.app h2 {
+    font-size: 30px;
+    text-align: center;
+    margin-top: 150px;
+}
+
+.app p {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.black {
+    height: 50px;
+    width: 200px;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background-color: black;
+}
+
+.white {
+    height: 50px;
+    width: 200px;
+    color: white;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+}
+
+.red {
+    width: 450px;
+    height: 50px;
+    margin-top: 50px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: space-between;
+    margin-top: 40px;
+}
+
+.link {
+    height: 300px;
+    width: 1364px;
+    margin: auto;
+    margin-top: 50px;
+    background-color: black;
+    color: white;
+}
+
+.link1 {
+    /* height: 150px; */
+    width: 1134px;
+    margin: auto;
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    justify-content: space-between;
+}
+
+.a {
+    /* height: 150px; */
+    width: 300px;
+}
+
+.b {
+    /* height: 150px; */
+    width: 300px;
+}
+
+.c {
+    /* height: 150px; */
+    width: 500px;
+    background-color: black;
+}
+
+.a ul li {
+    list-style: none;
+    margin-top: 20px;
+}
+
+.b ul li {
+    list-style: none;
+    margin-top: 20px;
+}
+
+.c ul li {
+    list-style: none;
+    margin-top: 20px;
+}
+
+.a ul li a {
+    color: red;
+    text-decoration: none;
+}
+
+.b ul li a {
+    color: red;
+    text-decoration: none;
+}
+
+.c ul li a {
+    color: red;
+    text-decoration: none;
+}
+
+.d {
+    height: 40px;
+    width: 1134px;
+    margin: auto;
+}
+
+.Jeswanth {
+    height: 40px;
+    width: 1134px;
+    margin-top: 40px;
+
+}
+
+
+
+
+
+@media screen and (max-width: 854px) {
+    .main {
+        width: 100%;
+        height: auto;
+    }
+
+    .top {
+        width: 100%;
+    }
+
+    .Content {
+        width: 100%;
+        display: grid;
+        grid-template-columns: auto ;
+    }
+    .right-box{
+        width: 45%;
+        float: left;
+        position: absolute;
+    }
+    .vking{
+        width: 45%;
+        float: right;
+        position: absolute;
+        margin-top: 240px;
+        margin-left: 340px;
+    }
+    .row1 {
+        width: 100%;
+        /* height: 600px; */
+        /* margin: 0 auto; */
+    }
+
+    
+}

@@ -1,0 +1,150 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    width: 1440px;
+    height: 88px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: auto auto;
+    background-color: whitesmoke;
+}
+
+.Head {
+    margin-top: 30px;
+    margin-left: 60px;
+}
+
+.Head1 {
+    margin-left: 500px;
+}
+
+.Head1 ul li {
+    display: inline-block;
+    padding: 10px;
+    margin-top: 30px;
+}
+
+.enroll-btn {
+    display: inline-flex;
+    align-items: flex-start;
+    gap: 10px;
+    border-radius: 24px;
+    background: white;
+    margin-left: 40px;
+}
+
+.row1 {
+    width: 1440px;
+    height: 800px;
+    margin: auto;
+    margin-top: -25px;
+    background-color: whitesmoke;
+}
+
+.main {
+    width: 876px;
+    height: 327px;
+    margin-left: 60px;
+
+}
+.heading{
+    width: 824px;
+    height: 140px;
+    font-size: 62px;
+    margin-top: 25px;
+}
+.msg{
+    width: 611px;
+    height: 64px;
+    font-size: 24px;
+    margin-top: 25px;
+}
+.button{
+    width: 394px;
+    height: 59px;
+    margin-top: 25px;
+    
+}
+.button ul{
+    margin: auto;
+    display: grid;
+    grid-template-columns: auto auto;
+}
+.enroll-btn1{
+    display: inline-flex;
+    gap: 10px;
+    border-radius: 24px;
+    background: blue;
+    padding: 20px;
+}
+.enroll-btn2{
+    display: inline-flex;
+    gap: 10px;
+    border-radius: 24px;
+    background: white;
+    padding: 20px;
+    margin-left: 20px;
+}
+/* .group{
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+.img1{
+    margin-top: 30px;
+    margin-left: 30px;
+}
+.img2{
+    margin-right: 30px;
+}
+.img3{
+    background-image: url(./Rectangle\ 645.png) ; width: 400px; height: 411px;
+} */
+.Group{
+    width: 1249px;
+    height: 480px;
+    margin-top: -120px;
+    margin-left: 60px;
+}
+.row2{
+    width: 1440px;
+    height: 963px;
+    margin: auto;
+    background-color: black;
+    border: 2px solid gray;
+}
+.text{
+    width: 767px;
+    height: 118px;
+    margin: auto;
+}
+.row2 p{
+    color: white;
+    font-size: 56px;
+    margin-top: 60px;
+}
+.video{
+    width: 835px;
+    height: 486px;
+    margin: auto;
+    margin-top: 65px;
+}
+.row2 .button{
+    width: 166px;
+    height: 69px;
+    margin: auto;
+    margin-top: 65px;
+}
+.enroll-btn3{
+    display: inline-flex;
+    gap: 10px;
+    border-radius: 24px;
+    background: blue;
+    padding: 20px;
+}
+.row3{
+    width: 1440px;
+    margin: auto;
+}
