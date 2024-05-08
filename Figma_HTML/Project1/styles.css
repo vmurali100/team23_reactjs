@@ -1,0 +1,44 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+main {
+  width: 1336px;
+  margin: 0 auto;
+  background-image: linear-gradient(#6f7dfb, #26308c);
+  border: 1px solid #6f7dfb;
+}
+header {
+  width: 1134px;
+  margin: 0 auto;
+  margin-top: 42px;
+  overflow: auto;
+}
+#logo{
+    float: left;
+}
+#logo h2 {
+  color: white;
+  font-family: Raleway;
+  font-size: 40px;
+  font-weight: 900;
+  line-height: 46.96px;
+  text-align: left;
+}
+nav{
+    float: right;
+}
+ul{
+    margin-top: 10px;
+}
+ul li{
+    display: inline-block;
+    margin-right: 25px;
+    color: white;
+    font-family: Poppins;
+}
+.enroll{
+    padding: 10px 20px;
+    background: #023047;
+    border-radius: 15px;
+}

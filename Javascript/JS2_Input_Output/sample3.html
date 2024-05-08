@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var num1 = Number(prompt("Enter 1st Number : "));
+        var num2 = Number(prompt("Enter 2nd Number : "));
+        var action = prompt("Should i Multiply,Add , Subtract, Devide ?")
+        var result;
+        if (action == "Multiply") {
+            result = num1 * num2
+        } else if (action == "Add") {
+            result = num1 + num2
+        } else if (action == "Subtract") {
+            result = num1 - num2
+        } else {
+            result = num1 / num2
+        }
+        document.write("The Result for Given 2 Numbers are = " + result)
+    </script>
+</body>
+
+</html>
