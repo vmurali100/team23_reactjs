@@ -172,7 +172,7 @@
     height: 1222px;
     background-color: whitesmoke;
     margin: auto;
-    border-bottom: 2px solid black;
+    border: 2px solid white;
 }
 .heading2{
     width: 612px;
@@ -191,6 +191,7 @@
     width: 612px;
     height: 26px;
     margin: auto;
+    margin-top: 30px;
     font-size: 18px;
     text-align: center;
 }
@@ -215,7 +216,7 @@
     margin-top: 50px;
     font-size: 18px;
 }
-.links{
+.link{
     width: 128px;
     height: 25px;
     margin: auto;
@@ -226,5 +227,189 @@
     height: 1099px;
     background-color: whitesmoke;
     margin: auto;
-    border: 2px solid white;
+    border: 2px solid whitesmoke;
+}
+.heading3{
+    width: 621px;
+    height: 58px;
+    margin: auto;
+    margin-top: 50px;
+    font-size: 35px;
+}
+.tabs{
+    width: 384px;
+    height: 65px;
+    margin: auto;
+    background-color: white;
+    border-radius: 8px;
+    margin-top: 30px;
+}
+.tabs ul{
+    margin: auto;
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+.tabs ul li{
+    display: inline-flex;
+    padding: 20px;
+    font-size: 24px;
+}
+.one{
+    border-radius: 24px;
+    background: blue;
+}
+.question{
+    width: 824px;
+    height: 176px;
+    margin: auto;
+    margin-top: 50px;
+    border-bottom: 1px solid;
+}
+.text1{
+    display: grid;
+    grid-template-columns: auto auto;
+}
+.Q1{
+    width: 742px;
+    height: 60px;
+    font-size: 25px;
+}
+.Q2{
+    transform: rotate(45deg);
+    margin-top: 10px;
+}
+.text2{
+    width: 718px;
+    height: 52px;
+    font-size: 19.5px;
+    margin-top: 15px;
+}
+.question1{
+    width: 824px;
+    height: 456px;
+    margin: auto;
+    margin-top: 10px;
+}
+.text3{
+    display: grid;
+    grid-template-columns: auto auto;
+    width: 824px;
+    height: 84px;
+    margin-top: 35px;
+    border-bottom: 1px dotted lightslategray;
+}
+.text4{
+    display: grid;
+    grid-template-columns: auto auto;
+    width: 824px;
+    height: 54px;
+    margin-top: 35px;
+    border-bottom: 1px dotted lightslategray;
+}
+.Q3{
+    width: 742px;
+    height: 60px;
+    font-size: 25px;
+}
+.Q4{
+    margin-left: 10px;
+}
+.row6{
+    width: 1440px;
+    height: 579px;
+    margin: auto;
+    background-color: black;
+    border: 2px solid;
+}
+.logo{
+    width: 150px;
+    height: 32px;
+    color: white;
+    font-size: 24px;
+    margin-top: 60px;
+    margin-left: 60px;
+}
+.links{
+    width: 1280px;
+    height: 220px;
+    margin-top: 50px;
+    margin-left: 60px;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+}
+.Newsletters{
+    width: 406px;
+    height: 205px;
+    background-color: white;
+    border-radius: 12px;
+}
+.Newsletters h3{
+    margin-top: 20px;
+    margin-left: 20px;
+    font-size: 24px;
+}
+.Newsletters p{
+    margin-top: 20px;
+    margin-left: 20px;
+    font-size: 24px;
+}
+.links1{
+    width: 358px;
+    height: 48px;
+    margin-top: 15px;
+    margin-left: 20px;
+    display: grid;
+    grid-template-columns: auto auto;
+}
+.links ul {
+    margin-top: 20px;
+    padding: 5px;
+    text-decoration: none;
+    list-style-type: none;
+}
+.links li{
+    padding: 5px;
+}
+.email{
+    width: 220px;
+    height: 48px;
+    border: 2px solid grey;
+    border-radius: 12px;
+}
+.subs{
+    width: 121px;
+    height: 48px;
+    border: 2px solid grey;
+    border-radius: 12px;
+    background-color: blue;
+    color: white;
+}
+.company{
+    width: 130px;
+    height: 148px;
+    color: white;
+    font-size: 18px;
+}
+.resource{
+    width: 125px;
+    height: 148px;
+    color: white;
+}
+.contact{
+    width: 186px;
+    height: 66px;
+    color: white;
+}
+.logos{
+    width: 65px;
+    height: 24px;
+    margin-top: 100px;
+    margin-left: 60px;
+}
+.btm{
+    width: 237px;
+    height: 21px;
+    color: wheat;
+    margin-top: 60px;
+    margin-left: 60px;
 }
