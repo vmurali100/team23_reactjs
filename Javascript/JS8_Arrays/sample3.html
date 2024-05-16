@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var students = ["Ram", "Ravi", "Sam", "Sundar", "Abi", "Balu"];
+        // Find out the Student Names with 3 Character length;
+        // Find method in Array will retuen only one result
+        // var studentsList = students.find(function(val){
+        //     return val.length === 3 ; 
+        // });
+
+        var studentsList = students.filter(function (val) {
+            return val.length === 3;
+        });
+
+
+        console.log(studentsList)
+    </script>
+</body>
+
+</html>
