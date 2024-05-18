@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1. `concat()`: Combines two or more arrays.
+        // const arr1 = [1, 2, 3];
+        // const arr2 = [4, 5, 6];
+        // const combinedArray = arr1.concat(arr2);
+        // console.log(combinedArray);
+        // document.write(combinedArray);
+
+        // 2. `copyWithin()`: Copies array elements within the array.
+        // const array = [1, 2, 3, 4, 5];
+        // array.copyWithin(0, 3);
+        // console.log(array);
+        // document.write(array);
+
+        // 3. `entries()`: Returns a new array iterator object that contains the key/value pairs for each index in the array.
+        // const array = ['a', 'b', 'c'];
+        // const iterator = array.entries();
+        // console.log(iterator.next().value);
+        // console.log(iterator.next().value);
+        // console.log(iterator.next().value);
+
+        // 4. `every()`: Tests whether all elements in the array pass the provided function.
+        // const array = [1, 2, 3, 4, 5];
+        // const isBelowThreshold = (currentValue) => currentValue < 10;
+        // console.log(array.every(isBelowThreshold));
+        // document.write(array.every(isBelowThreshold));
+
+        // 5. `fill()`: Fills all the elements of an array from a start index to an end index with a static value.
+        // const array = [1, 2, 3, 4, 5];
+        // console.log(array.fill(0, 2, 4));
+        // document.write(array.fill(0,2,4));
+
+        // 6. `filter()`: Creates a new array with all elements that pass the test implemented by the provided function.
+        // const array = [1, 2, 3, 4, 5];
+        // const filteredArray = array.filter(element => element > 3);
+        // console.log(filteredArray);
+        // document.write(filteredArray);
+
+        // 7. `find()`: Returns the first element in the array that satisfies the provided testing function.
+        // const array = [1, 2, 3, 4, 5];
+        // const foundElement = array.find(element => element > 3);
+        // console.log(foundElement);
+        // document.write(foundElement);
+
+        // 8. `findIndex()`: Returns the index of the first element in the array that satisfies the provided testing function.
+        // const array = [1, 2, 3, 4, 5];
+        // const foundIndex = array.findIndex(element => element > 3);
+        // console.log(foundIndex);
+        // document.write(foundIndex);
+
+        // 9. `flat()`: Creates a new array with all sub - array elements concatenated into it recursively up to the specified depth.
+        // const array = [1, 2, [3, 4]];
+        // const flatArray = array.flat();
+        // console.log(flatArray);
+        // document.write(flatArray);
+
+        // 10. `flatMap()`: Maps each element using a mapping function, then flattens the result into a new array.
+        // const array = [1, 2, 3];
+        // const mappedArray = array.flatMap(x => [x * 2]);
+        // console.log(mappedArray);
+        // document.write(mappedArray);
+
+        // 11. `forEach()`: Calls a function for each element in the array.
+        // const array = [1, 2, 3];
+        // array.forEach(element => console.log(element * 2));
+        // array.forEach(element => document.write(element * 2+"<br>"));
+
+        // 12. `includes()`: Determines whether an array includes a certain value among its entries.
+        // const array = [1, 2, 3];
+        // console.log(array.includes(2));
+        // document.write(array.includes(2));
+
+        // 13. `indexOf()`: Returns the first index at which a given element can be found in the array.
+        // const array = [1, 2, 3, 4, 5];
+        // console.log(array.indexOf(3));
+        // document.write(array.indexOf(3));
+
+        // 14. `join()`: Joins all elements of an array into a string.
+        // const array = ['Hello', 'World'];
+        // console.log(array.join(' ')); 
+
+        // 15. `keys()`: Returns a new array iterator object that contains the keys for each index in the array.
+        // const array = ['a', 'b', 'c'];
+        // const iterator = array.keys();
+        // console.log(iterator.next().value);
+        // console.log(iterator.next().value);
+        // console.log(iterator.next().value);
+
+        // 16. `lastIndexOf()`: Returns the last index at which a given element can be found in the array.
+        // const array = [1, 2, 3, 4, 5, 2];
+        // console.log(array.lastIndexOf(2));
+
+        // 17. `map()`: Creates a new array with the results of calling a provided function on every element in the array.
+        // const array = [1, 2, 3];
+        // const mappedArray = array.map(x => x * 2);
+        // console.log(mappedArray);
+
+        // 18. `pop()`: Removes the last element from an array and returns that element.
+        // const array = [1, 2, 3];
+        // const poppedElement = array.pop();
+        // console.log(poppedElement);
+
+        // 19. `push()`: Adds one or more elements to the end of an array and returns the new length of the array.
+        // const array = [1, 2, 3];
+        // const newLength = array.push(4);
+        // console.log(array); // Output: [1, 2, 3, 4]
+        // console.log(newLength);
+
+        // 20. `reduce()`: Applies a function against an accumulator and each element in the array(from left to right) to reduce it to a single value.
+        // const array = [1, 2, 3, 4, 5];
+        // const sum = array.reduce((accumulator, currentValue) => accumulator + currentValue);
+        // console.log(sum);
+
+        // 21. `reduceRight()`: Applies a function against an accumulator and each element in the array(from right to left) to reduce it to a single value.
+        // const array = ['a', 'b', 'c', 'd'];
+        // const concatenatedString = array.reduceRight((accumulator, currentValue) => accumulator + currentValue);
+        // console.log(concatenatedString);
+
+        // 22. `reverse()`: Reverses the order of the elements in an array in place.
+        // const array = [1, 2, 3];
+        // array.reverse();
+        // console.log(array);
+
+        // 23. `shift()`: Removes the first element from an array and returns that removed element.
+        // const array = [1, 2, 3];
+        // const shiftedElement = array.shift();
+        // console.log(shiftedElement);
+
+        // 24. `slice()`: Returns a shallow copy of a portion of an array into a new array object.
+        // const array = [1, 2, 3, 4, 5];
+        // const slicedArray = array.slice(1, 3);
+        // console.log(slicedArray);
+
+        // 25. `some()`: Tests whether at least one element in the array passes the test implemented by the provided function.
+        // const array = [1, 2, 3, 4, 5];
+        // const isAboveThreshold = (currentValue) => currentValue > 3;
+        // console.log(array.some(isAboveThreshold));
+
+        // 26. `sort()`: Sorts the elements of an array in place and returns the array.
+        // const array = [5, 2, 1, 4, 3];
+        // array.sort();
+        // console.log(array);
+
+        // 27. `splice()`: Changes the contents of an array by removing or replacing existing elements and / or adding new elements.
+        // const array = [1, 2, 3, 4, 5];
+        // const removedElements = array.splice(1, 2);
+        // console.log(array);
+        // console.log(removedElements);
+
+        // 28. `toLocaleString()`: Returns a localized string representing the array elements.
+        // const array = [1, 2, 3];
+        // console.log(array.toLocaleString('en-US'));
+
+        // 29. `toString()`: Returns a string representing the specified array and its elements.
+        // const array = [1, 2, 3];
+        // console.log(array.toString());
+
+        // 30. `unshift()`: Adds one or more elements to the beginning of an array and returns the new length of the array.
+        // const array = [2, 3];
+        // const newLength = array.unshift(1);
+        // console.log(array);
+        // console.log(newLength);
+
+        // 31. `values()`: Returns a new array iterator object that contains the values for each index in the array.
+        const array = ['a', 'b', 'c'];
+        const iterator = array.values();
+        console.log(iterator.next().value);
+        console.log(iterator.next().value);
+        console.log(iterator.next().value);
+
+
+    </script>
+</body>
+
+</html>
