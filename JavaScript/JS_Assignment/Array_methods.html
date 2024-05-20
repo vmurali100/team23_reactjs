@@ -12,7 +12,8 @@
         //1. `concat()`: Combines two or more arrays.
         const arr1 = [1, 2, 3];
         const arr2 = [4, 5, 6];
-        const combinedArray = arr1.concat(arr2);
+        const arr3 = [7, 8, 9];
+        const combinedArray = arr1.concat(arr2, arr3);
         console.log(combinedArray);
         document.write(combinedArray);
 
@@ -88,6 +89,7 @@
         // 14. `join()`: Joins all elements of an array into a string.
         const array = ['Hello', 'World'];
         console.log(array.join(' '));
+        document.write(array.join(' '));
 
         // 15. `keys()`: Returns a new array iterator object that contains the keys for each index in the array.
         const array = ['a', 'b', 'c'];
@@ -99,11 +101,13 @@
         // 16. `lastIndexOf()`: Returns the last index at which a given element can be found in the array.
         const array = [1, 2, 3, 4, 5, 2];
         console.log(array.lastIndexOf(2));
+        document.write(array.lastIndexOf(2));
 
         // 17. `map()`: Creates a new array with the results of calling a provided function on every element in the array.
         const array = [1, 2, 3];
         const mappedArray = array.map(x => x * 2);
         console.log(mappedArray);
+        document.write(mappedArray);
 
         // 18. `pop()`: Removes the last element from an array and returns that element.
         const array = [1, 2, 3];
