@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const students = [
+            { name: 'Alice', score: 85 },
+            { name: 'Bob', score: 72 },
+            { name: 'Charlie', score: 90 },
+            { name: 'David', score: 68 },
+            { name: 'Eve', score: 77 }
+        ];
+
+        // const firstClassStud = students
+        const filteredArray = students.filter(students => students.score > 75);
+        const mappedArray = students.map(students => students.name)
+        console.log(filteredArray);
+        console.log(mappedArray);
+
+
+        filteredArray.forEach((usr) => {
+            document.write(usr.name + " - " + usr.score + "<br/>");
+        })
+
+        document.write(mappedArray +"<br>");
+
+
+
+    </script>
+</body>
+
+</html>

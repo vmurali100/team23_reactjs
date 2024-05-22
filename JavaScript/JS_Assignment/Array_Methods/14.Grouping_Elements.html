@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const strings = ["apple", "banana", "avocado", "orange", "pear", "grape"];
+
+        const groupedStrings = strings.reduce((result, string) => {
+            const firstLetter = string[0];
+            if (!result[firstLetter]) {
+                result[firstLetter] = [string];
+            } else {
+                result[firstLetter].push(string);
+            }
+            return result;
+        }, {});
+
+        console.log(groupedStrings);
+
+    </script>
+</body>
+
+</html>

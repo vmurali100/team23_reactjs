@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const products = [
+            { name: 'product1', price: 50 },
+            { name: 'product2', price: 150 },
+            { name: 'product3', price: 30 },
+            { name: 'product4', price: 200 }
+        ];
+
+        // Find the index of the first product with a price greater than 100
+        const index = products.findIndex(product => product.price > 100);
+        console.log(index);
+
+        document.write(index);
+
+
+    </script>
+</body>
+
+</html>

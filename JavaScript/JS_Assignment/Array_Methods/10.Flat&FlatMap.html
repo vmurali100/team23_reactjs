@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const nestedNumbers = [1, [2, 3], [4, [5, 6]], 7];
+
+        // Flatten the array to a depth of 1 and double each number
+        const flattenedArray = nestedNumbers.flat().map(num => num * 2);
+
+        console.log(flattenedArray);
+
+        document.write(flattenedArray);
+
+        // Flatten the array to a depth of 1 and double each number using flatMap
+        const doubledArray = nestedNumbers.flatMap(num => Array.isArray(num) ? num : [num * 2]);
+
+        console.log(doubledArray);
+        
+        // document.write(doubledArray);
+
+    </script>
+</body>
+
+</html>

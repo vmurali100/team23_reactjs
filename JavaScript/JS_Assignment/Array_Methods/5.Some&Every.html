@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const ages = [14, 20, 16, 25, 30, 12, 18];
+        var teenager = ages.some(function (value) {
+            return value >= 13 && value <= 17;
+        })
+        var adults = ages.every(function(value){
+            return value >= 18;
+        })
+
+        console.log(teenager);
+        console.log(adults);
+
+        document.write(teenager); 
+        document.write(adults);
+    </script>
+</body>
+
+</html>
