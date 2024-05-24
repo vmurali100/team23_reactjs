@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="file" name="" id="">
+    <button onclick="gotoNextPage()">GO TO Next page</button>
+    <script>
+        window.onload = function () {
+            console.log("Window Loaded Successfully ");
+        }
+
+        window.onresize = function () {
+            console.log("Window Resized !!!")
+        }
+        window.onscroll = function () {
+            console.log("Window Scrolled !!!!")
+        }
+
+        // window.onbeforeunload = function (event) {
+            // const message = "You have unsaved changes. Do you really want to leave?";
+            // event.returnValue = message; // Display generic confirmation dialog
+        //     return message;
+        // };
+
+        window.onbeforeunload=function(){
+            const message = "You have unsaved changes. Do you really want to leave?";
+            event.returnValue = message;
+        }
+        function gotoNextPage(){
+            window.location.href = "sample3_formEvents.html"
+        }
+
+    </script>
+</body>
+
+</html>
