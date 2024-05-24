@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var words = ['apple', 'banana', 'apple', 'cherry', 'banana', 'apple'];
+        const wordsCount = words.reduce(function (acc, word) {
+            if (acc[word]) {
+                acc[word]++
+            }
+            else {
+                acc[word] = 1;
+            }
+            return acc;
+        }, {})
+
+        console.log(wordsCount)
+    </script>
+</body>
+</html>

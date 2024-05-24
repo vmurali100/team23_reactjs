@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const users = [
+            { name: 'Alice', age: 17 },
+            { name: 'Bob', age: 22 },
+            { name: 'Charlie', age: 19 },
+            { name: 'David', age: 15 },
+            { name: 'Eve', age: 21 }
+        ];
+
+        const formattedUsers = users
+            .filter(user => user.age >= 18) // Filter users who are 18 or older
+            .map(user => `${user.name} (${user.age})`); // Map each user to a formatted string
+
+        console.log(formattedUsers);
+
+        document.write(formattedUsers);
+    </script>
+</body>
+
+</html>
