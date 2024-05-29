@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <label for="">Ingredients :</label>
+        <input type="text" id="ingredients" class="ingredients" name="ingredients"> <br><br>
+        
+        <label for="">Instructions :</label>
+        <input type="text" id="instructions" class="instructions" name="instructions"> <br><br>
+
+        <button type="button" onclick="newRecipes()">Random Recipes</button>
+
+    </form>
+
+    <script>
+        // Method 1 with querySelector
+        // function newRecipes(){
+        //     var recipes = {
+        //         ingredients:document.querySelector("#ingredients").value,
+        //         instructions:document.querySelector("#instructions").value,
+        //     }
+        //     console.log(recipes)
+        // }
+
+        // Method 2 querySelectorAll
+        // function newRecipes(){
+        //     var recipes = {
+        //         ingredients:document.querySelectorAll("#ingredients")[0].value,
+        //         instructions:document.querySelectorAll("#instructions")[0].value,
+        //     }
+        //     console.log(recipes)
+        // }
+
+        // Method 3 getElementsByTagName
+        // function newRecipes(){
+        //     var recipes = {
+        //         ingredients:document.getElementsByTagName("input")[0].value,
+        //         instructions:document.getElementsByTagName("input")[1].value,
+        //     }
+        //     console.log(recipes)
+        // }
+
+        // Method 4 getElementById
+        // function newRecipes(){
+        //     var recipes = {
+        //         ingredients:document.getElementById("ingredients").value,
+        //         instructions:document.getElementById("instructions").value,
+        //     }
+        //     console.log(recipes)
+        // }
+
+        // Method 5 getElementsByClassName
+        // function newRecipes(){
+        //     var recipes = {
+        //         ingredients:document.getElementsByClassName("ingredients")[0].value,
+        //         instructions:document.getElementsByClassName("instructions")[0].value,
+        //     }
+        //     console.log(recipes)
+        // }
+
+        // Method 6 getElementsByName
+        function newRecipes(){
+            var recipes = {
+                ingredients:document.getElementsByName("ingredients")[0].value,
+                instructions:document.getElementsByName("instructions")[0].value,
+            }
+            console.log(recipes)
+        }
+
+
+    </script>
+</body>
+</html>

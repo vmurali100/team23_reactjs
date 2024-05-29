@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" startDate="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="">
+        <label for=""> Challenge Name :</label>
+        <input type="text" id="challengeName" class="challengeName" name="challengeName"> <br><br>
+
+        <label for=""> Participants :</label>
+        <input type="text" id="participants" class="participants" name="participants"> <br><br>
+
+        <label for=""> Start Date :</label>
+        <input type="text" id="startDate" class="startDate" name="startDate"> <br><br>
+
+        <label for=""> End Date :</label>
+        <input type="text" id="endDate" class="endDate" name="endDate"> <br><br>
+
+        <button type="button" onclick="fitnessChallenges()">Fitness Challenges</button>
+
+
+    </form>
+
+    <script>
+        // Method 1 with querySelector
+        // function fitnessChallenges(){
+        //     var challenges = {
+        //         challengeName:document.querySelector("#challengeName").value,
+        //         participants:document.querySelector("#participants").value,
+        //         startDate:document.querySelector("#startDate").value,
+        //         endDate:document.querySelector("#endDate").value, 
+        //     }
+        //     console.log(challenges)
+        // }
+
+        // Method 2 querySelectorAll
+        // function fitnessChallenges(){
+        //     var challenges = {
+        //         challengeName:document.querySelectorAll("#challengeName")[0].value,
+        //         participants:document.querySelectorAll("#participants")[0].value,
+        //         startDate:document.querySelectorAll("#startDate")[0].value,
+        //         endDate:document.querySelectorAll("#endDate")[0].value,
+        //     }
+        //     console.log(challenges)
+        // }
+
+        // Method 3 getElementsByTagName
+        // function fitnessChallenges(){
+        //     var challenges = {
+        //         challengeName:document.getElementsByTagName("input")[0].value,
+        //         participants:document.getElementsByTagName("input")[1].value,
+        //         startDate:document.getElementsByTagName("input")[2].value,
+        //         endDate:document.getElementsByTagName("input")[3].value,
+        //     }
+        //     console.log(challenges)
+        // }
+
+        // Method 4 getElementById
+        // function fitnessChallenges(){
+        //     var challenges = {
+        //         challengeName:document.getElementById("challengeName").value,
+        //         participants:document.getElementById("participants").value,
+        //         startDate:document.getElementById("startDate").value,
+        //         endDate:document.getElementById("endDate").value,
+        //     }
+        //     console.log(challenges)
+        // }
+
+        // Method 5 getElementsByClassName
+        // function fitnessChallenges(){
+        //     var challenges = {
+        //         challengeName:document.getElementsByClassName("challengeName")[0].value,
+        //         participants:document.getElementsByClassName("participants")[0].value,
+        //         startDate:document.getElementsByClassName("startDate")[0].value,
+        //         endDate:document.getElementsByClassName("endDate")[0].value,
+        //     }
+        //     console.log(challenges)
+        // }
+
+        // Method 6 getElementsByName
+        function fitnessChallenges() {
+            var challenges = {
+                challengeName: document.getElementsByName("challengeName")[0].value,
+                participants: document.getElementsByName("participants")[0].value,
+                startDate: document.getElementsByName("startDate")[0].value,
+                endDate: document.getElementsByName("endDate")[0].value,
+            }
+            console.log(challenges)
+        }
+
+
+    </script>
+</body>
+
+</html>

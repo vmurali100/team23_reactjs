@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="">
+        <label for="">Room Number :</label>
+        <input type="text" id="roomNumber" class="roomNumber" name="roomNumber"> <br><br>
+
+        <label for="">Guest Name :</label>
+        <input type="text" id="guestName" class="guestName" name="guestName"> <br><br>
+
+        <label for=""> CheckIn Date :</label>
+        <input type="text" id="checkinDate" class="checkinDate" name="checkinDate"> <br><br>
+
+        <label for=""> CheckOut Date :</label>
+        <input type="text" id="checkoutDate" class="checkoutDate" name="checkoutDate"> <br><br>
+
+        <button type="button" onclick="hotelReservations()">Hotel Reservations</button>
+
+
+    </form>
+
+    <script>
+        // Method 1 with querySelector
+        // function hotelReservations(){
+        //     var reservations = {
+        //         roomNumber:document.querySelector("#roomNumber").value,
+        //         guestName:document.querySelector("#guestName").value,
+        //         checkinDate:document.querySelector("#checkinDate").value,
+        //         checkoutDate:document.querySelector("#checkoutDate").value, 
+        //     }
+        //     console.log(reservations)
+        // }
+
+        // Method 2 querySelectorAll
+        // function hotelReservations(){
+        //     var reservations = {
+        //         roomNumber:document.querySelectorAll("#roomNumber")[0].value,
+        //         guestName:document.querySelectorAll("#guestName")[0].value,
+        //         checkinDate:document.querySelectorAll("#checkinDate")[0].value,
+        //         checkoutDate:document.querySelectorAll("#checkoutDate")[0].value,
+        //     }
+        //     console.log(reservations)
+        // }
+
+        // Method 3 getElementsByTagName
+        // function hotelReservations(){
+        //     var reservations = {
+        //         roomNumber:document.getElementsByTagName("input")[0].value,
+        //         guestName:document.getElementsByTagName("input")[1].value,
+        //         checkinDate:document.getElementsByTagName("input")[2].value,
+        //         checkoutDate:document.getElementsByTagName("input")[3].value,
+        //     }
+        //     console.log(reservations)
+        // }
+
+        // Method 4 getElementById
+        // function hotelReservations(){
+        //     var reservations = {
+        //         roomNumber:document.getElementById("roomNumber").value,
+        //         guestName:document.getElementById("guestName").value,
+        //         checkinDate:document.getElementById("checkinDate").value,
+        //         checkoutDate:document.getElementById("checkoutDate").value,
+        //     }
+        //     console.log(reservations)
+        // }
+
+        // Method 5 getElementsByClassName
+        // function hotelReservations(){
+        //     var reservations = {
+        //         roomNumber:document.getElementsByClassName("roomNumber")[0].value,
+        //         guestName:document.getElementsByClassName("guestName")[0].value,
+        //         checkinDate:document.getElementsByClassName("checkinDate")[0].value,
+        //         checkoutDate:document.getElementsByClassName("checkoutDate")[0].value,
+        //     }
+        //     console.log(reservations)
+        // }
+
+        // Method 6 getElementsByName
+        function hotelReservations() {
+            var reservations = {
+                roomNumber: document.getElementsByName("roomNumber")[0].value,
+                guestName: document.getElementsByName("guestName")[0].value,
+                checkinDate: document.getElementsByName("checkinDate")[0].value,
+                checkoutDate: document.getElementsByName("checkoutDate")[0].value,
+            }
+            console.log(reservations)
+        }
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="">
+        <label for=""> Post Title :</label>
+        <input type="text" id="postTitle" class="postTitle" name="postTitle"> <br><br>
+
+        <label for=""> Author :</label>
+        <input type="text" id="departureCity" class="departureCity" name="departureCity"> <br><br>
+
+        <label for=""> Content :</label>
+        <input type="text" id="content" class="content" name="content"> <br><br>
+
+        <label for=""> Tags :</label>
+        <input type="text" id="tags" class="tags" name="tags"> <br><br>
+
+        <button type="button" onclick="newPosts()">Blog Posts</button>
+
+
+    </form>
+
+    <script>
+        // Method 1 with querySelector
+        // function newPosts(){
+        //     var posts = {
+        //         postTitle:document.querySelector("#postTitle").value,
+        //         departureCity:document.querySelector("#departureCity").value,
+        //         content:document.querySelector("#content").value,
+        //         tags:document.querySelector("#tags").value, 
+        //     }
+        //     console.log(posts)
+        // }
+
+        // Method 2 querySelectorAll
+        // function newPosts(){
+        //     var posts = {
+        //         postTitle:document.querySelectorAll("#postTitle")[0].value,
+        //         departureCity:document.querySelectorAll("#departureCity")[0].value,
+        //         content:document.querySelectorAll("#content")[0].value,
+        //         tags:document.querySelectorAll("#tags")[0].value,
+        //     }
+        //     console.log(posts)
+        // }
+
+        // Method 3 getElementsByTagName
+        // function newPosts(){
+        //     var posts = {
+        //         postTitle:document.getElementsByTagName("input")[0].value,
+        //         departureCity:document.getElementsByTagName("input")[1].value,
+        //         content:document.getElementsByTagName("input")[2].value,
+        //         tags:document.getElementsByTagName("input")[3].value,
+        //     }
+        //     console.log(posts)
+        // }
+
+        // Method 4 getElementById
+        // function newPosts(){
+        //     var posts = {
+        //         postTitle:document.getElementById("postTitle").value,
+        //         departureCity:document.getElementById("departureCity").value,
+        //         content:document.getElementById("content").value,
+        //         tags:document.getElementById("tags").value,
+        //     }
+        //     console.log(posts)
+        // }
+
+        // Method 5 getElementsByClassName
+        // function newPosts(){
+        //     var posts = {
+        //         postTitle:document.getElementsByClassName("postTitle")[0].value,
+        //         departureCity:document.getElementsByClassName("departureCity")[0].value,
+        //         content:document.getElementsByClassName("content")[0].value,
+        //         tags:document.getElementsByClassName("tags")[0].value,
+        //     }
+        //     console.log(posts)
+        // }
+
+        // Method 6 getElementsByName
+        function newPosts() {
+            var posts = {
+                postTitle: document.getElementsByName("postTitle")[0].value,
+                departureCity: document.getElementsByName("departureCity")[0].value,
+                content: document.getElementsByName("content")[0].value,
+                tags: document.getElementsByName("tags")[0].value,
+            }
+            console.log(posts)
+        }
+
+
+    </script>
+</body>
+
+</html>

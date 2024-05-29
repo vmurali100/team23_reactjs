@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <label for=""> Item Name :</label>
+        <input type="text" id=" itemName" class=" itemName" name=" itemName"> <br><br>
+        
+        <label for=""> Priority Level :</label>
+        <input type="text" id="priorityLevel" class="priorityLevel" name="priorityLevel"> <br><br>
+
+        <label for=""> Price :</label>
+        <input type="text" id="price" class="price" name="price"> <br><br>
+
+        <button type="button" onclick="addItems()"> Add Items </button>
+
+    </form>
+
+    <script>
+        // Method 1 with querySelector
+        // function addItems(){
+        //     var Items = {
+        //          itemName:document.querySelector("# itemName").value,
+        //         priorityLevel:document.querySelector("#priorityLevel").value,
+        //         price:document.querySelector("#price").value,
+        //     }
+        //     console.log(Items)
+        // }
+
+        // Method 2 querySelectorAll
+        // function addItems(){
+        //     var Items = {
+        //          itemName:document.querySelectorAll("# itemName")[0].value,
+        //         priorityLevel:document.querySelectorAll("#priorityLevel")[0].value,
+        //         price:document.querySelectorAll("#price")[0].value
+        //     }
+        //     console.log(Items)
+        // }
+
+        // Method 3 getElementsByTagName
+        // function addItems(){
+        //     var Items = {
+        //          itemName:document.getElementsByTagName("input")[0].value,
+        //         priorityLevel:document.getElementsByTagName("input")[1].value,
+        //         price:document.getElementsByTagName("input")[2].value
+        //     }
+        //     console.log(Items)
+        // }
+
+        // Method 4 getElementById
+        // function addItems(){
+        //     var Items = {
+        //          itemName:document.getElementById(" itemName").value,
+        //         priorityLevel:document.getElementById("priorityLevel").value,
+        //         price:document.getElementById("price").value
+        //     }
+        //     console.log(Items)
+        // }
+
+        // Method 5 getElementsByClassName
+        // function addItems(){
+        //     var Items = {
+        //          itemName:document.getElementsByClassName(" itemName")[0].value,
+        //         priorityLevel:document.getElementsByClassName("priorityLevel")[0].value,
+        //         price:document.getElementsByClassName("price")[0].value
+        //     }
+        //     console.log(Items)
+        // }
+
+        // Method 6 getElementsByName
+        function addItems(){
+            var Items = {
+                 itemName:document.getElementsByName(" itemName")[0].value,
+                priorityLevel:document.getElementsByName("priorityLevel")[0].value,
+                price:document.getElementsByName("price")[0].value
+            }
+            console.log(Items)
+        }
+
+
+    </script>
+</body>
+</html>

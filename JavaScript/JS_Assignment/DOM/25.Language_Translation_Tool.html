@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <label for=""> Source Language :</label>
+        <input type="text" id="sourceLanguage" class="sourceLanguage" name="sourceLanguage"> <br><br>
+        
+        <label for=""> Target Language :</label>
+        <input type="text" id="targetLanguage" class="targetLanguage" name="targetLanguage"> <br><br>
+
+        <label for=""> Text to Translate :</label>
+        <input type="text" id="translate" class="translate" name="translate"> <br><br>
+
+        <button type="button" onclick="translateText()"> Translate Text </button>
+
+    </form>
+
+    <script>
+        // Method 1 with querySelector
+        // function translateText(){
+        //     var Text = {
+        //         sourceLanguage:document.querySelector("#sourceLanguage").value,
+        //         targetLanguage:document.querySelector("#targetLanguage").value,
+        //         translate:document.querySelector("#translate").value,
+        //     }
+        //     console.log(Text)
+        // }
+
+        // Method 2 querySelectorAll
+        // function translateText(){
+        //     var Text = {
+        //         sourceLanguage:document.querySelectorAll("#sourceLanguage")[0].value,
+        //         targetLanguage:document.querySelectorAll("#targetLanguage")[0].value,
+        //         translate:document.querySelectorAll("#translate")[0].value
+        //     }
+        //     console.log(Text)
+        // }
+
+        // Method 3 getElementsByTagName
+        // function translateText(){
+        //     var Text = {
+        //         sourceLanguage:document.getElementsByTagName("input")[0].value,
+        //         targetLanguage:document.getElementsByTagName("input")[1].value,
+        //         translate:document.getElementsByTagName("input")[2].value
+        //     }
+        //     console.log(Text)
+        // }
+
+        // Method 4 getElementById
+        // function translateText(){
+        //     var Text = {
+        //         sourceLanguage:document.getElementById("sourceLanguage").value,
+        //         targetLanguage:document.getElementById("targetLanguage").value,
+        //         translate:document.getElementById("translate").value
+        //     }
+        //     console.log(Text)
+        // }
+
+        // Method 5 getElementsByClassName
+        // function translateText(){
+        //     var Text = {
+        //         sourceLanguage:document.getElementsByClassName("sourceLanguage")[0].value,
+        //         targetLanguage:document.getElementsByClassName("targetLanguage")[0].value,
+        //         translate:document.getElementsByClassName("translate")[0].value
+        //     }
+        //     console.log(Text)
+        // }
+
+        // Method 6 getElementsByName
+        function translateText(){
+            var Text = {
+                sourceLanguage:document.getElementsByName("sourceLanguage")[0].value,
+                targetLanguage:document.getElementsByName("targetLanguage")[0].value,
+                translate:document.getElementsByName("translate")[0].value
+            }
+            console.log(Text)
+        }
+
+
+    </script>
+</body>
+</html>

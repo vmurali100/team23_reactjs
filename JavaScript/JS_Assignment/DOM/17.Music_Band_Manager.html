@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="">
+        <label for=""> Band Members :</label>
+        <input type="text" id="bandMembers" class="bandMembers" name="bandMembers"> <br><br>
+
+        <label for=""> Upcoming Gigs :</label>
+        <input type="text" id="upcomingGigs" class="upcomingGigs" name="upcomingGigs"> <br><br>
+
+        <label for=""> Setlist :</label>
+        <input type="text" id="setlist" class="setlist" name="setlist"> <br><br>
+
+        <button type="button" onclick="addMembers()">A Music Band</button>
+
+
+    </form>
+
+    <script>
+        // Method 1 with querySelector
+        // function addMembers(){
+        //     var musicBand = {
+        //         bandMembers:document.querySelector("#bandMembers").value,
+        //         upcomingGigs:document.querySelector("#upcomingGigs").value,
+        //         setlist:document.querySelector("#setlist").value,
+        //     }
+        //     console.log(musicBand)
+        // }
+
+        // Method 2 querySelectorAll
+        // function addMembers(){
+        //     var musicBand = {
+        //         bandMembers:document.querySelectorAll("#bandMembers")[0].value,
+        //         upcomingGigs:document.querySelectorAll("#upcomingGigs")[0].value,
+        //         setlist:document.querySelectorAll("#setlist")[0].value,
+        //     }
+        //     console.log(musicBand)
+        // }
+
+        // Method 3 getElementsByTagName
+        // function addMembers(){
+        //     var musicBand = {
+        //         bandMembers:document.getElementsByTagName("input")[0].value,
+        //         upcomingGigs:document.getElementsByTagName("input")[1].value,
+        //         setlist:document.getElementsByTagName("input")[2].value,
+        //     }
+        //     console.log(musicBand)
+        // }
+
+        // Method 4 getElementById
+        // function addMembers(){
+        //     var musicBand = {
+        //         bandMembers:document.getElementById("bandMembers").value,
+        //         upcomingGigs:document.getElementById("upcomingGigs").value,
+        //         setlist:document.getElementById("setlist").value,
+        //     }
+        //     console.log(musicBand)
+        // }
+
+        // Method 5 getElementsByClassName
+        // function addMembers(){
+        //     var musicBand = {
+        //         bandMembers:document.getElementsByClassName("bandMembers")[0].value,
+        //         upcomingGigs:document.getElementsByClassName("upcomingGigs")[0].value,
+        //         setlist:document.getElementsByClassName("setlist")[0].value,
+        //     }
+        //     console.log(musicBand)
+        // }
+
+        // Method 6 getElementsByName
+        function addMembers() {
+            var musicBand = {
+                bandMembers: document.getElementsByName("bandMembers")[0].value,
+                upcomingGigs: document.getElementsByName("upcomingGigs")[0].value,
+                setlist: document.getElementsByName("setlist")[0].value,
+            }
+            console.log(musicBand)
+        }
+
+
+    </script>
+</body>
+
+</html>

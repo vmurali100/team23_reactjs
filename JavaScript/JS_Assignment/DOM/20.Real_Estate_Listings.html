@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <label for=""> Property Type :</label>
+        <input type="text" id="propertyType" class="propertyType" name="propertyType"> <br><br>
+        
+        <label for=""> Price :</label>
+        <input type="text" id="price" class="price" name="price"> <br><br>
+
+        <label for=""> Location :</label>
+        <input type="text" id="location" class="location" name="location"> <br><br>
+
+        <button type="button" onclick="newListings()"> Real Estate Listings</button>
+
+    </form>
+
+    <script>
+        // Method 1 with querySelector
+        // function newListings(){
+        //     var listings = {
+        //         propertyType:document.querySelector("#propertyType").value,
+        //         price:document.querySelector("#price").value,
+        //         location:document.querySelector("#location").value,
+        //     }
+        //     console.log(listings)
+        // }
+
+        // Method 2 querySelectorAll
+        // function newListings(){
+        //     var listings = {
+        //         propertyType:document.querySelectorAll("#propertyType")[0].value,
+        //         price:document.querySelectorAll("#price")[0].value,
+        //         location:document.querySelectorAll("#location")[0].value
+        //     }
+        //     console.log(listings)
+        // }
+
+        // Method 3 getElementsByTagName
+        // function newListings(){
+        //     var listings = {
+        //         propertyType:document.getElementsByTagName("input")[0].value,
+        //         price:document.getElementsByTagName("input")[1].value,
+        //         location:document.getElementsByTagName("input")[2].value
+        //     }
+        //     console.log(listings)
+        // }
+
+        // Method 4 getElementById
+        // function newListings(){
+        //     var listings = {
+        //         propertyType:document.getElementById("propertyType").value,
+        //         price:document.getElementById("price").value,
+        //         location:document.getElementById("location").value
+        //     }
+        //     console.log(listings)
+        // }
+
+        // Method 5 getElementsByClassName
+        // function newListings(){
+        //     var listings = {
+        //         propertyType:document.getElementsByClassName("propertyType")[0].value,
+        //         price:document.getElementsByClassName("price")[0].value,
+        //         location:document.getElementsByClassName("location")[0].value
+        //     }
+        //     console.log(listings)
+        // }
+
+        // Method 6 getElementsByName
+        function newListings(){
+            var listings = {
+                propertyType:document.getElementsByName("propertyType")[0].value,
+                price:document.getElementsByName("price")[0].value,
+                location:document.getElementsByName("location")[0].value
+            }
+            console.log(listings)
+        }
+
+
+    </script>
+</body>
+</html>

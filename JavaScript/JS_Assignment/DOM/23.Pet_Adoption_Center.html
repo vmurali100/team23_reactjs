@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" age="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="">
+        <label for=""> Pet Name :</label>
+        <input type="text" id="petName" class="petName" name="petName"> <br><br>
+
+        <label for=""> Breed :</label>
+        <input type="text" id="breed" class="breed" name="breed"> <br><br>
+
+        <label for=""> Age :</label>
+        <input type="text" id="age" class="age" name="age"> <br><br>
+
+        <label for=""> Adoption Status :</label>
+        <input type="text" id="adoptionStatus" class="adoptionStatus" name="adoptionStatus"> <br><br>
+
+        <button type="button" onclick="newPets()"> New Pets </button>
+
+
+    </form>
+
+    <script>
+        // Method 1 with querySelector
+        // function newPets(){
+        //     var Pets = {
+        //         petName:document.querySelector("#petName").value,
+        //         breed:document.querySelector("#breed").value,
+        //         age:document.querySelector("#age").value,
+        //         adoptionStatus:document.querySelector("#adoptionStatus").value, 
+        //     }
+        //     console.log(Pets)
+        // }
+
+        // Method 2 querySelectorAll
+        // function newPets(){
+        //     var Pets = {
+        //         petName:document.querySelectorAll("#petName")[0].value,
+        //         breed:document.querySelectorAll("#breed")[0].value,
+        //         age:document.querySelectorAll("#age")[0].value,
+        //         adoptionStatus:document.querySelectorAll("#adoptionStatus")[0].value,
+        //     }
+        //     console.log(Pets)
+        // }
+
+        // Method 3 getElementsByTagName
+        // function newPets(){
+        //     var Pets = {
+        //         petName:document.getElementsByTagName("input")[0].value,
+        //         breed:document.getElementsByTagName("input")[1].value,
+        //         age:document.getElementsByTagName("input")[2].value,
+        //         adoptionStatus:document.getElementsByTagName("input")[3].value,
+        //     }
+        //     console.log(Pets)
+        // }
+
+        // Method 4 getElementById
+        // function newPets(){
+        //     var Pets = {
+        //         petName:document.getElementById("petName").value,
+        //         breed:document.getElementById("breed").value,
+        //         age:document.getElementById("age").value,
+        //         adoptionStatus:document.getElementById("adoptionStatus").value,
+        //     }
+        //     console.log(Pets)
+        // }
+
+        // Method 5 getElementsByClassName
+        // function newPets(){
+        //     var Pets = {
+        //         petName:document.getElementsByClassName("petName")[0].value,
+        //         breed:document.getElementsByClassName("breed")[0].value,
+        //         age:document.getElementsByClassName("age")[0].value,
+        //         adoptionStatus:document.getElementsByClassName("adoptionStatus")[0].value,
+        //     }
+        //     console.log(Pets)
+        // }
+
+        // Method 6 getElementsByName
+        function newPets() {
+            var Pets = {
+                petName: document.getElementsByName("petName")[0].value,
+                breed: document.getElementsByName("breed")[0].value,
+                age: document.getElementsByName("age")[0].value,
+                adoptionStatus: document.getElementsByName("adoptionStatus")[0].value,
+            }
+            console.log(Pets)
+        }
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="">
+        <label for="">Flight Number :</label>
+        <input type="text" id="flightNumber" class="flightNumber" name="flightNumber"> <br><br>
+
+        <label for="">Departure City :</label>
+        <input type="text" id="departureCity" class="departureCity" name="departureCity"> <br><br>
+
+        <label for=""> Arrival City :</label>
+        <input type="text" id="arrivalCity" class="arrivalCity" name="arrivalCity"> <br><br>
+
+        <label for=""> Departure Time :</label>
+        <input type="text" id="departureTime" class="departureTime" name="departureTime"> <br><br>
+
+        <button type="button" onclick="flightBookings()">Flight Booking System</button>
+
+
+    </form>
+
+    <script>
+        // Method 1 with querySelector
+        // function flightBookings(){
+        //     var bookings = {
+        //         flightNumber:document.querySelector("#flightNumber").value,
+        //         departureCity:document.querySelector("#departureCity").value,
+        //         arrivalCity:document.querySelector("#arrivalCity").value,
+        //         departureTime:document.querySelector("#departureTime").value, 
+        //     }
+        //     console.log(bookings)
+        // }
+
+        // Method 2 querySelectorAll
+        // function flightBookings(){
+        //     var bookings = {
+        //         flightNumber:document.querySelectorAll("#flightNumber")[0].value,
+        //         departureCity:document.querySelectorAll("#departureCity")[0].value,
+        //         arrivalCity:document.querySelectorAll("#arrivalCity")[0].value,
+        //         departureTime:document.querySelectorAll("#departureTime")[0].value,
+        //     }
+        //     console.log(bookings)
+        // }
+
+        // Method 3 getElementsByTagName
+        // function flightBookings(){
+        //     var bookings = {
+        //         flightNumber:document.getElementsByTagName("input")[0].value,
+        //         departureCity:document.getElementsByTagName("input")[1].value,
+        //         arrivalCity:document.getElementsByTagName("input")[2].value,
+        //         departureTime:document.getElementsByTagName("input")[3].value,
+        //     }
+        //     console.log(bookings)
+        // }
+
+        // Method 4 getElementById
+        // function flightBookings(){
+        //     var bookings = {
+        //         flightNumber:document.getElementById("flightNumber").value,
+        //         departureCity:document.getElementById("departureCity").value,
+        //         arrivalCity:document.getElementById("arrivalCity").value,
+        //         departureTime:document.getElementById("departureTime").value,
+        //     }
+        //     console.log(bookings)
+        // }
+
+        // Method 5 getElementsByClassName
+        // function flightBookings(){
+        //     var bookings = {
+        //         flightNumber:document.getElementsByClassName("flightNumber")[0].value,
+        //         departureCity:document.getElementsByClassName("departureCity")[0].value,
+        //         arrivalCity:document.getElementsByClassName("arrivalCity")[0].value,
+        //         departureTime:document.getElementsByClassName("departureTime")[0].value,
+        //     }
+        //     console.log(bookings)
+        // }
+
+        // Method 6 getElementsByName
+        function flightBookings() {
+            var bookings = {
+                flightNumber: document.getElementsByName("flightNumber")[0].value,
+                departureCity: document.getElementsByName("departureCity")[0].value,
+                arrivalCity: document.getElementsByName("arrivalCity")[0].value,
+                departureTime: document.getElementsByName("departureTime")[0].value,
+            }
+            console.log(bookings)
+        }
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <label for="">Temperature :</label>
+        <input type="text" id="temperature" class="temperature" name="temperature"> <br><br>
+        
+        <label for="">Humidity :</label>
+        <input type="text" id="humidity" class="humidity" name="humidity"> <br><br>
+
+        <label for="">Wind Speed :</label>
+        <input type="text" id="windSpeed" class="windSpeed" name="windSpeed"> <br><br>
+
+        <button type="button" onclick="weatherData()">Weather Information</button>
+
+    </form>
+
+    <script>
+        // Method 1 with querySelector
+        // function weatherData(){
+        //     var data = {
+        //         temperature:document.querySelector("#temperature").value,
+        //         humidity:document.querySelector("#humidity").value,
+        //         windSpeed:document.querySelector("#windSpeed").value,
+        //     }
+        //     console.log(data)
+        // }
+
+        // Method 2 querySelectorAll
+        // function weatherData(){
+        //     var data = {
+        //         temperature:document.querySelectorAll("#temperature")[0].value,
+        //         humidity:document.querySelectorAll("#humidity")[0].value,
+        //         windSpeed:document.querySelectorAll("#windSpeed")[0].value
+        //     }
+        //     console.log(data)
+        // }
+
+        // Method 3 getElementsByTagName
+        // function weatherData(){
+        //     var data = {
+        //         temperature:document.getElementsByTagName("input")[0].value,
+        //         humidity:document.getElementsByTagName("input")[1].value,
+        //         windSpeed:document.getElementsByTagName("input")[2].value
+        //     }
+        //     console.log(data)
+        // }
+
+        // Method 4 getElementById
+        // function weatherData(){
+        //     var data = {
+        //         temperature:document.getElementById("temperature").value,
+        //         humidity:document.getElementById("humidity").value,
+        //         windSpeed:document.getElementById("windSpeed").value
+        //     }
+        //     console.log(data)
+        // }
+
+        // Method 5 getElementsByClassName
+        // function weatherData(){
+        //     var data = {
+        //         temperature:document.getElementsByClassName("temperature")[0].value,
+        //         humidity:document.getElementsByClassName("humidity")[0].value,
+        //         windSpeed:document.getElementsByClassName("windSpeed")[0].value
+        //     }
+        //     console.log(data)
+        // }
+
+        // Method 6 getElementsByName
+        function weatherData(){
+            var data = {
+                temperature:document.getElementsByName("temperature")[0].value,
+                humidity:document.getElementsByName("humidity")[0].value,
+                windSpeed:document.getElementsByName("windSpeed")[0].value
+            }
+            console.log(data)
+        }
+
+
+    </script>
+</body>
+</html>

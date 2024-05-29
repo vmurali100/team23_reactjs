@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <label for="">Task Name :</label>
+        <input type="text" id="taskName" class="taskName" name="taskName"> <br><br>
+        
+        <label for="">Due Date :</label>
+        <input type="text" id="dueDate" class="dueDate" name="dueDate"> <br><br>
+
+        <label for="">Priority :</label>
+        <input type="text" id="priority" class="priority" name="priority"> <br><br>
+
+        <button type="button" onclick="addTasks()">Add Tasks</button>
+
+    </form>
+
+    <script>
+        // Method 1 with querySelector
+        // function addTasks(){
+        //     var TrackTasks = {
+        //         taskName:document.querySelector("#taskName").value,
+        //         dueDate:document.querySelector("#dueDate").value,
+        //         priority:document.querySelector("#priority").value,
+        //     }
+        //     console.log(TrackTasks)
+        // }
+
+        // Method 2 querySelectorAll
+        // function addTasks(){
+        //     var TrackTasks = {
+        //         taskName:document.querySelectorAll("#taskName")[0].value,
+        //         dueDate:document.querySelectorAll("#dueDate")[0].value,
+        //         priority:document.querySelectorAll("#priority")[0].value
+        //     }
+        //     console.log(TrackTasks)
+        // }
+
+        // Method 3 getElementsByTagName
+        // function addTasks(){
+        //     var TrackTasks = {
+        //         taskName:document.getElementsByTagName("input")[0].value,
+        //         dueDate:document.getElementsByTagName("input")[1].value,
+        //         priority:document.getElementsByTagName("input")[2].value
+        //     }
+        //     console.log(TrackTasks)
+        // }
+
+        // Method 4 getElementById
+        // function addTasks(){
+        //     var TrackTasks = {
+        //         taskName:document.getElementById("taskName").value,
+        //         dueDate:document.getElementById("dueDate").value,
+        //         priority:document.getElementById("priority").value
+        //     }
+        //     console.log(TrackTasks)
+        // }
+
+        // Method 5 getElementsByClassName
+        // function addTasks(){
+        //     var TrackTasks = {
+        //         taskName:document.getElementsByClassName("taskName")[0].value,
+        //         dueDate:document.getElementsByClassName("dueDate")[0].value,
+        //         priority:document.getElementsByClassName("priority")[0].value
+        //     }
+        //     console.log(TrackTasks)
+        // }
+
+        // Method 6 getElementsByName
+        function addTasks(){
+            var TrackTasks = {
+                taskName:document.getElementsByName("taskName")[0].value,
+                dueDate:document.getElementsByName("dueDate")[0].value,
+                priority:document.getElementsByName("priority")[0].value
+            }
+            console.log(TrackTasks)
+        }
+
+
+    </script>
+</body>
+</html>

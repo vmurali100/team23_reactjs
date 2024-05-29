@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" teamMembers="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="">
+        <label for=""> Project Name :</label>
+        <input type="text" id="projectName" class="projectName" name="projectName"> <br><br>
+
+        <label for=""> Description :</label>
+        <input type="text" id="description" class="description" name="description"> <br><br>
+
+        <label for=""> Team Members :</label>
+        <input type="text" id="teamMembers" class="teamMembers" name="teamMembers"> <br><br>
+
+        <label for=""> Deadlines :</label>
+        <input type="text" id="deadlines" class="deadlines" name="deadlines"> <br><br>
+
+        <button type="button" onclick="createProjects()">Create Projects</button>
+
+
+    </form>
+
+    <script>
+        // Method 1 with querySelector
+        // function createProjects(){
+        //     var Projects = {
+        //         projectName:document.querySelector("#projectName").value,
+        //         description:document.querySelector("#description").value,
+        //         teamMembers:document.querySelector("#teamMembers").value,
+        //         deadlines:document.querySelector("#deadlines").value, 
+        //     }
+        //     console.log(Projects)
+        // }
+
+        // Method 2 querySelectorAll
+        // function createProjects(){
+        //     var Projects = {
+        //         projectName:document.querySelectorAll("#projectName")[0].value,
+        //         description:document.querySelectorAll("#description")[0].value,
+        //         teamMembers:document.querySelectorAll("#teamMembers")[0].value,
+        //         deadlines:document.querySelectorAll("#deadlines")[0].value,
+        //     }
+        //     console.log(Projects)
+        // }
+
+        // Method 3 getElementsByTagName
+        // function createProjects(){
+        //     var Projects = {
+        //         projectName:document.getElementsByTagName("input")[0].value,
+        //         description:document.getElementsByTagName("input")[1].value,
+        //         teamMembers:document.getElementsByTagName("input")[2].value,
+        //         deadlines:document.getElementsByTagName("input")[3].value,
+        //     }
+        //     console.log(Projects)
+        // }
+
+        // Method 4 getElementById
+        // function createProjects(){
+        //     var Projects = {
+        //         projectName:document.getElementById("projectName").value,
+        //         description:document.getElementById("description").value,
+        //         teamMembers:document.getElementById("teamMembers").value,
+        //         deadlines:document.getElementById("deadlines").value,
+        //     }
+        //     console.log(Projects)
+        // }
+
+        // Method 5 getElementsByClassName
+        // function createProjects(){
+        //     var Projects = {
+        //         projectName:document.getElementsByClassName("projectName")[0].value,
+        //         description:document.getElementsByClassName("description")[0].value,
+        //         teamMembers:document.getElementsByClassName("teamMembers")[0].value,
+        //         deadlines:document.getElementsByClassName("deadlines")[0].value,
+        //     }
+        //     console.log(Projects)
+        // }
+
+        // Method 6 getElementsByName
+        function createProjects() {
+            var Projects = {
+                projectName: document.getElementsByName("projectName")[0].value,
+                description: document.getElementsByName("description")[0].value,
+                teamMembers: document.getElementsByName("teamMembers")[0].value,
+                deadlines: document.getElementsByName("deadlines")[0].value,
+            }
+            console.log(Projects)
+        }
+
+
+    </script>
+</body>
+
+</html>

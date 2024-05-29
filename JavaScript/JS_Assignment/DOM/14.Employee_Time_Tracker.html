@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="">
+        <label for="">Employee Name :</label>
+        <input type="text" id="employeeName" class="employeeName" name="employeeName"> <br><br>
+
+        <label for="">Date :</label>
+        <input type="text" id="date" class="date" name="date"> <br><br>
+
+        <label for=""> Start Time :</label>
+        <input type="text" id="startTime" class="startTime" name="startTime"> <br><br>
+
+        <label for=""> End Time :</label>
+        <input type="text" id="endTime" class="endTime" name="endTime"> <br><br>
+
+        <button type="button" onclick="employeeWorkHours()">Employee Work Hours</button>
+
+
+    </form>
+
+    <script>
+        // Method 1 with querySelector
+        // function employeeWorkHours(){
+        //     var workHours = {
+        //         employeeName:document.querySelector("#employeeName").value,
+        //         date:document.querySelector("#date").value,
+        //         startTime:document.querySelector("#startTime").value,
+        //         endTime:document.querySelector("#endTime").value, 
+        //     }
+        //     console.log(workHours)
+        // }
+
+        // Method 2 querySelectorAll
+        // function employeeWorkHours(){
+        //     var workHours = {
+        //         employeeName:document.querySelectorAll("#employeeName")[0].value,
+        //         date:document.querySelectorAll("#date")[0].value,
+        //         startTime:document.querySelectorAll("#startTime")[0].value,
+        //         endTime:document.querySelectorAll("#endTime")[0].value,
+        //     }
+        //     console.log(workHours)
+        // }
+
+        // Method 3 getElementsByTagName
+        // function employeeWorkHours(){
+        //     var workHours = {
+        //         employeeName:document.getElementsByTagName("input")[0].value,
+        //         date:document.getElementsByTagName("input")[1].value,
+        //         startTime:document.getElementsByTagName("input")[2].value,
+        //         endTime:document.getElementsByTagName("input")[3].value,
+        //     }
+        //     console.log(workHours)
+        // }
+
+        // Method 4 getElementById
+        // function employeeWorkHours(){
+        //     var workHours = {
+        //         employeeName:document.getElementById("employeeName").value,
+        //         date:document.getElementById("date").value,
+        //         startTime:document.getElementById("startTime").value,
+        //         endTime:document.getElementById("endTime").value,
+        //     }
+        //     console.log(workHours)
+        // }
+
+        // Method 5 getElementsByClassName
+        // function employeeWorkHours(){
+        //     var workHours = {
+        //         employeeName:document.getElementsByClassName("employeeName")[0].value,
+        //         date:document.getElementsByClassName("date")[0].value,
+        //         startTime:document.getElementsByClassName("startTime")[0].value,
+        //         endTime:document.getElementsByClassName("endTime")[0].value,
+        //     }
+        //     console.log(workHours)
+        // }
+
+        // Method 6 getElementsByName
+        function employeeWorkHours() {
+            var workHours = {
+                employeeName: document.getElementsByName("employeeName")[0].value,
+                date: document.getElementsByName("date")[0].value,
+                startTime: document.getElementsByName("startTime")[0].value,
+                endTime: document.getElementsByName("endTime")[0].value,
+            }
+            console.log(workHours)
+        }
+
+
+    </script>
+</body>
+
+</html>

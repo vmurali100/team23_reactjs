@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <label for=""> Subscription Name :</label>
+        <input type="text" id="subscriptionName" class="subscriptionName" name="subscriptionName"> <br><br>
+        
+        <label for=""> Price :</label>
+        <input type="text" id="price" class="price" name="price"> <br><br>
+
+        <label for=""> Renewal Date :</label>
+        <input type="text" id="renewalDate" class="renewalDate" name="renewalDate"> <br><br>
+
+        <button type="button" onclick="subscriptions()"> Subscriptions </button>
+
+    </form>
+
+    <script>
+        // Method 1 with querySelector
+        // function subscriptions(){
+        //     var subscribe = {
+        //         subscriptionName:document.querySelector("#subscriptionName").value,
+        //         price:document.querySelector("#price").value,
+        //         renewalDate:document.querySelector("#renewalDate").value,
+        //     }
+        //     console.log(subscribe)
+        // }
+
+        // Method 2 querySelectorAll
+        // function subscriptions(){
+        //     var subscribe = {
+        //         subscriptionName:document.querySelectorAll("#subscriptionName")[0].value,
+        //         price:document.querySelectorAll("#price")[0].value,
+        //         renewalDate:document.querySelectorAll("#renewalDate")[0].value
+        //     }
+        //     console.log(subscribe)
+        // }
+
+        // Method 3 getElementsByTagName
+        // function subscriptions(){
+        //     var subscribe = {
+        //         subscriptionName:document.getElementsByTagName("input")[0].value,
+        //         price:document.getElementsByTagName("input")[1].value,
+        //         renewalDate:document.getElementsByTagName("input")[2].value
+        //     }
+        //     console.log(subscribe)
+        // }
+
+        // Method 4 getElementById
+        // function subscriptions(){
+        //     var subscribe = {
+        //         subscriptionName:document.getElementById("subscriptionName").value,
+        //         price:document.getElementById("price").value,
+        //         renewalDate:document.getElementById("renewalDate").value
+        //     }
+        //     console.log(subscribe)
+        // }
+
+        // Method 5 getElementsByClassName
+        // function subscriptions(){
+        //     var subscribe = {
+        //         subscriptionName:document.getElementsByClassName("subscriptionName")[0].value,
+        //         price:document.getElementsByClassName("price")[0].value,
+        //         renewalDate:document.getElementsByClassName("renewalDate")[0].value
+        //     }
+        //     console.log(subscribe)
+        // }
+
+        // Method 6 getElementsByName
+        function subscriptions(){
+            var subscribe = {
+                subscriptionName:document.getElementsByName("subscriptionName")[0].value,
+                price:document.getElementsByName("price")[0].value,
+                renewalDate:document.getElementsByName("renewalDate")[0].value
+            }
+            console.log(subscribe)
+        }
+
+
+    </script>
+</body>
+</html>
