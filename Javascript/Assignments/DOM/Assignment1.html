@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <label for=""> Student ID :</label> 
+        <input type="text" id="studentID" class="stdId" name="stdId"> <br>
+        <label for=""> Student Name :</label> 
+        <input type="text" id="studentName" class="stdName" name="stdName"> <br>
+        <label for=""> Coursed Enrolled :</label> 
+        <input type="text" id="courseEnrolled" class="stdEnrolled" name="stdEnrolled"> <br>
+        <button type="button" onclick="addStudent()"> Add Student</button>
+    </form>
+
+    <script>
+        // Method 1 With querySelector
+        // function addStudent(){
+        //     var student = {
+        //         studentID:document.querySelector("#studentID").value,
+        //         studentName:document.querySelector("#studentName").value,
+        //         courseEnrolled:document.querySelector("#courseEnrolled").value
+        //     }
+        //     console.log(student)
+        // }
+
+        // Method 2 QuerySelector All 
+        //  function addStudent(){
+        //     var student = {
+        //         studentID:document.querySelectorAll("#studentID")[0].value,
+        //         studentName:document.querySelectorAll("#studentName")[0].value,
+        //         courseEnrolled:document.querySelectorAll("#courseEnrolled")[0].value
+        //     }
+        //     console.log(student)
+        // }
+
+        // Method 3 Tag Name 
+        //   function addStudent(){
+        //     var student = {
+        //         studentID:document.getElementsByTagName("input")[0].value,
+        //         studentName:document.getElementsByTagName("input")[1].value,
+        //         courseEnrolled:document.getElementsByTagName("input")[2].value
+        //     }
+        //     console.log(student)
+        // }
+
+
+        // Method 4 ID  
+        //   function addStudent(){
+        //     var student = {
+        //     studentID:document.getElementById("studentID").value,
+        //         studentName:document.getElementById("studentName").value,
+        //         courseEnrolled:document.getElementById("courseEnrolled").value
+        //     }
+        //     console.log(student)
+        // }
+
+         // Method 5  Class name  
+        //  function addStudent(){
+        //     var student = {
+        //     studentID:document.getElementsByClassName("stdId")[0].value,
+        //         studentName:document.getElementsByClassName("stdName")[0].value,
+        //         courseEnrolled:document.getElementsByClassName("stdEnrolled")[0].value
+        //     }
+        //     console.log(student)
+        // }
+
+
+         // Method 5  Class name  
+         function addStudent(){
+            var student = {
+            studentID:document.getElementsByName("stdId")[0].value,
+                studentName:document.getElementsByName("stdName")[0].value,
+                courseEnrolled:document.getElementsByName("stdEnrolled")[0].value
+            }
+            console.log(student)
+        }
+    </script>
+</body>
+</html>

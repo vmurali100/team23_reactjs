@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <label for="">Username : </label>
+        <input type="text"> <br>
+        <label for="">Last Name : </label>
+
+        <input type="text" > <br>
+        <button type="button" onclick="addUser()">Add User</button>
+    </form>
+    <script>
+        function addUser(){
+            // The following Methods are useful when Element doesnt have ID ,Clas or Name 
+            // Method 1 : 
+            // var inputElementValue = document.querySelector('input').value ;
+            // console.log("Value In Input is : ", inputElementValue);
+            // QuerySelector Method will Access only First Element 
+
+
+            // Method 2: 
+            // var inputElementValue = document.querySelectorAll('input')[1].value
+            // console.log(inputElementValue)
+            // Reading values from Input field 
+
+            // Method 3:
+            // var inputElementValue = document.getElementsByTagName('input')[0].value
+            // console.log(inputElementValue)
+        }
+    </script>
+</body>
+</html>
