@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul>
+
+    </ul>
+    <script>
+        var person = {
+            "id": 1,
+            "email": "ABunch@magna.io",
+            "username": "JClay",
+            "password": "whVfR"
+        }
+
+        // We have for In Loop in JS to Loop an Object 
+        // display All Propery Names : 
+        // for (a in person){
+        //     console.log(person[a])
+        //     var myLi= document.createElement("li");
+        //     myLi.innerHTML = a ;
+        //     document.querySelector("ul").appendChild(myLi)
+        // }
+
+
+        // display Only Propery Values 
+
+        // for (a in person) {
+        //     var myLi = document.createElement("li");
+        //     myLi.innerHTML = person[a];
+        //     document.querySelector("ul").appendChild(myLi)
+        // }
+
+        // Display Both Property Names and Values 
+
+        for(a in person){
+            var myLi = document.createElement("li");
+            myLi.innerHTML = a + " :- "+person[a];
+            document.querySelector("ul").appendChild(myLi)
+        }
+    </script>
+</body>
+
+</html>

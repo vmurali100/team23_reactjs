@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul {
+            background: lightblue;
+            border: 1px solid red;
+            margin: 5px;
+            padding: 5px;
+        }
+        li{
+            list-style: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <script>
+        var students = [
+            {
+                "id": 1,
+                "email": "ABunch@magna.io",
+                "username": "JClay",
+                "password": "whVfR"
+            },
+            {
+                "id": 2,
+                "email": "KVidales@non.ly",
+                "username": "BBrewer",
+                "password": "E0bCf"
+            },
+            {
+                "id": 3,
+                "email": "LTurich@tortor.ly",
+                "username": "RHackman",
+                "password": "vaUhj"
+            },
+            {
+                "id": 4,
+                "email": "KMann@augue.io",
+                "username": "BEichberger",
+                "password": "ZzZ3F"
+            },
+            {
+                "id": 5,
+                "email": "TPainter@aliquam.gov",
+                "username": "RPartridge",
+                "password": "vJG5O"
+            },
+            {
+                "id": 6,
+                "email": "SMonyer@morbi.org",
+                "username": "LGlover",
+                "password": "ecsR6"
+            },
+            {
+                "id": 7,
+                "email": "SCorson@turpis.net",
+                "username": "OFord",
+                "password": "AHmmY"
+            },
+            {
+                "id": 8,
+                "email": "CHettrick@nullam.io",
+                "username": "JMiller",
+                "password": "jlxFV"
+            },
+            {
+                "id": 9,
+                "email": "AMadison@morbi.gov",
+                "username": "JFriend",
+                "password": "rzi2y"
+            },
+            {
+                "id": 10,
+                "email": "EPepin@consectetur.ly",
+                "username": "HArreguin",
+                "password": "xj1Ku"
+            }
+        ]
+
+        for (i = 0; i < students.length; i++) {
+            var studentObject = students[i];
+            var myUl = document.createElement("ul");
+            for(a in studentObject){
+                var myLi = document.createElement("li");
+                myLi.innerHTML = a + " :-- "+studentObject[a];
+                myUl.appendChild(myLi)
+            }
+            document.body.appendChild(myUl);
+        }
+    </script>
+</body>
+
+</html>
