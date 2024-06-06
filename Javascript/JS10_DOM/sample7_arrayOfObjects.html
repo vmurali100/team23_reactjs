@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Email</th>
+                <th>Username</th>
+                <th>Password</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+    <script>
+        var students = [
+            {
+                "id": 1,
+                "email": "ABunch@magna.io",
+                "username": "JClay",
+                "password": "whVfR"
+            },
+            {
+                "id": 2,
+                "email": "KVidales@non.ly",
+                "username": "BBrewer",
+                "password": "E0bCf"
+            },
+            {
+                "id": 3,
+                "email": "LTurich@tortor.ly",
+                "username": "RHackman",
+                "password": "vaUhj"
+            },
+            {
+                "id": 4,
+                "email": "KMann@augue.io",
+                "username": "BEichberger",
+                "password": "ZzZ3F"
+            },
+            {
+                "id": 5,
+                "email": "TPainter@aliquam.gov",
+                "username": "RPartridge",
+                "password": "vJG5O"
+            },
+            {
+                "id": 6,
+                "email": "SMonyer@morbi.org",
+                "username": "LGlover",
+                "password": "ecsR6"
+            },
+            {
+                "id": 7,
+                "email": "SCorson@turpis.net",
+                "username": "OFord",
+                "password": "AHmmY"
+            },
+            {
+                "id": 8,
+                "email": "CHettrick@nullam.io",
+                "username": "JMiller",
+                "password": "jlxFV"
+            },
+            {
+                "id": 9,
+                "email": "AMadison@morbi.gov",
+                "username": "JFriend",
+                "password": "rzi2y"
+            },
+            {
+                "id": 10,
+                "email": "EPepin@consectetur.ly",
+                "username": "HArreguin",
+                "password": "xj1Ku"
+            }
+        ]
+
+
+        function displayStudents() {
+            for (i = 0; i < students.length; i++) {  // For Loop will Create TR's for The table .
+                var studentObject = students[i];
+                var myTr = document.createElement("tr");
+                for (a in studentObject) { // For In loop Will Create Td's for Each Row
+                    var myTd = document.createElement("td");
+                    myTd.innerHTML = studentObject[a];
+                    myTr.appendChild(myTd);
+                }
+                document.querySelector("tbody").appendChild(myTr);
+            }
+        }
+
+        displayStudents();
+
+        // How to do In Local (Without Back End);
+        // CRUD Operation With Server (AJAX);
+        C - Create;
+        R - Read;
+        U - Update;
+        D - Delete;
+    </script>
+</body>
+
+</html>
