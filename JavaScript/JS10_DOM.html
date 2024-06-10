@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form>
+        <label for="">First Name</label>
+        <input type="text" id="fname"><br><br>
+
+        <label for="">Last Name</label>
+        <input type="text" id="lname"><br><br>
+
+        <label for="">Gender</label>
+        <input type="text" id="gender"><br><br>
+
+        <label for="">Email</label>
+        <input type="text" id="email"><br><br>
+
+        <label for="">Password</label>
+        <input type="text" id="password"><br><br>
+
+        <button type="button" onclick="readvaluesfromform()">Add User</button>
+    </form>
+
+    <hr>
+    <table border="1">
+        <thead>
+            <td>First Name</td>
+            <td>Last Name</td>
+            <td>Gender</td>
+            <td>Email</td>
+            <td>Password</td>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <script>
+        var users = [];
+        function readvaluesfromform() {
+            // var person = {
+            //     fname: document.getElementById('fname').value,
+            //     lname: document.getElementById('lname').value,
+            //     gender: document.getElementById('gender').value,
+            //     email: document.getElementById('email').value,
+            //     password: document.getElementById('password').value
+            // }
+            // person.fname = document.getElementById('fname').value;
+            // person.lname = document.getElementById('lname').value;
+            // person.gender = document.getElementById('gender').value;
+            // person.email = document.getElementById('email').value;
+            // person.password = document.getElementById('password').value;
+
+            var person = {
+                fname: "",
+                lname: "",
+                gender: "",
+                email: "",
+                password: ""
+            }
+
+            for (a in person){
+                person[a] = document.getElementById(a).value
+            }
+
+            users.push(person);
+
+            displayUsers();
+            clearForm()
+        }
+
+        function clearForm(){
+            document.getElementById('fname').value = "";
+            document.getElementById('lname').value = "";
+            document.getElementById('gender').value = "";
+            document.getElementById('email').value = "";
+            document.getElementById('password').value = ""
+        }
+
+        function displayUsers(){
+            document.querySelector("tbody").innerHTML = "";
+            for(i=0;i<users.length;i++){
+                var userObject = users[i];
+                var myTr = document.createElement('tr');
+                for (a in userObject){
+                    var myTd = document.createElement('td');
+                    myTd.innerHTML = userObject[a]
+                    myTr.appendChild(myTd)
+                }
+                document.querySelector("tbody").appendChild(myTr)
+            }
+        }
+    </script>
+</body>
+
+</html>

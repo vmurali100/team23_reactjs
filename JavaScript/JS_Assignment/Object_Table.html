@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object_Table</title>
+</head>
+
+<body>
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+
+    <body>
+        <table border="1" style="width: 100%;">
+            <thead>
+                <tr>
+                    <th>Student_id</th>
+                    <th>Student_name</th>
+                    <th>Course_enrolled</th>
+                    <th>Course_Duration</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+        <script>
+            var students = [
+                {
+                    student_id: 1,
+                    student_name: 'Kishore Kumar',
+                    course_enrolled: 'Python Programming',
+                    Course_Duration: '45 Days'
+                },
+                {
+                    student_id: 2,
+                    student_name: 'Arun Kumar',
+                    course_enrolled: 'Data Science',
+                    Course_Duration: '3 Months'
+                },
+                {
+                    student_id: 3,
+                    student_name: 'Banu Prakesh',
+                    course_enrolled: 'Machine Learning',
+                    Course_Duration: '9 Months'
+                },
+                {
+                    student_id: 4,
+                    student_name: 'Charan',
+                    course_enrolled: 'Web Development',
+                    Course_Duration: '6 Months'
+                },
+                {
+                    student_id: 5,
+                    student_name: 'Dillep Kumar',
+                    course_enrolled: 'Cyber Security',
+                    Course_Duration: '1 Year'
+                },
+                {
+                    student_id: 6,
+                    student_name: 'Eswar Prasad',
+                    course_enrolled: 'Cloud Computing',
+                    Course_Duration: '9 Months'
+                },
+                {
+                    student_id: 7,
+                    student_name: 'Hari Prasad',
+                    course_enrolled: 'Java Script',
+                    Course_Duration: '6 Months'
+                },
+                {
+                    student_id: 8,
+                    student_name: 'Girish',
+                    course_enrolled: 'Programming Languages ',
+                    Course_Duration: '9 Months'
+                },
+                {
+                    student_id: 9,
+                    student_name: 'Harish',
+                    course_enrolled: 'Database Management',
+                    Course_Duration: '6 Months'
+                },
+                {
+                    student_id: 10,
+                    student_name: 'Jagan',
+                    course_enrolled: 'Software Engineering',
+                    Course_Duration: '4 Years'
+                },
+                {
+                    student_id: 11,
+                    student_name: 'Jaya Chandra',
+                    course_enrolled: 'Network Administration',
+                    Course_Duration: '1 Year'
+                },
+                {
+                    student_id: 12,
+                    student_name: 'Kiran',
+                    course_enrolled: 'Mobile Development',
+                    Course_Duration: '1 Years'
+                },
+                {
+                    student_id: 13,
+                    student_name: 'Lithin',
+                    course_enrolled: 'Game Development',
+                    Course_Duration: '2 Years'
+                },
+                {
+                    student_id: 14,
+                    student_name: 'Meera',
+                    course_enrolled: 'Digital Marketing',
+                    Course_Duration: '1 Years'
+                },
+                {
+                    student_id: 15,
+                    student_name: 'Naresh',
+                    course_enrolled: 'Data Science',
+                    Course_Duration: '15 Months'
+                },
+                {
+                    student_id: 16,
+                    student_name: 'Ramesh',
+                    course_enrolled: 'DevOps',
+                    Course_Duration: '1 Year'
+                },
+                {
+                    student_id: 17,
+                    student_name: 'Prakesh',
+                    course_enrolled: 'UI/UX Design',
+                    Course_Duration: '1 Year'
+                },
+                {
+                    student_id: 18,
+                    student_name: 'Manoj',
+                    course_enrolled: 'Robotics',
+                    Course_Duration: '2 Years'
+                },
+                {
+                    student_id: 19,
+                    student_name: 'Ramesh',
+                    course_enrolled: 'Project Management',
+                    Course_Duration: '2 Years'
+                },
+                {
+                    student_id: 20,
+                    student_name: 'Sam',
+                    course_enrolled: 'Business Analysis',
+                    Course_Duration: '3 Years'
+                },
+                {
+                    student_id: 21,
+                    student_name: 'Tharun',
+                    course_enrolled: 'IT Support',
+                    Course_Duration: '2 Years'
+                },
+                {
+                    student_id: 22,
+                    student_name: 'Uma Maheshwar',
+                    course_enrolled: 'E-commerce',
+                    Course_Duration: '3 Years'
+                },
+                {
+                    student_id: 23,
+                    student_name: 'Victor',
+                    course_enrolled: 'Cloud Architecture',
+                    Course_Duration: '3 Years'
+                },
+                {
+                    student_id: 24,
+                    student_name: 'Vinod',
+                    course_enrolled: 'Systems Analysis',
+                    Course_Duration: '3 Years'
+                },
+                {
+                    student_id: 25,
+                    student_name: 'Hafeez',
+                    course_enrolled: 'Information Systems',
+                    Course_Duration: '4 Years'
+                },
+                {
+                    student_id: 26,
+                    student_name: 'Lokesh',
+                    course_enrolled: 'Bioinformatics',
+                    Course_Duration: '1 Year'
+                },
+                {
+                    student_id: 27,
+                    student_name: 'Ramya',
+                    course_enrolled: 'Quantum Computing',
+                    Course_Duration: '4 Years'
+                },
+                {
+                    student_id: 28,
+                    student_name: 'Ramu',
+                    course_enrolled: 'Java Script',
+                    Course_Duration: '6 Months'
+                },
+                {
+                    student_id: 29,
+                    student_name: 'Seshu',
+                    course_enrolled: 'Business Technology',
+                    Course_Duration: '2 Years'
+                },
+                {
+                    student_id: 30,
+                    student_name: 'Vamsi',
+                    course_enrolled: 'Business Information',
+                    Course_Duration: '1 Years'
+                }
+                
+            ];
+
+            function displaystudents() {
+                for (i = 0; i < students.length; i++) {
+                    var studentObj = students[i];
+                    var tr = document.createElement("tr");
+                    for (a in studentObj) {
+                        var td = document.createElement("td");
+                        td.innerHTML = studentObj[a];
+                        tr.appendChild(td);
+                    };
+                    document.querySelector("tbody").appendChild(tr);
+                };
+            };
+
+            displaystudents()
+            
+        </script>
+    </body>
+
+    </html>
+
+</body>
+
+</html>
