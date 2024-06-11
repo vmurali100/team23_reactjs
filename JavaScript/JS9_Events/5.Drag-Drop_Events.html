@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drag and Drop Example</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div id="drag-container">
+        <div id="draggable" class="box" draggable="true">Drag me 1</div>
+        <div id="draggable2" class="box" draggable="true">Drag me 2</div>
+        <div id="draggable3" class="box" draggable="true">Drag me 3</div>
+    </div>
+    <div id="drop-container">
+        <div id="drop-target">Drop here</div>
+    </div>
+    <script>
+        var draggable = document.getElementById("draggable"); // Storing draggable element 
+        var dropTarget = document.getElementById("drop-target");
+
+        draggable.addEventListener('dragstart', function (e) {
+            e.dataTransfer.setData = e.target.id;
+        });
+        dropTarget.addEventListener('dragover',function(e){
+            e.preventDefault(); // will explain more when we discuss About DOM topic
+            dropTarget.style.backgroundColor="lightblue";
+        })
+        dropTarget.addEventListener('drop',function(e){
+            e.preventDefault();
+            var data = e.dataTransfer.getData('text/plain')
+            var draggedElement = document.getElementById('draggable'); // Getting the Actula ID
+            dropTarget.appendChild(draggedElement); // Adding the Dropped element to the Drop Area
+            dropTarget.style.backgroundColor = '#2ecc71';
+        })
+
+        dropTarget.addEventListener('dragend',function(){
+            console.log("Drag And Drop Compled !!!")
+        })
+    </script>
+</body>
+
+</html>
