@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="">Ingredians</label>
+    <input type="text" id="Ingredians" class="ingredianscls" name="ingrediansname"><br><br>
+    <label for="">Instructions</label>
+    <input type="text" id="Instructions" class="instructioncls" name="instructionsname"><br><br>
+    <button type="button" onclick="AddInformation()">Submit</button>
+    <script>
+        function AddInformation() {
+            var information = {
+                Ingredians: document.querySelector("#Ingredians").value,
+                Instructions: document.querySelector("#Instructions").value
+            }
+            console.log(information);
+        }
+
+        function AddInformation() {
+            var information = {
+                Ingredians: document.querySelectorAll("#Ingredians")[0].value,
+                Instructions: document.querySelectorAll("#Instructions")[0].value
+            }
+            console.log(information);
+        }
+
+        function AddInformation() {
+            var information = {
+                Ingredians: document.getElementsByTagName("input")[0].value,
+                Instructions: document.getElementById("input")[1].value
+            }
+            console.log(information);
+        }
+
+        function AddInformation() {
+            var information = {
+                Ingredians: document.getElementById("Ingredians").value,
+                Instructions: document.getElementById("Instructions").value
+            }
+            console.log(information);
+        }
+
+        function AddInformation() {
+            var information = {
+                Ingredians: document.getElementsByClassName("ingredianscls")[0].value,
+                Instructions: document.getElementsByClassName("instructioncls").value
+            }
+            console.log(information);
+        }
+
+        function AddInformation() {
+            var information = {
+                Ingredians: document.getElementsByName("ingrediansname")[0].value,
+                Instructions: document.getElementsByName("instructionsname")[0].value
+            }
+            console.log(information);
+        }
+    </script>
+</body>
+</html>

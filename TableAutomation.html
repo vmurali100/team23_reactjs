@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #updatebtn{
+            display: none;
+        }
+    </style>
+</head>
+<body>                              
+    <div class="colum form column">
+        <h2>Form</h2>
+        <form>
+            <label for="name">name</label>
+            <input type="text" id="name" name="name" required><br><br>
+            <label for="name">email</label>
+            <input type="text" id="email" name="email" required><br><br>
+            <label for="name">age</label>
+            <input type="number" id="age" name="age" required><br><br>
+            <button type="button" onclick="CreateUser()" id="createbtn">Submit</button>
+            <button type="button" onclick="updateUser()" id="updatebtn">UpdateUser</button>
+        </form>
+    </div>
+    <div column table-column>
+        <h2>table</h2>
+        <table border="1" style="width: 50%;">
+            <thead>
+                <tr>
+                    <th>name</th>
+                    <th>email</th>
+                    <th>age</th>
+                    <th>edit</th>
+                    <th>delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+            </tbody>
+        </table>
+    </div>
+    <script>
+        var users = []
+        function CreateUser() {
+            var user = {
+                name: document.getElementById("name").value,
+                email: document.getElementById("email").value,
+                age: document.getElementById("age").value,
+            }
+            users.push(user);
+            localStorage.setItem('users',JSON.stringify(users));
+            readUsers()
+            clearForm()
+        }     
+        function clearForm() {
+            document.getElementById("name").value = "";
+            document.getElementById("email").value = "";
+            document.getElementById("age").value = "";
+        }
+        function readUsers() {
+            document.querySelector("tbody").innerHTML = ""
+            users.forEach((usr, i) => {
+                var mytr = document.createElement("tr");
+                for(a in usr) {
+                    var mytd = document.createElement("td");
+                    mytd.innerHTML = usr[a];
+                    mytr.appendChild(mytd);        
+                }
+                var edittd = document.createElement("td");
+                var deletetd = document.createElement("td");
+
+                var editbut = document.createElement("button")
+                var deletebut = document.createElement("button")
+
+                editbut.setAttribute("onclick", "editUser("+i+")");
+                deletebut.setAttribute("onclick", "deleteUser("+i+")");
+
+                editbut.innerHTML = "EditUser"
+                deletebut.innerHTML = "DeleteUser"
+
+                edittd.appendChild(editbut)
+                deletetd.appendChild(deletebut)    
+                
+                mytr.appendChild(edittd);
+                mytr.appendChild(deletetd)
+                
+                document.querySelector("tbody").appendChild(mytr);
+            })
+        }
+        var index
+        function editUser(i) {
+            index = i;
+            var usertobeedite = users[i];
+            for(a in usertobeedite) {
+                document.getElementById(a).value = usertobeedite[a]
+            }
+            document.getElementById("updatebtn").style.display = "block"
+            document.getElementById("createbtn").style.display = "none"
+
+        }
+
+        function deleteUser(i) {
+         console.log("delete user called ", i);       
+         users.splice(i,1);    
+         localStorage.setItem('users',JSON.stringify(users));   
+         readUsers()                                                        
+        }
+
+        readUsers()
+
+        function updateUser() {
+            var user = {
+                name: document.getElementById("name").value,
+                email: document.getElementById("email").value,
+                age: document.getElementById("age").value,
+            }
+
+            users[index] = user;
+            localStorage.setItem('users',JSON.stringify(users));   
+            readUsers(); 
+            clearForm();
+            document.getElementById("createbtn").style.display = "block"
+            document.getElementById("updatebtn").style.display = "none"
+        }
+
+
+    </script>
+</body>
+</html>

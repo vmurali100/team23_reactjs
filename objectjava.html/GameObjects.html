@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="">Game</label>
+    <input type="text" id="GameName" class="gamecls" name="gamename"><br><br>
+    <label for="">Level</label>
+    <input type="text" id="Level" class="levelcls" name="levelname"><br><br>
+    <label for="">Health</label>
+    <input type="text" id="Health" class="healthcls" name="healthname"><br><br>
+    <button type="button" onclick="AddInformation()">Submit</button>
+
+    <script>
+        function AddInformation() {
+            var information = {
+                GameName: document.querySelector("#GameName").value,
+                Level: document.querySelector("#Level").value,
+                Health: document.querySelector("#Health").value
+            }
+            console.log(information);
+        }
+
+        function AddInformation() {
+            var information = {
+                GameName: document.querySelectorAll("#GameName")[0].value,
+                Level: document.querySelectorAll("#Level")[0].value,
+                Health: document.querySelectorAll("#Health")[0].value
+            }
+            console.log(information);
+        }
+
+        function AddInformation() {
+            var information = {
+                GameName: document.getElementsByTagName("input")[0].value,
+                Level: document.getElementsByTagName("input")[1].value,
+                Health: document.getElementsByTagName("input")[2].value
+            }
+            console.log(information);
+        }
+
+        function AddInformation() {
+            var information = {
+                GameName: document.getElementById("GameName").value,
+                Level: document.getElementById("Level").value,
+                Health: document.getElementById("Health").value
+            }
+            console.log(information);
+        }
+
+        function AddInformation() {
+            var information = {
+                GameName: document.getElementsByClassName("gamecls")[0].value,
+                Level: document.getElementsByClassName("levelcls")[0].value,
+                Health: document.getElementsByClassName("healthcls")[0].value
+            }
+            console.log(information);
+        }
+
+        function AddInformation() {
+            var information = {
+                GameName: document.getElementsByName("gamename")[0].value,
+                Level: document.getElementsByName("levelname")[0].value,
+                Health: document.getElementsByName("healthname").value
+            }
+            console.log(information);
+        }
+    </script>
+</body>
+</html>

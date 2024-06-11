@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="">PriorityLevel</label>
+    <input type="text" id="PriorityLevel" class="prioritycls" name="priorityname">
+    <label for="">Price</label>
+    <input type="text" id="Price" class="pricecls" name="pricename">
+    <button type="button" onclick="AddInformation()"></button>
+
+    <script>
+        function AddInformation() {
+            var information = {
+                PriorityLevel: document.querySelector("#PriorityLevel").value,
+                Price: document.querySelector("#Price").value,
+            }
+            console.log(information);
+        }
+
+        function AddInformation() {
+            var information = {
+                PriorityLevel: document.querySelectorAll("#PriorityLevel")[0].value,
+                Price: document.querySelectorAll("#Price")[0].value,
+            }
+            console.log(information);
+        }
+
+        function AddInformation() {
+            var information = {
+                PriorityLevel: document.getElementsByTagName("input")[0].value,
+                Price: document.getElementsByTagName("input")[1].value,
+            }
+            console.log(information);
+        }
+
+        function AddInformation() {
+            var information = {
+                PriorityLevel: document.getElementById("PriorityLevel").value,
+                Price: document.getElementById("Price").value,
+            }
+            console.log(information);
+        }
+
+        function AddInformation() {
+            var information = {
+                PriorityLevel: document.getElementsByClassName("prioritycls")[0].value,
+                Price: document.getElementsByClassName("pricecls")[0].value,
+            }
+            console.log(information);
+        }
+
+        function AddInformation() {
+            var information = {
+                PriorityLevel: document.getElementsByClassName("priorityname")[0].value,
+                Price: document.getElementsByClassName("pricename")[0].value,
+            }
+            console.log(information);
+        }
+
+        
+    </script>
+</body>
+</html>

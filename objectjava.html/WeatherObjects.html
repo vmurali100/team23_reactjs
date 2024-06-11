@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="">Temperature</label>
+    <input type="text" id="Temperature" class="temperatuecls" name="temperaturename"><br><br>
+    <label for="">Hummidity</label>
+    <input type="text" id="Hummidity" class="humiditycls" name="humidityname"><br><br>
+    <label for="">WindSpeed</label>
+    <input type="text" id="WindSpeed" class="windspeedcls" name="windpspeedname"><br><br>
+    <button type="button" onclick="AddInformation()">Submit</button>
+    <script>
+        function AddInformation() {
+            var information = {
+                Temperature: document.querySelector("#Temperature").value,
+                Hummidity: document.querySelector("#Hummidity").value,
+                WindSpeed: document.querySelector("#WindSpeed").value
+            }
+            console.log(information);
+        }
+
+        function AddIformation() {
+            var information = {
+                Temperature: document.querySelectorAll("#Temperature")[0].value,
+                Hummidity: document.querySelectorAll("#Hummidity")[0].value,
+                WindSpeed: document.querySelectorAll("#WindSpeed")[0].value
+            }
+            console.log(information);
+        }
+
+
+        function AddIformation() {
+            var information = {
+                Temperature: document.getElementsByTagName("input")[0].value,
+                Hummidity: document.getElementsByTagName("input")[0].value,
+                WindSpeed: document.getElementsByTagName("input")[0].value
+            }
+            console.log(information);
+        }
+
+        function AddIformation() {
+            var information = {
+                Temperature: document.getElementById("Temperature").value,
+                Hummidity: document.getElementById("Hummidity").value,
+                WindSpeed: document.getElementById("WindSpeed").value
+            }
+            console.log(information);
+        }
+
+        function AddIformation() {
+            var information = {
+                Temperature: document.getElementsByClassName("temperatuecls")[0].value,
+                Hummidity: document.getElementsByClassName("humiditycls")[0].value,
+                WindSpeed: document.getElementsByClassName("windspeedcls")[0].value
+            }
+            console.log(information);
+        }
+
+        function AddIformation() {
+            var information = {
+                Temperature: document.getElementsByName("temperaturename")[0].value,
+                Hummidity: document.getElementsByName("windpspeedname")[0].value,
+                WindSpeed: document.getElementsByName("windpspeedname")[0].value
+            }
+            console.log(information);
+        }
+
+
+    </script>
+</body>
+</html>

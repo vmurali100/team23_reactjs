@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="">ProductName</label>
+    <input type="text" id="Product" class="prductcls" name="productname"><br><br>
+    <label for="">Quantity</label>
+    <input type="text" id="Quantity" class="quentitycls" name="quantityname"><br><br>
+    <label for="">Price</label>
+    <input type="text" id="Price" class="pricecls" name="pricename"><br><br>
+    <button type="button" onclick="AddInformation()">Submit</button>
+
+    <script>
+        function AddInformation() {
+            var information = {
+                Product: document.querySelector("#Product").value,
+                Quantity: document.querySelector("#Quantity").value,
+                Price: document.querySelector("#Price").value
+            }
+            console.log(information);
+        }
+
+        function AddInformation() {
+            var information = {
+                Product: document.querySelectorAll("#Quantity")[0].value,
+                Quantity: document.querySelectorAll("#Quantity")[0].value,
+                Price: document.querySelectorAll("#Price")[0].value
+            }
+            console.log(information);
+        }
+
+        function AddInformation() {
+            var information = { 
+                Product: document.getElementsByTagName("input")[0].value,
+                Quantity: document.getElementsByTagNameNS("input")[1].value,
+                Price: document.getElementsByTagName("input")[2].value
+            }
+            console.log(information);
+        }
+
+        function AddInformation() {
+            var information = {
+                Product: document.getElementById("Product").value,
+                Quantity: document.getElementById("Quantity").value,
+                Price: document.getElementById("Price").value
+            }
+            console.log(information);
+        }
+
+        function AddInformation() {
+            var information = {
+                Product: document.getElementsByClassName("prductcls")[0].value,
+                Quantity: document.getElementsByClassName("quentitycls")[0].value,
+                Price: document.getElementsByClassName("pricecls")[0].value
+            }
+            console.log(information);
+        }
+
+        function AddInformation() {
+            var information = {
+                Product: document.getElementsByName("productname")[0].value,
+                Quantity: document.getElementsByName("quantityname")[0].value,
+                Price: document.getElementsByName("pricename")[0].value
+            }
+            console.log(information);
+        }
+
+
+    </script>
+</body>
+</html>

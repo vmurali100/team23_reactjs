@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <label for="">Current Song</label>
+        <input type="text" id="CurrentSong" class="songcls" name="songname"><br><br>
+        <label for="">playlist</label>
+        <input type="text" id="Playlist" class="playcls" name="playname"><br><br>
+        <button type="button" onclick="AddElement()">Submit</button>
+    </form>
+    <script>
+        function AddElement() {
+            var action = {
+                CurrentSong: document.querySelector("#CurrentSong").value,
+                Playlist: document.querySelector("#Playlist").value,
+            }
+            console.log(action);
+        }
+
+        function AddElement() {
+            var action = {
+                CurrentSong: document.querySelectorAll("#CurrentSong")[0].value,
+                Playlist: document.querySelectorAll("#Playlist")[0].value
+            }
+            console.log(action);
+        }
+
+        function AddElement() {
+            var action = {
+                CurrentSong: document.getElementsByTagName("input")[0].value,
+                Playlist: document.getElementsByTagName("input")[1].value,
+            }   
+            console.log(action);
+        }
+
+        function AddElement() {
+            var action = {
+                CurrentSong: document.getElementById("CurrentSong").value,
+                Playlist: document.getElementById("Playlist").value
+            }
+            console.log(action);
+        }
+
+        function AddElement() {
+            var action = {
+                CurrentSong: document.getElementsByClassName("songcls")[0].value,
+                Playlist: document.getElementsByClassName("playcls")[0].value
+            }
+            console.log(action);
+        }
+
+        function AddElement() {
+            var action = {
+                CurrentSong: document.getElementsByName("songname")[0].value,
+                Playlist: document.getElementsByName("playname")[0].value
+
+            }
+            console.log(action);
+        }
+
+
+
+
+    </script>
+    <script>
+
+    </script>
+</body>
+</html>

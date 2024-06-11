@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="">EventName</label>
+    <input type="text" id="Event" class="eventcls" name="enentname"><br><br>
+    <label for="">Time</label>
+    <input type="text" id="Time" class="timecls" name="timename"><br><br>
+    <label for="">Location</label>
+    <input type="text" id="Location" class="locationcls" name="locationname"><br><br>
+    <button type="button" onclick="AddInformation()">Submit</button>
+
+    <script>
+        function AddInformation() {
+            var information = {
+                Event: document.querySelector("#Event").value,
+                Time: document.querySelector("#Time").value,
+                Location: document.querySelector("#Location").value
+            }
+            console.log(information);
+        }
+
+        function AddInformation() {
+            var information = {
+                Event: document.querySelectorAll("#Event")[0].value,
+                Time: document.querySelectorAll("#Time")[0].value,
+                Location: document.querySelectorAll("#Location")[0].value
+            }
+            console.log(information);
+        }
+
+        function AddInformation() {
+            var information = {
+                Event: document.getElementsByTagName("input")[0].value,
+                Time: document.getElementsByTagName("input")[1].value,
+                Location: document.getElementsByTagName("input").value
+            }
+            console.log(information);
+        }
+
+        function AddInformation() {
+            var information = { 
+                Event: document.getElementById("Event").value,
+                Time: document.getElementById("Time").value,
+                Location: document.getElementById("Location").value
+            }
+            console.log(information);
+        }
+
+        function AddInformation() {
+            var information = {
+                Event: document.getElementsByClassName("eventcls")[0].value,
+                Time: document.getElementsByClassName("timecls")[0].value,
+                Location: document.getElementsByClassName("locationcls")[0].value
+            }
+            console.log(information);
+        }
+    </script>
+</body>
+</html>

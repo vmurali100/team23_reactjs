@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="">PostTittle</label>
+    <input type="text" id="PostTittle" class="posttittlecls" name="posttittlename"><br><br>
+    <label for="">Author</label>
+    <input type="text" id="Author" class="authorcls" name="authorname"><br><br>
+    <label for="">Content</label>
+    <input type="text" id="Content" class="contentcls" name="contentname">
+    <button type="button" onclick="AddIformation()">Submit</button>
+
+    <script>
+        function AddIformation() {
+            var information = {
+                PostTittle: document.querySelector("#PostTittle").value,
+                Author: document.querySelector("#Author").value,
+                Content: document.querySelector("#Content").value
+            }
+            console.log(information);
+        }
+        function AddIformation() {
+            var information = {
+                PostTittle: document.querySelectorAll("#PostTittle")[0].value,
+                Author: document.querySelectorAll("#Author")[0].value,
+                Content: document.querySelectorAll("#Content")[0].value
+            }
+            console.log(information);
+        }
+        function AddIformation() {
+            var information = {
+                PostTittle: document.getElementsByTagName("input")[0].value,
+                Author: document.getElementsByTagName("input")[1].value,
+                Content: document.getElementsByTagName("input")[2].value,
+            }
+            console.log(information);
+        }
+
+        function AddIformation() {
+            var information = {
+                PostTittle: document.getElementById("PostTittle").value,
+                Author: document.getElementById("Author").value,
+                Content: document.getElementById("Content").value,
+            }
+            console.log(information);
+        }
+
+        function AddIformation() {
+            var information = {
+                PostTittle: document.getElementsByClassName("posttittlecls")[0].value,  
+                Author: document.getElementsByClassName("authorcls")[0].value,  
+                Content: document.getElementsByClassName("contentcls")[0].value,  
+            }
+            console.log(information);
+        }
+
+        function AddIformation() {
+            var information = {
+                PostTittle: document.getElementsByName("posttittlename")[0].value,  
+                Author: document.getElementsByName("authorname")[0].value,  
+                Content: document.getElementsByName("contentname")[0].value,  
+            }
+            console.log(information);
+        }
+    </script>
+</body>
+</html>

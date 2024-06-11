@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Enrollments</title>
+    <style>
+        ul {
+            border: solid;
+            background-color: aliceblue;
+        }
+
+        li {
+            list-style-type: none;
+        }
+    </style> 
+</head>
+
+<body>
+    <div id="students-list"></div>
+    <script>
+        var students = [
+            {
+                student_id: 1,
+                student_name: 'Kishore',
+                course_enrolled: 'Python Programming',
+                start_date: '2024-01-15'
+            },
+            {
+                student_id: 2,
+                student_name: 'Alice',
+                course_enrolled: 'Data Science',
+                start_date: '2024-02-01'
+            },
+            {
+                student_id: 3,
+                student_name: 'Bob',
+                course_enrolled: 'Machine Learning',
+                start_date: '2024-03-10'
+            },
+            {
+                student_id: 4,
+                student_name: 'Charlie',
+                course_enrolled: 'Web Development',
+                start_date: '2024-04-05'
+            },
+            {
+                student_id: 5,
+                student_name: 'David',
+                course_enrolled: 'Cyber Security',
+                start_date: '2024-05-20'
+            },
+            {
+                student_id: 6,
+                student_name: 'Eva',
+                course_enrolled: 'Cloud Computing',
+                start_date: '2024-06-15'
+            },
+            {
+                student_id: 7,
+                student_name: 'Frank',
+                course_enrolled: 'Blockchain Technology',
+                start_date: '2024-07-10'
+            },
+            {
+                student_id: 8,
+                student_name: 'Grace',
+                course_enrolled: 'Artificial Intelligence',
+                start_date: '2024-08-01'
+            },
+            {
+                student_id: 9,
+                student_name: 'Hannah',
+                course_enrolled: 'Database Management',
+                start_date: '2024-09-05'
+            },
+            {
+                student_id: 10,
+                student_name: 'Ian',
+                course_enrolled: 'Software Engineering',
+                start_date: '2024-10-10'
+            },
+            {
+                student_id: 11,
+                student_name: 'Jack',
+                course_enrolled: 'Network Administration',
+                start_date: '2024-11-15'
+            },
+            {
+                student_id: 12,
+                student_name: 'Karen',
+                course_enrolled: 'Mobile App Development',
+                start_date: '2024-12-01'
+            },
+            {
+                student_id: 13,
+                student_name: 'Leo',
+                course_enrolled: 'Game Development',
+                start_date: '2024-01-05'
+            },
+            {
+                student_id: 14,
+                student_name: 'Mia',
+                course_enrolled: 'Digital Marketing',
+                start_date: '2024-02-20'
+            },
+            {
+                student_id: 15,
+                student_name: 'Nina',
+                course_enrolled: 'Big Data',
+                start_date: '2024-03-15'
+            },
+            {
+                student_id: 16,
+                student_name: 'Oscar',
+                course_enrolled: 'DevOps',
+                start_date: '2024-04-10'
+            },
+            {
+                student_id: 17,
+                student_name: 'Paul',
+                course_enrolled: 'UI/UX Design',
+                start_date: '2024-05-01'
+            },
+            {
+                student_id: 18,
+                student_name: 'Quinn',
+                course_enrolled: 'Robotics',
+                start_date: '2024-06-05'
+            },
+            {
+                student_id: 19,
+                student_name: 'Rita',
+                course_enrolled: 'Project Management',
+                start_date: '2024-07-20'
+            },
+            {
+                student_id: 20,
+                student_name: 'Sam',
+                course_enrolled: 'Business Analysis',
+                start_date: '2024-08-15'
+            },
+            {
+                student_id: 21,
+                student_name: 'Tina',
+                course_enrolled: 'IT Support',
+                start_date: '2024-09-10'
+            },
+            {
+                student_id: 22,
+                student_name: 'Uma',
+                course_enrolled: 'E-commerce',
+                start_date: '2024-10-05'
+            },
+            {
+                student_id: 23,
+                student_name: 'Victor',
+                course_enrolled: 'Cloud Architecture',
+                start_date: '2024-11-20'
+            },
+            {
+                student_id: 24,
+                student_name: 'Wendy',
+                course_enrolled: 'Systems Analysis',
+                start_date: '2024-12-10'
+            },
+            {
+                student_id: 25,
+                student_name: 'Xander',
+                course_enrolled: 'Information Systems',
+                start_date: '2024-01-25'
+            },
+            {
+                student_id: 26,
+                student_name: 'Yara',
+                course_enrolled: 'Bioinformatics',
+                start_date: '2024-02-10'
+            },
+            {
+                student_id: 27,
+                student_name: 'Zane',
+                course_enrolled: 'Quantum Computing',
+                start_date: '2024-03-25'
+            }
+        ];
+
+        function displaystudents() {
+            for(i=1; i < students.length; i++) {
+                var studentObj = students[i];
+                var ul = document.createElement("ul");
+                for(a in studentObj) {
+                    var li = document.createElement("li");
+                    li.innerHTML = studentObj[a];
+                    ul.appendChild(li);
+                }
+                document.body.appendChild(ul);
+            }
+        }
+
+        displaystudents();
+    </script>
+</body>
+
+</html>

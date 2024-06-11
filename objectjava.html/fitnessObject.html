@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+      <label for="">ChallangeName</label>
+      <input type="text" id="ChallangeName" class="challangecls" name="challangename">
+      <label for="">Participants</label>
+      <input type="text" id="Participants" class="participantscls" name="participantsname">
+      <label for="">StarDate</label>
+      <input type="text" id="StarDate" class="startdatecls" name="startdatename">
+      <label for="">EndDate</label>
+      <input type="text" id="EndDate" class="enddatecls" name="enddatename">
+      <button type="button" onclick="AddInformation()"></button>
+
+      <script>
+        function AddInformation() {
+            var information = {
+                ChallangeName: document.querySelector("#ChallangeName").value,
+                Participants: document.querySelector("#Participants").value,
+                StarDate: document.querySelector("#StarDate").value,
+                EndDate: document.querySelector("#EndDate").value
+            }
+            console.log(information)
+        }
+
+        function AddIformation() {
+            var information ={
+                ChallangeName: document.querySelectorAll("#ChallangeName")[0].value, 
+                Participants: document.querySelectorAll("#Participants")[0].value,
+                StarDate: document.querySelectorAll("#StarDate")[0].value,
+                EndDate: document.querySelectorAll("#EndDate")[0].value
+            }
+            console.log(information);
+        }
+
+        function AddIformation() {
+            var information = {
+                ChallangeName: document.getElementsByTagName("input")[0].value,
+                Participants: document.getElementsByTagName("input")[1].value,
+                StarDate: document.getElementsByTagName("input")[2].value,
+                EndDate: document.getElementsByTagName("input")[3].value
+            }
+            console.log(information);
+        }
+
+        function AddIformation() {
+            var information = {
+                ChallangeName: document.getElementById("ChallangeName").value,
+                Participants: document.getElementById("ChallangeName").value,
+                StarDate: document.getElementById("ChallangeName").value,
+                EndDate: document.getElementById("EndDate").value,
+            }
+            console.log(information);
+        }
+
+        function AddIformation() {
+            var information = {
+                ChallangeName: document.getElementById("challangecls").value,
+                Participants: document.getElementById("participantscls").value,
+                StarDate: document.getElementById("startdatecls").value,
+                ChallangeName: document.getElementById("enddatecls").value,
+            }
+            console.log(information);
+        }
+
+        function AddIformation() {
+            var information = {
+                ChallangeName: document.get("challangename")[0].value,
+                Participants: document.getElementById("participantsname")[0].value,
+                StarDate: document.getElementById("startdatename")[0].value,
+                EndDate: document.getElementById("enddatename")[0].value,
+            }
+            console.log(information);
+        }
+
+
+
+        
+      </script>
+</body>
+</html>

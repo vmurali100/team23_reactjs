@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="">Recipe Name</label>
+    <input type="text" id="RecipeName" class="recipecls" name="recipename"><br><br>
+    <label for="">Ingredians</label>
+    <input type="text" id="Ingredians" class="ingredianscls" name="ingrediansname"><br><br>
+    <label for="">Instructions</label>
+    <input type="text" id="Instructions" class="instructionscls" name="instructinsname"><br><br>
+    <button type="button" onclick="Addinfo()">Submit</button>
+
+    <script>
+        function Addinfo() {
+            var information = {
+                RecipeName: document.querySelector("#RecipeName").value,
+                Ingredians: document.querySelector("#Ingredians").value,
+                Instructions: document.querySelector("#Instructions").value
+
+            }
+            console.log(information);
+        }
+
+        function Addinfo() {
+            var information = {
+                RecipeName: document.querySelectorAll("#RecipeName")[0].value,
+                Ingredians: document.querySelectorAll("#Ingredians")[0].value,
+                Instructions: document.querySelectorAll("#Instructions")[0].value
+            }
+            console.log(information);
+        }
+
+        function Addinfo() {
+            var information = {
+                RecipeName: document.getElementsByTagName("input")[0].value,
+                Ingredians: document. getElementsByTagName("input")[1].value,
+                Instructions: document.getElementsByTagName("input")[2].value
+            }
+            console.log(information);
+        }
+
+        function Addinfo() {
+            var information = {
+                RecipeName: document.getElementById("RecipeName").value,
+                Ingredians: document. getElementById("Ingredians").value,
+                Instructions: document.getElementById("Instructions").value
+            }
+            console.log(information);
+        }
+
+        function Addinfo() {
+            var information = {
+                RecipeName: document.getElementsByClassName("recipecls")[0].value,
+                Ingredians: document.getElementsByClassName("ingredianscls")[0].value,
+                Instructions: document.getElementsByClassName("instructionscls")[0].value
+            }
+            console.log(information);
+        }
+
+        function Addinfo() {
+            var information = {
+                RecipeName: document.getElementsByName("recipename")[0].value,
+                Ingredians: document.getElementsByName("ingrediansname")[0].value,
+                Instructions: document.getElementsByName("instructinsname")[0].value
+
+            }
+            console.log(information);
+        }
+    </script>
+</body>
+</html>

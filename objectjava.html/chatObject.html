@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <label for="">Sender</label>
+    <input type="text" id="Sender" class="sendercls" name="sendername"><br><br>
+    <label for="">Receiver</label>
+    <input type="text" id="Receiver" class="receivercls" name="receivername"><br><br>
+    <label for="">Massage</label>
+    <input type="text" id="Massage" class="massagecls" name="massagename"><br><br>
+    <button type="button" onclick="AddInformation()">Submit</button>
+
+    <script>
+        function AddInformation() {
+            var information = {
+                Sender: document.querySelector("#Sender").value,
+                Receiver: document.querySelector("#Receiver").value,
+                Massage: document.querySelector("#Massage").value
+            }
+            console.log(information);
+        }
+
+        function AddInformation() {
+            var information = {
+                Sender: document.querySelectorAll("#Sender")[0].value,
+                Receiver: document.querySelectorAll("#Receiver")[0].value,
+                Massage: document.querySelectorAll("#Massage")[0].value
+            }
+            console.log(information);
+        }
+
+        function AddInformation() {
+            var information = {
+                Sender: document.getElementsByTagName("input")[0].value,
+                Receiver: document.getElementsByTagName("input")[1].value,
+                Massage: document.getElementsByTagName("input")[2].value
+            }
+            console.log(information);
+        }
+
+        function AddInformation() {
+            var information = {
+                Sender: document.getElementById("Sender").value,
+                Receiver: document.getElementById("Receiver").value,
+                Massage: document.getElementById("Massage").value
+            }
+            console.log(information);
+        }
+
+        function AddInformation() {
+            var information = {
+                Sender: document.getElementsByClassName("sendercls")[0].value,
+                Receiver: document.getElementsByClassName("receivercls")[0].value,
+                Massage: document.getElementsByClassName("massagecls")[0].value
+            }
+            console.log(information);
+        }
+
+        function AddInformation() {
+            var information = {
+                Sender: document.getElementsByName("sendername")[0].value,
+                Receiver: document.getElementsByName("receivername")[0].value,
+                Massage: document.getElementsByName("massagename")[0].value
+            }
+            console.log(information);
+        }
+
+
+
+
+    </script>
+</body>
+
+</html>

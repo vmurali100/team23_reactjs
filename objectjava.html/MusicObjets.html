@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="">BandNumber</label>
+    <input type="text" id="BandNumber" class="banmumbercls" name="bandnumbername"><br><br>
+    <label for="">UpcomingGigs</label>
+    <input type="text" id="UpcomingGigs" class="upcominggigscls" name="upcomingname"><br><br>
+    <label for="">Setlist</label>
+    <input type="text" id="Setlist" class="setlistcls" name="setlistname"><br><br>
+    <button type="button" onclick="AddInformation()">Submit</button>
+    <script>
+        function AddInformation() {
+            var information = {
+                BandNumber: document.querySelector("#BandNumber").value,
+                UpcomingGigs: document.querySelector("#UpcomingGigs").value,
+                Setlist: document.querySelector("#Setlist").value
+            }
+            console.log(information);
+        }
+
+        function AddIformation() {
+            var information = {
+                BandNumber: document.querySelectorAll("#BandNumber")[0].value,
+                UpcomingGigs: document.querySelectorAll("#UpcomingGigs")[0].value,
+                Setlist: document.querySelectorAll("#Setlist")[0].value
+            }
+            console.log(information);
+        }
+
+        function AddIformation() {
+            var information = {
+                BandNumber: document.getElementsByTagName("input")[0].value,
+                UpcomingGigs: document.getElementsByTagName("input")[1].value,
+                Setlist: document.getElementsByTagName("input")[2].value
+            }
+            console.log(information);
+        }
+
+        function AddInformation() {
+            var information = {
+                BandNumber: document.getElementById("BandNumber").value,
+                UpcomingGigs: document.querySelector("UpcomingGigs").value,
+                Setlist: document.querySelector("Setlist").value
+            }
+            console.log(information);
+        }
+
+        function AddIformation() {
+            var information = {
+                BandNumber: document.getElementsByClassName("banmumbercls")[0].value,
+                UpcomingGigs: document.getElementsByClassName("upcominggigscls")[0].value,
+                Setlist: document.getElementsByClassName("setlistcls")[0].value
+            }
+            console.log(information);
+        }
+
+        function AddIformation() {
+            var information = {
+                BandNumber: document.getElementsByName("bandnumbername")[0].value,
+                UpcomingGigs: document.getElementsByName("upcomingname")[0].value,
+                Setlist: document.getElementsByName("setlistname")[0].value
+            }
+            console.log(information);
+        }
+    </script>
+
+</body>
+</html>

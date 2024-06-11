@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="">SourceLanguage</label>
+    <input type="text" id="SourceLanguage" class="sourcelanguagecls" name="sourcelanguagename"><br><br>
+    <label for="">TargetLanguage</label>
+    <input type="text" id="TargetLanguage" class="targetlanguagecls" name="targetlanguagename"><br><br>
+    <label for="">TextToTranslate</label>
+    <input type="text" id="TextToTranslate" class="texttotranslatecls" name="texttotranslatename"><br><br>
+    <button type="button" onclick="AddInformation()">Submit</button>
+
+    <script>
+        function AddInformation() {
+            var information = {
+                SourceLanguage: document.querySelector("#SourceLanguage").value,
+                TargetLanguage:querySelector("#TargetLanguage").value,
+                TextToTranslate:querySelector("#TextToTranslate").value
+            }
+            console.log(information);
+        }
+
+        function AddInformation() {
+            var information = {
+                SourceLanguage: document.querySelectorAll("#SourceLanguage")[0].value,
+                TargetLanguage:document.querySelectorAll("#TargetLanguage")[0].value,
+                TextToTranslate:document.querySelectorAll("#TextToTranslate")[0].value
+            }
+            console.log(information);
+        }
+
+        function AddInformation() {
+            var information = {
+                SourceLanguage: document.getElementById("SourceLanguage").value,
+                TargetLanguage: document.getElementById("TargetLanguage").value,
+                TextToTranslate: document.getElementById("TextToTranslate").value,
+            }
+            console.log(information);
+        }
+
+        function AddInformation() {
+            var information = {
+                SourceLanguage: document.getElementsByTagName("input")[0].value,
+                TargetLanguage: document.getElementsByTagName("input")[1].value,
+                TextToTranslate: document.getElementsByTagName("input")[2].value,
+            }
+            console.log(information);
+        }
+
+        function AddInformation() {
+            var information = {
+                SourceLanguage: document.getElementsByClassName("sourcelanguagecls")[0].value,
+                SourceLanguage: document.getElementsByClassName("targetlanguagecls")[0].value,
+                SourceLanguage: document.getElementsByClassName("texttotranslatecls")[0].value,
+            }
+            console.log(information);
+        }
+
+        function AddInformation() {
+            var information = {
+                SourceLanguage: document.getElementsByName("sourcelanguagename")[0].value,
+                SourceLanguage: document.getElementsByName("targetlanguagename")[0].value,
+                SourceLanguage: document.getElementsByName("texttotranslatename")[0].value,
+            }
+            console.log(information);
+        }
+    </script>
+
+</body>
+</html>

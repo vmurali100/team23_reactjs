@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="">vocabularywords</label>
+    <input type="text" id="Vocabulary" class="vocabularycls" name="vocabularyname">
+    <label for="">Definations</label>
+    <input type="text" id="Definations" class="definationcls" name="definationname">
+    <label for="">ExampleSentence</label>
+    <input type="text" id="ExampleSentence" class="examplesentencecls" name="examplesentencename">
+    <button type="button" onclick="AddInformation()">Submit</button>
+
+    <script>
+        function AddIformation() {
+            var information = {
+                Vocabulary: document.querySelector("#Vocabulary").value,
+                Definations: document.querySelector("#Definations").value,
+                ExampleSentence: document.querySelector("#ExampleSentence").value
+            }
+            console.log(information);
+        }
+
+        function AddIformation() {
+            var information = {
+                Vocabulary: document.querySelectorAll("#Vocabulary")[0].value,
+                Definations: document.querySelectorAll("#Definations")[0].value,
+                ExampleSentence: document.querySelectorAll("#ExampleSentence")[0].value
+            }
+            console.log(information);
+        }
+
+        function AddIformation() {
+            var information = {
+                Vocabulary: document.getElementsByTagName("input")[0].value,
+                Definations: document.getElementsByTagName("input")[1].value,
+                ExampleSentence: document.getElementsByTagName("input")[2].value
+            }
+            console.log(information);
+        }
+
+        function AddIformation() {
+            var information = {
+                Vocabulary: document.getElementById("Vocabulary").value,
+                Definations: document.getElementById("Definations").value,
+                ExampleSentence: document.getElementById("ExampleSentence").value
+            }
+            console.log(information);
+        }
+
+        function AddIformation() {
+            var information = {
+                Vocabulary: document.getElementsByClassName("vocabularycls")[0].value,
+                Definations: document.getElementsByClassName("definationcls")[0].value,
+                ExampleSentence: document.getElementsByClassName("examplesentencecls")[0].value
+            }
+            console.log(information);
+        }
+
+        function AddIformation() {
+            var information = {
+                Vocabulary: document.getElementsByName("vocabularyname")[0].value,
+                Definations: document.getElementsByName("definationname")[0].value,
+                ExampleSentence: document.getElementsByName("examplesentencename").value
+            }
+            console.log(information);
+        }
+    </script>
+</body>
+</html>

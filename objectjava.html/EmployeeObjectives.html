@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="">EmployeeName</label>
+    <input type="text" id="EmployeeName" class="employeecls" name="employeename"><br><br>
+    <label for="">StartDate</label>
+    <input type="text" id="StartDate" class="startcls" name="startname"><br><br>
+    <label for="">EndDate</label>
+    <input type="text" id="EndDate" class="enddatecls" name="enddatename"><br><br>
+    <button type="button" onclick="AddInformation()">Submit</button>
+</body>
+<script>
+    function AddInformation() {
+        var information = {
+            EmployeeName: document.querySelector("#EmployeeName").value,
+            StartDate: document.querySelector("#StartDate").value,
+            EndDate: document.querySelector("#EndDate").value
+        }
+        console.log(information);
+    }
+
+    function AddInformation() {
+        var information = {
+            EmployeeName: document.querySelectorAll("#EmployeeName")[0].value,
+            StartDate: document.querySelectorAll("#StartDate")[0].value,
+            EndDate: document.querySelectorAll("#EndDate")[0].value
+        }
+        console.log(information);
+    }
+
+    function AddInformation() {
+        var information = {
+            EmployeeName: document.getElementsByTagName("input")[0].value,
+            StartDate: document.getElementsByTagName("input")[1].value,
+            EndDate: document.getElementsByTagName("input")[2].value
+        }
+        console.log(information);
+    }
+
+    function AddInformation() {
+        var information = {
+            EmployeeName: document.getElementById("EmployeeName").value,
+            StartDate: document.getElementById("StartDate").value,
+            EndDate: document.getElementById("EndDate").value
+
+        }
+        console.log(information);
+    }
+
+    function AddInformation() {
+        var information = {
+            EmployeeName: document.getElementsByClassName("employeecls")[0].value,
+            StartDate: document.getElementsByClassName("startcls")[0].value,
+            EndDate: document.getElementsByClassName("EndDate")[0].value
+        }
+        console.log(information);
+    }
+
+    function AddInformation() {
+        var information = {
+            EmployeeName: document.getElementsByName("employeename")[0].value,
+            StartDate: document.getElementsByName("StartDate")[0].value,
+            EndDate: document.getElementsByName("EndDate")[0].value,
+        }
+        console.log(information);
+    }
+</script>
+</html>

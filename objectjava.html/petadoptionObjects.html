@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="">PetName</label>
+    <input type="text" id="PetName" class="petnamecls" name="petnames"><br><br>
+    <label for="">Breed</label>
+    <input type="text" id="Breed" class="breedcls" name="breedname"><br><br>
+    <label for="">AdoptionStatus</label>
+    <input type="text" id="AdoptionStatus" class="adoptionstaruscls" name="adoptionstartusname"><br><br>
+    <button type="button" onclick="AddInformation()"></button>
+    <script>
+        function AddInformation() {
+            var information = {
+                PetName: document.querySelector("#PetName").value,
+                Breed: document.querySelector("#Breed").value,
+                AdoptionStatus: document.querySelector("#AdoptionStatus").value
+            }
+            console.log(information);
+        }
+
+        function AddIformation() {
+            var information = {
+                PetName: document.getElementsByTagName("input")[0].value,
+                Breed: document.getElementsByTagName("input")[1].value,
+                AdoptionStatus: document.getElementsByTagName("input")[2].value
+            }
+            console.log(information);
+        }
+
+        function AddIformation() {
+            var information = {
+                PetName: document.getElementById("PetName")[0].value,
+                Breed: document.getElementById("Breed")[0].value,
+                AdoptionStatus: document.getElementById("AdoptionStatus")[0].value
+            }
+            console.log(information);
+        }
+
+
+
+        function AddIformation() {
+            var information = {
+                PetName: document.getElementsByClassName("petnamecls")[0].value,
+                Breed: document.getElementsByClassName("breedcls")[0].value,
+                AdoptionStatus: document.getElementsByClassName("AdoptionStatus")[0].value,
+
+            }
+            console.log(information);
+        }
+
+        function AddIformation() {
+            var information = {
+                PetName: document.getElementsByName("petnames")[0].value,
+                Breed: document.getElementsByName("breedname")[0].value,
+                AdoptionStatus: document.getElementsByName("adoptionstartusname")[0].value,
+            }
+            console.log(information);
+        }
+
+        
+
+        
+    </script>
+</body>
+</html>

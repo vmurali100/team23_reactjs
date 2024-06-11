@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="">
+        <label for="">Student Id :</label>
+        <input type="text" name="" id="StudentID" class="stdid" name="stdid"> <br><br>
+        <label for="">Student Name :</label>
+        <input type="text" name="" id="StudentName" class="stdname" name="stdname"> <br><br>
+        <label for="">Student Endrolled :</label>
+        <input type="text" name="" id="StudentEndrolled" class="stdidendrolled" name="stdidendrolled"> <br><br>
+        <button type="button" onclick="Addstudent()">Add Student</button>
+    </form>
+    <script>
+        function Addstudent() {
+            var Student = {
+                StudentID: document.querySelector("#StudentID").value,
+                StudentName: document.querySelector("#StudentName").value,
+                StudentEndrolled: document.querySelector("#StudentEndrolled").value,
+
+            }
+            console.log(Student)
+        }
+
+        function Addstudent() {
+            var Student = {
+                StudentID: document.querySelectorAll("#StudentID")[0].value,
+                StudentName: document.querySelectorAll("#StudentName")[0].value,
+                StudentEndrolled: document.querySelectorAll("#StudentEndrolled")[0].value,
+            }
+            console.log(Student)
+        }
+
+        function Addstudent() {
+            var Student = {
+                StudentID: document.getElementsByTagName("input")[0].value,
+                StudentName: document.getElementsByTagName("input")[1].value,
+                StudentEndrolled: document.getElementsByTagName("input")[2].value,
+
+            }
+            console.log(Student)
+        }
+
+        function Addstudent() {
+            var Student = {
+                StudentID: document.getElementById("StudentID").value,
+                StudentName: document.getElementById("StudentName").value,
+                StudentEndrolled: document.getElementById("StudentEndrolled").value,
+
+            }
+            console.log(Student)
+        }
+
+        function Addstudent() {
+            var Student = {
+                StudentID: document.getElementsByClassName("stdid")[0].value,
+                StudentName: document.getElementsByClassName("stdname")[0].value,
+                StudentEndrolled: document.getElementsByClassName("stdidendrolled")[0].value,
+
+            }
+            console.log(Student)
+        }
+
+        function Addstudent() {
+            var Student = {
+                StudentID: document.getElementsByName("stdid")[0].value,
+                StudentName: document.getElementsByName("stdname")[0].value,
+                StudentEndrolled: document.getElementsByName("stdidEndrolled")[0].value
+
+            }
+            console.log(Student)
+        }
+    </script>
+</body>
+
+</html>

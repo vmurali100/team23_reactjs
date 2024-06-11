@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="">TaskName</label>
+    <input type="text" id="TaskName" class="taskcls" name="taskname"><br><br>
+    <label for="">DueDate</label>
+    <input type="text" id="DueDate" class="duedatecls" name="duename"><br><br>
+    <label for="">Priority</label>
+    <input type="text" id="Priority" class="Prioritycls" name="priorityname"><br><br>
+    <button type="button" onclick="AddInformation()">Submit</button>
+
+    <script>
+        function AddIformation() {
+            var information = {
+                TaskName: document.querySelector("#TaskName").value,
+                DueDate: document.querySelector("#DueDate").value,
+                Priority: document.querySelector("#Priority").value
+            }
+            console.log(information);
+        }
+
+        function AddIformation() {
+            var information = {
+                TaskName: document.querySelectorAll("#TaskName").value,
+                DueDate: document.querySelectorAll("#DueDate").value,
+                Priority: document.querySelectorAll("#Priority").value
+            }
+            console.log(information)
+        }
+
+        function AddIformation() {
+            var information = {
+                TaskName: document.getElementsByTagName("input")[0].value,
+                DueDate: document.getElementsByTagName("input")[1].value,
+                Priority: document.getElementsByTagName("input")[2].value
+            }
+            console.log(information);
+        }
+
+        function AddIformation() {
+            var information = {
+                TaskName: document.getElementById("TaskName").value,
+                DueDate: document.getElementById("DueDate").value,
+                Priority: document.getElementById("Priority").value
+            }
+            console.log(information);
+        }
+
+        function AddIformation() {
+            var information = {
+                TaskName: document.getElementsByClassName("taskcls")[0].value,
+                DueDate: document.getElementsByClassName("duedatecls")[0].value,
+                Priority: document.getElementsByClassName("Prioritycls")[0].value
+            }
+            console.log(information);
+        }
+
+        function AddIformation() {
+            var information = {
+                TaskName: document.getElementsByName("taskname")[0].value,
+                DueDate: document.getElementsByName("duename")[0].value,
+                Priority: document.getElementsByName("priorityname")[0].value
+            }
+            console.log(information);
+        }
+    </script>
+</body>
+</html>

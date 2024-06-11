@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <label for="">ProjectName</label>
+    <input type="text" id="ProjectName" class="projectcls" name="projectname">
+    <label for="">Description</label>
+    <input type="text" id="Description" class="descriptioncls" name="descriptionname">
+    <label for="">TeamNumber</label>
+    <input type="text" id="TeamNumber" class="teamnuberscls" name="teamnumbersname">
+    <button type="button" onclick="AddInformation()">Submit</button>
+    <script>
+        function AddInformation() {
+            var information = {
+                ProjectName: document.querySelector("#ProjectName").value,
+                Description: document.querySelector("#Description").value,
+                TeamNumber: document.querySelector("#TeamNumber").value
+            }
+            console.log(information);
+        }
+
+        function AddIformation() {
+            var information = {
+                ProjectName: document.querySelectorAll("#ProjectName")[0].value,
+                Description: document.querySelectorAll("#Description")[0].value,
+                TeamNumber: document.querySelectorAll("#TeamNumber")[0].value,
+            }
+            console.log(information);
+        }
+
+        function AddIformation() {
+            var information = {
+                ProjectName: document.getElementsByTagName("input")[0].value,
+                Description: document.getElementsByTagName("input")[0].value,
+                TeamNumber: document.getElementsByTagName("input")[0].value,
+            }
+            console.log(information);
+        }
+
+
+        function AddIformation() {
+            var information = {
+                ProjectName: document.getElementById("ProjectName").value,
+                Description: document.getElementById("ProjectName").value,
+                TeamNumber: document.getElementById("ProjectName").value,
+            }
+            console.log(information);
+        }
+
+        function AddIformation() {
+            var information = {
+                ProjectName: document.getElementsByClassName("projectcls")[0].value,
+                Description: document.getElementsByClassName("descriptioncls")[0].value,
+                TeamNumber: document.getElementsByClassName("teamnuberscls")[0].value,
+            }
+            console.log(information);
+        }
+
+        function AddIformation() {
+            var information = {
+                ProjectName: document.getElementsByName("projectname")[0].value,
+                Description: document.getElementsByName("descriptionname")[0].value,
+                TeamNumber: document.getElementsByName("teamnumbersname")[0].value,
+            }
+            console.log(information);
+        }
+    </script>
+</body>
+
+</html>

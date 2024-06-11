@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="">Price</label>
+    <input type="text" id="Price" class="pricecles" name="pricename">
+    <label for="">Location</label>
+    <input type="text" id="Location" class="locattioncls" name="locationname">
+    <button type="button" onclick="AddInformation()"></button>
+
+    <script>
+        function AddInformation() {
+            var information = {
+                Price: document.querySelector("#Price").value,
+                Location: document.querySelector("#Location").value
+            }
+            console.log(information);
+        }
+
+        function AddInformation() {
+            var information = {
+                Price: document.querySelectorAll("#Price")[0].value,
+                Location: document.querySelectorAll("#Location")[0].value
+            }
+            console.log(information);
+        }
+
+        function AddInformation() {
+            var information = {
+                Price: document.getElementsByTagName("input")[0].value,
+                Location: document.getElementsByTagName("input")[1].value
+            }
+            console.log(information);
+        }
+
+        function AddInformation() {
+            var information = {
+                Price: document.getElementById("Price").value,
+                Location: document.getElementById("Location").value,
+            }
+            console.log(information);
+        }
+
+        function AddIformation() {
+            var information = {
+                Price: document.getElementsByClassName("pricecles")[0].value,
+                Location: document.getElementsByClassName("locattioncls")[0].value,
+            }
+            console.log(information);
+        }
+
+        function AddIformation() {
+            var information = {
+                Price: document.getElementsByClassName("pricename")[0].value,
+                Location: document.getElementsByClassName("locationname")[0].value,
+            }
+            console.log(information);
+        }
+    </script>
+</body>
+</html>

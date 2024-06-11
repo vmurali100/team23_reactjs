@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+
+
+        const students = [
+            { name: 'Alice', score: 85 },
+            { name: 'Bob', score: 72 },
+            { name: 'Charlie', score: 90 },
+            { name: 'David', score: 68 },
+            { name: 'Eve', score: 77 }
+        ];
+
+        var highscorestudents = students.filter(student => student.score > 75).map(student => student.name);
+
+        console.log(highscorestudents); 
+
+        out put (3) ['Alice', 'Charlie', 'Eve']...........................................1
+
+
+
+
+        const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+        var total = numbers.reduce(function(a, b){
+            return a + b
+        });
+
+        console.log(total);
+
+        out put total 55  ..................................................................2
+
+
+
+        const fruits = ['banana', 'apple', 'cherry', 'date', 'elderberry', 'fig', 'grape'];
+
+        var sorted = fruits.sort()
+
+        document.write(sorted);...........................................................3
+
+
+
+        var numbers = [10, 20, 30, 40, 50, 60, 70, 80, 90];
+
+        var find = numbers.find(val => val > 50)
+
+        var includes = numbers.includes(50)
+
+        document.write(find + "<br>");
+
+        document.write(includes);
+
+        output 60  true ..................................................................4
+
+
+        var ages = [14, 20, 16, 25, 30, 12, 18];
+
+        var teenagers = ages.some(function (val) {
+            return val >= 13 && val <= 16; 
+        });
+
+        var adults = ages.every(function(val){
+            return val >= 18;
+        })
+
+        document.write(teenagers);  true
+
+        document.write(adults); false ........................................................5
+
+
+        var array1 = [1, 2, 3, 4, 5];
+        var array2 = [6, 7, 8, 9, 10];
+
+        var arraycancate = array1.concat(array2);
+
+        var subarray = arraycancate.slice(3, 7);
+
+        console.log(subarray);.................................................................6
+
+
+
+
+        var tasks = ['task1', 'task2', 'task3', 'task4'];
+
+        tasks.splice(1, 1, 'task1', 'task2') ;
+
+        console.log(tasks);....................................................................7
+
+
+        var words = ['', 'is', 'fun'];
+
+        var joinedString = words.join(' ');
+
+        var splitArray = joinedString.split(' ');
+
+        console.log(splitArray);..................................................................8
+
+
+        var products = [
+            { name: 'product1', price: 50 },
+            { name: 'product2', price: 150 },
+            { name: 'product3', price: 30 },
+            { name: 'product4', price: 200 }
+        ];
+
+        var indexfind = products.findIndex(index => index.price > 100);
+
+        console.log(indexfind)
+
+        output = 1 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,9
+
+
+
+        var nestedNumbers = [1, [2, 3], [4, [5, 6]], 7];
+
+        var flaterednum = nestedNumbers.flat(Infinity);
+
+        var flateredmap = flaterednum.flatMap(num => num * 2);
+
+        console.log(flateredmap);
+
+        Otput = (7) [2, 4, 6, 8, 10, 12, 14]..........................................................10
+
+
+
+        var numbers = [5, 2, 9, 1, 5, 6];
+
+        var sortnum = numbers.sort().reverse()
+
+        console.log(sortnum);
+
+        Output = (6) [9, 6, 5, 5, 2, 1]..................................................................11
+
+
+        const transactions = [
+            { type: 'credit', amount: 200 },
+            { type: 'debit', amount: 100 },
+            { type: 'credit', amount: 300 },
+            { type: 'debit', amount: 50 }
+        ];
+
+        var initialBalance = 1000;
+        var finalBalance = transactions.reduce((balance, transaction) => {
+            if (transaction.type === 'credit') {
+                return balance + transaction.amount;
+            } else if (transaction.type === 'debit') {
+                return balance - transaction.amount;
+            }
+        }, initialBalance);
+
+        console.log(finalBalance); 
+
+        Output: 1350 .......................................................................................12
+
+
+        const numbers = [1, 2, 2, 3, 4, 4, 5, 6, 6, 7];
+
+        const uniqueNumbers = numbers.filter((value, index, self) => {
+            return self.indexOf(value) === index;
+        });
+
+        console.log(uniqueNumbers); 
+
+        Output: [1, 2, 3, 4, 5, 6, 7].........................................................................13
+
+
+
+        var words = ['apple', 'banana', 'apricot', 'cherry', 'blueberry', 'avocado', 'blackberry'];
+
+        var groupedByFirstLetter = words.reduce((accumulator, word) => {
+            var firstLetter = word[0];
+            if (!accumulator[firstLetter]) {
+                accumulator[firstLetter] = [];
+            }
+            accumulator[firstLetter].push(word);
+            return accumulator;
+        }, {});
+
+        console.log(groupedByFirstLetter);...................................................................14
+
+
+        a:(3)['apple', 'apricot', 'avocado']
+        b:(3)['banana', 'blueberry', 'blackberry']
+        c:['cherry']..........................................................................................15
+
+
+        const words = ['apple', 'banana', 'apple', 'cherry', 'banana', 'apple'];
+
+        const wordCounts = words.reduce((counts, word) => {
+        counts[word] = (counts[word] || 0) + 1;
+          return counts;
+            }, {});
+
+        console.log(wordCounts);
+
+        Output {apple: 3, banana: 2, cherry: 1}................................................................16
+
+
+        var users = [
+            { name: 'Alice', age: 17 },
+            { name: 'Bob', age: 22 },
+            { name: 'Charlie', age: 19 },
+            { name: 'David', age: 15 },
+            { name: 'Eve', age: 21 }
+        ];
+
+        const formattedUsers = users.filter(user => user.age >= 18).map(user => user.name + ' (' + user.age + ')');
+
+        console.log(formattedUsers);
+
+        Output: ['Bob (22)', 'Charlie (19)', 'Eve (21)']..........................................................17
+
+
+
+        
+        var numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+        var iseven = numbers.filter(val => val % 2 === 0);
+
+        console.log(iseven);  Output = (5) [2, 4, 6, 8, 10];
+
+
+        var nestedNumbers = [1, [2, [3, [4, 5]]], 6, [7, 8], 9];
+
+        var flatterednum = nestedNumbers.flat(Infinity);
+
+        var total = flatterednum.reduce(function(a, b){
+            return a + b;
+        })
+
+        console.log(total);  Output 45 ....................................................................18
+
+        
+
+        
+
+
+
+        function partition(array, predicate) {
+            return array.reduce((acc, item) => {
+                if(predicate(item)) {
+                    acc.pass.push(item);
+                }else {
+                    acc.fail.push(item);
+                }
+                return acc;
+            },{pass: [], fail: []});
+        };
+
+        var numbers = [7, 5, 3, 9, 2,8, 6];
+
+        var isEven = num => num % 2 === 0;
+
+        var results = partition(numbers, isEven);
+
+        console.log(results);..................................................................19
+
+
+
+
+        var data = [
+            [{ name: 'Alice' }, { name: 'Bob' }],
+            [{ name: 'Charlie' }, { name: 'David' }],
+            [{ name: 'Eve' }]
+        ];
+
+        var flattennames = data.flat().map(val => val.name);
+
+        console.log(flattennames);
+
+        Output = (5) ['Alice', 'Bob', 'Charlie', 'David', 'Eve'];......................................20
+
+
+    </script>
+</body>
+
+</html>

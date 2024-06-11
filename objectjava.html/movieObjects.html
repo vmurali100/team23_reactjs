@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="">Movie title</label>
+    <input type="text" id="MovieTittle" class="movietittlecls" name="movietittlename"><br><br>
+    <label for="">Directer</label>
+    <input type="text" id="Directer" class="directercls" name="directername"><br><br>
+    <label for="">Relese</label>
+    <input type="text" id="Relese" class="relesecls" name="releasename"><br><br>
+    <button type="button" onclick="AddInformation()">Submit</button>
+
+    <script>
+        function AddInformation() {
+            var information = {
+                MovieTittle: document.querySelector("#MovieTittle").value,
+                Directer: document.querySelector("#Directer").value,
+                Relese: document.querySelector("#Relese").value,
+            }
+            console.log(information);
+        }
+
+        function AddInformation() {
+            var information = {
+                MovieTittle: document.querySelectorAll("#MovieTittle")[0].value,
+                Directer: document.querySelectorAll("#Directer")[0].value,
+                Relese: document.querySelectorAll("#Relese")[0].value
+            }
+            console.log(information);
+        }
+
+        function AddInformation() {
+            var information = {
+                MovieTittle: document.getElementsByTagName("input")[0].value,
+                Directer: document.getElementsByTagName("input")[1].value,
+                Relese: document.getElementsByTagName("input")[2].value
+            }
+            console.log(information);
+        }
+
+        function AddInformation() {
+            var information = {
+                MovieTittle: document.getElementById("MovieTittle").value,
+                Directer: document.getElementById("Directer").value,
+                Relese: document.getElementById("Relese").value
+            }
+            console.log(information);
+        }
+
+        function AddInformation() {
+            var information = { 
+                MovieTittle: document.getElementsByClassName("movietittlecls")[0].value,
+                Directer: document.getElementsByClassName("directercls")[0].value,
+                Relese: document.getElementsByClassName("relesecls")[0].value
+
+            }
+            console.log(information)
+        }
+
+        function AddInformation() {
+            var information = {
+                MovieTittle: document.getElementsByName("movietittlename")[0].value,
+                Directer: document.getElementsByName("directername")[0].value,
+                Relese: document.getElementsByName("releasename")[0].value
+            }
+            console.log(information);
+        }
+    </script>
+</body>
+</html>

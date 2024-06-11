@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="">RoomNumber</label>
+    <input type="text" id="RoomNumber" class="roomnumbercls" name="roomname"><br><br>
+    <label for="">GuestName</label>
+    <input type="text" id="GuestName" class="guestnamecls" name="gestname"><br><br>
+    <label for="">Check-In-Date</label>
+    <input type="text" id="CheckInDate" class="checkincls" name="checkname"><br><br>
+    <label for="">Check-Out-Date</label>
+    <input type="text" id="CheckOutDate" class="checkoutcls" name="checkoutname"><br><br>
+    <button type="button" onclick="AddInformation()">Submit</button>
+    <script>
+        function AddIformation() {
+            var information = {
+                RoomNumber: document.querySelector("#RoomNumber").value,
+                GuestName: document.querySelector("#GuestName").value,
+                CheckInDate: document.querySelector("#CheckInDate").value,
+                CheckOutDate: document.querySelector("#CheckOutDate").value
+            }
+            console.log(information);
+        }
+
+        function AddIformation() {
+            var information = {
+                RoomNumber: document.querySelectorAll("#RoomNumber")[0].value,
+                GuestName: document.querySelectorAll("#GuestName")[0].value,
+                CheckInDate: document.querySelectorAll("#CheckInDate")[0].value,
+                CheckOutDate: document.querySelectorAll("#CheckOutDate")[0].value
+            }
+            console.log(information);
+        }
+
+        function AddIformation() {
+            var information = {
+                RoomNumber: document.getElementsByTagName("input")[0].value,
+                RoomNumber: document.getElementsByTagName("input")[1].value,
+                CheckInDate: document.getElementsByTagName("input")[2].value,
+                CheckOutDate: document.getElementsByTagName("input")[3].value
+            }
+            console.log(information);
+        }
+        function AddIformation() {
+            var information = {
+                RoomNumber: document.getElementById("RoomNumber").value,
+                GuestName: document.getElementById("GuestName").value, 
+                CheckInDate: document.getElementById("CheckInDate").value,
+                CheckOutDate: document.getElementById("CheckOutDate").value,
+            }
+            console.log(information);
+        }
+        function AddIformation() {
+            var information = {
+                RoomNumber: document.getElementsByClassName("roomnumbercls")[0].value,
+                GuestName: document.getElementsByClassName("guestnamecls")[0].value,
+                CheckInDate: document.getElementsByClassName("checkincls")[0].value,
+                CheckOutDate: document.getElementsByClassName("checkoutcls")[0].value
+            }
+            console.log(information);
+        }
+
+        function AddIformation() {
+            var information = {
+                RoomNumber: document.getElementsByClassName("roomname")[0].value,
+                GuestName: document.getElementsByClassName("gestname")[0].value,
+                CheckInDate: document.getElementsByClassName("checkname")[0].value,
+                CheckOutDate: document.getElementsByClassName("checkoutname")[0].value
+            }
+            console.log(information);
+        }
+    </script>
+</body>
+</html>

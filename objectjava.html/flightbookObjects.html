@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="">FlihtNumber</label>
+    <input type="text" id="FlihtNumber" class="flightnumbercls" name="flightname"><br><br>
+    <label for="">DepartureCity</label>
+    <input type="text" id="DepartureCity" class="departurecitycls" name="departurename"><br><br>
+    <label for="">ArrivalCity</label>
+    <input type="text" id="ArrivalCity" class="arrrivalcitycls" name="arrivalcityname"><br><br>
+    <label for="">ArrivalTime</label>
+    <input type="text" id="ArrivalTime" class="arrivaltimecls" name="arrivaltimename"><br><br>
+    <button type="button" onclick="AddInformation()"></button>
+
+    <script>
+        function AddInformation() {
+            var information = {
+                FlihtNumber: document.querySelector("#FlihtNumber").value,
+                DepartureCity: document.querySelector("#DepartureCity").value,
+                ArrivalCity: document.querySelector("#ArrivalCity").value,
+                ArrivalTime: document.querySelector("#ArrivalTime").value
+            }
+            console.log(information);
+        }
+
+        function AddInformation() {
+            var information = {
+                FlihtNumber: document.querySelectorAll("#FlihtNumber")[0].value,
+                DepartureCity: document.querySelectorAll("#DepartureCity")[0].value,
+                ArrivalCity: document.querySelectorAll("#ArrivalCity")[0].value,
+                ArrivalTime: document.querySelectorAll("#ArrivalTime")[0].value
+            }
+            console.log(information);
+        }
+
+        function AddIformation() {
+            var information = {
+                FlihtNumber: document.getElementsByTagName("input")[0].value,
+                DepartureCity: document.getElementsByTagName("input")[1].value,
+                ArrivalCity: document.getElementsByTagName("input")[2].value,
+                ArrivalTime: document.getElementsByTagName("input")[3].value
+            }
+            console.log(information);
+        }
+
+        function AddIformation() {
+            var information = {
+                FlihtNumber: document.getElementById("FlihtNumber").value,
+                DepartureCity: document.getElementById("DepartureCity").value,
+                ArrivalCity: document.getElementById("ArrivalCity").value,
+                ArrivalTime: document.getElementById("ArrivalTime").value
+            }
+            console.log(information);
+        }
+
+        function AddIformation() {
+            var information = {
+                FlihtNumber: document.getElementsByClassName("flightnumbercls")[0].value,
+                DepartureCity: document.getElementsByClassName("departurecitycls")[0].value,
+                ArrivalCity: document.getElementsByClassName("arrrivalcitycls")[0].value,
+                ArrivalTime: document.getElementsByClassName("arrivaltimecls")[0].value
+            }
+            console.log(information);
+        }
+
+        function AddIformation() {
+            var information = {
+                FlihtNumber: document.getElementsByName("flightname")[0].value,
+                DepartureCity: document.getElementsByName("departurename")[0].value,
+                ArrivalCity: document.getElementsByName("arrivalcityname")[0].value,
+                ArrivalTime: document.getElementsByName("arrivaltimename")[0].value
+            }
+            console.log(information);
+        }
+    </script>
+</body>
+</html>

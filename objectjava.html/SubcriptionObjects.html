@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="">SubcriptionName</label>
+    <input type="text" id="SubcriptionName" class="subcriptioncls" name="subcriptioname"><br><br>
+    <label for="">Price</label>
+    <input type="text" id="Price" class="pricecls" name="pricename"><br><br>
+    <label for="">RenewalDate</label>
+    <input type="text" id="RenewalDate" class="renewaldatecls" name="renewalname"><br><br>
+    <button type="button" onclick="AddInformaiton()">Submit</button>
+
+    <script>
+        function AddInformaiton() {
+            var information = {
+                SubcriptionName: document.querySelector("#SubcriptionName").value,
+                Price: document.querySelector("#Price").value,
+                RenewalDate: document.querySelector("#RenewalDate").value
+            }
+            console.log(information);
+        }
+
+        function AddInformaiton() {
+            var information = {
+                SubcriptionName: document.querySelectorAll("#SubcriptionName")[0].value,
+                Price: document.querySelectorAll("#Price")[0].value,
+                RenewalDate: document.querySelectorAll("#RenewalDate")[0].value
+            }
+            console.log(information);
+        }
+
+        function AddInformaiton() {
+            var information = {
+                SubcriptionName: document.getElementsByTagName("input")[0].value,
+                Price: document.getElementsByTagName("input")[1].value,
+                RenewalDate: document.getElementsByTagName("input")[2].value
+            }
+            console.log(information);
+        }
+
+        function AddInformaiton() {
+            var information = {
+                SubcriptionName: document.getElementById("SubcriptionName").value,
+                Price: document.getElementById("Price").value,
+                RenewalDate: document.getElementById("RenewalDate").value,
+                
+            }
+            console.log(information)
+        }
+
+        function AddIformation() {
+            var information = {
+                SubcriptionName: document.getElementsByClassName("subcriptioncls")[0].value,
+                SubcriptionName: document.getElementsByClassName("pricecls")[0].value,
+                SubcriptionName: document.getElementsByClassName("renewaldatecls")[0].value,
+            }
+            console.log(information);
+        }
+
+        function AddIformation() {
+            var information = {
+                SubcriptionName: document.getElementsByName("subcriptioname")[0].value,
+                SubcriptionName: document.getElementsByName("pricename")[0].value,
+                SubcriptionName: document.getElementsByName("renewalname")[0].value,
+            }
+            console.log(information);
+        }
+    </script>
+</body>
+</html>
