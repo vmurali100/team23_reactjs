@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        1. charAt(index)
+        let str = "JavaScript";
+        console.log(str.charAt(0)); // "J"
+        console.log(str.charAt(4)); // "S"
+        console.log(str.charAt(9)); // "p"
+        console.log(str.charAt(10)); // ""
+
+        2. charCodeAt(index)
+        let str = "Hello";
+        console.log(str.charCodeAt(0)); // 72 (H)
+        console.log(str.charCodeAt(1)); // 101 (e)
+        console.log(str.charCodeAt(2)); // 108 (l)
+        console.log(str.charCodeAt(3)); // 108 (l)
+
+        3. concat(string2, string3, ...)
+        let str1 = "Hello";
+        let str2 = "World";
+        console.log(str1.concat(" ", str2)); // "Hello World"
+        console.log(str1.concat(", ", str2, "!")); // "Hello, World!"
+        console.log("Good".concat(" ", "Morning")); // "Good Morning"
+        console.log("foo".concat("bar")); // "foobar"
+
+        4. endsWith(searchString, length)
+        let str = "JavaScript";
+        console.log(str.endsWith("Script")); // true
+        console.log(str.endsWith("Java")); // false
+        console.log(str.endsWith("Java", 4)); // true
+        console.log("Hello World".endsWith("World")); // true
+
+        5. fromCharCode(n1, n2, ...)
+        console.log(String.fromCharCode(72, 101, 108, 108, 111)); // "Hello"
+        console.log(String.fromCharCode(87, 111, 114, 108, 100)); // "World"
+        console.log(String.fromCharCode(74, 97, 118, 97)); // "Java"
+        console.log(String.fromCharCode(83, 99, 114, 105, 112, 116)); // "Script"
+
+        6. includes(searchString, position)
+        let str = "Hello World";
+        console.log(str.includes("World")); // true
+        console.log(str.includes("world")); // false
+        console.log(str.includes("Hello", 1)); // false
+        console.log("JavaScript".includes("Script")); // true
+
+        7. indexOf(searchValue, fromIndex)
+        let str = "Hello World";
+        console.log(str.indexOf("o")); // 4
+        console.log(str.indexOf("l")); // 2
+        console.log(str.indexOf("o", 5)); // 7
+        console.log(str.indexOf("world")); // -1
+
+        8. lastIndexOf(searchValue, fromIndex)
+        let str = "Hello World";
+        console.log(str.lastIndexOf("o")); // 7
+        console.log(str.lastIndexOf("l")); // 9
+        console.log(str.lastIndexOf("o", 5)); // 4
+        console.log(str.lastIndexOf("World")); // 6
+
+        9. localeCompare(compareString)
+        let str1 = "apple";
+        let str2 = "banana";
+        console.log(str1.localeCompare(str2)); // -1
+        console.log(str2.localeCompare(str1)); // 1
+        console.log("apple".localeCompare("apple")); // 0
+        console.log("Apple".localeCompare("apple")); // -1 or 1 depending on locale
+
+        10. match(regexp)
+        let str = "Hello World";
+        console.log(str.match(/l/g)); // ["l", "l", "l"]
+        console.log(str.match(/o/g)); // ["o", "o"]
+        console.log(str.match(/world/i)); // ["World"]
+        console.log(str.match(/z/g)); // null
+
+        11. matchAll(regexp)
+        let str = "Hello World";
+        let matches = str.matchAll(/l/g);
+        for (let match of matches) {
+            console.log(match[0]); // "l" "l" "l"
+        }
+
+        let str2 = "ababa";
+        let matches2 = str2.matchAll(/a/g);
+        for (let match of matches2) {
+            console.log(match.index); // 0 2 4
+        }
+
+        let str3 = "xyz";
+        let matches3 = str3.matchAll(/z/g);
+        for (let match of matches3) {
+            console.log(match[0]); // "z"
+        }
+
+        let str4 = "hellohello";
+        let matches4 = str4.matchAll(/hello/g);
+        for (let match of matches4) {
+            console.log(match.index); // 0 5
+        }
+
+        12. normalize(form)
+        let str = "\u1E9B\u0323";
+        console.log(str.normalize("NFC")); // "ṩ"
+        console.log(str.normalize("NFD")); // "\u0073\u0323\u0307"
+        console.log("\u00E9".normalize("NFC")); // "é"
+        console.log("\u0065\u0301".normalize("NFC")); // "é"
+
+        13. padEnd(targetLength, padString)
+        let str = "Hello";
+        console.log(str.padEnd(10, "!")); // "Hello!!!!!"
+        console.log("123".padEnd(5, "0")); // "12300"
+        console.log("abc".padEnd(8, "")); // "abc"
+        console.log("hello".padEnd(12, "world")); // "helloworldwo"
+
+        14. padStart(targetLength, padString)
+        let str = "Hello";
+        console.log(str.padStart(10, "!")); // "!!!!!Hello"
+        console.log("123".padStart(5, "0")); // "00123"
+        console.log("abc".padStart(8, "")); // "**abc"
+        console.log("world".padStart(12, "hello")); // "helloheworld"
+
+        15. repeat(count)
+        let str = "Hello";
+        console.log(str.repeat(3)); // "HelloHelloHello"
+        console.log("abc".repeat(2)); // "abcabc"
+        console.log("xyz".repeat(4)); // "xyzxyzxyzxyz"
+        console.log("Hi ".repeat(5)); // "Hi Hi Hi Hi Hi "
+
+        16. replace(regexp | substr, newSubStr | function)
+        let str = "Hello World";
+        console.log(str.replace("World", "JavaScript")); // "Hello JavaScript"
+        console.log("foo bar foo".replace("foo", "baz")); // "baz bar foo"
+        console.log("123-456-789".replace(/\d/g, "#")); // "###-###-###"
+        console.log("hello world".replace(/world/, "everyone")); // "hello everyone"
+
+        17. replaceAll(searchValue, replaceValue)
+        let str = "Hello World World";
+        console.log(str.replaceAll("World", "JavaScript")); // "Hello JavaScript JavaScript"
+        console.log("foo bar foo".replaceAll("foo", "baz")); // "baz bar baz"
+        console.log("123-456-789".replaceAll("-", "/")); // "123/456/789"
+        console.log("hello world world".replaceAll(/world/g, "everyone")); // "hello everyone everyone"
+
+        18. search(regexp)
+        let str = "Hello World";
+        console.log(str.search(/World/)); // 6
+        console.log(str.search(/world/i)); // 6
+        console.log(str.search(/o/)); // 4
+        console.log("abcdef".search(/d/)); // 3
+
+        19. slice(startIndex, endIndex)
+        let str = "Hello World";
+        console.log(str.slice(0, 5)); // "Hello"
+        console.log(str.slice(6, 11)); // "World"
+        console.log(str.slice(-5)); // "World"
+        console.log("JavaScript".slice(4)); // "Script"
+
+        20. split(separator, limit)
+        let str = "Hello World";
+        console.log(str.split(" ")); // ["Hello", "World"]
+        console.log("a,b,c".split(",")); // ["a", "b", "c"]
+        console.log("123-456-789".split("-", 2)); // ["123", "456"]
+        console.log("abc".split("")); // ["a", "b", "c"]
+
+        21. startsWith(searchString, position)
+        let str = "JavaScript";
+        console.log(str.startsWith("Java")); // true
+        console.log(str.startsWith("Script")); // false
+        console.log(str.startsWith("Script", 4)); // true
+        console.log("Hello World".startsWith("Hello")); // true
+
+        22. substr(startIndex, length)
+        let str = "Hello World";
+        console.log(str.substr(0, 5)); // "Hello"
+        console.log(str.substr(6, 5)); // "World"
+        console.log(str.substr(-5, 5)); // "World"
+        console.log("JavaScript".substr(4, 6)); // "Script"
+
+        23. substring
+        let str = "Hello World";
+        console.log(str.substring(0, 5)); // "Hello"
+        console.log(str.substring(6, 11)); // "World"
+        console.log(str.substring(6)); // "World"
+        console.log("JavaScript".substring(4, 10)); // "Script"
+
+        24. toLocaleLowerCase([locale, ...])
+        let str = "HELLO WORLD";
+        console.log(str.toLocaleLowerCase()); // "hello world"
+        console.log("İstanbul".toLocaleLowerCase("tr-TR")); // "istanbul"
+        console.log("STRASSE".toLocaleLowerCase("de-DE")); // "straße"
+        console.log("MOSKVA".toLocaleLowerCase("ru-RU")); // "москва"
+
+        25. toLocaleUpperCase([locale, ...])
+        let str = "hello world";
+        console.log(str.toLocaleUpperCase()); // "HELLO WORLD"
+        console.log("istanbul".toLocaleUpperCase("tr-TR")); // "İSTANBUL"
+        console.log("straße".toLocaleUpperCase("de-DE")); // "STRASSE"
+        console.log("москва".toLocaleUpperCase("ru-RU")); // "МОСКВА"
+
+        26. toLowerCase()
+        let str = "HELLO WORLD";
+        console.log(str.toLowerCase()); // "hello world"
+        console.log("JavaScript".toLowerCase()); // "javascript"
+        console.log("FOO BAR".toLowerCase()); // "foo bar"
+        console.log("HTML".toLowerCase()); // "html"
+
+        27. toString()
+        let num = 123;
+        console.log(num.toString()); // "123"
+        let arr = [1, 2, 3];
+        console.log(arr.toString()); // "1,2,3"
+        let bool = true;
+        console.log(bool.toString()); // "true"
+        let obj = { a: 1, b: 2 };
+        console.log(obj.toString()); // "[object Object]"
+
+        28. toUpperCase()
+        let str = "hello world";
+        console.log(str.toUpperCase()); // "HELLO WORLD"
+        console.log("JavaScript".toUpperCase()); // "JAVASCRIPT"
+        console.log("foo bar".toUpperCase()); // "FOO BAR"
+        console.log("html".toUpperCase()); // "HTML"
+    </script>
+</body>
+
+</html>
