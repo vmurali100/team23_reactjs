@@ -3,91 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registration Form</title>
+    <title>Simple HTML Form</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            padding: 20px;
         }
         .container {
             display: flex;
-            width: 80%;
-            border: 1px solid #ccc;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        .left, .right {
-            padding: 20px;
-            width: 50%;
-        }
-        .right {
-            border-left: 1px solid #ccc;
-        }
-        form {
-            display: flex;
             flex-direction: column;
-        }
-        form label, form input, form button {
-            margin-bottom: 10px;
+            gap: 10px;
         }
         table {
             width: 100%;
             border-collapse: collapse;
         }
-        table, th, td {
-            border: 1px solid #ccc;
-        }
         th, td {
+            border: 1px solid #ddd;
             padding: 8px;
             text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
         }
     </style>
 </head>
 <body>
+
     <div class="container">
-        <div class="left">
-            <h2>Registration Form</h2>
-            <form>
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
-
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-
-                <label for="password">Password:</label>
-                <input type="password" id="password" name="password" required>
-
-                <label for="confirm-password">Confirm Password:</label>
-                <input type="password" id="confirm-password" name="confirm-password" required>
-
-                <button type="submit">Register</button>
-            </form>
-        </div>
-        <div class="right">
-            <h2>Registered Users</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Email</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>John Doe</td>
-                        <td>john@example.com</td>
-                    </tr>
-                    <tr>
-                        <td>Jane Smith</td>
-                        <td>jane@example.com</td>
-                    </tr>
-                    <!-- Add more rows as needed -->
-                </tbody>
-            </table>
-        </div>
+        <form id="simpleForm">
+            <label for="fname">First Name:</label>
+            <input type="text" id="fname" name="fname"><br><br>
+            
+            <label for="lname">Last Name:</label>
+            <input type="text" id="lname" name="lname"><br><br>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email"><br><br>
+            
+            <label>Gender:</label><br>
+            <input type="radio" id="male" name="gender" value="male">
+            <label for="male">Male</label><br>
+            <input type="radio" id="female" name="gender" value="female">
+            <label for="female">Female</label><br><br>
+            
+            <label>Subjects:</label><br>
+            <input type="checkbox" id="subject1" name="subjects" value="Math">
+            <label for="subject1">Math</label><br>
+            <input type="checkbox" id="subject2" name="subjects" value="Science">
+            <label for="subject2">Science</label><br>
+            <input type="checkbox" id="subject3" name="subjects" value="History">
+            <label for="subject3">History</label><br><br>
+            
+            <label for="state">State:</label>
+            <select id="state" name="state">
+                <option value="karnataka">Karnataka</option>
+                <option value="tamilnadu">Tamil Nadu</option>
+                <option value="kerala">Kerala</option>
+                <option value="andhrapradesh">Andhra Pradesh</option>
+            </select><br><br>
+            
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob" name="dob"><br><br>
+            
+            <input type="submit" value="Submit">
+        </form>
     </div>
+
+    <div class="container">
+       
+    </div>
+
+    <script>
+      
+    </script>
+
 </body>
 </html>

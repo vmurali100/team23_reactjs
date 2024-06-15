@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form>
+        <label for="">Select Subjects :</label>
+        <input type="checkbox" name="subject" value="HTML"> HTML
+        <input type="checkbox" name="subject" value="CSS"> CSS
+        <input type="checkbox" name="subject" value="Javascript"> Javascript
+        <input type="checkbox" name="subject" value="ReactJS"> ReactJS
+        <br><br>
+        <!-- <button onclick="selectSubjects()" type="button">Select Subjects</button> -->
+        <button onclick="setSelectSubjects()" type="button">Set Selected Subjects</button>
+    </form>
+
+    <script>
+        function selectSubjects() {
+            var person = {
+                subjects: []
+            };
+
+            var allCheckBoxes = document.getElementsByName("subject");
+            console.log(allCheckBoxes)
+
+            for (i = 0; i < allCheckBoxes.length; i++) {
+                if (allCheckBoxes[i].checked) {
+                    person.subjects.push(allCheckBoxes[i].value)
+                }
+            }
+            console.log(person)
+
+        }
+
+        function setSelectSubjects() {
+            var person = {
+                subjects: ["Javascript", "ReactJS"]
+            };
+            var allCheckBoxes = document.getElementsByName("subject");
+            person.subjects.forEach(function (sub) {
+                for (i = 0; i < allCheckBoxes.length; i++) {
+                    if (allCheckBoxes[i].value == sub) {
+                        allCheckBoxes[i].checked = true
+                    }
+                }
+            })
+
+
+        }
+    </script>
+</body>
+
+</html>
