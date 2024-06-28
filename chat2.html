@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Registration Form</title>
+</head>
+<body>
+  <form>
+    <h2>Registration Details</h2>
+    <div>
+      <label for="university">University:</label>
+      <input type="text" id="university" name="university">
+    </div>
+    <div>
+      <label for="institute">Institute:</label>
+      <input type="text" id="institute" name="institute">
+    </div>
+    <div>
+      <label for="branch">Branch:</label>
+      <select id="branch" name="branch">
+        <option value="">-- select --</option>
+        <option value="CSE">CSE</option>
+        <option value="IT">IT</option>
+        <option value="ECE">ECE</option>
+        </select>
+    </div>
+    <div>
+      <label for="degree">Degree:</label>
+      <select id="degree" name="degree">
+        <option value="">-- select --</option>
+        <option value="B.Tech">B.Tech</option>
+        <option value="M.Tech">M.Tech</option>
+        </select>
+      <label for="degreeStatus">Status:</label>
+      <input type="radio" id="pursuing" name="degreeStatus" value="pursuing">
+      <label for="pursuing">Pursuing</label>
+      <input type="radio" id="completed" name="degreeStatus" value="completed">
+      <label for="completed">Completed</label>
+    </div>
+    <div>
+      <label for="avgCpi">Average CPI:</label>
+      <input type="text" id="avgCpi" name="avgCpi">
+      <label for="semester">Upto:</label>
+      <input type="number" id="semester" name="semester">
+      <label for="semester">Semester</label>
+    </div>
+    <div>
+      <label for="experience">Experience:</label>
+      <input type="text" id="experience" name="experience">
+      <label for="experience">Years</label>
+    </div>
+    <div>
+      <label for="website">Your Website Or Blog:</label>
+      <input type="url" id="website" name="website" placeholder="http://">
+    </div>
+    <button type="submit">Submit</button>
+  </form>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Personal Details Form</title>
+</head>
+<body>
+  <h1>Personal Details</h1>
+  <form>
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" placeholder="Enter your name">
+    <br>
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" placeholder="Enter your password">
+    <br>
+    <label for="email">E-mail id:</label>
+    <input type="email" id="email" name="email" placeholder="Enter your email">
+    <br>
+    <label for="gender">Gender:</label>
+    <input type="radio" id="gender_male" name="gender" value="male"> Male
+    <input type="radio" id="gender_female" name="gender" value="female"> Female
+    <br>
+    <label for="contact">Contact#</label>
+    <input type="tel" id="contact" name="contact" placeholder="Enter your contact number">
+    <br>
+    <label for="qualification">Educational Qualification</label>
+    <br>
+    <label for="degree">Degree:</label>
+    <select id="degree" name="degree">
+      <option value="">Select Degree</option>
+      <option value="engineering">Engineering</option>
+      </select>
+    <br>
+    <label for="hobbies">Hobbies:</label>
+    <input type="checkbox" id="hobby_chess" name="hobby[]" value="chess"> Playing chess
+    <input type="checkbox" id="hobby_books" name="hobby[]" value="books"> Reading Books
+    <br>
+    <label for="address">Address:</label>
+    <textarea id="address" name="address" rows="4" cols="50" placeholder="Enter your address"></textarea>
+    <br>
+    <label for="resume">Attch Resume:</label>
+    <input type="file" id="resume" name="resume">
+    <br>
+    <input type="submit" value="SUBMIT">
+  </form>
+</body>
+</html>
+
