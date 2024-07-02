@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CRUD1</title>
-    
+    <title>CRUD-3</title>
+
     <style>
         #updateBtn{
             display: none;
@@ -19,10 +19,8 @@
             <input type="text" id="name" name="name" required><br><br>
 
             <label for="email">Email</label>
-            <input type="text" id="email" name="email" required><br><br>
-
-            <label for="age"> Age</label>
-            <input type="text" id="age" name="age" required><br><br>
+            <input type="text" id="email" name="email" required onkeyup="checkAndValidate()"><br><br>
+            <p id="emailError"></p>
 
             <button type="button" onclick="createUser()" id="createBtn"> Submit </button>
             <button type="button" onclick="updateUser()" id="updateBtn"> Update </button>
@@ -36,7 +34,6 @@
                 <tr>
                     <th>Name</th>
                     <th>Email</th>
-                    <th>Age</th>
                     <th>Edit</th>
                     <th>Delete</th>
                 </tr>
@@ -56,17 +53,25 @@
             var user = {
                 name: document.getElementById("name").value,
                 email: document.getElementById("email").value,
-                age: document.getElementById("age").value
             }
-            users.push(user);
-            localStorage.setItem('users',JSON.stringify(users));
-            readUser();
-            clearForm();
+            var emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
+            if (emailPattern.test(user.email)) {
+                users.push(user);
+                localStorage.setItem('users', JSON.stringify(users));
+                readUser();
+                clearForm();
+                document.getElementById("emailError").innerHTML = "";
+            }
+            else{
+                document.getElementById("emailError").style.color = "red";
+                document.getElementById("emailError").innerHTML = "Please enter Valid Email ID ";
+                
+            }
+            
         };
         function clearForm(){
             document.getElementById("name").value = "";
             document.getElementById("email").value = "";
-            document.getElementById("age").value = "";
 
         }
         function readUser(){
@@ -113,7 +118,6 @@
             var user = {
                 name: document.getElementById("name").value,
                 email: document.getElementById("email").value,
-                age: document.getElementById("age").value
             }
 
             users[index]=user;
@@ -131,6 +135,15 @@
             readUser();
             clearForm();
         };
+        function checkAndValidate(){
+            var userEntereEmail = document.getElementById("email").value;
+            var emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
+            if(emailPattern.test(userEntereEmail)){
+                document.getElementById("createBtn").removeAttribute("disabled")
+            }else{
+                document.getElementById("createBtn").setAttribute("disabled",true)
+            }
+        }
 
         readUser();
         clearForm();

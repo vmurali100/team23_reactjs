@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer-Form</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    
+</head>
+<body>
+    
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col">
+                <form>
+                    <div class="mb-3">
+                        <label for="Name" class="form-label">Name</label>
+                        <input type="text" class="form-control" id="Name" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="Email" class="form-label">Email address</label>
+                        <input type="email" class="form-control" id="Email" aria-describedby="emailHelp" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">Investment</label>
+                        <select class="form-select" id="Investment">
+                            <option selected>Investment</option>
+                            <option value="10000">10000</option>
+                            <option value="20000">20000</option>
+                            <option value="30000">30000</option>
+                            <option value="40000">40000</option>
+                            <option value="50000">50000</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="DateOfJoin" class="form-label">Date of Join</label>
+                        <input type="date" class="form-control" id="DateOfJoin" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Active</label>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="Active">
+                            <label class="form-check-label" for="Active">
+                                Active
+                            </label>
+                        </div>
+                    </div>
+                    <button type="button" onclick="createUser()" id="submitbtn" class="btn btn-primary">Submit</button>
+                    <button type="button" onclick="updateUser()" id="updatebtn" class="btn btn-primary" style="display:none;">Update</button>
+                </form>
+            </div>
+            <div class="col">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Investment</th>
+                            <th>Date of Join</th>
+                            <th>Active</th>
+                            <th>Edit</th>
+                            <th>Delete</th>
+                        </tr>
+                    </thead>
+                    <tbody id="userTableBody">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var customers = JSON.parse(localStorage.getItem("customers")) || [];
+
+        function createUser() {
+            var customer = {
+                Name: document.getElementById("Name").value.trim(),
+                Email: document.getElementById("Email").value.trim(),
+                Investment: parseFloat(document.getElementById("Investment").value),
+                DateOfJoin: document.getElementById("DateOfJoin").value,
+                Active: document.getElementById("Active").checked
+            };
+
+            customers.push(customer);
+            localStorage.setItem("customers", JSON.stringify(customers));
+            clearForm();
+            displayUsers();
+        }
+
+        function clearForm() {
+            document.getElementById("Name").value = "";
+            document.getElementById("Email").value = "";
+            document.getElementById("Investment").value = "";
+            document.getElementById("DateOfJoin").value = "";
+            document.getElementById("Active").checked = false;
+        }
+
+        function displayUsers() {
+            var tableBody = document.getElementById("userTableBody");
+            tableBody.innerHTML = "";
+
+            customers.forEach(function (customer, index) {
+                var row = tableBody.insertRow();
+
+                for (var key in customer) {
+                    var cell = row.insertCell();
+                    cell.textContent = customer[key];
+                }
+
+                var editCell = row.insertCell();
+                var editButton = document.createElement("button");
+                editButton.textContent = "Edit";
+                editButton.className = "btn btn-warning btn-sm";
+                editButton.onclick = function () {
+                    editUser(index);
+                };
+                editCell.appendChild(editButton);
+
+                var deleteCell = row.insertCell();
+                var deleteButton = document.createElement("button");
+                deleteButton.textContent = "Delete";
+                deleteButton.className = "btn btn-danger btn-sm";
+                deleteButton.onclick = function () {
+                    deleteUser(index);
+                };
+                deleteCell.appendChild(deleteButton);
+            });
+        }
+
+        function editUser(index) {
+            var customer = customers[index];
+
+            document.getElementById("Name").value = customer.Name;
+            document.getElementById("Email").value = customer.Email;
+            document.getElementById("Investment").value = customer.Investment;
+            document.getElementById("DateOfJoin").value = customer.DateOfJoin;
+            document.getElementById("Active").checked = customer.Active;
+
+            document.getElementById("submitbtn").style.display = "none";
+            document.getElementById("updatebtn").style.display = "block";
+            document.getElementById("updatebtn").onclick = function () {
+                updateUser(index);
+            };
+        }
+
+        function updateUser(index) {
+            var customer = {
+                Name: document.getElementById("Name").value.trim(),
+                Email: document.getElementById("Email").value.trim(),
+                Investment: parseFloat(document.getElementById("Investment").value),
+                DateOfJoin: document.getElementById("DateOfJoin").value,
+                Active: document.getElementById("Active").checked
+            };
+
+            customers[index] = customer;
+            localStorage.setItem("customers", JSON.stringify(customers));
+            clearForm();
+            displayUsers();
+
+            document.getElementById("submitbtn").style.display = "block";
+            document.getElementById("updatebtn").style.display = "none";
+        }
+
+        function deleteUser(index) {
+            if (confirm("Are you sure you want to delete this user?")) {
+                customers.splice(index, 1);
+                localStorage.setItem("customers", JSON.stringify(customers));
+                displayUsers();
+            }
+        }
+
+        displayUsers();
+    </script>
+</body>
+
+</html>

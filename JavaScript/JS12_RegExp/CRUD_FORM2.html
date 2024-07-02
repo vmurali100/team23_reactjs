@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CRUD2</title>
+    <title>CRUD-2</title>
 
     <style>
-        #updateBtn{
+        #updateBtn {
             display: none;
         }
     </style>
@@ -20,10 +21,11 @@
             <input type="text" id="name" name="name" required><br><br>
 
             <label for="email">Email</label>
-            <input type="email" id="email" name="email" required><br><br>
+            <input type="email" id="email" name="email" required onkeyup="checkAndValidate()"><br><br>
+            <p id="emailError"></p>
 
             <label for="message">Message</label>
-            <textarea id="message" name="message" rows="4" required></textarea><br><br>
+            <textarea id="message" name="message" rows="4" required ></textarea><br><br>
 
             <button type="button" onclick="addUser()" id="addBtn">Submit</button>
             <button type="button" onclick="updateUser()" id="updateBtn">Update</button>
@@ -57,11 +59,20 @@
                 email: document.getElementById("email").value,
                 message: document.getElementById("message").value
             }
-            users.push(user);
-            localStorage.setItem("users", JSON.stringify(users))
-            console.log(user);
-            readUser()
-            clearUser()
+            var emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
+            if (emailPattern.test(user.email)) {
+                users.push(user);
+                localStorage.setItem('users', JSON.stringify(users));
+                readUser();
+                clearForm();
+                document.getElementById("emailError").innerHTML = "";
+            }
+            else{
+                document.getElementById("emailError").style.color = "red";
+                document.getElementById("emailError").innerHTML = "Please enter Valid Email ID ";
+                
+            }
+            
         };
         function readUser() {
             document.querySelector("tbody").innerHTML = "";
@@ -96,8 +107,8 @@
             for (a in userToEdit) {
                 document.getElementById(a).value = userToEdit[a]
             }
-            document.getElementById("updateBtn").style.display="block"
-            document.getElementById("addBtn").style.display="none"
+            document.getElementById("updateBtn").style.display = "block"
+            document.getElementById("addBtn").style.display = "none"
         }
         function updateUser() {
             var user = {
@@ -110,8 +121,8 @@
             clearUser();
             localStorage.setItem("users", JSON.stringify(users));
 
-            document.getElementById("addBtn").style.display="block"
-            document.getElementById("updateBtn").style.display="none"
+            document.getElementById("addBtn").style.display = "block"
+            document.getElementById("updateBtn").style.display = "none"
         };
         function deleteUser(i) {
             users.splice(i, 1);
@@ -119,10 +130,20 @@
             localStorage.setItem("users", JSON.stringify("users"));
         };
         function clearUser() {
-            document.getElementById("name").value="";
-            document.getElementById("email").value="";
-            document.getElementById("message").value=""
-         };
+            document.getElementById("name").value = "";
+            document.getElementById("email").value = "";
+            document.getElementById("message").value = ""
+        };
+
+        function checkAndValidate(){
+            var userEntereEmail = document.getElementById("email").value;
+            var emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
+            if(emailPattern.test(userEntereEmail)){
+                document.getElementById("createBtn").removeAttribute("disabled")
+            }else{
+                document.getElementById("createBtn").setAttribute("disabled",true)
+            }
+        }
 
         readUser();
     </script>

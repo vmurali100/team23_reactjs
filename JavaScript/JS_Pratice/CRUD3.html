@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CRUD1</title>
-    
+    <title>CRUD-3</title>
+
     <style>
         #updateBtn{
             display: none;
@@ -21,9 +21,6 @@
             <label for="email">Email</label>
             <input type="text" id="email" name="email" required><br><br>
 
-            <label for="age"> Age</label>
-            <input type="text" id="age" name="age" required><br><br>
-
             <button type="button" onclick="createUser()" id="createBtn"> Submit </button>
             <button type="button" onclick="updateUser()" id="updateBtn"> Update </button>
         </form>
@@ -36,7 +33,6 @@
                 <tr>
                     <th>Name</th>
                     <th>Email</th>
-                    <th>Age</th>
                     <th>Edit</th>
                     <th>Delete</th>
                 </tr>
@@ -56,7 +52,6 @@
             var user = {
                 name: document.getElementById("name").value,
                 email: document.getElementById("email").value,
-                age: document.getElementById("age").value
             }
             users.push(user);
             localStorage.setItem('users',JSON.stringify(users));
@@ -66,7 +61,6 @@
         function clearForm(){
             document.getElementById("name").value = "";
             document.getElementById("email").value = "";
-            document.getElementById("age").value = "";
 
         }
         function readUser(){
@@ -113,7 +107,6 @@
             var user = {
                 name: document.getElementById("name").value,
                 email: document.getElementById("email").value,
-                age: document.getElementById("age").value
             }
 
             users[index]=user;
