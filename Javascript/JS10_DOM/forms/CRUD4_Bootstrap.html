@@ -31,28 +31,31 @@
                 <form>
                     <div class="mb-3">
                         <label for="email" class="form-label">Email address</label>
-                        <input type="email" class="form-control" id="email" aria-describedby="emailHelp">
+                        <input type="email" class="form-control" id="email" onkeyup="validateForm()">
                     </div>
                     <div class="mb-3">
                         <label for="password" class="form-label">Password</label>
-                        <input type="password" class="form-control" id="password">
+                        <input type="password" class="form-control" id="password" onkeyup="validateForm()">
                     </div>
                     <div class="mb-3">
                         <label for="exampleInputPassword1" class="form-label">Gender</label>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="gender" value="Male">
+                            <input class="form-check-input" type="radio" name="gender" value="Male"
+                                onchange="validateForm()">
                             <label class="form-check-label" for="flexRadioDefault1">
                                 Male
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="gender" value="Female">
+                            <input class="form-check-input" type="radio" name="gender" value="Female"
+                                onchange="validateForm()">
                             <label class="form-check-label" for="flexRadioDefault2">
                                 Female
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="gender" value="Other">
+                            <input class="form-check-input" type="radio" name="gender" value="Other"
+                                onchange="validateForm()">
                             <label class="form-check-label" for="flexRadioDefault2">
                                 Other
                             </label>
@@ -62,31 +65,35 @@
                         <label for="exampleInputPassword1" class="form-label">Subjects</label>
 
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="HTML" name="subjects">
+                            <input class="form-check-input" type="checkbox" value="HTML" name="subjects"
+                                onchange="validateForm()">
                             <label class="form-check-label" for="flexCheckDefault">
                                 HTML
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="CSS" name="subjects">
+                            <input class="form-check-input" type="checkbox" value="CSS" name="subjects"
+                                onchange="validateForm()">
                             <label class="form-check-label" for="flexCheckChecked">
                                 CSS </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="Javascript" name="subjects">
+                            <input class="form-check-input" type="checkbox" value="Javascript" name="subjects"
+                                onchange="validateForm()">
                             <label class="form-check-label" for="flexCheckChecked">
                                 Javascript </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="ReactJS" name="subjects">
+                            <input class="form-check-input" type="checkbox" value="ReactJS" name="subjects"
+                                onchange="validateForm()">
                             <label class="form-check-label" for="flexCheckChecked">
                                 ReactJS </label>
                         </div>
                     </div>
                     <div class="mb-3">
                         <label for="exampleInputPassword1" class="form-label">Selct State</label>
-                        <select class="form-select" id="state">
-                            <option selected>Select State</option>
+                        <select class="form-select" id="state" onchange="validateForm()">
+                            <option value="">Select State</option>
                             <option value="AP">AP</option>
                             <option value="Telangana">Telangana</option>
                             <option value="Karnataka">Karnataka</option>
@@ -95,9 +102,10 @@
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Date Of Birth</label>
-                        <input type="date" class="form-control" id="dob">
+                        <input type="date" class="form-control" id="dob" onchange="validateForm()">
                     </div>
-                    <button type="button" onclick="createUser()" id="submitBtn" class="btn btn-primary">Submit</button>
+                    <button type="button" onclick="createUser()" id="submitBtn" class="btn btn-primary"
+                        disabled>Submit</button>
                     <button type="button" onclick="updateUser()" id="updateBtn" class="btn btn-primary">Update</button>
                 </form>
             </div>
@@ -110,7 +118,7 @@
                             <th>Gender</th>
                             <th>Subjects</th>
                             <th>State</th>
-                            <th>DOB</th>
+                            <th style="width: 110px;display: block;">DOB</th>
                             <th>Edit</th>
                             <th>Delete</th>
                         </tr>
@@ -158,6 +166,7 @@
             localStorage.setItem('users', JSON.stringify(users));
             readUser();
             clearUser();
+            document.getElementById("submitBtn").setAttribute("disabled", true);
         }
         function readUser() {
             document.querySelector("tbody").innerHTML = "";
@@ -187,7 +196,6 @@
                 document.querySelector("tbody").appendChild(myTr);
             })
         };
-
         function editUser(i) {
             index = i;
             var userTobeEdit = users[i];
@@ -215,9 +223,8 @@
 
             document.getElementById("updateBtn").style.display = "block";
             document.getElementById("submitBtn").style.display = "none";
-        } ;
-        
-        function updateUser() { 
+        };
+        function updateUser() {
             var user = {
                 email: '',
                 password: '',
@@ -246,11 +253,13 @@
                     }
                 }
             }
-            users[index]=user;
-            localStorage.setItem("users",JSON.stringify(users));
+            users[index] = user;
+            localStorage.setItem("users", JSON.stringify(users));
             readUser();
-            clearUser()
-
+            clearUser();
+            document.getElementById("updateBtn").style.display = "none";
+            document.getElementById("submitBtn").style.display = "block";
+            document.getElementById("submitBtn").setAttribute("disabled", true);
         }
         function deleteUser(i) {
             users.splice(i, 1);
@@ -277,14 +286,66 @@
                 }
             }
         }
-
         function clearCheckBox() {
             for (i = 0; i < allCheckBoxes.length; i++) {
                 allCheckBoxes[i].checked = false;
             }
         }
+        readUser();
+        function validateForm() {
+            var user = {
+                email: '',
+                password: '',
+                gender: '',
+                state: '',
+                dob: '',
+                subjects: [],
+            };
+            for (a in user) {
+                if (a !== "gender" && a !== "subjects") {
+                    user[a] = document.getElementById(a).value;
+                } else if (a == "gender") {
+                    for (i = 0; i < allRadioBtns.length; i++) {
+                        if (allRadioBtns[i].checked) {
+                            user[a] = allRadioBtns[i].value
+                        }
+                    }
+                } else if (a == "subjects") {
+                    for (i = 0; i < allCheckBoxes.length; i++) {
+                        if (allCheckBoxes[i].checked) {
+                            user[a].push(allCheckBoxes[i].value)
+                        }
+                    }
+                }
 
-        readUser()
+            }
+
+            var check = false;
+
+            for (a in user) {
+                if (a !== "subjects" && a !== "email") {
+                    if (user[a] === "") {
+                        check = true;
+                    }
+                } else if (a == "subjects") {
+                    if (user[a].length == 0) {
+                        check = true;
+                    }
+                } else if (a == "email") {
+                    var pattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
+                    if (!pattern.test(user[a])) {
+                        check = true;
+                    }
+                }
+            }
+
+            if (check) {
+                document.getElementById("submitBtn").setAttribute("disabled", true);
+            } else {
+                document.getElementById("submitBtn").removeAttribute("disabled", true);
+            }
+
+        }
     </script>
 </body>
 
