@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <label for="">Current Song :</label>
+        <input type="text" id="currentlist" class="currentlist" name="currentlist"> <br><br>
+        
+        <label for="">Playlist :</label>
+        <input type="text" id="plylist" class="plylist" name="plylist"> <br><br>
+
+        <button type="button" onclick="songs()">Music Player</button>
+
+    </form>
+
+    <script>
+        // Method 1 with querySelector
+        // function songs(){
+        //     var music = {
+        //         currentSong:document.querySelector("#currentlist").value,
+        //         playlist:document.querySelector("#plylist").value,
+        //     }
+        //     console.log(music)
+        // }
+
+        // Method 2 querySelectorAll
+        // function songs(){
+        //     var music = {
+        //         currentSong:document.querySelectorAll("#currentlist")[0].value,
+        //         playlist:document.querySelectorAll("#plylist")[0].value,
+        //     }
+        //     console.log(music)
+        // }
+
+        // Method 3 getElementsByTagName
+        // function songs(){
+        //     var music = {
+        //         currentSong:document.getElementsByTagName("input")[0].value,
+        //         playlist:document.getElementsByTagName("input")[1].value,
+        //     }
+        //     console.log(music)
+        // }
+
+        // Method 4 getElementById
+        // function songs(){
+        //     var music = {
+        //         currentSong:document.getElementById("currentlist").value,
+        //         playlist:document.getElementById("plylist").value,
+        //     }
+        //     console.log(music)
+        // }
+
+        // Method 5 getElementsByClassName
+        // function songs(){
+        //     var music = {
+        //         currentSong:document.getElementsByClassName("currentlist")[0].value,
+        //         playlist:document.getElementsByClassName("plylist")[0].value,
+        //     }
+        //     console.log(music)
+        // }
+
+        // Method 6 getElementsByName
+        function songs(){
+            var music = {
+                currentSong:document.getElementsByName("currentlist")[0].value,
+                playlist:document.getElementsByName("plylist")[0].value,
+            }
+            console.log(music)
+        }
+    </script>
+</body>
+</html>

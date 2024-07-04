@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var  para= "Returns the index within the calling String object of the first occurrence of the specified value, starting the search at fromIndex"
+        var stuname= "  vishal  "
+        var rollno= "45"
+        var middlename= "m.g."
+        document.write(para.length +"<br>")
+        document.write(para.charAt(45)+"<br>")
+        document.write(para.charCodeAt(45)+"<br>")
+        document.write(middlename.concat(stuname)+"<br>")
+        document.write(para.endsWith("the")+"<br>")
+        document.write(String.fromCharCode(97,98)+"<br>")
+        document.write(para.includes("the")+"<br>")
+        document.write(para.indexOf("t"+"<br>"))
+        document.write(para.lastIndexOf("t")+"<br>")
+        document.write(stuname.localeCompare(middlename)+"<br>")
+        document.write(middlename.match("m")+"<br>");
+        document.write(rollno.padStart(10,0)+"<br>")
+        document.write(rollno.padEnd(10,0)+"<br>")
+        document.write(stuname.repeat(10)+"<br>");
+        document.write(para.replace("within","with"+"<br>"))
+        document.write(para.replaceAll("witin","with"))
+        document.write(para.slice(0,6))
+        document.write(para.startsWith("returns"))
+        document.write(para.substr(30,6))
+        document.write()
+        document.write(para.toLocaleUpperCase()+"<br>")
+        document.write(para.toLocaleLowerCase()+"<br>")
+        document.write(stuname.trim()+"<br>")
+        document.write(stuname.trimEnd()+"<br>")
+        document.write(stuname.trimStart()+"<br>")
+    </script>
+    
+</body>
+</html>

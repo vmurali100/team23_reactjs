@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <label for="">Sender :</label>
+        <input type="text" id="sender" class="sender" name="sender"> <br><br>
+        
+        <label for="">Receiver :</label>
+        <input type="text" id="receiver" class="receiver" name="receiver"> <br><br>
+
+        <label for="">Message :</label>
+        <input type="text" id="message" class="message" name="message"> <br><br>
+
+        <button type="button" onclick="sendMessages()">Send Message</button>
+
+    </form>
+
+    <script>
+        // Method 1 with querySelector
+        // function sendMessages(){
+        //     var messages = {
+        //         sender:document.querySelector("#sender").value,
+        //         receiver:document.querySelector("#receiver").value,
+        //         message:document.querySelector("#message").value,
+        //     }
+        //     console.log(messages)
+        // }
+
+        // Method 2 querySelectorAll
+        // function sendMessages(){
+        //     var messages = {
+        //         sender:document.querySelectorAll("#sender")[0].value,
+        //         receiver:document.querySelectorAll("#receiver")[0].value,
+        //         message:document.querySelectorAll("#message")[0].value
+        //     }
+        //     console.log(messages)
+        // }
+
+        // Method 3 getElementsByTagName
+        // function sendMessages(){
+        //     var messages = {
+        //         sender:document.getElementsByTagName("input")[0].value,
+        //         receiver:document.getElementsByTagName("input")[1].value,
+        //         message:document.getElementsByTagName("input")[2].value
+        //     }
+        //     console.log(messages)
+        // }
+
+        // Method 4 getElementById
+        // function sendMessages(){
+        //     var messages = {
+        //         sender:document.getElementById("sender").value,
+        //         receiver:document.getElementById("receiver").value,
+        //         message:document.getElementById("message").value
+        //     }
+        //     console.log(messages)
+        // }
+
+        // Method 5 getElementsByClassName
+        // function sendMessages(){
+        //     var messages = {
+        //         sender:document.getElementsByClassName("sender")[0].value,
+        //         receiver:document.getElementsByClassName("receiver")[0].value,
+        //         message:document.getElementsByClassName("message")[0].value
+        //     }
+        //     console.log(messages)
+        // }
+
+        // Method 6 getElementsByName
+        function sendMessages(){
+            var messages = {
+                sender:document.getElementsByName("sender")[0].value,
+                receiver:document.getElementsByName("receiver")[0].value,
+                message:document.getElementsByName("message")[0].value
+            }
+            console.log(messages)
+        }
+
+
+    </script>
+</body>
+</html>

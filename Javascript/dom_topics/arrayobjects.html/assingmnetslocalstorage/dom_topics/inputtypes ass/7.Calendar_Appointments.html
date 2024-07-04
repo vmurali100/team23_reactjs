@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <label for="">Event Name :</label>
+        <input type="text" id="eventName" class="eventName" name="eventName"> <br><br>
+        
+        <label for="">Date :</label>
+        <input type="text" id="date" class="date" name="date"> <br><br>
+
+        <label for=""> Time :</label>
+        <input type="text" id="time" class="time" name="time"> <br><br>
+
+        <label for=""> Location :</label>
+        <input type="text" id="location" class="location" name="location"> <br><br>
+
+        <button type="button" onclick="addNewAppointments()">Add New Appointments</button>
+
+    </form>
+
+    <script>
+        // Method 1 with querySelector
+        // function addNewAppointments(){
+        //     var newAppointments = {
+        //         eventName:document.querySelector("#eventName").value,
+        //         date:document.querySelector("#date").value,
+        //         time:document.querySelector("#time").value,
+        //         location:document.querySelector("#location").value,
+        //     }
+        //     console.log(newAppointments)
+        // }
+
+        // Method 2 querySelectorAll
+        // function addNewAppointments(){
+        //     var newAppointments = {
+        //         eventName:document.querySelectorAll("#eventName")[0].value,
+        //         date:document.querySelectorAll("#date")[0].value,
+        //         time:document.querySelectorAll("#time")[0].value,
+        //         location:document.querySelectorAll("#location")[0].value
+        //     }
+        //     console.log(newAppointments)
+        // }
+
+        // Method 3 getElementsByTagName
+        // function addNewAppointments(){
+        //     var newAppointments = {
+        //         eventName:document.getElementsByTagName("input")[0].value,
+        //         date:document.getElementsByTagName("input")[1].value,
+        //         time:document.getElementsByTagName("input")[2].value,
+        //         location:document.getElementsByTagName("input")[3].value
+        //     }
+        //     console.log(newAppointments)
+        // }
+
+        // Method 4 getElementById
+        // function addNewAppointments(){
+        //     var newAppointments = {
+        //         eventName:document.getElementById("eventName").value,
+        //         date:document.getElementById("date").value,
+        //         time:document.getElementById("time").value,
+        //         location:document.getElementById("location").value
+        //     }
+        //     console.log(newAppointments)
+        // }
+
+        // Method 5 getElementsByClassName
+        // function addNewAppointments(){
+        //     var newAppointments = {
+        //         eventName:document.getElementsByClassName("eventName")[0].value,
+        //         date:document.getElementsByClassName("date")[0].value,
+        //         time:document.getElementsByClassName("time")[0].value,
+        //         location:document.getElementsByClassName("location")[0].value
+        //     }
+        //     console.log(newAppointments)
+        // }
+
+        // Method 6 getElementsByName
+        function addNewAppointments(){
+            var newAppointments = {
+                eventName:document.getElementsByName("eventName")[0].value,
+                date:document.getElementsByName("date")[0].value,
+                time:document.getElementsByName("time")[0].value,
+                location:document.getElementsByName("location")[0].value
+            }
+            console.log(newAppointments)
+        }
+
+
+    </script>
+</body>
+</html>

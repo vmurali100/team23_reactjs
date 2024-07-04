@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var students=[
+        { name: 'Alice', score: 85 },
+        { name: 'Bob', score: 72 },
+        { name: 'Charlie', score: 90 },
+        { name: 'David', score: 68 },
+        { name: 'Eve', score: 77 }        
+        ]
+        document.write(students.score);
+        if ( students=> students.score>75){
+
+
+
+        }       // if (){}
+
+        //reduce
+        var numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        var num1=numbers.reduce
+        document.write(num1+"<br>")
+
+        //sort()
+        document.write("sort")
+        var num2=[24,5,676,65,765,3,244,543,2,1]
+        var n= num2.sort();
+        document.write(n+"<br>")
+
+        //Assignment 4: Find and Includes
+         var numb = [10, 20, 30, 40, 50, 60, 70, 80, 90];
+         document.write("include"+"<br>")
+         document.write (numb.includes(50)+"<br>") 
+
+         document.write("find"+"<br>")
+        document.write (numb.find(Element=>Element>50)) 
+       
+
+       //Assignment 5: Some and Every
+       var ages = [14, 20, 16, 25, 30, 12, 18];
+
+       document.write("some"+"<br>")
+       var ev1= (currentValue)=>13<18; 
+       document.write("teeneger")
+       document.write(ages.some(ev1)+"<br>")
+       document.write("every"+"<br>")
+       var ev= (currentvalue)=>currentvalue=18;
+       document.write("older")
+       document.write(ages.every(ev))
+        
+
+       //Assignment 6: Concat and Slice
+       var array1 = [1, 2, 3, 4, 5];
+      var array2 = [6, 7, 8, 9, 10];
+ 
+       var co= array1.concat(array2);
+       document.write(co+"<br>")
+       var sl= co.slice(3,7)
+       document.write(sl)
+
+       //SPILCE
+       var tasks = ['task1', 'task2', 'task3', 'task4'];
+         var sp=tasks.splice(2,2,"task")
+         document.write(sp);
+
+         //join aND SPILT
+         document.write("JOIN")
+         var words = ['', 'is', 'fun'];document.write("join"+"<br>")
+         document.write( words.join(""));
+        // document.write( words.spilt(""));
+         
+
+         //find index
+         document.write("find index")
+         var products = [
+        { name: 'product1', price: 50 },
+        { name: 'product2', price: 150 },
+        { name: 'product3', price: 30 },
+        { name: 'product4', price: 200 }
+        ];
+        var fi=products.findIndex(price => price >100)
+        document.write(fi)
+        
+
+
+        //flat and flat map
+        var nestedNumbers = [1, [2, 3], [4, [5, 6]], 7];
+        var fl= nestedNumbers.flat()
+        document.write(fl)
+       var fm= nestedNumbers.flatMap(x => [x * 2]);
+       document.write(fm)
+        
+       //reverse and sort
+       var number = [5, 2, 9, 1, 5, 6];
+       number.reverse()
+       document.write(number)
+       number.sort()
+       document.write(number)
+       //
+      
+
+
+
+
+
+
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul {
+            background: red;
+            margin: 5px;
+            border: 2px solid black;
+            padding: 5px;
+        }
+
+        li {
+            list-style-type: none;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        var array_objects = [
+            {
+                id: 32,
+                name: "vishal",
+                courses_enrolled: 3
+            },
+            {
+                current_song: "na saami",
+                playlist: "puspa"
+
+            }
+        ]
+        for (i = 0; array_objects.length; i++) {
+            var storage1 = array_objects[i];
+            var myul = document.createElement("ul");
+            for (a in storage1) {
+                myli = document.createElement("li");
+                myli.innerHTML = a + ":-" + storage1[a]
+            }
+            document.body.appendChild(myul)
+
+        }
+
+    </script>
+</body>
+
+</html>

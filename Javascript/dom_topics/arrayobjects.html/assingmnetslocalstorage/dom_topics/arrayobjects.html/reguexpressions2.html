@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    p{
+        color:red
+    }
+</style>
+
+<body>
+    <form action="">
+        <label> NAME</label>
+        <input type="text" id="name" onkeyup="validate()"><br>
+        <p id="nameerror">PLEASE ENTER YOUR NAME</p>
+        <label> ROLLNO</label>
+        <input type="numbers" id="rollno" onkeyup="validate()"><br>
+        <p id="rollnoerror">PLEASE ENTER YOUR ROLLNO</p>
+        <label> EMAIL</label>
+        <input type="email" id="email" onkeyup="validate()"><br>
+        <p id="emailerror">PLEASE ENTER YOUR EMAIL</p>
+        <label> PASSWORD</label>
+        <input type="text" id="password" onkeyup="validate()"><br>
+        <p id="passworderror">PLEASE ENTER YOUR PASSWORD</p>
+        <label> CONFRIM PASSWORD</label>
+        <input type="text" id="cpassword" onkeyup="validate()"><br>
+        <p id="cpassworderror">PLEASE ENTER YOUR CURRENTPASSWORD</p>
+        <button type="button" onclick="adduser()"id="addusr">submit</button>
+        <button type="button" onclick="update()" id="upd">update</button>
+        </form>
+
+        <table style="border: 1;">
+            <thead>
+                <tr>
+                    <td>NAME</td>
+                    <td>ROLLNO</td>
+                    <td>EMAIL</td>
+                    <td>EDIT</td>
+                    <td>DELETE</td>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+
+        </table>
+
+   
+    <script>
+        var users = JSON.parse(localStorage.getItem(users));
+        if (users==null) {
+            users=[]
+       };
+        function adduser(){
+        var user = {
+            name: document.getElementById("name").value,
+            rollno: document.getElementById("rollno").value,
+            email: document.getElementById("email").value,
+            password: document.getElementById("password").value,
+            cpassword: document.getElementById("cpassword").value,
+
+        }
+        
+        users.push(user)
+        //console.log(users)
+        localStorage.setItem('users', JSON.stringify(users))
+        readusers();
+        clearForm();
+        validate()
+    }
+    function validate(){
+        var user = {
+            name: document.getElementById("name").value,
+            rollno: document.getElementById("rollno").value,
+            email: document.getElementById("email").value,
+            password: document.getElementById("password").value,
+            cpassword: document.getElementById("cpassword").value,
+
+        }
+        for (a in user){
+            if (user[a].length==0){
+                document.getElementById(a+"error").style.display="block"
+
+            }
+            else{
+                document.getElementById(a+"error").style.display="none"
+            }
+
+        }
+
+    }
+
+        function clearForm() {
+            document.getElementById("name").value = ""
+            document.getElementById("rollno").value = ""
+            document.getElementById("email").value = ""
+            document.getElementById("password").value = ""
+            document.getElementById("cpassword").value = ""
+
+        }
+        function readusers() {
+           document.querySelector("tbody").innerHTML = "";
+            for (i = 0; i < users.length; i++) {
+                var data1 = users[i];
+                var mytr = document.createElement("tr");
+                for (a in data1) {
+                    var mytd = document.createElement("td")
+                    mytd.innerHTML = data1[a];
+                    mytr.appendChild(mytd)
+
+                }
+                var edittd = document.createElement("td")
+                var editbutton = document.createElement("button")
+                editbutton.innerHTML = "edit user"
+                edittd.appendChild(editbutton)
+                editbutton.setAttribute("onclick", "edituser(" + i + ")");
+
+                var deletebutton = document.createElement("button")
+                var deltd = document.createElement("td")
+                deletebutton.innerHTML = "delete user"
+                deltd.appendChild(deletebutton)
+                mytr.appendChild(edittd)
+                mytr.appendChild(deltd)
+                document.querySelector("tbody").appendChild(mytr)
+
+                deletebutton.setAttribute("onclick", "deluser(" + i + ")");
+               //  document.getElementById("update").style.display="none";
+
+            }
+            
+        }
+        var index;
+        function edituser(i) {
+            index=i;
+
+            var tobeedited = users[i];
+            
+            for (a in tobeedited ){
+                document.getElementById(a).value =tobeedited[a]
+            }
+            document.getElementById("addusr").style.display="none";
+            document.getElementById("upd").style.display="block";
+        }
+
+        
+        function deluser(i) {
+            console.log("deleted user", i)
+            users.splice(i,1);
+            localStorage.setItem('users', JSON.stringify("users"))
+            readusers();
+        }
+
+        function update() {
+            var upstu={
+            name: document.getElementById("name").value,
+            rollno: document.getElementById("rollno").value,
+            email: document.getElementById("email").value,
+            password: document.getElementById("password").value,
+            cpassword: document.getElementById("cpassword").value
+            }
+            users[index]=upstu;
+            localStorage.setItem('users', JSON.stringify('users'))
+            readusers();
+            clearForm();
+            document.getElementById("addusr").style.display="block";
+            document.getElementById("upd").style.display="none";
+
+
+            
+        }
+        readusers()
+
+    </script>
+</body>
+
+</html>

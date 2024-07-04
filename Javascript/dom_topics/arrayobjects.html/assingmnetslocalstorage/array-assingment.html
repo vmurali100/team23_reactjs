@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //array
+        var a=[1,2,3]
+        var b=[4,,5,6]
+
+        //concatinston
+        var c= a.concat(b)
+        console.log(c)
+        document.write(c+"<br>")
+
+        //copywith
+        c.copyWithin(2,3)
+        document.write(c)
+        
+        //entities
+        document.write("entities"+"<br>")
+        var array=["vis","jes","shek"];
+        var d =array.entries();
+        console.log(d.next().value);
+        console.log(d.next().value);
+        console.log(d.next().value);
+        //every
+        document.write("every"+"<br>")
+        var e = (currentValue) => currentValue < 10;
+       console.log(c.every(e));
+       document.write(c.every(e)+"<br>");
+       //fill
+       document.write("fill"+"<br>")
+       var arr1=[1,2,3,45,5,6]
+       console.log(arr1.fill(0, 2, 4)); 
+       document.write(arr1+"<br>")
+       //filter
+       document.write("filter"+"<br>")
+       var arr2 = [1, 2, 3, 4, 5];
+       var filteredArray = arr2.filter(element => element > 3);
+       document.write(filteredArray+"<br>")
+       //find
+       document.write("find"+"<br>")
+       var arr3=[21,23,4,5,6,1]
+       var  foundElement = arr3.find(element => element > 3);
+       console.log(foundElement); 
+       document.write(foundElement+"<br>");
+       //findindeex
+       document.write("find index"+"<br>")
+       var arr4 = [11, 12, 13, 14, 15];
+      var foundIndex = arr4.findIndex(element => element > 3);
+      console.log(foundIndex); // Output: 3
+      document.write(foundIndex+"<br>");
+      document.write(foundIndex+"<br>");
+
+      document.write(foundIndex+"<br>");
+
+      document.write(foundIndex+"<br>");
+      //flatarray
+      document.write("flat array"+"<br>")
+      var arr5= [1, 2, 3, 4];
+     var flatArray = arr5.flat();
+     console.log(flatArray);
+     document.write(flatArray+"<br>");
+     //flatmap and for each
+     var arr6= [1, 2, 3];
+     var mappedArray = arr6.flatMap(x => [x * 2]);
+     document.write("for each"+"<br>")
+     arr6.forEach(element => document.write(element * 2)+"<br>");
+     document.write("flatmap"+"<br>")
+     console.log(mappedArray); 
+     document.write("mappedArray"+"<br>")
+    
+       
+
+
+     //includes
+     document.write(arr4+"<br>")
+     document.write("includes"+"<br>")
+     document.write( arr4.includes(11)+"<br>")
+     document.write("indexof"+"<br>")
+     document.write( arr4.indexOf(11)+"<br>")
+     document.write("lastindexof"+"<br>")
+     document.write( arr4.lastIndexOf(15)+"<br>")
+
+     var arr7=["mg","vishal"];
+     document.write("join"+"<br>")
+     document.write( arr7.join('')+"<br>")
+     document.write("keys"+"<br>")
+     var key=arr7.keys();
+     document.write( key.next().value+"<br>")
+     document.write( key.next().value+"<br>")
+     document.write("map"+"<br>")
+
+     var mappedArray1 = arr4.map(x => x * 2);
+     document.write(mappedArray1)
+     document.write("sort"+"<br>")
+
+     document.write(arr4.sort()+"<br>")
+     document.write("splice"+"<br>")
+     
+
+     document.write(arr1+"<br>")
+
+     
+
+     var cut=arr1.splice(2,3)
+     document.write(arr1+"<br>")
+     document.write("todtring"+"<br>")
+     
+     document.write(arr2.toString())
+     document.write("tolocalvarible"+"<br>")
+      
+     document.write(arr3.toLocaleString('en-us'))
+
+
+
+
+     
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+    </script>
+</body>
+</html>

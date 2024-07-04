@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estimate Information</title>
+
+    <style>
+        body {
+            font-family: sans-serif;
+            background-color: rgba(255, 217, 0, 0.953)
+        }
+
+        h1,
+        h2 {
+            margin-bottom: 10px;
+        }
+
+
+        .block1 {
+            margin-left: 350px;
+            width: 400px;
+            height: auto;
+            padding: 50px;
+        }
+
+        .customer-info,
+        .estimate-info {
+            padding: 50px
+        }
+
+        .estimate-info {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div class="block1">
+        <div class="customer-info" style="background-color: burlywood;">
+            <form action="">
+                <label for="">customer name:</label>
+                <input type="text" id="name"><br>
+                <label for="">Part name:</label>
+                <input type="text" id="pname"><br>
+                <label for="">Part Print name:</label>
+                <input type="text" id="ppname"><br>
+                <label for="">Revision:</label>
+                <input type="text" id="Revision"><br>
+                <label for="">PartNumber:</label>
+                <input type="no" id="pnumber"><br>
+
+                <label for="">Date Of estimation:</label>
+                <input type="date" id="doe"><br><br>
+                <label for="">Estimator Name:</label>
+                <input type="text" id="Estimator"><br>
+
+                <label for="">Buyer name:</label>
+                <input type="text" id="bname">
+            </form>
+        </div>
+
+
+        <div class="estimate-info" style="background-color: rgb(255, 115, 0);">
+            <form action="">
+                <label for="">Estimate base Number:</label>
+                <input type="number" id="ebn"><br>
+                <label for="">Scrap Percentage:</label>
+                <input type="percentage" id="spercentage"><br>
+                <label for="">Costs Associated with Scrap:</label><br>
+                <input type="checkbox" name="cost" value="Material">Material
+                <input type="checkbox" name="cost" value="Tooling">Tooling
+                <input type="checkbox" name="cost" value="Labour">Labour
+                <input type="checkbox" name="cost" value="Non-Macting">Non-Macting <br>
+                <button type="button" onclick="create()">submit</button>
+                <button type="button" onclick="clear()">Clear Form</button>
+                <button type="button">Close</button>
+            </form>
+        </div>
+
+
+
+    </div>
+    <script>
+        var costs = document.getElementsByName("cost")
+        var users = JSON.parse(localStorage.getItem("users"))
+        function create() {
+            var user = {
+                name: '',
+                pname: '',
+                ppname: '',
+                Revision: '',
+                pnumber: '',
+                doe: '',
+                Estimator: '',
+                bname: '',
+                ebn: '',
+                spercentage: '',
+                cost: []
+            }
+            //console.log(radio.length)
+            for (a in user) {
+                if (a !== 'cost') {
+                    user[a] = document.getElementById(a).value;
+
+                } else if (a === "cost") {
+                    // Read Values from Checkboxes
+                    for (i = 0; i < costs.length; i++) {
+                        if (costs[i].checked) {
+                            user[a].push(costs[i].value)
+                        }
+                    }
+                }
+            }
+            //users.push(user);
+            localStorage.setItem('users', JSON.stringify(users));
+            console.log(user)
+        }
+        function clearCheckBox() {
+            for (i = 0; i < costs.length; i++) {
+                costs[i].checked = false;
+            }
+        }
+        function clear() {
+            var user = {
+                name: '',
+                pname: '',
+                ppname: '',
+                Revision: '',
+                pnumber: '',
+                doe: '',
+                Estimator: '',
+                bname: '',
+                ebn: '',
+                spercentage: '',
+                cost: []
+            }
+           
+            for (a in user) {
+                if (a !== 'cost') {
+                    document.getElementById('a').value = ""
+
+                } else {
+                    clearCheckBox();
+                  
+                    for (i = 0; i < costs.length; i++) {
+                        costs[i].checked = false;
+                    }
+                }
+        
+                }
+             
+
+
+        }
+    </script>
+
+</body>
+
+</html>

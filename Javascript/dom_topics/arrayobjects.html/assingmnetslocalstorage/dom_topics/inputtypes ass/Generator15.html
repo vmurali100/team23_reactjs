@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <label >ingredients</label>
+        <br>
+        <input type="text" name="recipe" id="recipe1" class="items">
+        <br>
+        <label >instrutions</label>
+        <br>
+        <input type="text" name="recipe" id="recipe2" class="intsruction">
+        <br>
+        <br>
+        <button type="button" onclick="recipes()"> submit</button>
+    </form>
+    <script>
+        //metod1
+        function recipes (){
+            //console.log("user 1 called");
+            //var food = document.querySelector('input').value
+            //console.log("to generate random recipes is: ",food ) 
+
+
+        //metod2
+        //var food = document.querySelectorAll('input')[1].value
+        //console.log("to generate random recipes is: ",food )
+        //METOD 3
+        //var food = document.getElementsByTagName('input')[0].value
+        //console.log("to generate random recipes is: ",food )
+        //metod 4
+        //var food = document.getElementById('recipe2').value
+        //console.log("to generate random recipes is: ",food )
+
+        //metod 5
+        //var food = document.getElementsByClassName('items')[0].value
+        //console.log("to generate random recipes is: ",food )
+
+
+        //metod6
+        var food = document.getElementsByName('recipe')[0].value
+        console.log("to generate random recipes is: ",food )
+
+
+        }
+    </script>
+</body>
+</html>
