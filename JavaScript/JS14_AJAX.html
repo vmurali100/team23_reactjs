@@ -66,7 +66,7 @@
 
     <script>
         function createUser() {
-            var user = {
+            var junior = {
                 firstName: document.getElementById("firstName").value,
                 LastName: document.getElementById("lastName").value,
                 email: document.getElementById("email").value,
@@ -74,30 +74,30 @@
             }
 
             var postUser = new XMLHttpRequest;
-            postUser.open("POST", "http://localhost:3000/users");
+            postUser.open("POST", "http://localhost:3000/juniors");
             postUser.setRequestHeader("Content-Type", "application/json");
-            postUser.send(JSON.stringify(user));
+            postUser.send(JSON.stringify(junior));
             postUser.onreadystatechange = function () {
                 if (postUser.readyState == 4 && postUser.status == 201) {
-                    console.log("User Added Successfully !!!");
+                    console.log("Junior Added Successfully !!!");
                 }
             }
             clearForm()
         };
-        var users = []
+        var juniors = []
         function getDataFromServer() {
             var postUser = new XMLHttpRequest;
-            postUser.open("GET", "http://localhost:3000/users");
+            postUser.open("GET", "http://localhost:3000/juniors");
             postUser.send();
             postUser.onreadystatechange = function () {
                 if (postUser.readyState == 4 && postUser.status == 200) {
-                    users = JSON.parse(postUser.response);
+                    juniors = JSON.parse(postUser.response);
                     readUser()
                 }
             }
         }
         function readUser() {
-            users.forEach((usr, i) => {
+            juniors.forEach((usr, i) => {
                 var myTr = document.createElement("tr")
                 for (a in usr) {
                     var myTd = document.createElement("td");
@@ -127,10 +127,10 @@
         var index = null;
         function editUser(i) {
             index = i;
-            var userToEdit = users[i];
-            for (a in userToEdit) {
+            var juniorToEdit = juniors[i];
+            for (a in juniorToEdit) {
                 if (a !== "id") {
-                    document.getElementById(a).value = userToEdit[a]
+                    document.getElementById(a).value = juniorToEdit[a]
                 }
 
             }
@@ -138,19 +138,19 @@
             document.getElementById("submitBtn").style.display = "none"
         };
         function updateUser() {
-            var user = {
+            var junior = {
                 firstName: document.getElementById("firstName").value,
                 LastName: document.getElementById("lastName").value,
                 email: document.getElementById("email").value,
                 password: document.getElementById("password").value,
             }
             var postUser = new XMLHttpRequest;
-            postUser.open("PUT", "http://localhost:3000/users/" + users[index].id);
+            postUser.open("PUT", "http://localhost:3000/juniors/" + juniors[index].id);
             postUser.setRequestHeader("Content-Type", "Application/json")
-            postUser.send(JSON.stringify(user));
+            postUser.send(JSON.stringify(junior));
             postUser.onreadystatechange = function () {
                 if (postUser.readyState == 4 && postUser.status == 200) {
-                    users = JSON.parse(postUser.response);
+                    juniors = JSON.parse(postUser.response);
                     readUser();
                     document.getElementById("updateBtn").style.display = "none"
                     document.getElementById("submitBtn").style.display = "block"
@@ -166,11 +166,11 @@
         };
         function deleteUser(i) {
             var postUser = new XMLHttpRequest;
-            postUser.open("DELETE", "http://localhost:3000/users/" + users[i].id);
+            postUser.open("DELETE", "http://localhost:3000/juniors/" + juniors[i].id);
             postUser.send();
             postUser.onreadystatechange = function () {
                 if (postUser.readyState == 4 && postUser.status == 200) {
-                    users = JSON.parse(postUser.response);
+                    juniors = JSON.parse(postUser.response);
                     getDataFromServer();
                 }
             }
