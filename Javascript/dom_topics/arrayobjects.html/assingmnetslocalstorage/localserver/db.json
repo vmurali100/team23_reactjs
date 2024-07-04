@@ -1,10 +1,4 @@
 {
-  "users": [
-    {
-      "fullName": "Harry",
-      "email": "harry@den.com",
-      "password": "LJSADJ",
-      "id": "f8b2"
-    }
-  ]
+  "data": [],
+  "users": []
 }
