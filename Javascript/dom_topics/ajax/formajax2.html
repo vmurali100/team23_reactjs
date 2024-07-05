@@ -60,6 +60,7 @@
 </head>
 <body>
     <h4 id="register" style="position: absolute;">Registration Details</h4>
+   <div style="display: flex">
     <div class="container">
        
         <form id="regForm">
@@ -112,16 +113,39 @@
                 <label for="website">Your Website Or Blog:</label>
                 <input type="url" name="website" id="website" placeholder="http://">
             </div>
-            <button  onclick="create()" type="button">Submit</button>
+            <button  onclick="create()" id="submitBtn" type="button">Submit</button>
+            <button   style="display: none" onclick="updateUser()" id="updateBtn"type="button">update</button>
         </form>
     </div>
+    <div class="table">
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>university</th>
+                    <th>institute</th>
+                    <th>branch</th>
+                    <th>degree</th>
+                    <th>degreeStatus</th>
+                    <th>cgpa</th>
+                    <th>semester</th>
+                    <th>experience</th>
+                    <th>website</th>
+                    <th>edit</th>
+                    <th>delete</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+   </div>
+    
     <script >
        // var drag1=document.getElementsByName("branch").value;
         //var drag2=document.getElementsByName("degree").value;
         var radio =document.getElementsByName("degreeStatus");
-        var users=JSON.parse(localStorage.getItem("users"))
+       
         function create(){
-            var user={
+            var details={
                 university:'',
                 institute:'',
                 branch:'',
@@ -133,9 +157,9 @@
                 website:''
             }
             //console.log(radio.length)
-            for (a in user){
+            for (a in details){
                 if( a!=='degreeStatus'){
-                    user[a]=document.getElementById(a).value;
+                    details[a]=document.getElementById(a).value;
 
                 }else if(a ==="degreeStatus") {
                     for (i = 0; i <radio.length; i++) {
@@ -147,11 +171,142 @@
 
             }
             //users.push(user)
-            localStorage.setItem('users', JSON.stringify(users));
-            console.log(user)
+            var postuser= new XMLHttpRequest;
+           postuser.open("POST", "http://localhost:3000/detail");
+           postuser.setRequestHeader("Content-Type","application/json")
+           postuser.send(JSON.stringify(details));
+           postuser.onreadystatechange =function(){
+               if( postuser.readyState ==4 && postuser.status==201){
+                   console.log("coustemers added sucessfully")
+               }
+   
+           }
+           clearuser()
 
         }
-   
+        var detail= [];
+        function getdatabase (){
+            var postuser= new XMLHttpRequest;
+            postuser.open("GET", "http://localhost:3000/detail");
+           
+            postuser.send();
+            postuser.onreadystatechange =function(){
+                if( postuser.readyState ==4 && postuser.status==200){
+                    detail=JSON.parse(postuser.response)
+                    
+                }
+                readdetails()
+            }
+        }
+      
+            function readdetails() {
+                detail.forEach((usr, i) => {
+                    var myTr = document.createElement("tr")
+                    for (a in usr) {
+                        var myTd = document.createElement("td");
+                        myTd.innerHTML = usr[a]
+                        myTr.appendChild(myTd)
+                    }
+                    // Edit Button
+                    var editTd = document.createElement("td");
+                    var editButton = document.createElement("button");
+                    editButton.setAttribute("onclick", "editUser(" + i + ")")
+                    editButton.setAttribute("class", "btn btn-warning")
+                    editButton.innerHTML = "Edit User"
+                    editTd.appendChild(editButton);
+                    // Delete Button 
+                    var deleteTd = document.createElement("td");
+                    var deleteButton = document.createElement("button");
+                    deleteButton.setAttribute("onclick", "deleteUser(" + i + ")");
+                    deleteButton.innerHTML = "Delete User"
+                    deleteTd.appendChild(deleteButton);
+                    deleteButton.setAttribute("class", "btn btn-danger")
+        
+                    myTr.appendChild(editTd);
+                    myTr.appendChild(deleteTd)
+                    document.querySelector("tbody").appendChild(myTr)
+                })
+            };
+            function clearuser(){
+                var details={
+                    university:'',
+                    institute:'',
+                    branch:'',
+                    degree:'',
+                    degreeStatus:'',
+                    cgpa:'',
+                    semester:'',
+                    experience:'',
+                    website:''
+                }
+
+            }
+            var index = null;
+            function editUser(i) {
+                index = i;
+                var userToEdit = detail[i];
+                for (a in userToEdit) {
+                    if (a !== "id") {
+                        document.getElementById(a).value = userToEdit[a]
+                    }
+        
+                }
+                document.getElementById("updateBtn").style.display = "block"
+                document.getElementById("submitBtn").style.display = "none"
+            };
+            function updateUser() {
+                var details={
+                    university:'',
+                    institute:'',
+                    branch:'',
+                    degree:'',
+                    degreeStatus:'',
+                    cgpa:'',
+                    semester:'',
+                    experience:'',
+                    website:''
+                }
+                //console.log(radio.length)
+                for (a in details){
+                    if( a!=='degreeStatus'){
+                        details[a]=document.getElementById(a).value;
+    
+                    }else if(a ==="degreeStatus") {
+                        for (i = 0; i <radio.length; i++) {
+                            if (radio[i].checked) {
+                                user[a] = radio[i].value
+                            }
+                        }
+                    }
+    
+                }
+                var postUser = new XMLHttpRequest;
+                postUser.open("PUT", "http://localhost:3000/detail/" + detail[i].id);
+                postUser.setRequestHeader("Content-Type","Application/json")
+                postUser.send(JSON.stringify(details));
+                postUser.onreadystatechange = function () {
+                    if (postUser.readyState == 4 && postUser.status == 200) {
+                        detail = JSON.parse(postUser.response);
+                        readdetails();
+                        document.getElementById("updateBtn").style.display = "none"
+                        document.getElementById("submitBtn").style.display = "block"
+                    }
+                }
+        
+            };
+            function deleteUser(i) {
+                var postUser = new XMLHttpRequest;
+                postUser.open("DELETE", "http://localhost:3000/detail/" + detail[i].id);
+                postUser.send();
+                postUser.onreadystatechange = function () {
+                    if (postUser.readyState == 4 && postUser.status == 200) {
+                        detail = JSON.parse(postUser.response);
+                        getdatabase();
+                    }
+                }
+            };
+            getdatabase()
+        
 
     </script>
 </body>

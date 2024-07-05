@@ -8,14 +8,31 @@
     }
   ],
   "users": [],
-  "coustomer": [
+  "coustomer": [],
+  "detail": [
     {
-      "id": "2cec",
-      "name": "",
-      "email": "",
-      "investment": "",
-      "date": "",
-      "active": "on"
+      "id": "9c9f",
+      "university": "",
+      "institute": "",
+      "branch": "",
+      "degree": "",
+      "degreeStatus": "",
+      "cgpa": "",
+      "semester": "",
+      "experience": "",
+      "website": ""
+    },
+    {
+      "id": "90cd",
+      "university": "wer",
+      "institute": "wret",
+      "branch": "",
+      "degree": "",
+      "degreeStatus": "",
+      "cgpa": "2",
+      "semester": "3",
+      "experience": "4",
+      "website": "dfg"
     }
   ]
 }
