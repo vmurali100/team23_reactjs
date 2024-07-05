@@ -68,12 +68,12 @@
             document.querySelector("tbody").innerHTML = ""
             for (i = 0; i < data.length; i++) {
                 var student = data[i];
-                var mytr = document.createElement("tr");
+                var row = document.createElement("tr");
                 for (a in student) {
-                    var mytd = document.createElement("td");
-                    mytd.innerHTML = student[a]
+                    var desk = document.createElement("td");
+                    desk.innerHTML = student[a]
 
-                    mytr.appendChild(mytd);
+                    row.appendChild(desk);
 
                 }
                 var editTD = document.createElement("td");
@@ -88,9 +88,9 @@
                 delbutton.innerHTML = "delete STUDENT";
                 delbutton.setAttribute("onclick", "deletestu(" + i + ")");
                 deltd.appendChild(delbutton)
-                mytr.appendChild(editTD)
-                mytr.appendChild(deltd)
-                document.querySelector("tbody").appendChild(mytr)
+                row.appendChild(editTD)
+                row.appendChild(deltd)
+                document.querySelector("tbody").appendChild(row)
 
 
             }

@@ -31,84 +31,110 @@
 </style>
 
 <body>
-    <div id="first">
-        <div class="one">
-            <h2>Personal Details</h2>
-            <form action="">
-                <label for="">Name:</label>
-                <input type="text" id="name"><br>
-                <label for="">Password:</label>
-                <input type="password" id="password"><br>
-                <label for="">Email:</label>
-                <input type="email" id="email"><br>
-                <label for="">Gender: </label>
-                <input type="radio" name="gender">male
-                <input type="radio" name="gender">female<br>
-                <label for="">contact us: </label>
-                <input type="numbers" id="contact">
-                <h2>
-                    Educational qualifications
-                </h2>
-                <label for="" id="degree">Degree:</label>
-                <select id="degree" name="degree">
-                    <option  name="" value="">Select Degree</option>
-                    <option value="engineering">Engineering</option>
-                    <option value="bscIT">B.Sc. IT</option>
-                    <option value="bscIS">B.Sc. IS</option>
-                    <option value="bscCS">B.Sc. CS</option>
-                </select><br>
+    <body class="container">
 
-                <label for="" id="Engeeneering">Engeeneering:</label>
-                <select id="Engeeneering" name="Engeeneering">
-                    <option value="">Select group</option>
-                    <option value="CSE-AIML">CSE-AIML</option>
-                    <option value="CSE">CSE</option>
-                    <option value="ECE">ECE</option>
-                    <option value="EEE">EEE</option>
-                    <option value="MECH">MECH</option>
-                </select><br>
-
-                <label for="">Hobbie</label>
-                <input type="checkbox" name="hobbie">playing chess
-                <input type="checkbox" name="hobbie">reading
-                <h2>
-                    Address
-
-                </h2>
-                <label for="address"> Address:</label>
-                <textarea id="address" name="address" rows="4" cols="40"
-                    placeholder="Enter your address"></textarea><br>
-
-                <label for="resume">Attach Resume:</label>
-                <input type="file" id="resume" name="resume"><br>
-
-                <button type="button" onclick="create()">submit</button>
-
-
-            </form>
+        <div class="row">
+            <div class="col-4">
+                <form action="">
+                    <label for="">Name:</label>
+                    <input type="text" id="name"><br>
+                    <label for="">Password:</label>
+                    <input type="password" id="password"><br>
+                    <label for="">Email:</label>
+                    <input type="email" id="email"><br>
+                    <label for="">Gender: </label>
+                    <input type="radio" name="gender">male
+                    <input type="radio" name="gender">female<br>
+                    <label for="">contact us: </label>
+                    <input type="numbers" id="contact">
+                    <h2>
+                        Educational qualifications
+                    </h2>
+                    <label for="" id="degree">Degree:</label>
+                    <select id="degree" name="degree">
+                        <option  name="" value="">Select Degree</option>
+                        <option value="engineering">Engineering</option>
+                        <option value="bscIT">B.Sc. IT</option>
+                        <option value="bscIS">B.Sc. IS</option>
+                        <option value="bscCS">B.Sc. CS</option>
+                    </select><br>
+    
+                    <label for="" id="Engeeneering">Engeeneering:</label>
+                    <select id="Engeeneering" name="Engeeneering">
+                        <option value="">Select group</option>
+                        <option value="CSE-AIML">CSE-AIML</option>
+                        <option value="CSE">CSE</option>
+                        <option value="ECE">ECE</option>
+                        <option value="EEE">EEE</option>
+                        <option value="MECH">MECH</option>
+                    </select><br>
+    
+                    <label for="">Hobbie</label>
+                    <input type="checkbox" name="hobbie">playing chess
+                    <input type="checkbox" name="hobbie">reading
+                    <h2>
+                        Address
+    
+                    </h2>
+                    <label for="address"> Address:</label>
+                    <textarea id="address" name="address" rows="4" cols="40"
+                        placeholder="Enter your address"></textarea><br>
+    
+                    <label for="resume">Attach Resume:</label>
+                    <input type="file" id="resume" name="resume"><br>
+    
+                    <button type="button" onclick="create()">submit</button>
+    
+    
+                </form>
+            </div>
+            <div class="col-8">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            
+                            <th>Password</th>
+                            <th>Email</th>
+                            <th>gender</th>
+                            <th>contact</th>
+                            <th>degree</th>
+                            <th>Engeeneering</th>
+                            <th>hobbies</th>
+                            <th>adress</th>
+                            <th>resume</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+    
+                    </tbody>
+                </table>
+            </div>
         </div>
-    </div>
+
+ 
+  
     <script>
         var allRadioBtns = document.getElementsByName("gender");
         var allCheckBoxes = document.getElementsByName("degree");
         var CheckBoxes2 = document.getElementsByName("Engeeneering");
         var CheckBoxes3 = document.getElementsByName("hobbie");
 
-        var users=JSON.parse(localStorage.getItem("users"));
+        
         function create(){
         var user= {
-            name:'',
-            password:'',
-            email:'',
-            gender:'',
-            contact:'',
-            degree:[],
-            Engeeneering:[],
-            hobbies:[],
-            adress:'',
-            resume:''
+            name :'',
+            password :'',
+            email :'',
+            gender :'',
+            contact :'',
+            degree :[],
+            Engeeneering :[],
+            hobbies :[],
+            adress :'',
+            resume :''
         }
-        
+        console.log(user)
         for (a in user) {
             if (a !== "gender" && a !== "degree"  && a !== "Engeeneering" && a !== "hobbies" && a !== "resume" ) {
                 user[a] = document.getElementById(a).value;
@@ -151,11 +177,44 @@
                 fileNameDisplay.textContent = 'No file selected.';
             }
             }
+          
+            }
+            var postUser = new XMLHttpRequest;
+            postUser.open("POST", "http://localhost:3000/data");
+            postUser.setRequestHeader("Content-Type", "application/json");
+            postUser.send(JSON.stringify(user));
+            postUser.onreadystatechange = function () {
+                if (postUser.readyState == 4 && postUser.status == 201) {
+                    console.log("User Added Successfully !!!");
+                }
+                readuser()
         }
-        users.push(user)
-        localStorage.setItem('users', JSON.stringify(users));
-        console.log(users)
     }
+     
+      var data=[];
+      function getdatabase () {
+        var postuser= new XMLHttpRequest;
+        postuser.open("GET","http://localhost:3000/data");
+        postuser.send();
+        postuser.onreadystatechange = function ( ) {
+            if(postuser.readystate ==4 && postuser.status==200){
+                data = JSON.parse(postuser.response);
+            }
+        }
+      }
+       function readuser (){
+        data.forEach ((usr,i) =>{
+        var myTr=document.createElement("tr")
+        for (i in usr){
+            var mytd=document.createElement("td")
+            mytd.innerHTML = usr[a]
+            myTr.appendChild(mytd);
+        }
+
+        })
+       }
+
+    
    
     </script>
 

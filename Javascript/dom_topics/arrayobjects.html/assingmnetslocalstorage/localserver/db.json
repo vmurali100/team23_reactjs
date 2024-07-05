@@ -1,4 +1,21 @@
 {
-  "data": [],
-  "users": []
+  "data": [
+    {
+      "id": "2eec",
+      "fullName": "",
+      "email": "harry@den.com",
+      "password": "1223435345"
+    }
+  ],
+  "users": [],
+  "coustomer": [
+    {
+      "id": "2cec",
+      "name": "",
+      "email": "",
+      "investment": "",
+      "date": "",
+      "active": "on"
+    }
+  ]
 }
