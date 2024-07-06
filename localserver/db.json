@@ -1,0 +1,189 @@
+{
+  "users": [
+    {
+      "id": "770d",
+      "fullName": "hima reddy",
+      "email": "himareddy@gmail.com",
+      "password": "gdfgdfh"
+    },
+    {
+      "id": "522f",
+      "fullName": "Gnanashekar",
+      "email": "shekark509@gmail.com",
+      "password": "dfsdfg"
+    },
+    {
+      "id": "6678",
+      "fullName": "naveen kumar",
+      "email": "shekark509@gmail.com",
+      "password": "dfdgg"
+    }
+  ],
+  "persons": [
+    {
+      "id": "0605",
+      "Email": "shekark509@gmail.com",
+      "Password": "treyey",
+      "Gender": "Male",
+      "Select": [
+        "HTML",
+        "JavaScript"
+      ],
+      "state": "Karnataka",
+      "dob": "2024-07-20"
+    },
+    {
+      "id": "a7df",
+      "Email": "user/jachu.1212@gmail.com",
+      "Password": "rtttretrt",
+      "Gender": "Male",
+      "Select": [
+        "HTML",
+        "JavaScript",
+        "CSS"
+      ],
+      "state": "TamilNadu",
+      "dob": "2024-07-18"
+    }
+  ],
+  "customers": [
+    {
+      "id": "26fb",
+      "FirstName": "hima",
+      "LastName": "reddy",
+      "Email": "himareddy@gmail.com",
+      "Phone": "08217083919",
+      "Address": "dgrdhght",
+      "City": "bangaloret",
+      "State": "Kerala",
+      "ZipCode": "560062",
+      "Website": "Shekar",
+      "Hosting": "Yes",
+      "ProjectDescription": "dfrgrgfdhdfh"
+    },
+    {
+      "id": "adad",
+      "FirstName": "shekar",
+      "LastName": "shekar",
+      "Email": "shekark509@gmail.com",
+      "Phone": "08217083919",
+      "Address": "dgrdhgh",
+      "City": "bangalore",
+      "State": "Karnataka",
+      "ZipCode": "560062",
+      "Website": "dp",
+      "Hosting": "Yes",
+      "ProjectDescription": "ddsfdf"
+    }
+  ],
+  "students": [
+    {
+      "id": "gdfgdfgrt",
+      "Name": "fghfgfht",
+      "Course": "ffhdher",
+      "Branch": "dfhdhdfg",
+      "RollNo": "dhdhdfhgfg",
+      "Email": "dhdhdhfsg",
+      "Username": "dhdhhfsg",
+      "About": "ettet",
+      "Password": "etttt"
+    }
+  ],
+  "buyers": [
+    {
+      "id": "23e7",
+      "customerName": "Customer USA",
+      "partName": "Nozzle",
+      "partPrintNumber": "PN-1234",
+      "revision": "E",
+      "partNumber": "PN-1234",
+      "dateOfEstimate": "3/16/2020",
+      "estimatorName": "fjhg",
+      "buyerName": "dfff",
+      "estimateBaseQuantity": "100",
+      "scrapPercentage": "3",
+      "costs": [
+        "Material",
+        "Tooling",
+        "Labor",
+        "Non-Machining"
+      ]
+    },
+    {
+      "id": "372d",
+      "customerName": "Customer USA",
+      "partName": "Nozzle",
+      "partPrintNumber": "PN-1234",
+      "revision": "E",
+      "partNumber": "PN-1234",
+      "dateOfEstimate": "3/16/2020",
+      "estimatorName": "fjhg",
+      "buyerName": "dfff",
+      "estimateBaseQuantity": "100",
+      "scrapPercentage": "3",
+      "costs": [
+        "Material",
+        "Tooling",
+        "Labor",
+        "Non-Machining"
+      ]
+    },
+    {
+      "id": "3f6d",
+      "customerName": "Customer USA",
+      "partName": "Nozzle",
+      "partPrintNumber": "PN-1234",
+      "revision": "E",
+      "partNumber": "PN-1234",
+      "dateOfEstimate": "3/16/2020",
+      "estimatorName": "fjhg",
+      "buyerName": "guiyooi",
+      "estimateBaseQuantity": "100",
+      "scrapPercentage": "3",
+      "costs": [
+        "Material",
+        "Tooling",
+        "Labor",
+        "Non-Machining"
+      ]
+    },
+    {
+      "id": "f1cf",
+      "customerName": "Customer USA",
+      "partName": "Nozzle",
+      "partPrintNumber": "PN-1234",
+      "revision": "E",
+      "partNumber": "PN-1234",
+      "dateOfEstimate": "3/16/2020",
+      "estimatorName": "fjhg",
+      "buyerName": "dfff",
+      "estimateBaseQuantity": "100",
+      "scrapPercentage": "3",
+      "costs": [
+        "Material",
+        "Tooling",
+        "Labor",
+        "Non-Machining"
+      ]
+    },
+    {
+      "id": "1f8d",
+      "customerName": "Customer USA",
+      "partName": "Nozzle",
+      "partPrintNumber": "PN-1234",
+      "revision": "E",
+      "partNumber": "PN-1234",
+      "dateOfEstimate": "3/16/2020",
+      "estimatorName": "fjhg",
+      "buyerName": "guiyooi",
+      "estimateBaseQuantity": "100",
+      "scrapPercentage": "3",
+      "costs": [
+        "Material",
+        "Tooling",
+        "Labor",
+        "Non-Machining"
+      ]
+    }
+  ]
+}

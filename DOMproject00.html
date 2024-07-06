@@ -173,14 +173,10 @@
                     document.getElementById(a).value = "";
                 } else {
                     clearCheckBox();
-                    clearRodioBTN();
+                    for (i = 0; i < allRadioBtns.length; i++) {
+                        allRadioBtns[i].checked = false;
+                    }
                 }
-            }
-        }
-
-        function clearRodioBTN() {
-            for (i = 0; i < allRadioBtns.length; i++) {
-                allRadioBtns[i].checked = false;
             }
         }
 
@@ -201,21 +197,19 @@
                 }
                 var edittd = document.createElement("td");
                 var editbtn = document.createElement("button");
-                edittd.appendChild(editbtn);
                 editbtn.innerHTML = "Edit";
                 editbtn.setAttribute("onclick", "EditUser(" + i + ")");
-                tr.appendChild(edittd);
-
                 editbtn.setAttribute("class", "btn btn-warning");
+                edittd.appendChild(editbtn);
+                tr.appendChild(edittd);
 
                 var deltd = document.createElement("td");
                 var delbtn = document.createElement("button");
-                deltd.appendChild(delbtn);
                 delbtn.innerHTML = "Delete";
                 delbtn.setAttribute("onclick", "DeleteUser(" + i + ")");
-                tr.appendChild(deltd);
-
                 delbtn.setAttribute("class", "btn btn-danger");
+                deltd.appendChild(delbtn);
+                tr.appendChild(deltd);
 
                 document.querySelector("tbody").appendChild(tr);
             });
@@ -255,7 +249,7 @@
                 Gender: "",
                 Select: [],
                 state: "",
-                dob: "",          
+                dob: "",
             }
 
             for (a in user) {

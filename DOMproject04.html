@@ -26,12 +26,16 @@
             <div class="col">
                 <form>
                     <div class="mb-3">
-                        <label for="Email" class="form-label">Email address</label>
-                        <input type="email" class="form-control" id="Email" aria-describedby="emailHelp">
+                        <label for="name" class="form-label">Name</label>
+                        <input type="text" class="form-control" id="name">
                     </div>
                     <div class="mb-3">
                         <label for="Password" class="form-label">Password</label>
                         <input type="password" class="form-control" id="Password">
+                    </div>
+                    <div class="mb-3">
+                        <label for="Email" class="form-label">Email address</label>
+                        <input type="email" class="form-control" id="Email" aria-describedby="emailHelp">
                     </div>
                     <div class="mb-3">
                         <label for="Gender" class="form-label">Gender</label>
@@ -55,47 +59,68 @@
                         </div>
                     </div>
                     <div class="mb-3">
-                        <label for="exampleInputPassword1" class="form-label">Subjects</label>
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="HTML" name="Select">
-                            <label class="form-check-label" for="flexCheckDefault">
-                                HTML
-                            </label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="JavaScript" name="Select">
-                            <label class="form-check-label" for="flexCheckChecked">
-                                JavaScript
-                            </label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="CSS" name="Select">
-                            <label class="form-check-label" for="flexCheckChecked">
-                                CSS
-                            </label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="JsReact" name="Select">
-                            <label class="form-check-label" for="flexCheckChecked">
-                                JsReact
-                            </label>
-                        </div>
+                        <label for="Name" class="form-label">Contact#</label>
+                        <input type="number" class="form-control" id="contact" required>
                     </div>
                     <div class="mb-3">
-                        <label class="form-label">Select State</label>
-                        <select class="form-select" id="state">
-                            <option selected>Select State</option>
-                            <option value="Karnataka">Karnataka</option>
-                            <option value="TamilNadu">TamilNadu</option>
-                            <option value="Kerala">Kerala</option>
-                            <option value="AP">AP</option>
+                        <label class="form-label">deggroup</label>
+                        <select class="form-select" id="degree">
+                            <option selected>Select group</option>
+                            <option value="Engineering">Engineering</option>
+                            <option value="Medicine">Medicine</option>
+                            <option value="Business">Business</option>
+                            <option value="Science">Science</option>
                         </select>
                     </div>
                     <div class="mb-3">
-                        <label class="form-label">Date of birth</label>
-                        <input type="date" class="form-control" id="dob">
+                        <label class="form-label">enggroup</label>
+                        <select class="form-select" id="enginer">
+                            <option selected>Select State</option>
+                            <option value="Mechanical Engineering">Mechanical Engineering</option>
+                            <option value="Electrical Engineering">Electrical Engineering</option>
+                            <option value="Civil Engineering">Civil Engineering</option>
+                            <option value="Computer Engineering">Computer Engineering</option>
+                        </select>
                     </div>
-                    <button type="button" onclick="creatUser()" id="submitbtn" class="btn btn-primary">Submit</button>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">Hobbies</label>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="Playing" name="Hobbies">
+                            <label class="form-check-label" for="flexCheckDefault">
+                                Playing
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="Reading" name="Hobbies">
+                            <label class="form-check-label" for="flexCheckChecked">
+                                Reading
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="Excersing" name="Hobbies">
+                            <label class="form-check-label" for="flexCheckChecked">
+                                Excersing
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="singing" name="Hobbies">
+                            <label class="form-check-label" for="flexCheckChecked">
+                                singing
+                            </label>
+                        </div>
+                        <div class="mb-3">
+                            <h5>Adress</h5>
+                            <textarea name="" id="address" rows="3"></textarea>
+                            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                        </div>
+                        <div class="mb-3">
+                            <div class="form-group">
+                              <label for="FileUpload">Upload File</label>
+                              <input type="file" class="form-control-file" id="FileUpload">
+                            </div>
+                          </div>
+                    </div>
+                    <button type="button" onclick="creatUser()" id="submitbtn">Submit</button>
                     <button type="button" onclick="updateUser()" id="updatebtn" class="btn btn-primary" style="display:none;">Update</button>
                 </form>
             </div>
@@ -103,12 +128,16 @@
                 <table class="table table-bordered border-primary">
                     <thead>
                         <tr>
-                            <th>Email</th>
+                            <th>Name</th>
                             <th>Password</th>
+                            <th>Email</th>
                             <th>Gender</th>
-                            <th>Select</th>
-                            <th>States</th>
-                            <th>DOB</th>
+                            <th>Contact</th>
+                            <th>degree</th>
+                            <th>enginer</th>
+                            <th>Hobbies</th>
+                            <th>Adress</th>
+                            <th>Upload file</th>
                             <th>Edit</th>
                             <th>Delete</th>
                         </tr>
@@ -121,21 +150,25 @@
     </div>
     <script>
         var allRadioBtns = document.getElementsByName("Gender");
-        var allCheckBoxes = document.getElementsByName("Select");
+        var allCheckBoxes = document.getElementsByName("Hobbies");
         var users = JSON.parse(localStorage.getItem("users")) || [];
 
         function creatUser() {
             var user = {
-                Email: "",
+                name: "",
                 Password: "",
+                Email: "",
                 Gender: "",
-                Select: [],
-                state: "",
-                dob: "",
+                contact: "",
+                degree: "",
+                enginer: "",
+                Hobbies: [],
+                address: "",
+                FileUpload: "",
             }
 
             for (a in user) {
-                if (a !== "Gender" && a !== "Select") {
+                if (a !== "Gender" && a !== "Hobbies") {
                     user[a] = document.getElementById(a).value;
                 } else if (a === "Gender") {
                     for (i = 0; i < allRadioBtns.length; i++) {
@@ -143,7 +176,7 @@
                             user[a] = allRadioBtns[i].value;
                         }
                     }
-                } else if (a === "Select") {
+                } else if (a === "Hobbies") {
                     for (i = 0; i < allCheckBoxes.length; i++) {
                         if (allCheckBoxes[i].checked) {
                             user[a].push(allCheckBoxes[i].value);
@@ -160,27 +193,27 @@
 
         function clearForm() {
             var user = {
-                Email: "",
+                name: "",
                 Password: "",
+                Email: "",
                 Gender: "",
-                Select: [],
-                state: "",
-                dob: "",
+                contact: "",
+                degree: "",
+                enginer: "",
+                Hobbies: [],
+                address: "",
+                FileUpload: "",
             }
 
             for (a in user) {
-                if (a !== "Gender" && a !== "Select") {
+                if (a !== "Gender" && a !== "Hobbies") {
                     document.getElementById(a).value = "";
                 } else {
                     clearCheckBox();
-                    clearRodioBTN();
+                    for (i = 0; i < allRadioBtns.length; i++) {
+                        allRadioBtns[i].checked = false;
+                    }
                 }
-            }
-        }
-
-        function clearRodioBTN() {
-            for (i = 0; i < allRadioBtns.length; i++) {
-                allRadioBtns[i].checked = false;
             }
         }
 
@@ -201,21 +234,19 @@
                 }
                 var edittd = document.createElement("td");
                 var editbtn = document.createElement("button");
-                edittd.appendChild(editbtn);
                 editbtn.innerHTML = "Edit";
                 editbtn.setAttribute("onclick", "EditUser(" + i + ")");
-                tr.appendChild(edittd);
-
                 editbtn.setAttribute("class", "btn btn-warning");
+                edittd.appendChild(editbtn);
+                tr.appendChild(edittd);
 
                 var deltd = document.createElement("td");
                 var delbtn = document.createElement("button");
-                deltd.appendChild(delbtn);
                 delbtn.innerHTML = "Delete";
                 delbtn.setAttribute("onclick", "DeleteUser(" + i + ")");
-                tr.appendChild(deltd);
-
                 delbtn.setAttribute("class", "btn btn-danger");
+                deltd.appendChild(delbtn);
+                tr.appendChild(deltd);
 
                 document.querySelector("tbody").appendChild(tr);
             });
@@ -225,7 +256,7 @@
             index = i;
             var usrToBeEdit = users[i];
             for (a in usrToBeEdit) {
-                if (a !== "Gender" && a !== "Select") {
+                if (a !== "Gender" && a !== "Hobbies") {
                     document.getElementById(a).value = usrToBeEdit[a];
                 } else if (a == "Gender") {
                     for (var j = 0; j < allRadioBtns.length; j++) {
@@ -233,9 +264,9 @@
                             allRadioBtns[j].checked = true;
                         }
                     }
-                } else if (a == "Select") {
+                } else if (a == "Hobbies") {
                     clearCheckBox();
-                    usrToBeEdit.Select.forEach((val) => {
+                    usrToBeEdit.Hobbies.forEach((val) => {
                         for (var k = 0; k < allCheckBoxes.length; k++) {
                             if (allCheckBoxes[k].value == val) {
                                 allCheckBoxes[k].checked = true;
@@ -250,16 +281,20 @@
 
         function updateUser() {
             var user = {
-                Email: "",
+                name: "",
                 Password: "",
+                Email: "",
                 Gender: "",
-                Select: [],
-                state: "",
-                dob: "",          
+                contact: "",
+                degree: "",
+                enginer: "",
+                Hobbies: [],
+                address: "",
+                FileUpload: "",
             }
 
             for (a in user) {
-                if (a !== "Gender" && a !== "Select") {
+                if (a !== "Gender" && a !== "Hobbies") {
                     user[a] = document.getElementById(a).value;
                 } else if (a == "Gender") {
                     for (i = 0; i < allRadioBtns.length; i++) {
@@ -267,7 +302,7 @@
                             user[a] = allRadioBtns[i].value;
                         }
                     }
-                } else if (a == "Select") {
+                } else if (a == "Hobbies") {
                     for (i = 0; i < allCheckBoxes.length; i++) {
                         if (allCheckBoxes[i].checked) {
                             user[a].push(allCheckBoxes[i].value);
