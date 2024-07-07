@@ -185,5 +185,123 @@
         "Non-Machining"
       ]
     }
+  ],
+  "techstudents": [
+    {
+      "id": "77ee",
+      "university": "gfgfhgf",
+      "institute": "ghgfjgf",
+      "branch": "CSE",
+      "degree": "M.Tech",
+      "degreeStatus": "Persuing",
+      "avgCpi": "fhghgd",
+      "semester": "3",
+      "experience": "fhhhgh",
+      "website": "fhhhhhdfe"
+    },
+    {
+      "id": "b72b",
+      "university": "gfgfhgf",
+      "institute": "ghgfjgf",
+      "branch": "CSE",
+      "degree": "B.Tech",
+      "degreeStatus": "Persuing",
+      "avgCpi": "fhghgd",
+      "semester": "3",
+      "experience": "fhhhgh",
+      "website": "fhhhhhdfe"
+    },
+    {
+      "id": "83c4",
+      "university": "gfgfhgf",
+      "institute": "ghgfjgf",
+      "branch": "IT",
+      "degree": "M.Tech",
+      "degreeStatus": "Persuing",
+      "avgCpi": "fhghgd",
+      "semester": "3",
+      "experience": "fhhhgh",
+      "website": "fhhhhhdfe"
+    },
+    {
+      "id": "ff3e",
+      "university": "gfgfhgf",
+      "institute": "ghgfjgf",
+      "branch": "ECE",
+      "degree": "M.Tech",
+      "degreeStatus": "Persuing",
+      "avgCpi": "fhghgd",
+      "semester": "2",
+      "experience": "fhhhgh",
+      "website": "wwww"
+    },
+    {
+      "id": "e54e",
+      "university": "gfgfhgf",
+      "institute": "ghgfjgf",
+      "branch": "IT",
+      "degree": "B.Tech",
+      "degreeStatus": "Persuing",
+      "avgCpi": "fhghgd",
+      "semester": "2",
+      "experience": "fhhhgh",
+      "website": "wwww"
+    }
+  ],
+  "users1": [
+    {
+      "id": "99e1",
+      "name": "hima reddy",
+      "Password": "hhfgfghh",
+      "Email": "himareddy@gmail.com",
+      "Gender": "Male",
+      "contact": "8217083919",
+      "degree": "Engineering",
+      "enginer": "Electrical Engineering",
+      "Hobbies": [
+        "Playing",
+        "Reading"
+      ],
+      "address": "dggdfghdfh",
+      "FileUpload": "C:\\fakepath\\sbic_statement_23_may_2024_06_44_43.pdf"
+    }
+  ],
+  "users2": [
+    {
+      "id": "4ade",
+      "Name": "hima reddy",
+      "Email": "himareddy@gmail.com",
+      "Investment": "65461",
+      "DateOfJoin": "2024-07-13",
+      "Active": true,
+      "Contact": "8217083919"
+    },
+    {
+      "id": "f239",
+      "Name": "hima reddy",
+      "Email": "himareddy@gmail.com",
+      "Investment": "65444",
+      "DateOfJoin": "2024-07-06",
+      "Active": true,
+      "Contact": "8217083919"
+    },
+    {
+      "id": "eb6d",
+      "Name": "hima reddy",
+      "Email": "himareddy@gmail.com",
+      "Investment": "451121",
+      "DateOfJoin": "2024-07-14",
+      "Active": true,
+      "Contact": "8217083919"
+    },
+    {
+      "id": "53d9",
+      "Name": "hima reddy",
+      "Email": "himareddy@gmail.com",
+      "Investment": "26464",
+      "DateOfJoin": "",
+      "Active": true,
+      "Contact": "8217083919"
+    }
   ]
 }

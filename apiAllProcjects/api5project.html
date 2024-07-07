@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        label.form-label {
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar bg-primary" data-bs-theme="dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Navbar</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <form>
+                    <div class="mb-3">
+                        <label for="university" class="form-label">University:</label>
+                        <input type="text" id="university" name="university" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label for="institute" class="form-label">Institute:</label>
+                        <input type="text" id="institute" name="institute" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label for="branch" class="form-label">Branch:</label>
+                        <select id="branch" name="branch" class="form-select">
+                            <option value="">-- select --</option>
+                            <option value="CSE">CSE</option>
+                            <option value="IT">IT</option>
+                            <option value="ECE">ECE</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="degree" class="form-label">Degree:</label>
+                        <select id="degree" name="degree" class="form-select">
+                            <option value="">-- select --</option>
+                            <option value="B.Tech">B.Tech</option>
+                            <option value="M.Tech">M.Tech</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Degree Status</label>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="degreeStatus" value="Persuing" id="persuing">
+                            <label class="form-check-label" for="persuing">
+                                Persuing
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="degreeStatus" value="completed" id="completed">
+                            <label class="form-check-label" for="completed">
+                                Completed
+                            </label>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="avgCpi" class="form-label">Average CPI:</label>
+                        <input type="text" id="avgCpi" name="avgCpi" class="form-control">
+                        <label for="semester" class="form-label">Upto:</label>
+                        <input type="number" id="semester" name="semester" class="form-control">
+                        <label for="semester" class="form-label">Semester</label>
+                    </div>
+                    <div class="mb-3">
+                        <label for="experience" class="form-label">Experience:</label>
+                        <input type="text" id="experience" name="experience" class="form-control">
+                        <label for="experience" class="form-label">Years</label>
+                    </div>
+                    <div class="mb-3">
+                        <label for="website" class="form-label">Your Website Or Blog:</label>
+                        <input type="url" id="website" name="website" placeholder="http://" class="form-control">
+                    </div>
+
+                    <button type="button" onclick="createStudent()" id="submitbtn" class="btn btn-primary">Submit</button>
+                    <button type="button" onclick="updateStudent()" id="updatebtn" class="btn btn-primary" style="display:none;">Update</button>
+                </form>
+            </div>
+            <div class="col">
+                <table class="table table-bordered border-primary">
+                    <thead>
+                        <tr>
+                            <th>University</th>
+                            <th>Institute</th>
+                            <th>Branch</th>
+                            <th>Degree</th>
+                            <th>Degree Status</th>
+                            <th>Average CPI</th>
+                            <th>Semester</th>
+                            <th>Experience</th>
+                            <th>Website</th>
+                            <th>Edit</th>
+                            <th>Delete</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script>
+        var allRadioBtns = document.getElementsByName("degreeStatus");
+        var techstudents = [];
+        var index = null;
+
+        function createStudent() {
+            var student = {
+                university: "",
+                institute: "",
+                branch: "",
+                degree: "",
+                degreeStatus: "",
+                avgCpi: "",
+                semester: "",
+                experience: "",
+                website: "",
+            };
+
+            for (a in student) {
+                if (a !== "degreeStatus") {
+                    student[a] = document.getElementById(a).value;
+                } else {
+                    for (var i = 0; i < allRadioBtns.length; i++) {
+                        if (allRadioBtns[i].checked) {
+                            student[a] = allRadioBtns[i].value;
+                        }
+                    }
+                }
+            }
+
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", "http://localhost:3000/techstudents/", true);
+            xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+            xhr.send(JSON.stringify(student));
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4 && xhr.status == 201) {
+                    console.log("Student added successfully!");
+                    getStudents();
+                    clearStudent();
+                }
+            };
+        }
+
+        function getStudents() {
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET", "http://localhost:3000/techstudents/", true);
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    techstudents = JSON.parse(xhr.responseText);
+                    readStudents();
+                }
+            };
+            xhr.send();
+        }
+
+        function clearStudent() {
+            var student = {
+                university: "",
+                institute: "",
+                branch: "",
+                degree: "",
+                pursuing: "",
+                completed: "",
+                avgCpi: "",
+                semester: "",
+                experience: "",
+                website: "",
+            };
+
+            for (a in student) {
+                if (a !== "degreeStatus") {
+                    document.getElementById(a).value = "";
+                } else {
+                    for (var i = 0; i < allRadioBtns.length; i++) {
+                        allRadioBtns[i].checked = false;
+                    }
+                }
+            }
+        }
+
+        function readStudents() {
+            document.querySelector("tbody").innerHTML = "";
+            techstudents.forEach((usr, i) => {
+                var tr = document.createElement("tr");
+                for (a in usr) {
+                    var td = document.createElement("td");
+                    td.innerHTML = usr[a];
+                    tr.appendChild(td);
+                }
+                var edittd = document.createElement("td");
+                var editbtn = document.createElement("button");
+                editbtn.innerHTML = "Edit";
+                editbtn.setAttribute("onclick", "editStudent(" + i + ")");
+                editbtn.setAttribute("class", "btn btn-warning");
+                edittd.appendChild(editbtn);
+                tr.appendChild(edittd);
+
+                var deltd = document.createElement("td");
+                var delbtn = document.createElement("button");
+                delbtn.innerHTML = "Delete";
+                delbtn.setAttribute("onclick", "deleteStudent(" + i + ")");
+                delbtn.setAttribute("class", "btn btn-danger");
+                deltd.appendChild(delbtn);
+                tr.appendChild(deltd);
+
+                document.querySelector("tbody").appendChild(tr);
+            });
+        }
+
+        function editStudent(i) {
+            index = i;
+            var usrToBeEdit = techstudents[i];
+            for (a in usrToBeEdit) {
+                if (a !== "degreeStatus") {
+                    document.getElementById(a).value = usrToBeEdit[a];
+                } else {
+                    for (var j = 0; j < allRadioBtns.length; j++) {
+                        if (allRadioBtns[j].value == usrToBeEdit.degreeStatus) {
+                            allRadioBtns[j].checked = true;
+                        }
+                    }
+                }
+            }
+            document.getElementById("updatebtn").style.display = "block";
+            document.getElementById("submitbtn").style.display = "none";
+        }
+
+        function updateStudent() {
+            var student = {
+                university: "",
+                institute: "",
+                branch: "",
+                degree: "",
+                degreeStatus: "",
+                avgCpi: "",
+                semester: "",
+                experience: "",
+                website: "",
+            };
+
+            for (a in student) {
+                if (a !== "degreeStatus") {
+                    student[a] = document.getElementById(a).value;
+                } else {
+                    for (var i = 0; i < allRadioBtns.length; i++) {
+                        if (allRadioBtns[i].checked) {
+                            student[a] = allRadioBtns[i].value;
+                        }
+                    }
+                }
+            }
+
+            var xhr = new XMLHttpRequest();
+            xhr.open("PUT", "http://localhost:3000/techstudents/" + techstudents[index].id, true);
+            xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+            xhr.send(JSON.stringify(student));
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    console.log("Student updated successfully!");
+                    getStudents();
+                    clearStudent();
+                    document.getElementById("updatebtn").style.display = "none";
+                    document.getElementById("submitbtn").style.display = "block";
+                }
+            };
+        }
+
+        function deleteStudent(i) {
+            var xhr = new XMLHttpRequest();
+            xhr.open("DELETE", "http://localhost:3000/techstudents/" + techstudents[i].id, true);
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    console.log("Student deleted successfully!");
+                    getStudents();
+                }
+            };
+            xhr.send();
+        }
+
+        getStudents();
+    </script>
+</body>
+
+</html>

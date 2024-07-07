@@ -80,8 +80,8 @@
     </div>
 
     <script>
-        var users = JSON.parse(localStorage.getItem("users")) || [];
-        var index;
+        var users2 = [];
+        var index = null;
 
         function createUser() {
             var user = {
@@ -96,10 +96,29 @@
                 user[a] = document.getElementById(a).value;
             }
             user.Active = document.getElementById("Active").checked;
-            users.push(user);
-            localStorage.setItem("users", JSON.stringify(users));
-            readUsers();
-            clearForm();
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", "http://localhost:3000/users2", true);
+            xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+            xhr.send(JSON.stringify(user));
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4 && xhr.status == 201) {
+                    console.log("Student added successfully!");
+                    getUser();
+                    clearForm();
+                }
+            };
+        }
+
+        function getUser() {
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET", "http://localhost:3000/users2", true);
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    users2 = JSON.parse(xhr.responseText);
+                    readUsers();
+                }
+            };
+            xhr.send();
         }
 
         function clearForm() {
@@ -119,7 +138,7 @@
  
         function readUsers() {
             document.querySelector("tbody").innerHTML = "";
-            users.forEach((usr, i) => {
+            users2.forEach((usr, i) => {
                 var tr = document.createElement("tr");
                 for (var a in usr) {
                     var td = document.createElement("td");
@@ -148,7 +167,7 @@
 
         function editUser(i) {
             index = i;
-            var usrToBeEdit = users[i];
+            var usrToBeEdit = users2[i];
             for (var a in usrToBeEdit) {
                 document.getElementById(a).value = usrToBeEdit[a];
             }
@@ -170,21 +189,34 @@
                 user[a] = document.getElementById(a).value;
             }
             user.Active = document.getElementById("Active").checked;
-            users[index] = user;
-            localStorage.setItem('users', JSON.stringify(users));
-            readUsers();
-            clearForm();
-            document.getElementById("updatebtn").style.display = "none";
-            document.getElementById("submitbtn").style.display = "block";
+            var xhr = new XMLHttpRequest();
+            xhr.open("PUT", "http://localhost:3000/users2/" + users2[index].id, true);
+            xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+            xhr.send(JSON.stringify(user));
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    console.log("Student updated successfully!");
+                    getUser();
+                    clearForm();
+                    document.getElementById("updatebtn").style.display = "none";
+                    document.getElementById("submitbtn").style.display = "block";
+                }
+            };
         }
 
         function deleteUser(i) {
-            users.splice(i, 1);
-            localStorage.setItem('users', JSON.stringify(users));
-            readUsers();
+            var xhr = new XMLHttpRequest();
+            xhr.open("DELETE", "http://localhost:3000/users2/" + users2[i].id, true);
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    console.log("Student deleted successfully!");
+                    getUser();
+                }
+            };
+            xhr.send();
         }
 
-        readUsers();
+        getUser();
     </script>
 </body>
 
