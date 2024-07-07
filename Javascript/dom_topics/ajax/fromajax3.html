@@ -35,6 +35,7 @@
     </style>
 </head>
 <body>
+   <div style="display:flex">
     <div class="container">
         <h1>Contact Us Today!</h1>
         <div class="form-group">
@@ -85,15 +86,42 @@
                 <textarea name="projectDescription" id="projectDescription" rows="5" required></textarea><br>
             
            
-            <button type="button" onclick="create()">Send</button>
+            <button type="button" id="submitBtn" onclick="create()">Send</button>
+            <button type="button" style="display: none" id="upadteBtn" onclick="updateUser()">update</button>
         </form>
     </div>
+   
     </div>
+    <div>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>firstName</th>
+                    <th>lastName</th>
+                    <th>email</th>
+                    <th>phone</th>
+                    <th>adress</th>
+                    <th>city</th>
+                    <th>state</th>
+                    <th>zip</th>
+                    <th>website</th>
+                    <th>hosting</th>
+                    <th>projectDescription</th>
+                    <th>edit</th>
+                    <th>delete</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
+   </div>
     <script>
         var radio=document.getElementsByName("hosting");
-        var users=JSON.parse(localStorage.getItem("users"));
+       
         function create(){
-            var user={
+            var db={
                 firstName:'',
                 lastName:'',
                 email:'',
@@ -106,26 +134,165 @@
                 hosting:'',
                 projectDescription:''
             }
-            console.log(user)
-            console.log(document.getElementById('lastName').value)
-            for (a in user){
-                if( a!=="hosting"){
-                    user[a]=document.getElementById(a).value;
+           
+            for (a in db){
+                if( a !=="hosting"){
+                    db[a]=document.getElementById(a).value;
 
                 }else if(a ==="hosting") {
                     for (i = 0; i < radio.length; i++) {
                         if (radio[i].checked) {
-                            user[a] = radio[i].value
+                            db[a] = radio[i].value
                         }
                     }
                 }
 
             }
-            users.push(user)
-            localStorage.setItem('users', JSON.stringify(users))
+            var postUser=new XMLHttpRequest;
+            postUser.open("POST", "http://localhost:3000/dbs");
+            postUser.setRequestHeader("Content-Type","application/json")
+            postUser.send(JSON.stringify(db));
+            postUser.onreadystatechange =function(){
+                if( postUser.readyState ==4 && postUser.status==201){
+                    console.log("db added sucessfully")
+                }
+    
+            }
+            clearuser()
+ 
+         }
+         var dbs= [];
+         function getdatabase (){
+             var postuser= new XMLHttpRequest;
+             postuser.open("GET", "http://localhost:3000/dbs");
+            
+             postuser.send();
+             postuser.onreadystatechange =function(){
+                 if( postuser.readyState ==4 && postuser.status==200){
+                     dbs=JSON.parse(postuser.response)
+                     
+                 }
+                 readdetails()
+             }
+         }
             //console.log(user)
+        function clearuser(){
+            var db={
+                firstName:'',
+                lastName:'',
+                email:'',
+                phone:'',
+                adress:'',
+                city:'',
+                state:'',
+                zip:'',
+                website:'',
+                hosting:'',
+                projectDescription:''
+            }
+
         }
-       create()
+      
+        function readdetails() {
+            dbs.forEach((usr, i) => {
+                var myTr = document.createElement("tr")
+                for (a in usr) {
+                    var myTd = document.createElement("td");
+                    myTd.innerHTML = usr[a]
+                    myTr.appendChild(myTd)
+                }
+                // Edit Button
+                var editTd = document.createElement("td");
+                var editButton = document.createElement("button");
+                editButton.setAttribute("onclick", "editUser(" + i + ")")
+                editButton.setAttribute("class", "btn btn-warning")
+                editButton.innerHTML = "Edit User"
+                editTd.appendChild(editButton);
+                // Delete Button 
+                var deleteTd = document.createElement("td");
+                var deleteButton = document.createElement("button");
+                deleteButton.setAttribute("onclick", "deleteUser(" + i + ")");
+                deleteButton.innerHTML = "Delete User"
+                deleteTd.appendChild(deleteButton);
+                deleteButton.setAttribute("class", "btn btn-danger")
+    
+                myTr.appendChild(editTd);
+                myTr.appendChild(deleteTd)
+                document.querySelector("tbody").appendChild(myTr)
+            })
+        };
+      
+        var index = null;
+        function editUser(i) {
+            index = i;
+            var userToEdit = dbs[i];
+            for (a in userToEdit) {
+                if (a !== "id") {
+                    document.getElementById(a).value = userToEdit[a]
+                }
+    
+            }
+            document.getElementById("updateBtn").style.display = "block"
+            document.getElementById("submitBtn").style.display = "none"
+        };
+        function updateUser() {
+            var db={
+                firstName:'',
+                lastName:'',
+                email:'',
+                phone:'',
+                adress:'',
+                city:'',
+                state:'',
+                zip:'',
+                website:'',
+                hosting:'',
+                projectDescription:''
+            }
+           
+            for (a in db){
+                if( a !=="hosting"){
+                    db[a]=document.getElementById(a).value;
+
+                }else if(a ==="hosting") {
+                    for (i = 0; i < radio.length; i++) {
+                        if (radio[i].checked) {
+                            db[a] = radio[i].value
+                        }
+                    }
+                }
+
+            }
+            var postUser = new XMLHttpRequest;
+            postUser.open("PUT", "http://localhost:3000/dbs/" + dbs[i].id);
+            postUser.setRequestHeader("Content-Type","Application/json")
+            postUser.send(JSON.stringify(db));
+            postUser.onreadystatechange = function () {
+                if (postUser.readyState == 4 && postUser.status == 200) {
+                    dbs = JSON.parse(postUser.response);
+                    readdetails();
+                    document.getElementById("updateBtn").style.display = "none"
+                    document.getElementById("submitBtn").style.display = "block"
+                }
+            }
+    
+        };
+        function deleteUser(i) {
+            var postUser = new XMLHttpRequest;
+            postUser.open("DELETE", "http://localhost:3000/dbs/" + dbs[i].id);
+            postUser.send();
+            postUser.onreadystatechange = function () {
+                if (postUser.readyState == 4 && postUser.status == 200) {
+                    dbs = JSON.parse(postUser.response);
+                    getdatabase();
+                }
+            }
+        };
+        getdatabase()
+    
+
+        
+     
     </script>
 
 </body>

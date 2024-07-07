@@ -11,28 +11,18 @@
   "coustomer": [],
   "detail": [
     {
-      "id": "9c9f",
-      "university": "",
-      "institute": "",
-      "branch": "",
-      "degree": "",
-      "degreeStatus": "",
-      "cgpa": "",
-      "semester": "",
-      "experience": "",
-      "website": ""
-    },
-    {
-      "id": "90cd",
+      "id": "b614",
       "university": "wer",
       "institute": "wret",
-      "branch": "",
-      "degree": "",
-      "degreeStatus": "",
-      "cgpa": "2",
+      "branch": "CSE",
+      "degree": "BE",
+      "degreeStatus": "pursuing",
+      "cgpa": "3",
       "semester": "3",
-      "experience": "4",
-      "website": "dfg"
+      "experience": "3",
+      "website": "2fweregtr"
     }
-  ]
+  ],
+  "dbs":[],
+  "databases":[]
 }
