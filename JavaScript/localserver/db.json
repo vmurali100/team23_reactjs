@@ -45,5 +45,35 @@
       "Website": "google.com",
       "ProjectDescription": "It's Good."
     }
-  ]
+  ],
+  "users1": [
+    {
+      "id": "4c1c",
+      "name": "",
+      "Password": "",
+      "Email": "",
+      "Gender": "",
+      "contact": "",
+      "degree": "Select group",
+      "enginer": "Select State",
+      "Hobbies": [],
+      "address": "",
+      "FileUpload": ""
+    }
+  ],
+  "techstudents": [
+    {
+      "id": "004f",
+      "university": "Andhra",
+      "institute": "GIPDIET",
+      "branch": "CSE",
+      "degree": "B.Tech",
+      "degreeStatus": "Persuing",
+      "avgCpi": "",
+      "semester": "10",
+      "experience": "2",
+      "website": "https://chatgpt.com/"
+    }
+  ],
+  "buyers": []
 }

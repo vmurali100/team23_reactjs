@@ -7,7 +7,6 @@
     <title>Form4</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-
     <style>
         h4 {
             color: orangered;
@@ -16,97 +15,113 @@
 </head>
 
 <body>
+
     <div class="container">
         <div class="row">
             <div class="col-3">
-                <div>
-                    <form>
-                        <h4>Personal Details</h4>
-                        <div class="mb-3">
-                            <label for="Name" class="form-label">Name</label>
-                            <input type="text" class="form-control" id="Name">
+                <form>
+                    <h4>Personal Details</h4>
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Name</label>
+                        <input type="text" class="form-control" id="name">
+                    </div>
+                    <div class="mb-3">
+                        <label for="Password" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="Password">
+                    </div>
+                    <div class="mb-3">
+                        <label for="Email" class="form-label">Email address</label>
+                        <input type="email" class="form-control" id="Email" aria-describedby="emailHelp">
+                    </div>
+                    <div class="mb-3">
+                        <label for="gender" class="form-label">Gender</label>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="gender" value="Male">
+                            <label class="form-check-label" for="flexRadioDefault1">
+                                Male
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="gender" value="Female">
+                            <label class="form-check-label" for="flexRadioDefault2">
+                                Female
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="gender" value="Others">
+                            <label class="form-check-label" for="flexRadioDefault3">
+                                Others
+                            </label>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="Name" class="form-label">Contact Number</label>
+                        <input type="number" class="form-control" id="contact" required>
+                    </div>
+                    <h4>Educational Qualification</h4>
+                    <div class="mb-3">
+                        <label class="form-label">Degree</label>
+                        <select class="form-select" id="degree">
+                            <option selected>Select Group</option>
+                            <option value="BA">BA</option>
+                            <option value="BCom">BCOM</option>
+                            <option value="Bsc">BSC</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Engineering</label>
+                        <select class="form-select" id="engineering">
+                            <option selected>Select Branch</option>
+                            <option value="Civil Engineering">Civil Engineering</option>
+                            <option value="Mechanical Engineering">Mechanical Engineering</option>
+                            <option value="Electrical Engineering">Electrical Engineering</option>
+                            <option value="Automobile Engineering">Automobile Engineering</option>
+                            <option value="Chemical Engineering">Chemical Engineering</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">Hobbies</label>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="Playing Chess" name="hobbies">
+                            <label class="form-check-label" for="flexCheckDefault">
+                                Playing Chess
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="Reading Books" name="hobbies">
+                            <label class="form-check-label" for="flexCheckChecked">
+                                Reading Books </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="Reading Books" name="hobbies">
+                            <label class="form-check-label" for="flexCheckChecked">
+                                Watching Movies </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="Reading Books" name="hobbies">
+                            <label class="form-check-label" for="flexCheckChecked">
+                                Swimming </label>
                         </div>
                         <div class="mb-3">
-                            <label for="password" class="form-label">Password</label>
-                            <input type="password" class="form-control" id="password">
+                            <h4> Address </h4>
+                            <textarea name="" id="address" rows="3"></textarea>
                         </div>
                         <div class="mb-3">
-                            <label for="email" class="form-label">Email address</label>
-                            <input type="email" class="form-control" id="email">
-                        </div>
-                        <div class="mb-3">
-                            <label for="exampleInputPassword1" class="form-label">Gender</label>
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="gender" value="Male">
-                                <label class="form-check-label" for="flexRadioDefault1">
-                                    Male
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="gender" value="Female">
-                                <label class="form-check-label" for="flexRadioDefault2">
-                                    Female
-                                </label>
-                            </div>
                             <div class="form-group">
-                                <label for="contactNumber">Contact Number</label>
-                                <input type="tel" class="form-control" id="contactNumber"
-                                    placeholder="Enter your contact number">
+                                <label for="resume">Attach Resume</label>
+                                <input type="file" class="form-control-file" id="resume">
                             </div>
                         </div>
-                        <h4>Educational Qualification</h4>
-                        <div class="mb-3">
-                            <label for="exampleInputPassword1" class="form-label">Degree</label>
-                            <select class="form-select" id="degree">
-                                <option selected>Degree</option>
-                                <option value="BA">BA</option>
-                                <option value="BCom">BCOM</option>
-                                <option value="Bsc">BSC</option>
-                            </select>
-                        </div>
-                        <div class="mb-3">
-                            <label for="exampleInputPassword1" class="form-label">Engineering</label>
-                            <select class="form-select" id="engineering">
-                                <option selected>Engineering</option>
-                                <option value="Civil Engineering">Civil Engineering</option>
-                                <option value="Mechanical Engineering">Mechanical Engineering</option>
-                                <option value="Electrical Engineering">Electrical Engineering</option>
-                                <option value="Automobile Engineering">Automobile Engineering</option>
-                                <option value="Chemical Engineering">Chemical Engineering</option>
-                            </select>
-                        </div>
-                        <div class="mb-3">
-                            <label for="exampleInputPassword1" class="form-label">Hobbies</label>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="Playing Chess" name="hobbies">
-                                <label class="form-check-label" for="flexCheckDefault">
-                                    Playing Chess
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="Reading Books" name="hobbies">
-                                <label class="form-check-label" for="flexCheckChecked">
-                                    Reading Books </label>
-                            </div>
-                            <div class="mb-3">
-                                <h4> Address </h4>
-                                <!-- <label for="About" class="form-label">Address</label> -->
-                                <textarea class="form-control" id="address"></textarea>
-                            </div>
-                        </div>
-                        <!-- <div class="form-group">
-                            <label for="resume">Attach Resume:</label>
-                            <input type="file" class="form-control-file" id="resume" name="resume" required>
-                        </div> -->
-                        <button type="button" onclick="createUser()" id="submitBtn" class="btn btn-primary">Submit</button>
-                    </form>
-                </div>
+                    </div>
+                    <button type="button" onclick="createUser()" id="submitBtn" class="btn btn-primary">Submit</button>
+                    <button type="button" onclick="updateUser()" id="updatebtn" class="btn btn-primary"
+                        style="display:none;">Update</button>
+                </form>
             </div>
             <div class="col-9">
-                <table class="table table-striped">
+                <table class="table table-bordered border-primary">
                     <thead>
                         <tr>
-                            <!-- <h4>Personal Details</h4> -->
                             <th>Name</th>
                             <th>Password</th>
                             <th>Email</th>
@@ -116,177 +131,79 @@
                             <th>Engineering</th>
                             <th>Hobbies</th>
                             <th>Address</th>
-                            <!-- <th>Attach Resume</th> -->
+                            <th>Attach Resume</th>
+                            <th>Edit</th>
+                            <th>Delete</th>
                         </tr>
                     </thead>
-                    <tbody></tbody>
+                    <tbody>
+                    </tbody>
                 </table>
             </div>
         </div>
     </div>
-
     <script>
         var allRadioBtns = document.getElementsByName("gender");
         var allCheckBoxes = document.getElementsByName("hobbies");
-        var students = JSON.parse(localStorage.getItem("students"));
-        if (students === null) {
-            students = [];
-        }
+        var users = JSON.parse(localStorage.getItem("users")) || [];
+
         function createUser() {
-            var student = {
-                name: '',
-                password: '',
-                email: '',
-                gender: '',
-                contact: '',
-                degree: '',
-                engineering: '',
+            var user = {
+                name: "",
+                Password: "",
+                Email: "",
+                gender: "",
+                contact: "",
+                degree: "",
+                engineering: "",
                 hobbies: [],
-                address: '',
-                // resume: ''
+                address: "",
+                resume: "",
             }
-            for (a in student) {
-                if (a !== 'gender' && a !== "hobbies") {
-                    student[a] = document.getElementById(a).value;
-                } else if (a === "gender") {
-                    // Read Values from Radio Btns
 
-                    for (i = 0; i < allRadioBtns.length; i++) {
-                        if (allRadioBtns[i].checked) {
-                            student[a] = allRadioBtns[i].value
-                        }
-                    }
-                } else if (a === "hobbies") {
-                    // Read Values from Checkboxes
-                    for (i = 0; i < allCheckBoxes.length; i++) {
-                        if (allCheckBoxes[i].checked) {
-                            student[a].push(allCheckBoxes[i].value)
-                        }
-                    }
-                }
-            }
-            students.push(student);
-            localStorage.setItem('students', JSON.stringify(students));
-            readUser();
-            clearUser();
-        }
-        function readUser() {
-            document.querySelector("tbody").innerHTML = "";
-            students.forEach((usr, i) => {
-                var myTr = document.createElement("tr");
-                for (a in usr) {
-                    var myTd = document.createElement("td");
-                    myTd.innerHTML = usr[a]
-                    myTr.appendChild(myTd);
-                }
-                // Edit Button
-                var editTd = document.createElement("td");
-                var editButton = document.createElement("button");
-                editButton.setAttribute("onclick", "editUser(" + i + ")")
-                editButton.setAttribute("class", "btn btn-warning")
-                editButton.innerHTML = "Edit "
-                editTd.appendChild(editButton);
-                // Delete Button 
-                var deleteTd = document.createElement("td");
-                var deleteButton = document.createElement("button");
-                deleteButton.setAttribute("onclick", "deleteUser(" + i + ")");
-                deleteButton.setAttribute("class", "btn btn-danger")
-                deleteButton.innerHTML = "Delete "
-                deleteTd.appendChild(deleteButton);
-                myTr.appendChild(editTd);
-                myTr.appendChild(deleteTd)
-                document.querySelector("tbody").appendChild(myTr);
-            })
-        };
-
-        function editUser(i) {
-            index = i;
-            var userTobeEdit = students[i];
-            for (a in userTobeEdit) {
+            for (a in user) {
                 if (a !== "gender" && a !== "hobbies") {
-                    document.getElementById(a).value = userTobeEdit[a]
-                } else if (a == "gender") {
-                    for (i = 0; i < allRadioBtns.length; i++) {
-                        if (allRadioBtns[i].value == userTobeEdit.gender) {
-                            allRadioBtns[i].checked = true;
-                        }
-                    }
-                } else if (a == "hobbies") {
-                    clearCheckBox();
-                    userTobeEdit.hobbies.forEach((val) => {
-                        for (i = 0; i < allCheckBoxes.length; i++) {
-                            if (allCheckBoxes[i].value == val) {
-                                allCheckBoxes[i].checked = true
-                            }
-                        }
-
-                    })
-                }
-            }
-
-            document.getElementById("updateBtn").style.display = "block";
-            document.getElementById("submitBtn").style.display = "none";
-        };
-
-        function updateUser() {
-            var student = {
-                name: '',
-                password: '',
-                email: '',
-                gender: '',
-                contact: '',
-                degree: '',
-                engineering: '',
-                hobbies: [],
-                address: '',
-                // resume: ''
-            };
-            for (a in student) {
-                if (a !== 'gender' && a !== "hobbies") {
-                    student[a] = document.getElementById(a).value;
+                    user[a] = document.getElementById(a).value;
                 } else if (a === "gender") {
                     for (i = 0; i < allRadioBtns.length; i++) {
                         if (allRadioBtns[i].checked) {
-                            student[a] = allRadioBtns[i].value
+                            user[a] = allRadioBtns[i].value;
                         }
                     }
                 } else if (a === "hobbies") {
                     for (i = 0; i < allCheckBoxes.length; i++) {
                         if (allCheckBoxes[i].checked) {
-                            student[a].push(allCheckBoxes[i].value)
+                            user[a].push(allCheckBoxes[i].value);
                         }
                     }
                 }
             }
-            students[index] = student;
-            localStorage.setItem("students", JSON.stringify(students));
-            readUser();
-            clearUser()
 
+            users.push(user);
+            localStorage.setItem("users", JSON.stringify(users));
+            readUsers();
+            clearForm();
         }
-        function deleteUser(i) {
-            students.splice(i, 1);
-            readUser();
-            localStorage.setItem("students", JSON.stringify("students"));
-        };
-        function clearUser() {
-            var student = {
-                name: '',
-                password: '',
-                email: '',
-                gender: '',
-                contact: '',
-                degree: '',
-                engineering: '',
+
+        function clearForm() {
+            var user = {
+                name: "",
+                Password: "",
+                Email: "",
+                gender: "",
+                contact: "",
+                degree: "",
+                engineering: "",
                 hobbies: [],
-                address: '',
-                // resume: ''
-            };
-            for (a in student) {
+                address: "",
+                resume: "",
+            }
+
+            for (a in user) {
                 if (a !== "gender" && a !== "hobbies") {
-                    document.getElementById(a).value = ""
+                    document.getElementById(a).value = "";
                 } else {
-                    clearCheckBox()
+                    clearCheckBox();
                     for (i = 0; i < allRadioBtns.length; i++) {
                         allRadioBtns[i].checked = false;
                     }
@@ -300,7 +217,109 @@
             }
         }
 
-        readUser();
+        function readUsers() {
+            document.querySelector("tbody").innerHTML = "";
+            users.forEach((usr, i) => {
+                var tr = document.createElement("tr");
+                for (a in usr) {
+                    var td = document.createElement("td");
+                    td.innerHTML = usr[a];
+                    tr.appendChild(td);
+                }
+                var edittd = document.createElement("td");
+                var editbtn = document.createElement("button");
+                editbtn.innerHTML = "Edit";
+                editbtn.setAttribute("onclick", "EditUser(" + i + ")");
+                editbtn.setAttribute("class", "btn btn-warning");
+                edittd.appendChild(editbtn);
+                tr.appendChild(edittd);
+
+                var deltd = document.createElement("td");
+                var delbtn = document.createElement("button");
+                delbtn.innerHTML = "Delete";
+                delbtn.setAttribute("onclick", "DeleteUser(" + i + ")");
+                delbtn.setAttribute("class", "btn btn-danger");
+                deltd.appendChild(delbtn);
+                tr.appendChild(deltd);
+
+                document.querySelector("tbody").appendChild(tr);
+            });
+        }
+
+        function EditUser(i) {
+            index = i;
+            var usrToBeEdit = users[i];
+            for (a in usrToBeEdit) {
+                if (a !== "gender" && a !== "hobbies") {
+                    document.getElementById(a).value = usrToBeEdit[a];
+                } else if (a == "gender") {
+                    for (var j = 0; j < allRadioBtns.length; j++) {
+                        if (allRadioBtns[j].value == usrToBeEdit.gender) {
+                            allRadioBtns[j].checked = true;
+                        }
+                    }
+                } else if (a == "hobbies") {
+                    clearCheckBox();
+                    usrToBeEdit.hobbies.forEach((val) => {
+                        for (var k = 0; k < allCheckBoxes.length; k++) {
+                            if (allCheckBoxes[k].value == val) {
+                                allCheckBoxes[k].checked = true;
+                            }
+                        }
+                    });
+                }
+            }
+            document.getElementById("updatebtn").style.display = "block";
+            document.getElementById("submitbtn").style.display = "none";
+        }
+
+        function updateUser() {
+            var user = {
+                name: "",
+                Password: "",
+                Email: "",
+                gender: "",
+                contact: "",
+                degree: "",
+                engineering: "",
+                hobbies: [],
+                address: "",
+                resume: "",
+            }
+
+            for (a in user) {
+                if (a !== "gender" && a !== "hobbies") {
+                    user[a] = document.getElementById(a).value;
+                } else if (a == "gender") {
+                    for (i = 0; i < allRadioBtns.length; i++) {
+                        if (allRadioBtns[i].checked) {
+                            user[a] = allRadioBtns[i].value;
+                        }
+                    }
+                } else if (a == "hobbies") {
+                    for (i = 0; i < allCheckBoxes.length; i++) {
+                        if (allCheckBoxes[i].checked) {
+                            user[a].push(allCheckBoxes[i].value);
+                        }
+                    }
+                }
+            }
+
+            users[index] = user;
+            localStorage.setItem('users', JSON.stringify(users));
+            readUsers();
+            clearForm();
+            document.getElementById("updatebtn").style.display = "none";
+            document.getElementById("submitbtn").style.display = "block";
+        }
+
+        function DeleteUser(i) {
+            users.splice(i, 1);
+            localStorage.setItem('users', JSON.stringify(users));
+            readUsers();
+        }
+
+        readUsers();
     </script>
 </body>
 
