@@ -19,7 +19,7 @@
 
 
         .block1 {
-            margin-left: 350px;
+            margin-left: 50px;
             width: 400px;
             height: auto;
             padding: 50px;
@@ -61,11 +61,23 @@
 
                 <label for="">Buyer name:</label>
                 <input type="text" id="bname">
+                <label for="">Estimate base Number:</label>
+                <input type="number" id="ebn"><br>
+                <label for="">Scrap Percentage:</label>
+                <input type="percentage" id="spercentage"><br>
+                <label for="">Costs Associated with Scrap:</label><br>
+                <input type="checkbox" name="cost" value="Material">Material
+                <input type="checkbox" name="cost" value="Tooling">Tooling
+                <input type="checkbox" name="cost" value="Labour">Labour
+                <input type="checkbox" name="cost" value="Non-Macting">Non-Macting <br>
+                <button type="button" onclick="create()" id="submitBtn">submit</button>
+                <button type="button"  style="display:none" id="updateBtn" onclick="updatesuit()">update </button>
+                
             </form>
         </div>
 
 
-        <div class="estimate-info" style="background-color: rgb(255, 115, 0);">
+        <!-- <div class="estimate-info" style="background-color: rgb(255, 115, 0);">
             <form action="">
                 <label for="">Estimate base Number:</label>
                 <input type="number" id="ebn"><br>
@@ -76,17 +88,17 @@
                 <input type="checkbox" name="cost" value="Tooling">Tooling
                 <input type="checkbox" name="cost" value="Labour">Labour
                 <input type="checkbox" name="cost" value="Non-Macting">Non-Macting <br>
-                <button type="button" onclick="create()">submit</button>
-                <button type="button" onclick="clear()">Clear Form</button>
-                <button type="button">Close</button>
+                <button type="button" onclick="create()" id="submitBtn">submit</button>
+                <button type="button"  style="display:none" id="updateBtn" onclick="updatesuit()">update </button>
+                
             </form>
-        </div>
+        </div> -->
 
 
 
     </div>
     <div>
-        <table>
+        <table border="1">
             <thead>
                 <tr>
                     <th>name</th>
@@ -112,7 +124,7 @@
 </div>
     <script>
         var costs = document.getElementsByName("cost")
-        var suits = JSON.parse(localStorage.getItem("suits"))
+        
         function create() {
             var suit = {
                 name: '',
@@ -141,50 +153,71 @@
                     }
                 }
             }
-           // suits.push(suit);
-            localStorage.setItem('suits', JSON.stringify(suits));
-            console.log(suits)
-            readdetails()
-        }
+        
         function clearCheckBox() {
             for (i = 0; i < costs.length; i++) {
                 costs[i].checked = false;
             }
         }
     
+    
+    var postUser=new XMLHttpRequest;
+    postUser.open("POST", "http://localhost:3000/suits");
+    postUser.setRequestHeader("Content-Type","application/json")
+    postUser.send(JSON.stringify(suit));
+    postUser.onreadystatechange =function(){
+        if( postUser.readyState ==4 && postUser.status==201){
+            console.log("suits added sucessfully")
+        }
+    }
+        }
+    var suits =[];
+    function getdata (){
+        var postUser=new XMLHttpRequest;
+        postUser.open("POST", "http://localhost:3000/suits");
+//postUser.setRequestHeader("Content-Type","application/json")
+        postUser.send();
+        postUser.onreadystatechange =function(){
+            if( postUser.readyState ==4 && postUser.status==200){
+                suits=JSON.parse(postUser.response)
+            }
+            readdetails()
+        }
+    }
      
                
 
         
-        function readdetails() {
-            suits.forEach((usr, i) => {
-                var myTr = document.createElement("tr")
-                for (a in usr) {
-                    var myTd = document.createElement("td");
-                    myTd.innerHTML = usr[a]
-                    myTr.appendChild(myTd)
-                }
-                // Edit Button
-                var editTd = document.createElement("td");
-                var editButton = document.createElement("button");
-                editButton.setAttribute("onclick", "editsuit(" + i + ")")
-                editButton.setAttribute("class", "btn btn-warning")
-                editButton.innerHTML = "Edit suit"
-                editTd.appendChild(editButton);
-                // Delete Button 
-                var deleteTd = document.createElement("td");
-                var deleteButton = document.createElement("button");
-                deleteButton.setAttribute("onclick", "deletesuit(" + i + ")");
-                deleteButton.innerHTML = "Delete suit"
-                deleteTd.appendChild(deleteButton);
-                deleteButton.setAttribute("class", "btn btn-danger")
-    
-                myTr.appendChild(editTd);
-                myTr.appendChild(deleteTd)
-                document.querySelector("tbody").appendChild(myTr)
-            })
-        };
-        function clear() {
+     
+    function readdetails() {
+        suits.forEach((usr, i) => {
+            var myTr = document.createElement("tr")
+            for (a in usr) {
+                var myTd = document.createElement("td");
+                myTd.innerHTML = usr[a]
+                myTr.appendChild(myTd)
+            }
+            // Edit Button
+            var editTd = document.createElement("td");
+            var editButton = document.createElement("button");
+            editButton.setAttribute("onclick", "editUser(" + i + ")")
+            editButton.setAttribute("class", "btn btn-warning")
+            editButton.innerHTML = "Edit User"
+            editTd.appendChild(editButton);
+            // Delete Button 
+            var deleteTd = document.createElement("td");
+            var deleteButton = document.createElement("button");
+            deleteButton.setAttribute("onclick", "deleteUser(" + i + ")");
+            deleteButton.innerHTML = "Delete User"
+            deleteTd.appendChild(deleteButton);
+            deleteButton.setAttribute("class", "btn btn-danger")
+
+            myTr.appendChild(editTd);
+            myTr.appendChild(deleteTd)
+            document.querySelector("tbody").appendChild(myTr)
+        })
+    };
+  function clear() {
             var suit = {
                 name: '',
                 pname: '',
@@ -199,21 +232,91 @@
                 cost: []
             }
            
+            
+            }
+        
+
+        var index = null;
+        function editsuit(i) {
+            index = i;
+            var userToEdit = suits[i];
+            for (a in userToEdit) {
+                if (a !== "id") {
+                    document.getElementById(a).value = userToEdit[a]
+                }
+    
+            }
+            document.getElementById("updateBtn").style.display = "block"
+            document.getElementById("submitBtn").style.display = "none"
+        };
+        function updatesuit(){
+            var suit = {
+                name: '',
+                pname: '',
+                ppname: '',
+                Revision: '',
+                pnumber: '',
+                doe: '',
+                Estimator: '',
+                bname: '',
+                ebn: '',
+                spercentage: '',
+                cost: []
+            }
+            //console.log(radio.length)
             for (a in suit) {
                 if (a !== 'cost') {
-                    document.getElementById('a').value = ""
+                    suit[a] = document.getElementById(a).value;
 
-                } else {
-                    clearCheckBox();
-                  
+                } else if (a === "cost") {
+                    // Read Values from Checkboxes
                     for (i = 0; i < costs.length; i++) {
-                        costs[i].checked = false;
+                        if (costs[i].checked) {
+                            suit[a].push(costs[i].value)
+                        }
                     }
                 }
+            }
+           // suits.push(suit);
+
         
+        function clearCheckBox() {
+            for (i = 0; i < costs.length; i++) {
+                costs[i].checked = false;
             }
         }
-        readdetails()
+        var postUser=new XMLHttpRequest;
+        postUser.open("POST", "http://localhost:3000/suits"+suits[i]+id);
+        postUser.setRequestHeader("Content-Type","application/json")
+        postUser.send(JSON.stringify(suit));
+        postUser.onreadystatechange =function(){
+            if( postUser.readyState ==4 && postUser.status==201){
+                suits = JSON.parse(postUser.response);
+                readdetails();
+                document.getElementById("updateBtn").style.display = "none"
+                     document.getElementById("submitBtn").style.display = "block"
+                    
+            }
+    
+        }
+    }
+        function deletesuit (){
+            var postUser = new XMLHttpRequest;
+            postUser.open("DELETE", "http://localhost:3000/suits/" + suits[i].id);
+            postUser.send();
+            postUser.onreadystatechange = function () {
+                if (postUser.readyState == 4 && postUser.status == 200) {
+                    suits = JSON.parse(postUser.response);
+                    getdata();
+                }
+            }
+        };
+        
+        getdata()
+
+
+        
+      //  readdetails()
     </script>
 
 </body>

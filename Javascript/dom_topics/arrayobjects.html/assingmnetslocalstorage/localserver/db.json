@@ -8,21 +8,85 @@
     }
   ],
   "users": [],
-  "coustomer": [],
-  "detail": [
+  "coustomer": [
     {
-      "id": "b614",
-      "university": "wer",
-      "institute": "wret",
-      "branch": "CSE",
-      "degree": "BE",
-      "degreeStatus": "pursuing",
-      "cgpa": "3",
-      "semester": "3",
-      "experience": "3",
-      "website": "2fweregtr"
+      "id": "e544",
+      "name": "vishal mg",
+      "email": "mgvishalctr@gmail.com",
+      "investment": "",
+      "date": "",
+      "active": "on"
+    },
+    {
+      "id": "1660",
+      "name": "vishal mg",
+      "email": "mgvishalctr@gmail.com",
+      "investment": "",
+      "date": "",
+      "active": "on"
+    },
+    {
+      "id": "29d8",
+      "name": "vishal",
+      "email": "mgvishalctr@gmail.com",
+      "investment": "",
+      "date": "",
+      "active": "on"
     }
   ],
-  "dbs":[],
-  "databases":[]
+  "detail": [],
+  "dbs": [],
+  "suits": [
+    {
+      "id": "7196"
+    },
+    {
+      "id": "fb30"
+    },
+    {
+      "id": "5c4d"
+    },
+    {
+      "id": "653b",
+      "name": "",
+      "pname": "",
+      "ppname": "",
+      "Revision": "",
+      "pnumber": "",
+      "doe": "",
+      "Estimator": "",
+      "bname": "",
+      "ebn": "",
+      "spercentage": "",
+      "cost": []
+    },
+    {
+      "id": "6411"
+    },
+    {
+      "id": "2c9a"
+    },
+    {
+      "id": "5035"
+    },
+    {
+      "id": "296a"
+    },
+    {
+      "id": "ab53"
+    },
+    {
+      "id": "33ec"
+    },
+    {
+      "id": "b8a3"
+    },
+    {
+      "id": "03a3"
+    },
+    {
+      "id": "f52d"
+    }
+  ],
+  "databases": []
 }

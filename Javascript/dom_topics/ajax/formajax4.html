@@ -162,7 +162,7 @@
             document.querySelector("tbody").appendChild(myTr)
         })
     };
-    var index = null;
+    var index;
     function editUser(i) {
         index = i;
         var userToEdit = coustomer[i];
@@ -184,7 +184,7 @@
             active: document.getElementById("active").value
         }
         var postUser = new XMLHttpRequest;
-        postUser.open("PUT", "http://localhost:3000/coustomer/" + coustomer[i].id);
+        postUser.open("PUT", "http://localhost:3000/coustomer/" + coustomer[index].id);
         postUser.setRequestHeader("Content-Type","Application/json")
         postUser.send(JSON.stringify(coustomers));
         postUser.onreadystatechange = function () {
