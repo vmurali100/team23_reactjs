@@ -25,20 +25,23 @@
         </tbody>
     </table>
     <script>
-        var users = []
-        function getDataFromServer( displayUsers) {
-            // XMLHttpRequest 
-            var getData = new XMLHttpRequest;
-            getData.open("GET", "http://localhost:3000/users"); 
-            getData.send();
-           
-            getData.onreadystatechange = function () {
-                if (getData.readyState === 4 && getData.status === 200) {
-                    users = JSON.parse(getData.response);
-                    displayUsers()
+
+        function getDataFromServer() {
+            return new Promise(function (resolve, reject) {
+                var getData = new XMLHttpRequest;
+                getData.open("GET", "http://localhost:3000/users");
+                 getData.send();
+                getData.onreadystatechange = function () {
+                    if (getData.readyState === 4 && getData.status === 200) {
+                        users = JSON.parse(getData.response);
+                        resolve();
+                        // reject();
+                    }
                 }
-            }
-        }
+            })
+        };
+
+
         function displayUsers() {
             document.querySelector("tbody").innerHTML = ""
             users.forEach((usr, i) => {
@@ -66,8 +69,24 @@
             })
         };
         
-        getDataFromServer(displayUsers);
-        
+        async function handleGetAndDisplay(){
+            await getDataFromServer();
+            displayUsers();
+        }
+        handleGetAndDisplay()
+
+        // getDataFromServer()
+        // .then(function (){
+        //     displayUsers()
+        // })
+        // .catch(function(){
+        //     console.log("Some thing happend ....")
+        // })
+        // .finally(function (){
+        //     console.log("Excution Completed !!!")
+        // })
+
+    
     </script>
 </body>
 
