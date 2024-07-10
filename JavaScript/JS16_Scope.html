@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Variables declared outside of any function or block are in the global scope
+        let globalVariable = 'I am a global variable';
+
+        function printGlobal() {
+            // Accessing a global variable inside a function
+            console.log(globalVariable);
+        }
+
+        function modifyGlobal() {
+            // Modifying a global variable inside a function
+            globalVariable = 'Modified global variable';
+        }
+
+        // Calling functions
+        printGlobal();  // Output: I am a global variable
+        modifyGlobal();
+        printGlobal();  // Output: Modified global variable
+
+    </script>
+</body>
+
+</html>
