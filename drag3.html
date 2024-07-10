@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        #drag-container,
+        #drop-container {
+            margin: 20px;
+            padding: 20px;
+            border: 2px dashed #ccc;
+            border-radius: 10px;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .draggable {
+            width: 100px;
+            padding: 10px;
+            background-color: lightblue;
+            cursor: grab;
+            border-radius: 5px;
+            text-align: center;
+            transition: background-color 0.3s;
+            margin-bottom: 10px;
+        }
+
+        .draggable:active {
+            cursor: grabbing;
+        }
+
+        #drop-target {
+            width: 200px;
+            height: 200px;
+            padding: 10px;
+            background-color: lightgrey;
+            text-align: center;
+            line-height: 1.5;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        #drop-target.drag-over {
+            background-color: #d3d3d3;
+        }
+    </style>
+</head>
+<body>
+    <div id="drag-container">
+        <div id="draggable1" draggable="true" class="draggable">drage me 1</div>
+        <div id="draggable2" draggable="true" class="draggable">drage me 2</div>
+        <div id="draggable3" draggable="true" class="draggable">drage me 3</div>
+        <div id="draggable4" draggable="true" class="draggable">drage me 4</div>
+    </div>
+    <div id="drop-container">
+        <div id="drop-target"></div>
+    </div>
+    <script>
+        var draggables = document.querySelectorAll(".draggable");
+        var dropTarget = document.getElementById("drop-target");
+
+        draggables.forEach(function(dragable){
+            dragable.addEventListener('dragstart', function(e){
+                e.dataTransfer.setData('text/plain', e.target.id);
+            });
+        });
+
+        dropTarget.addEventListener('dragover', function(e){
+            e.preventDefault();
+            dropTarget.classList.add('drag-over');
+        });
+
+        dropTarget.addEventListener('dragleave', function(e){
+            dropTarget.classList.remove('drag-over');
+        });
+
+        dropTarget.addEventListener('drop', function(e){
+            e.preventDefault();
+            dropTarget.classList.remove('drag-over');
+            var data = e.dataTransfer.getData('text/plain');
+            var draggedElement = document.getElementById(data);
+            dropTarget.appendChild(draggedElement);
+            dropTarget.style.backgroundColor="red"
+        });
+    </script>
+</body>
+</html>

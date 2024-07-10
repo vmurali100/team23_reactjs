@@ -1,0 +1,307 @@
+{
+  "users": [
+    {
+      "id": "770d",
+      "fullName": "hima reddy",
+      "email": "himareddy@gmail.com",
+      "password": "gdfgdfh"
+    },
+    {
+      "id": "522f",
+      "fullName": "Gnanashekar",
+      "email": "shekark509@gmail.com",
+      "password": "dfsdfg"
+    },
+    {
+      "id": "6678",
+      "fullName": "naveen kumar",
+      "email": "shekark509@gmail.com",
+      "password": "dfdgg"
+    }
+  ],
+  "persons": [
+    {
+      "id": "0605",
+      "Email": "shekark509@gmail.com",
+      "Password": "treyey",
+      "Gender": "Male",
+      "Select": [
+        "HTML",
+        "JavaScript"
+      ],
+      "state": "Karnataka",
+      "dob": "2024-07-20"
+    },
+    {
+      "id": "a7df",
+      "Email": "user/jachu.1212@gmail.com",
+      "Password": "rtttretrt",
+      "Gender": "Male",
+      "Select": [
+        "HTML",
+        "JavaScript",
+        "CSS"
+      ],
+      "state": "TamilNadu",
+      "dob": "2024-07-18"
+    }
+  ],
+  "customers": [
+    {
+      "id": "26fb",
+      "FirstName": "hima",
+      "LastName": "reddy",
+      "Email": "himareddy@gmail.com",
+      "Phone": "08217083919",
+      "Address": "dgrdhght",
+      "City": "bangaloret",
+      "State": "Kerala",
+      "ZipCode": "560062",
+      "Website": "Shekar",
+      "Hosting": "Yes",
+      "ProjectDescription": "dfrgrgfdhdfh"
+    },
+    {
+      "id": "adad",
+      "FirstName": "shekar",
+      "LastName": "shekar",
+      "Email": "shekark509@gmail.com",
+      "Phone": "08217083919",
+      "Address": "dgrdhgh",
+      "City": "bangalore",
+      "State": "Karnataka",
+      "ZipCode": "560062",
+      "Website": "dp",
+      "Hosting": "Yes",
+      "ProjectDescription": "ddsfdf"
+    }
+  ],
+  "students": [
+    {
+      "id": "gdfgdfgrt",
+      "Name": "fghfgfht",
+      "Course": "ffhdher",
+      "Branch": "dfhdhdfg",
+      "RollNo": "dhdhdfhgfg",
+      "Email": "dhdhdhfsg",
+      "Username": "dhdhhfsg",
+      "About": "ettet",
+      "Password": "etttt"
+    }
+  ],
+  "buyers": [
+    {
+      "id": "23e7",
+      "customerName": "Customer USA",
+      "partName": "Nozzle",
+      "partPrintNumber": "PN-1234",
+      "revision": "E",
+      "partNumber": "PN-1234",
+      "dateOfEstimate": "3/16/2020",
+      "estimatorName": "fjhg",
+      "buyerName": "dfff",
+      "estimateBaseQuantity": "100",
+      "scrapPercentage": "3",
+      "costs": [
+        "Material",
+        "Tooling",
+        "Labor",
+        "Non-Machining"
+      ]
+    },
+    {
+      "id": "372d",
+      "customerName": "Customer USA",
+      "partName": "Nozzle",
+      "partPrintNumber": "PN-1234",
+      "revision": "E",
+      "partNumber": "PN-1234",
+      "dateOfEstimate": "3/16/2020",
+      "estimatorName": "fjhg",
+      "buyerName": "dfff",
+      "estimateBaseQuantity": "100",
+      "scrapPercentage": "3",
+      "costs": [
+        "Material",
+        "Tooling",
+        "Labor",
+        "Non-Machining"
+      ]
+    },
+    {
+      "id": "3f6d",
+      "customerName": "Customer USA",
+      "partName": "Nozzle",
+      "partPrintNumber": "PN-1234",
+      "revision": "E",
+      "partNumber": "PN-1234",
+      "dateOfEstimate": "3/16/2020",
+      "estimatorName": "fjhg",
+      "buyerName": "guiyooi",
+      "estimateBaseQuantity": "100",
+      "scrapPercentage": "3",
+      "costs": [
+        "Material",
+        "Tooling",
+        "Labor",
+        "Non-Machining"
+      ]
+    },
+    {
+      "id": "f1cf",
+      "customerName": "Customer USA",
+      "partName": "Nozzle",
+      "partPrintNumber": "PN-1234",
+      "revision": "E",
+      "partNumber": "PN-1234",
+      "dateOfEstimate": "3/16/2020",
+      "estimatorName": "fjhg",
+      "buyerName": "dfff",
+      "estimateBaseQuantity": "100",
+      "scrapPercentage": "3",
+      "costs": [
+        "Material",
+        "Tooling",
+        "Labor",
+        "Non-Machining"
+      ]
+    },
+    {
+      "id": "1f8d",
+      "customerName": "Customer USA",
+      "partName": "Nozzle",
+      "partPrintNumber": "PN-1234",
+      "revision": "E",
+      "partNumber": "PN-1234",
+      "dateOfEstimate": "3/16/2020",
+      "estimatorName": "fjhg",
+      "buyerName": "guiyooi",
+      "estimateBaseQuantity": "100",
+      "scrapPercentage": "3",
+      "costs": [
+        "Material",
+        "Tooling",
+        "Labor",
+        "Non-Machining"
+      ]
+    }
+  ],
+  "techstudents": [
+    {
+      "id": "77ee",
+      "university": "gfgfhgf",
+      "institute": "ghgfjgf",
+      "branch": "CSE",
+      "degree": "M.Tech",
+      "degreeStatus": "Persuing",
+      "avgCpi": "fhghgd",
+      "semester": "3",
+      "experience": "fhhhgh",
+      "website": "fhhhhhdfe"
+    },
+    {
+      "id": "b72b",
+      "university": "gfgfhgf",
+      "institute": "ghgfjgf",
+      "branch": "CSE",
+      "degree": "B.Tech",
+      "degreeStatus": "Persuing",
+      "avgCpi": "fhghgd",
+      "semester": "3",
+      "experience": "fhhhgh",
+      "website": "fhhhhhdfe"
+    },
+    {
+      "id": "83c4",
+      "university": "gfgfhgf",
+      "institute": "ghgfjgf",
+      "branch": "IT",
+      "degree": "M.Tech",
+      "degreeStatus": "Persuing",
+      "avgCpi": "fhghgd",
+      "semester": "3",
+      "experience": "fhhhgh",
+      "website": "fhhhhhdfe"
+    },
+    {
+      "id": "ff3e",
+      "university": "gfgfhgf",
+      "institute": "ghgfjgf",
+      "branch": "ECE",
+      "degree": "M.Tech",
+      "degreeStatus": "Persuing",
+      "avgCpi": "fhghgd",
+      "semester": "2",
+      "experience": "fhhhgh",
+      "website": "wwww"
+    },
+    {
+      "id": "e54e",
+      "university": "gfgfhgf",
+      "institute": "ghgfjgf",
+      "branch": "IT",
+      "degree": "B.Tech",
+      "degreeStatus": "Persuing",
+      "avgCpi": "fhghgd",
+      "semester": "2",
+      "experience": "fhhhgh",
+      "website": "wwww"
+    }
+  ],
+  "users1": [
+    {
+      "id": "99e1",
+      "name": "hima reddy",
+      "Password": "hhfgfghh",
+      "Email": "himareddy@gmail.com",
+      "Gender": "Male",
+      "contact": "8217083919",
+      "degree": "Engineering",
+      "enginer": "Electrical Engineering",
+      "Hobbies": [
+        "Playing",
+        "Reading"
+      ],
+      "address": "dggdfghdfh",
+      "FileUpload": "C:\\fakepath\\sbic_statement_23_may_2024_06_44_43.pdf"
+    }
+  ],
+  "users2": [
+    {
+      "id": "4ade",
+      "Name": "hima reddy",
+      "Email": "himareddy@gmail.com",
+      "Investment": "65461",
+      "DateOfJoin": "2024-07-13",
+      "Active": true,
+      "Contact": "8217083919"
+    },
+    {
+      "id": "f239",
+      "Name": "hima reddy",
+      "Email": "himareddy@gmail.com",
+      "Investment": "65444",
+      "DateOfJoin": "2024-07-06",
+      "Active": true,
+      "Contact": "8217083919"
+    },
+    {
+      "id": "eb6d",
+      "Name": "hima reddy",
+      "Email": "himareddy@gmail.com",
+      "Investment": "451121",
+      "DateOfJoin": "2024-07-14",
+      "Active": true,
+      "Contact": "8217083919"
+    },
+    {
+      "id": "53d9",
+      "Name": "hima reddy",
+      "Email": "himareddy@gmail.com",
+      "Investment": "26464",
+      "DateOfJoin": "",
+      "Active": true,
+      "Contact": "8217083919"
+    }
+  ]
+}

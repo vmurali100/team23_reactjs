@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>India VIX Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+        }
+        form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input, button {
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #007BFF;
+            color: white;
+            cursor: pointer;
+            grid-column: span 2;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .result {
+            grid-column: span 2;
+            text-align: center;
+            margin-top: 20px;
+            font-size: 1.2em;
+            color: #007BFF;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>India VIX Calculator</h1>
+        <form id="vixForm">
+            <div>
+                <label for="nifty">Current NIFTY Index Level</label>
+                <input type="number" id="nifty" required>
+            </div>
+            <div>
+                <label for="vix">India VIX (%)</label>
+                <input type="number" id="vix" step="0.01" required>
+            </div>
+            <button type="submit">Calculate Ranges</button>
+        </form>
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+        document.getElementById('vixForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const nifty = parseFloat(document.getElementById('nifty').value);
+            const vix = parseFloat(document.getElementById('vix').value) / 100;
+
+            const annualVolatility = vix;
+            const monthlyVolatility = annualVolatility / Math.sqrt(12);
+            const weeklyVolatility = annualVolatility / Math.sqrt(52);
+            const dailyVolatility = annualVolatility / Math.sqrt(365);
+
+            const annualHigh = nifty * (1 + annualVolatility);
+            const annualLow = nifty * (1 - annualVolatility);
+
+            const monthlyHigh = nifty * (1 + monthlyVolatility);
+            const monthlyLow = nifty * (1 - monthlyVolatility);
+
+            const weeklyHigh = nifty * (1 + weeklyVolatility);
+            const weeklyLow = nifty * (1 - weeklyVolatility);
+
+            const dailyHigh = nifty * (1 + dailyVolatility);
+            const dailyLow = nifty * (1 - dailyVolatility);
+
+            const resultDiv = document.getElementById('result');
+            resultDiv.innerHTML = `
+                <p>Annual Range: ${annualHigh.toFixed(2)} - ${annualLow.toFixed(2)} (${(annualVolatility * 100).toFixed(2)}%)</p>
+                <p>Monthly Range: ${monthlyHigh.toFixed(2)} - ${monthlyLow.toFixed(2)} (${(monthlyVolatility * 100).toFixed(2)}%)</p>
+                <p>Weekly Range: ${weeklyHigh.toFixed(2)} - ${weeklyLow.toFixed(2)} (${(weeklyVolatility * 100).toFixed(2)}%)</p>
+                <p>Daily Range: ${dailyHigh.toFixed(2)} - ${dailyLow.toFixed(2)} (${(dailyVolatility * 100).toFixed(2)}%)</p>
+            `;
+        });
+    </script>
+</body>
+</html>
