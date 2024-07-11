@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <label for="">Activity Name : </label>
+        <input type="text" name="" id="task">
+        <button type="button" onclick="addTask()">Add Task</button>
+        <hr>
+        <ul></ul>
+    </form>
+
+    <script>
+        var allTasks = []
+        function addTask(){
+            var userInput = document.getElementById("task").value;
+            allTasks.push(userInput);
+            displayTasks()
+        }
+
+        function displayTasks(){
+            document.querySelector("ul").innerHTML = "";
+            allTasks.forEach((tsk)=>{
+                var myli = document.createElement("li")
+                myli.innerHTML = tsk
+                document.querySelector("ul").appendChild(myli)
+            })
+        }
+    </script>
+</body>
+</html>
