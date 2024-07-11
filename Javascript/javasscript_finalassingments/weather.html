@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #main{
+        margin-left: 200px;
+        margin-top: 50px;
+    }
+    #display{
+        margin-left: 50px;
+    }
+    #f1{
+        margin-top: 30px;
+    }
+
+</style>
+
+<body>
+    <h1 style="text-align: center;"> weather details</h1>
+   <div style=" display :flex" id="main">
+    <div id="f1">
+        <form >
+            <label > USER INPUT</label>
+            <input type="text" id="city">
+            <button type="button" onclick="db()">submit</button>
+       </form>
+    </div>
+    <div id="display">
+        <h2 id="city"></h2>
+        <h2 id="climate"></h2>
+        <h2 id="sunrise"></h2>
+        <h2 id="sunset"></h2>
+        <h2 id="temparature"></h2>
+    
+    </div>
+   </div>
+    <h2 id="town"></h2>
+    <h2 id="climate"></h2>
+    <h2 id="sunrise"></h2>
+    <h2 id="sunset"></h2>
+    <h2 id="temparature"></h2>
+
+
+    <script>
+      function db () {
+        var City=document.getElementById("city").value;
+        var Climate=document.getElementById("climate").value;
+        
+        const data = null;
+
+        const xhr = new XMLHttpRequest();
+        xhr.withCredentials = true;
+
+        xhr.addEventListener('readystatechange', function () {
+            if (this.readyState === this.DONE) {
+                console.log(this.responseText);
+                var wloc =JSON.parse(this.responseText)
+                document.getElementById("town").innerHTML="CITY NAME IS:  "+ wloc.location.city
+                document.getElementById("climate").innerHTML="CITY humidity IS:  "+ wloc.current_observation.atmosphere.humidity,
+                document.getElementById("sunrise").innerHTML="CITY sunrise  at:  "+ wloc.current_observation.astronomy.sunrise
+                document.getElementById("sunset").innerHTML="CITY sunrise  at:  "+ wloc.current_observation.astronomy.sunset
+                document.getElementById("temparature").innerHTML="CITY temparature is:  "+ wloc.current_observation.condition.temperature
+            }
+        });
+
+        xhr.open('GET', 'https://yahoo-weather5.p.rapidapi.com/weather?location='+City+'&format=json&u=f');
+        xhr.setRequestHeader('x-rapidapi-key', '2a5f5c3301msh25a5b13be667fcfp1e078djsn0a8478fc4d00');
+        xhr.setRequestHeader('x-rapidapi-host', 'yahoo-weather5.p.rapidapi.com');
+
+        xhr.send(data);
+      }
+    </script>
+</body>
+
+</html>
