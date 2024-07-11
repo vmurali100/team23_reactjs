@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation Example</title>
+    <style>
+        .error { color: red; }
+        #w1{
+            align-self: center;
+            margin-left: 300px;
+            margin-top:100px;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center;">website validation</h1>
+  <div id="w1">
+    <form id="myForm" >
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username"><br>
+        <h5 type="text" id="usernameerror" name="username"  style="display: none"></h5><br>
+      
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email"><br>
+        <input type="text" id="emailerror" name="email"  style="display: none"><br>
+      
+
+        <label for="password">Password:</label><br>
+        <input type="password" id="password" name="password" > 
+        <input type="text" id="passworderror" style="display: none" > <br>
+       
+        <!-- <span id="passwordError" class="error"></span><br><br> -->
+        
+
+        <button onclick="validate()" type="button">submit</button>
+    </form>
+  </div>
+
+    <script >
+        function validate(){
+          var user = {
+            var username: document.getElementById("username").value,
+            var nameerror: document.getElementById("usernameerror").value,
+            var email: document.getElementById("email").value,
+            var emialerror: document.getElementById("emailerror").value,
+            var password: document.getElementById("password").value,
+            var passworderror: document.getElementById("passworderror").value
+          }
+            for (a in user){
+                if (user[a].length==0){
+                    document.getElementById(a+"error").style.display="block"
+    
+                }
+                else{
+                    document.getElementById(a+"error").style.display="none"
+                }
+    
+            }
+    
+        }
+   
+            if (name.length==0){
+                document.getElementById("usernameerror").innerHTML="NAME IS REQUIRED"
+               document.getElementById("usernameerror").style.display="block"
+           
+   
+            }
+           
+            else {
+                document.getElementById("usernameerror").style.display="none"
+
+            }
+         
+        }
+
+        validate()
+    </script>
+</body>
+</html>
