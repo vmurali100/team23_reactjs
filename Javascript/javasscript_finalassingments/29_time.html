@@ -26,11 +26,20 @@
 <body>
     <u style="color: red;"> <H1 style="color: RED;" ID="title">DATE AND TIME </H1></u>
     <div>
-        <!-- <div style="display:flex">
+        <div class="timer" style="display:flex">
             <div style="margin-right: 20px;color:red"><h3>Date:</h3></div>
-     
-        </div> -->
-        <div>  <h2 id="date"></h2></div>
+            <div id="box4">
+                <h2 id="date"></h2>
+                
+            </div>
+            <div id="box5">
+                <h2 id="mon">:</h2>
+                
+            </div>
+            <div id="box6">
+                <h2 id="year">:</h2>
+            </div>
+            
     </div>
 
     <div class="timer" style="display: flex;">
@@ -51,15 +60,20 @@
         var hrs= document.getElementById("hrs");
         var min= document.getElementById("min");
         var sec= document.getElementById("sec");
+        var date= document.getElementById("date");
+        var mon= document.getElementById("mon");
+        var year= document.getElementById("year");
         var currentTime=new Date()
-      //  var date= document.getElementById("date");
+     
         console.log(currentTime)
        setInterval(()=>{
         var currentTime=new Date()
         hrs.innerHTML=+currentTime.getHours()+"    :";
         min.innerHTML=currentTime.getMinutes()+"   :";
         sec.innerHTML=currentTime.getSeconds();
-      //  date.innerHTML=currentTime.getDate(),currentTime.getMonth();
+       date.innerHTML=currentTime.getDate() +"    .";
+       mon.innerHTML=currentTime.getMonth()+"    .";
+       year.innerHTML=currentTime.getFullYear();
     
 
 
