@@ -12,15 +12,17 @@
         </label>
         <input type="number" id="age">
         <p  id="ageerror"></p>
+        <button type="button" onclick="validate()">submit</button>
     </form>
     <script>
-       //
+       
        
             age :document.getElementById("age")
-            document.write(age)
+            //document.write(age)
         
        
         var agepattern=/[0-9]/
+       function validate(){
         document.write(agepattern.test(age))
         if(agepattern.test(age)){
            // user.push(users)
@@ -29,9 +31,10 @@
              document.write("user age =",age);
         } else{
             document.getElementById("ageerror").style.color="red"
-            document.getElementById("ageerror").innerHTML="please enter the corect email id"
+            document.getElementById("ageerror").innerHTML="please enter the corect age"
         }
-        document.write(result)
+       // document.write(result)
+       }
         //if (result== ){ }
 
         var firstname="vishal is a good boy";
@@ -42,6 +45,7 @@
 
         var email="vishal@gmial.com"
       //  document.write(emailRegex.test(email))
+      validate()
 
     </script>
 </body>
