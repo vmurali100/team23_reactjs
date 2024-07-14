@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    body{
+        background-color: aqua;
+    }
+    #main
+    {
+        margin-left: 250px;
+        margin-top: 50px;
+        padding: 20px;
+
+    }
+    button{
+        width: 100px;
+        border-radius: 10px;
+        background-color: rgb(238, 139, 39);
+        height: 40px;
+        margin-left: 50px;
+        
+    }
+    #textarea {
+        width: 700px;
+        height: 300px;
+        border-radius: 10px;
+        border: 2px solid black;
+    }
+    select{
+        width: 500px;
+        height: 40px;
+        border: 2px solid black;
+        border-radius: 20px;
+        color: black;
+    }
+</style>
+
+<body>
+    <u><div style="margin-right: 20px;color:red;text-align:center"><h2>21. Text To Speech Convertor</h2></div></u>
+  
+    <div id="main" >
+        <div>
+            <textarea name="" id="textarea"></textarea>
+
+
+        </div>
+     
+        <div>
+            <h3 style="color:rgb(66, 30, 210)">select voice to listen:</h3>
+            <select  ></select>
+            <span><button> <h3>listen</h3></button></span>
+        </div>
+    
+    </div>
+    <script>
+        let speech = new SpeechSynthesisUtterance();
+         let voices = [];
+        
+         let voiceSelect = document.querySelector("select");
+         window.speechSynthesis.onvoiceschanged = () => {
+          voices = window.speechSynthesis.getVoices();
+
+            speech.voice = voices[0];
+           
+            voices.forEach((voice, i) => (voiceSelect.options[i] = new Option(voice.name, i)));
+
+        };
+        voiceSelect.addEventListener("change",()=>{
+            speech.voice=voices[voiceSelect.value];
+
+        })
+
+        
+
+       document.querySelector("button").addEventListener("click", () => {
+      speech.text=document.querySelector("textarea").value;
+      window.speechSynthesis.speak(speech);
+  
+       });
+
+
+
+
+             </script>
+</body>
+
+</html>
