@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background Image Change Effect</title>
+    <style>
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .background-container {
+            height: 100%;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-size: cover;
+            background-position: center;
+            transition: background-image 1s ease-in-out;
+        }
+
+        h1 {
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        .background-image {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <u><div style="margin-right: 20px;color:red;text-align:center"><h2>22. Background change</h2></div></u>
+  
+    <div class="background-container" id="background-container">
+       
+    </div>
+    <img src="./original.jpg" alt="Background 1" class="background-image" style="display:none;">
+    <img src="./jonatan-pie-3l3RwQdHRHg-unsplash.jpg" alt="Background 2" class="background-image" style="display:none;">
+    <img src="./1_xMuIOwjliGUPjkzukeWKfw.jpg" alt="Background 3" class="background-image" style="display:none;">
+    <script>
+        const backgroundImages = document.querySelectorAll('.background-image');
+        let currentIndex = 0;
+
+        function changeBackground() {
+            const backgroundContainer = document.getElementById('background-container');
+            currentIndex = (currentIndex + 1) % backgroundImages.length;
+            backgroundContainer.style.backgroundImage = `url(${backgroundImages[currentIndex].src})`;
+        }
+
+        setInterval(changeBackground, 3000); // Change background every 3 seconds
+
+        // Initialize the first background
+        document.getElementById('background-container').style.backgroundImage = `url(${backgroundImages[0].src})`;
+
+    </script>
+</body>
+
+</html>
