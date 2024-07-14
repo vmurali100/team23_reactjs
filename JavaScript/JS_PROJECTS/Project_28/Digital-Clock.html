@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital-Clock</title>
+</head>
+<style>
+    .timer{
+        display: flex;
+        width:auto;
+        align-items: center;
+        margin-top: 50PX;
+        margin-left: 450PX;
+    }
+    .timer div{
+        width: 100PX;
+        font-size: xx-large;
+
+    }
+    #title{
+        text-align: center;
+    }
+
+</style>
+<body>
+    <u style="color: green;"> <H1 style="color: RED;" ID="title">DATE AND TIME </H1></u>
+    <div>
+        <div class="timer" style="display:flex">
+            <div style="margin-right: 20px;color:red"><h3> Date :</h3></div>
+            <div id="box4">
+                <h2 id="date"></h2>
+                
+            </div>
+            <div id="box5">
+                <h2 id="mon">:</h2>
+                
+            </div>
+            <div id="box6">
+                <h2 id="year">:</h2>
+            </div>
+            
+    </div>
+
+    <div class="timer" style="display: flex;">
+        <div style="margin-right: 20px;color:red"><h3>Time:</h3></div>
+        <div id="box1">
+            <h2 id="hrs"></h2>
+            
+        </div>
+        <div id="box2">
+            <h2 id="min">:</h2>
+            
+        </div>
+        <div id="box3">
+            <h2 id="sec">:</h2>
+        </div>
+    </div>
+    <script>
+        var hrs= document.getElementById("hrs");
+        var min= document.getElementById("min");
+        var sec= document.getElementById("sec");
+        var date= document.getElementById("date");
+        var mon= document.getElementById("mon");
+        var year= document.getElementById("year");
+        var currentTime=new Date()
+      
+        
+     
+        console.log(currentTime)
+       setInterval(()=>{
+        var currentTime=new Date()
+        hrs.innerHTML=+currentTime.getHours()+"    :";
+        min.innerHTML=currentTime.getMinutes()+"   :";
+        sec.innerHTML=currentTime.getSeconds();
+       date.innerHTML=currentTime.getDate() +"    .";
+       mon.innerHTML=currentTime.getMonth()+"    .";
+       year.innerHTML=currentTime.getFullYear();
+    
+    
+
+
+       }
+       ,1000)
+
+    </script>
+</body>
+</html>

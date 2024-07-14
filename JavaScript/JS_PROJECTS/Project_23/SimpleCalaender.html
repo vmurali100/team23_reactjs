@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple-Calender</title>
+</head>
+<style>
+    #c1{
+       margin-left: 450px;
+       margin-top: 150px;
+       border:2px black
+
+    }
+    #c2,#c3{
+        padding:10px;
+
+    }
+</style>
+<body>
+    <u style="color: green;"> <H1 style="color: rgb(0, 76, 255);text-align:center" ID="title"> Simple Calender </H1></u>
+    
+    <div id="c1" style="display: flex;"> 
+        <div id="c2" style="background-color: black;color:white">
+            <h2 id="date" style="text-align: center;"></h2>
+            <h2 id="days"></h2>
+            
+
+        </div>
+        <div id="c3"style="background-color: white;color:black">
+            <h2 id="year" style="text-align: center";></h2>
+            <h2 id="yearname"></h2>
+
+        </div>
+    </div>
+    <script>
+        var da=document.getElementById("date");
+        var d=document.getElementById("days");
+        var y=document.getElementById("year");
+        var yn=document.getElementById("yearname");
+        setInterval(()=>{
+            var currentTime=new Date()
+        var day=["","MONDAY","TUESDAY","WEDNESDAY","TURSDAY","FRIDAY","SATURDAY","SUNDAY"]
+        var days=currentTime.getDay()
+        var mon = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+        var months=currentTime.getMonth()
+
+
+        da.innerHTML=currentTime.getDate()
+        y.innerHTML=currentTime.getFullYear()
+        yn.innerHTML= mon[months]
+
+        d.innerHTML=day[days]
+        },1000)
+        
+    </script>
+</body>
+</html>
