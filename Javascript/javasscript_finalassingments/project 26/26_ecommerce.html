@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+   <div class="container">
+
+    <div class="product">
+
+        <div class="gallery" style="background-color: rgba(27, 27, 116, 0.903);">
+
+            <img src="./image1.png" id="productimg">
+
+            <div class="controls">
+
+                I
+
+                <span class="btn active"></span>
+
+                <span class="btn"></span>
+
+                <span class="btn"></span>
+
+            </div>
+
+        </div>
+    </div>
+    <script>
+        var products =document.getElementById("productimg");
+        var btn =document.getElementsByClassName("btn");
+
+        btn[0].onclick=function(){
+            products.src="./image1.png";
+        }
+        btn[1].onclick=function(){
+            products.src="./image2.png";
+        }
+        btn[2].onclick=function(){
+            products.src="./image3.png";
+        }
+
+    </script>
+</body>
+
+</html>
