@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cryptocurrency Website</title>
+   <style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+    
+    header {
+        background-color: #f0f0f0;
+        padding: 20px;
+        text-align: center;
+    }
+    
+    main {
+        padding: 20px;
+    }
+    
+    .crypto-prices {
+        margin-bottom: 50px;
+    }
+    
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+    
+    th, td {
+        padding: 10px;
+        text-align: left;
+        border: 1px solid #ddd;
+    }
+    
+    th {
+        background-color: #f0f0f0;
+    }
+    
+    .about p {
+        line-height: 1.5;
+    }
+    
+    footer {
+        background-color: #f0f0f0;
+        padding: 10px;
+        text-align: center;
+    }
+    
+   </style>
+</head>
+<body>
+    <header>
+        <h1>Cryptocurrency Prices</h1>
+    </header>
+    <main>
+        <section class="crypto-prices">
+            <h2>Current Prices</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Currency</th>
+                        <th>Price (USD)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Bitcoin (BTC)</td>
+                        <td id="bitcoin-price"></td>
+                    </tr>
+                    <tr>
+                        <td>Ethereum (ETH)</td>
+                        <td id="ethereum-price"></td>
+                    </tr>
+                    </tbody>
+            </table>
+        </section>
+        <section class="about">
+            <h2>About Cryptocurrency</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu leo orci. Mauris eget leo risus. Donec vel lectus euismod, imperdiet neque eget, pharetra lorem. Maecenas eu augue eget magna gravida semper. Donec nec nulla at justo rutrum sodales.</p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 All rights reserved.</p>
+    </footer>
+    <script >
+        const bitcoinPriceElement = document.getElementById('bitcoin-price');
+const ethereumPriceElement = document.getElementById('ethereum-price');
+
+// Replace these with actual API calls to fetch cryptocurrency prices
+fetch('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd')
+  .then(response => response.json())
+  .then(data => {
+      bitcoinPriceElement.textContent = data.bitcoin.usd;
+  });
+
+fetch('https://api.coingecko.com/api/v3/simple/price?ids=ethereum&vs_currencies=usd')
+  .then(response => response.json())
+  .then(data => {
+      ethereumPriceElement.textContent = data.ethereum.usd;
+  });
+
+    </script>
+</body>
+</html>
