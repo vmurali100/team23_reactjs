@@ -8,41 +8,48 @@
 </head>
 
 <body>
-   <div class="container">
+    <u><div style="margin-right: 20px;color:red;text-align:center"><h2>26.e-commerce wesite</h2></div></u>
+  
+   <div class="container" style="display: flex;">
 
     <div class="product">
 
-        <div class="gallery" style="background-color: rgba(27, 27, 116, 0.903);">
+        <div class="gallery" style="background-color: black;">
 
             <img src="./image1.png" id="productimg">
-
-            <div class="controls">
+         
+            <div class="controls" style="margin:20px">
 
                 I
 
-                <span class="btn active"></span>
+              <h4>  <span class="btn " style="background-color: aqua;">1st view</span></h4>
 
-                <span class="btn"></span>
+                <h4><span class="btn" style="background-color: aqua;">2nd view</span></h4>
 
-                <span class="btn"></span>
+                <h4><span class="btn" style="background-color: aqua;">3rd view</span></h4>
 
             </div>
 
         </div>
     </div>
     <script>
-        var products =document.getElementById("productimg");
+        var products = document.getElementById("productimg");
         var btn =document.getElementsByClassName("btn");
 
         btn[0].onclick=function(){
-            products.src="./image1.png";
+            products.src ="./image1.png"
+            ;
         }
         btn[1].onclick=function(){
-            products.src="./image2.png";
+            products.src ="./image2.png"
+            
         }
         btn[2].onclick=function(){
-            products.src="./image3.png";
+
+            products.src ="./image3.png"
+           
         }
+
 
     </script>
 </body>
