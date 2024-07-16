@@ -6,48 +6,163 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+<style>
+   
+    .colorselect span{
+        display: inline-block;
+        width:15px;
+        height: 15px;
+        border-radius: 50%;
+        scroll-margin-right: 15px;
+        cursor:pointer;
 
+    }
+    .colorselect input{
+        display: none;
+
+    }
+    .colorselect input:checked + span {
+        transform:scale(0.7);
+        box-shadow: 0 0 0 4px #fff,0 0 0 6px #0f0202;
+
+
+
+    }
+    #this{
+        margin-right: 20px;
+    }
+
+</style>
 <body>
-    <u><div style="margin-right: 20px;color:red;text-align:center"><h2>26.e-commerce wesite</h2></div></u>
-  
-   <div class="container" style="display: flex;">
+    <u>
+        <div style="margin-right: 20px;color:red;text-align:center">
+            <h2>26.e-commerce wesite</h2>
+        </div>
+    </u>
 
-    <div class="product">
+    <div class="container" style="display: flex;">
 
-        <div class="gallery" style="background-color: black;">
+        <div class="product">
 
-            <img src="./image1.png" id="productimg">
-         
-            <div class="controls" style="margin:20px">
+            <div class="gallery" style="background-color: black;display:flex">
 
-                I
+                <img src="./image1.png" id="productimg">
 
-              <h4>  <span class="btn " style="background-color: aqua;">1st view</span></h4>
+                <div class="controls" style="margin:20px;margin:10px">
 
-                <h4><span class="btn" style="background-color: aqua;">2nd view</span></h4>
+                    I
 
-                <h4><span class="btn" style="background-color: aqua;">3rd view</span></h4>
+                    <h4 class="btn " style="background-color: aqua;margin:20px">1st view </h4>
+
+                    <h4 class="btn" style="background-color: aqua;margin:20px">2nd view</h4>
+
+                    <h4 class="btn" style="background-color: aqua;margin:20px">3rd view </h4>
+
+                </div>
+                <div id="details" style="background-color:white;margin:40px;padding:50px">
+                    <h1>causual t-shirt</h1>
+                    <h1>$15.00</h1>
+                    <h3 style="color: green;">30% OFF</h3>
+                    <P>WRANGLER IS AN AMERICAN MANUFACTURER OF <BR>JEANS AND OTHER CLOTHING ITEMS PARTICULARY<BR>
+                        WORKWEAR</P>
+                    <form action="">
+                        <div class="size" style="margin-left:10px; display: flex;">
+                            <span style="margin-right: 20px;">size: </span>
+
+                            <label for="small">
+                                <span>S</span>
+                                <input type="radio" name="si" id="small" style="margin-right: 20px;">
+                                
+                            </label>
+                            <label for="medium">
+                                <span>M</span>
+                                <input type="radio" name="si" id="medium" style="margin-right: 20px;">
+                              
+                            </label>
+                            <label for="large">
+                                <span>L</span>
+                                <input type="radio" name="si" id="large" style="margin-right: 20px;">
+                                <span>L</span>
+                            </label>
+                            </label>
+                            <label for="XL">
+                                <span>XL</span>
+                                <input type="radio" name="si" id="XL" style="margin-right: 20px;">
+                              
+                            </label>
+                            </label>
+                            <label for="XXL">
+                                <span>XXL</span>
+                                <input type="radio" name="si" id="XLL">
+                               
+                            </label>
+                        </div><br>
+                    </form>
+                    <form >
+                        <div class="colorselect" style="margin-left:10px; display: flex;">
+                          <span id="this" style="margin-right:20px;">color:</span>
+
+                            <label >
+                                <input type="radio" name="si2" id="red" >
+                                <span id="color-1" style="background-color: red;margin-left:20px;margin-right: 20px;"></span>
+                            
+                            </label>
+                            <label for="orange">
+                                <input type="radio" name="si2" id="orange">
+                                <span id="color-2" style="background: orange;margin-right: 20px;"></span>
+                            
+                            </label>
+                            <label for="black">
+                                <input type="radio" name="si2" id="black">
+                                <span id="color-1" style="background: black;margin-right: 20px;"></span>
+                            
+                            </label>
+                            </label>
+                            <label for="pink">
+                                <input type="radio" name="si2" id="pink">
+                                <span id="color-1" style="background: pink;margin-right: 20px;"></span>
+                            
+                            </label>
+                            </label>
+                            <label for="blue">
+                                <input type="radio" name="si" id="XLL">
+                                <span id="color-4" style="background: rgb(5, 5, 151)"></span>
+                            
+                            </label>
+                        </div>
+                    </form>
+                    <div>
+                        <form >
+                            <label style="margin-left:11px"> Quantity</label>
+                            <input type="number" style="width: 30px; border-radius:20px; margin:10px">
+                        </form>
+                    </div>
+                    <h3
+                        style="margin-left:100px;padding:10px;width:150px;text-align:center;background-color:aqua;border:2px solid black;border-radius:30px">
+                        BUY NOW </h3>
+
+
+                </div>
 
             </div>
-
         </div>
     </div>
     <script>
         var products = document.getElementById("productimg");
-        var btn =document.getElementsByClassName("btn");
+        var btn = document.getElementsByClassName("btn");
 
-        btn[0].onclick=function(){
-            products.src ="./image1.png"
-            ;
+        btn[0].onclick = function () {
+            products.src = "./image1.png"
+                ;
         }
-        btn[1].onclick=function(){
-            products.src ="./image2.png"
-            
-        }
-        btn[2].onclick=function(){
+        btn[1].onclick = function () {
+            products.src = "./image2.png"
 
-            products.src ="./image3.png"
-           
+        }
+        btn[2].onclick = function () {
+
+            products.src = "./image3.png"
+
         }
 
 
