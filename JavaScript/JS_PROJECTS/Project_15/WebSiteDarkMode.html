@@ -10,11 +10,57 @@
             margin: 0;
             padding: 0;
         }
+
+        body {
+            background-color: var(--primary-color);
+        }
+
+        :root {
+            --primary-color: white;
+            --secondary-color: black;
+        }
+
+        .dark-teme {
+
+            --primary-color: black;
+            --secondary-color: white;
+        }
+
+        #dark {
+            margin-left: 400px;
+            margin-top: 100px;
+            background-color: var(--primary-color);
+            color: var(--secondary-color);
+        }
+
+        #main {
+            margin-left: 500px;
+            color: white;
+            text-align: center"
+
+        }
+
+        #l1 {
+            color: black;
+        }
     </style>
 </head>
 
 <body>
+    <div id="main">
+        <h2>Dark Mode <br><span id="l1">Light Mode</span></h2>
+    </div>
 
+    <div>
+        <h1 id="dark">CLICK HERE TO CHANGE</h1>
+    </div>
 </body>
+<script>
+    var darkt = document.getElementById("dark")
+    var light = document.getElementById("LIGHT")
+    darkt.onclick = function () {
+        document.body.classList.toggle("dark-teme");
+    }
+</script>
 
 </html>
