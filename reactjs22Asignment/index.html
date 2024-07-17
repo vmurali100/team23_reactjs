@@ -4,16 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Image Animation</title>
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
         <div class="image-box">
             <div class="image">
-                <img src="./background_change_img/transparent.png" alt="">
+                <img src="./background_change_img/transparent.png" alt="" width="100%">
+
+                <div class="img-drop">
+                    <img src="./background_change_img/original.jpg" id="originalImg" alt="Original Image">
+                </div>
+                <span id="line">
+                    <img src="./background_change_img/arrow.png" alt="Arrow" class="arrow">
+                </span>
             </div>
         </div>
     </div>
-    
+    <script src="script.js"></script>
 </body>
 </html>
