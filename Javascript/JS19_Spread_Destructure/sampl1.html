@@ -25,11 +25,28 @@
         // console.log(n1);
         // console.log(n2)
 
-        var person2 = {...person};
+        // var person2 = { ...person };
 
-        person2.fname = "Murali";
+        // person2.fname = "Murali";
 
-        console.log(person)
+        // console.log(person)
+
+        // var myNos = [100, 200, 300]
+
+        // var [n1, n2, n3] = myNos
+        // console.log(n3)
+        // console.log(myNos[2])
+
+        function useStateFunctionDemo() {
+            function sampleFunction() {
+
+            }
+            return [100, sampleFunction]
+        }
+
+        var [n1,sFunc] = useStateFunctionDemo();
+        console.log(n1);
+        console.log(sFunc)
     </script>
 </body>
 
