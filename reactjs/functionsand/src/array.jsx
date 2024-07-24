@@ -1,24 +1,19 @@
-import { useState } from "react"
+import { useState } from "react";
 
-export const Userobject = () => {
-    var [user,setuser] = useState({
-        fname: "vishal",
-        lname: "M.G.",
-    })
+export const UsersArray = () => {
+  const [users, setUsers] = useState(["Kiran", "Kumar", "Ram", "Ravi"]);
 
-var changeobject = () => {
-     setuser({
-        fname: "krishna",
-        lname: "d"
-
-    })
-    return <div>
-    <button onClick={changeobject}>click to change object</button>
-    
-        <li>{Userobject.lname}</li>
-        <li>{Userobject.fname}</li>
-   
-</div>
+  const changeArrayValues = () => {
+    setUsers(['Raghu','Vishal','Shekar','Jashwanth'])
+  };
+  return (
+    <div>
+      <button onClick={changeArrayValues}>Change Values In Array</button>
+      <ul>
+        {users.map((usr) => {
+          return <li>{usr}</li>;
+        })}
+      </ul>
+    </div>
+  );
 };
-};
-export default Userobject

@@ -16,7 +16,7 @@ function Variables (){
     return <div>
         <h2> user name is: {myname}</h2>
         <button onClick={changename}>click to change name</button><br />
-        <Child msg={"myname"} hello={"welcome"} />
+        <Child msg={myname} hello={"welcome"} />
       
          </div>
         

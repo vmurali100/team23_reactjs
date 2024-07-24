@@ -4,7 +4,7 @@ import './index.css';
 import Func from './func';
 import MyComponent from './class';
 import Variables from './inputtypes';
-import Userobject from './array';
+import Userobject, { UsersArray } from './array';
 import Child from './child';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -12,8 +12,9 @@ root.render(
   <React.StrictMode>
     
     <Variables/>
-    
+
     <Child/>
+   <UsersArray/>
   
   
   </React.StrictMode>
