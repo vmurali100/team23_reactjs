@@ -12,6 +12,7 @@ root.render(
   <React.StrictMode>
     
     <Variables/>
+    
     <Child/>
   
   
