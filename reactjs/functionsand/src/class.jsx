@@ -1,4 +1,5 @@
 import { Component } from "react";
+import Child from "./child";
 
 
 class MyComponent extends Component {
@@ -6,6 +7,8 @@ class MyComponent extends Component {
     return (
       <div>
         <h1>Hello, world!</h1>
+        
+        
       </div>
     );
   }

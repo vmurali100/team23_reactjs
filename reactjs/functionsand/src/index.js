@@ -4,13 +4,16 @@ import './index.css';
 import Func from './func';
 import MyComponent from './class';
 import Variables from './inputtypes';
+import Userobject from './array';
+import Child from './child';
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-     <Variables/>
-    <Func/>
-    <MyComponent/>
-   
+    
+    <Variables/>
+    <Child/>
+  
   
   </React.StrictMode>
 );
