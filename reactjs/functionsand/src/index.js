@@ -6,15 +6,19 @@ import MyComponent from './class';
 import Variables from './inputtypes';
 import Userobject, { UsersArray } from './array';
 import Child from './child';
+import Editarray from './arrrayedit';
+import Deletearray from './deletearray';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     
-    <Variables/>
+    {/* <Variables/>
 
     <Child/>
-   <UsersArray/>
+   <UsersArray/> */}
+   <Editarray/>
+   <Deletearray/>
   
   
   </React.StrictMode>
