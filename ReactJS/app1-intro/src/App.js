@@ -9,8 +9,8 @@ function App() {
       <h2>Welcome to ReactJS Introduction !!!</h2>
       {/* <User /> */}
       {/* <UserCalss/> */}
-      {/* <UserObject/> */}
-      <UsersArray/>
+      <UserObject/>
+      {/* <UsersArray/> */}
     </>
   );
 }

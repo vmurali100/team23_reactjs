@@ -2,9 +2,10 @@ import { useState } from "react";
 
 export const UserObject = () => {
   const [userInfo, setUserInfo] = useState({
-    fname: "Ram",
+    fname: "Murali",
     lname: "Krishna",
-  });
+    email: "murali@gmail.com",
+});
 
   const changeObjectDetails = () => {
     setUserInfo({
@@ -16,9 +17,16 @@ export const UserObject = () => {
   return (
     <div>
       <button onClick={changeObjectDetails}>Change Object Info</button>
-      <ul>
+      {/* <ul>
         <li>{userInfo.fname}</li>
         <li>{userInfo.lname}</li>
+        <li>{userInfo.email}</li>
+      </ul> */}
+
+      <ul>
+        {Object.values(userInfo).map((val,i)=>{
+          return <li key={i}>{val}</li>
+        })}
       </ul>
     </div>
   );
