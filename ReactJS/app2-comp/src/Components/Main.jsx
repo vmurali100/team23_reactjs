@@ -1,5 +1,6 @@
 import { useState } from "react";
 import AddValue from "./AddValue";
+import AddValueForm from "./AddValueForm";
 import Child from "./Child";
 import RemoveValue from "./RemoveValue";
 
@@ -18,7 +19,8 @@ export const Main = () => {
       {/* <button onClick={sayhelloFunc}>SAY HELLO</button> */}
       {/* <Child msg={greetings} hello={"Welcome"} age={45}/> */}
       {/* <AddValue/> */}
-      <RemoveValue/>
+      {/* <RemoveValue/> */}
+      <AddValueForm/>
     </div>
   );
 };
