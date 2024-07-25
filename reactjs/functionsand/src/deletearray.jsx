@@ -7,14 +7,14 @@ var Deletearray =()=>{
         "list2",
        "list3"
     ])
-    var  addlist =()=>{
+    var  deletelist =()=>{
         var newlist =[...list]
         newlist.pop()
         listchange(newlist)
 
     }
     return  <div>
-        <button onClick={addlist}>click to delete</button>
+        <button onClick={deletelist}>click to delete</button>
         <ul>
             {list.map((item,i)=>{
                 return <li key={i}>{item}</li>

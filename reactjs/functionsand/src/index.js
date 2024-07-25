@@ -8,6 +8,7 @@ import Userobject, { UsersArray } from './array';
 import Child from './child';
 import Editarray from './arrrayedit';
 import Deletearray from './deletearray';
+import Array from './delandedit';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -17,8 +18,10 @@ root.render(
 
     <Child/>
    <UsersArray/> */}
-   <Editarray/>
-   <Deletearray/>
+   {/* <Editarray/> */}
+   {/* <Deletearray/> */}
+   <Array/>
+   
   
   
   </React.StrictMode>
