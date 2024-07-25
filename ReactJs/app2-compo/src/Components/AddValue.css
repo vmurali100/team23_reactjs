@@ -1,0 +1,16 @@
+li{
+    display: block;
+    background: lightseagreen;
+    margin: 2px;
+    color: whitesmoke;
+    padding: 2px;
+    width: 200px;
+    list-style: none;
+    
+}
+#Add{
+    background-color: green;
+}
+#Remove{
+    background-color: red;
+}
