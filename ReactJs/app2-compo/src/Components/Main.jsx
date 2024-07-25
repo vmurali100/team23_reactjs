@@ -1,6 +1,7 @@
 import { useState } from "react";
 import AddValue from "./AddValue";
 import Child from "./Child";
+import AddValueForm from "./AddValueForm";
 
 export const Main = () => {
     const [message, setMessage] = useState("Welcome to Main Component");
@@ -16,6 +17,7 @@ export const Main = () => {
             <button onClick={sayhelloFunc}>Say Hello</button>
             <Child msg={greetings} hello={"Jeswanth"} age={35} />
             <AddValue/>
+            <AddValueForm/>
         </div>
     );
 };
