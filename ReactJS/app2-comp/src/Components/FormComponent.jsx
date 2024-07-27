@@ -1,6 +1,6 @@
 import React from "react";
 
-const FormComponent = ({ user, handleChange, isEdit, updateUser, addUser }) => {
+const FormComponent = ({ user, handleChange, isEdit, updateUser, addUser,isValid,validateForm }) => {
   return (
     <div>
       <h2>Welcome to Form Component !!</h2>
@@ -12,6 +12,7 @@ const FormComponent = ({ user, handleChange, isEdit, updateUser, addUser }) => {
           name="fname"
           value={user.fname}
           onChange={handleChange}
+          onKeyUp={validateForm}
         />{" "}
         <br />
         <label htmlFor="">Last Name : </label>
@@ -20,6 +21,7 @@ const FormComponent = ({ user, handleChange, isEdit, updateUser, addUser }) => {
           name="lname"
           value={user.lname}
           onChange={handleChange}
+          onKeyUp={validateForm}
         />{" "}
         <br />
         <label htmlFor="">Email : </label>
@@ -28,6 +30,7 @@ const FormComponent = ({ user, handleChange, isEdit, updateUser, addUser }) => {
           name="email"
           value={user.email}
           onChange={handleChange}
+          onKeyUp={validateForm}
         />{" "}
         <br />
         {isEdit ? (
@@ -35,7 +38,7 @@ const FormComponent = ({ user, handleChange, isEdit, updateUser, addUser }) => {
             Update User
           </button>
         ) : (
-          <button type="button" onClick={addUser}>
+          <button type="button" onClick={addUser} disabled ={!isValid} >
             Add User
           </button>
         )}
