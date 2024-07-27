@@ -3,6 +3,7 @@ import React from 'react'
 const Table = ({handleDelete,handleEdit,allusers}) => {
   return (
     <div>
+        <hr />
        <table border={1}  style={{width:"700px",padding:"10px"}}>
             <thead>
                 <tr>
@@ -19,7 +20,8 @@ const Table = ({handleDelete,handleEdit,allusers}) => {
                 {allusers.map((usr,i) => {
                     return <tr key={i}>
                      
-                        <td></td>
+                        <td>{i+1}</td>
+
                         <td>{usr.fname}</td>
                         <td>{usr.lname}</td>
 
