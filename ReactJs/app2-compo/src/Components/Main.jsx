@@ -2,6 +2,7 @@ import { useState } from "react";
 import AddValue from "./AddValue";
 import Child from "./Child";
 import AddValueForm from "./AddValueForm";
+import CreateForm from "./CreateForm";
 
 export const Main = () => {
     const [message, setMessage] = useState("Welcome to Main Component");
@@ -16,8 +17,9 @@ export const Main = () => {
             <h2>{message} </h2>
             <button onClick={sayhelloFunc}>Say Hello</button>
             <Child msg={greetings} hello={"Jeswanth"} age={35} />
-            <AddValue/>
-            <AddValueForm/>
+            {/* <AddValue/> */}
+            {/* <AddValueForm/> */}
+            <CreateForm/>
         </div>
     );
 };
