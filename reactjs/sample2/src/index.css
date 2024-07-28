@@ -53,3 +53,130 @@
 
    
 }
+/* prpos 2 nd project css */
+
+#start{
+    width: 900px;
+    height: 900px;
+    margin: 0 auto;
+    background-color: lightsalmon;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    border: 2px ;
+    border-radius: 50%;
+
+}
+#one{
+    width: 700px;
+    height: 700px;
+    margin: 0 auto;
+    background-color: rgb(122, 255, 184);
+    display: flex;
+    text-align: center;
+    align-items: center;
+    border: 2px ;
+    border-radius: 50%;
+
+}
+#two{
+    width: 500px;
+    height: 500px;
+    margin: 0 auto;
+    background-color: rgb(255, 122, 133);
+    display: flex;
+    text-align: center;
+    align-items: center;
+    border: 2px ;
+    border-radius: 50%;
+
+}
+#tree{
+    width: 300px;
+    height: 300px;
+    margin: 0 auto;
+    background-color: rgb(135, 122, 255);
+    display: flex;
+    text-align: center;
+    align-items: center;
+    border: 2px ;
+    border-radius: 50%;
+
+}
+#four{
+    margin-left: 100px;
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+    background-color: rgb(255, 122, 237);
+    display: flex;
+    text-align: center;
+    align-items: center;
+    border: 2px ;
+    border-radius: 50%;
+
+}
+#end{
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+    background-color: rgb(253, 255, 122);
+    display: flex;
+    text-align: center;
+    align-items: center;
+    border: 2px ;
+    border-radius: 50%;
+    color: black;
+}
+
+/* css styling for the prpops3 */
+
+#parent{
+    width: 900px;
+    height: 700px;
+    margin: 0 auto;
+    background-color: rgb(253, 255, 122);
+    display: flex;
+    text-align: center;
+    align-items: center;
+   
+    color: black;
+}
+#child{
+    width: 700px;
+    height: 500px;
+    margin: 0 auto;
+    background-color: rgb(122, 255, 188);
+    display: flex;
+    text-align: center;
+    align-items: center;
+   
+    color: black;
+
+
+}
+#grandchild{
+    width: 500px;
+    height: 300px;
+    margin: 0 auto;
+    background-color: rgb(255, 142, 122);
+    display: flex;
+    text-align: center;
+    align-items: center;
+   
+    color: black;
+
+}
+
+#final{
+    width: 300px;
+    height: 100px;
+    margin: 0 auto;
+    background-color: rgb(16, 5, 74);
+    display: flex;
+    text-align: center;
+    align-items: center;
+   
+    color: white;
+
+}

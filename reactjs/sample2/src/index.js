@@ -4,13 +4,18 @@ import "./index.css"
 
 
 import Index from './props rendering';
+import Props2 from './props2/imp';
+import Props3 from './props3/Props3';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     
    
-  <Index/>
+ 
+ 
+  <Props3/>
+
    
   
   
