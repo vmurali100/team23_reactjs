@@ -12,19 +12,24 @@ import Base2 from './hoc2/base2';
 import Tabel5 from './hoc2/tabel5';
 import Table3 from './hoc2/table3';
 import Table4 from './hoc2/table4';
+import Form1 from './hoc3.jsx/form1';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
   {/* <Increment/>
   <Decrement/> */}
+
+  {/* 2ndcode
   <Base1/><hr/>
   <Base2/><hr/>
   <Table3/><hr/>
   <hr/>
   <Table4/>
   <hr/>
-  <Tabel5/>
+  <Tabel5/> */}
+
+ <Form1/>
   </React.StrictMode>
 );
 
