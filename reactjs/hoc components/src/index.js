@@ -4,11 +4,16 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Forms from './validationforms';
+import Combine from './hoc1/combine';
+import Increment from './hoc1/increment';
+import Decrement from './hoc1/decrement';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-  <Forms/>
+    <Increment/>
+    <hr />
+    <Decrement/>
   </React.StrictMode>
 );
 
