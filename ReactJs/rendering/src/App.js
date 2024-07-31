@@ -5,17 +5,19 @@ import RenderChild from './Components/renderingchills';
 import ClickCounter from './Components/ClickCounter';
 import HoverCounterxd from './Components/HoverConterxd';
 import Counter1 from './components1/counter';
+import OnDoubleClick from './Components/OnDoubleClick';
 
 function App() {
   return (
     <div className="App">
-      {/* <h2>This is from main component</h2>
-      <hr/> */}
-      {/* <RenderMain/>  */}
-      <Counter1/>
-      {/* {<ClickCounter/>
+      <h2>This is from main component</h2>
+      {/* <ClickCounter/>
       <hr/>
-      <HoverCounterxd/>  */}
+      <HoverCounterxd/>
+      <hr/>
+      <OnDoubleClick/> */}
+      <RenderMain/>
+     
     </div>
   );
 }
