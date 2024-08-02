@@ -1,16 +1,22 @@
 {
   "users": [
     {
-      "fullName": "Murali VMR",
+      "fname": "murali",
+      "lname": "Krishna New",
       "email": "vmurali100@gmail.com",
-      "password": "1234",
-      "id": 1
+      "id": 3
     },
     {
-      "fullName": "Ram VV",
+      "fname": "Ram",
+      "lname": "Krishna VMR",
       "email": "ram@gmail.com",
-      "password": "222",
-      "id": 2
+      "id": 4
+    },
+    {
+      "fname": "Navin",
+      "lname": "Kumar New",
+      "email": "navin@gmail.com",
+      "id": 5
     }
   ]
 }
