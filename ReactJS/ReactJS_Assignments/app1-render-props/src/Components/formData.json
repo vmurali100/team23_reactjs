@@ -1,0 +1,156 @@
+[
+  {
+     "id":"field1",
+     "label":"First Field",
+     "type":"text",
+     "placeholder":"Enter text",
+     "value":"",
+     "required":false,
+     "options":[
+        
+     ]
+  },
+  {
+     "id":"field2",
+     "label":"Second Field",
+     "type":"dropdown",
+     "placeholder":"Select an option",
+     "value":"",
+     "required":false,
+     "options":[
+        {
+           "label":"Option 1",
+           "value":"option1"
+        },
+        {
+           "label":"Option 2",
+           "value":"option2"
+        },
+        {
+           "label":"Option 3",
+           "value":"option3"
+        }
+     ]
+  },
+  {
+     "id":"field3",
+     "label":"Third Field",
+     "type":"dropdown",
+     "placeholder":"Select an option",
+     "value":"",
+     "required":false,
+     "options":[
+        {
+           "label":"Choice A",
+           "value":"choiceA"
+        },
+        {
+           "label":"Choice B",
+           "value":"choiceB"
+        },
+        {
+           "label":"Choice C",
+           "value":"choiceC"
+        }
+     ]
+  },
+  {
+     "id":"field4",
+     "label":"Fourth Field",
+     "type":"table",
+     "placeholder":"",
+     "value":"",
+     "required":false,
+     "columns":[
+        {
+           "header":"Column 1",
+           "field":"column1"
+        },
+        {
+           "header":"Column 2",
+           "field":"column2"
+        },
+        {
+           "header":"Column 3",
+           "field":"column3"
+        },
+        {
+           "header":"Column 4",
+           "field":"column4"
+        }
+     ],
+     "data":[
+        {
+           "column1":"Data 1-1",
+           "column2":"Data 1-2",
+           "column3":"Data 1-3",
+           "column4":"Data 1-4"
+        },
+        {
+           "column1":"Data 2-1",
+           "column2":"Data 2-2",
+           "column3":"Data 2-3",
+           "column4":"Data 2-4"
+        },
+        {
+           "column1":"Data 3-1",
+           "column2":"Data 3-2",
+           "column3":"Data 3-3",
+           "column4":"Data 3-4"
+        }
+     ]
+  },
+  {
+     "id":"field5",
+     "label":"Fifth Field",
+     "type":"table",
+     "placeholder":"",
+     "value":"",
+     "required":false,
+     "columns":[
+        {
+           "header":"Name",
+           "field":"name"
+        },
+        {
+           "header":"Age",
+           "field":"age"
+        },
+        {
+           "header":"Email",
+           "field":"email"
+        },
+        {
+           "header":"Occupation",
+           "field":"occupation"
+        },
+        {
+           "header":"Country",
+           "field":"country"
+        }
+     ],
+     "data":[
+        {
+           "name":"Alice",
+           "age":30,
+           "email":"alice@example.com",
+           "occupation":"Engineer",
+           "country":"USA"
+        },
+        {
+           "name":"Bob",
+           "age":25,
+           "email":"bob@example.com",
+           "occupation":"Designer",
+           "country":"Canada"
+        },
+        {
+           "name":"Charlie",
+           "age":35,
+           "email":"charlie@example.com",
+           "occupation":"Teacher",
+           "country":"UK"
+        }
+     ]
+  }
+]

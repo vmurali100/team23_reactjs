@@ -6,9 +6,11 @@ import RegistrationFormHOC from './Components/HOC/RegistrationFormHOC';
 import LoginFormHOC from './Components/HOC/LoginFormHOC';
 import RegistrationFormWrapper from './Components/Context-API/RegistrationFormWrapper';
 import LoginFormWrapper from './Components/Context-API/LoginFormWrapper';
-
+import Form from './Components/Form';
+import data from './Components/formData.json'
 
 function App() {
+  console.log(data)
   return (
     <div className="App">
       {/* <MyForm/> */}
@@ -18,7 +20,8 @@ function App() {
       {/* <RegistrationFormHOC/> */}
       {/* <LoginFormHOC/> */}
       {/* <RegistrationFormWrapper/> */}
-      <LoginFormWrapper/>
+      {/* <LoginFormWrapper/> */}
+      <Form formData={data}/>
     </div>
   );
 }
