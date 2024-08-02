@@ -1,10 +1,10 @@
 import React from "react";
 import Child from "./Child";
 
-const Parent = ({myDetails}) => {
+const Parent = () => {
     return(
         <div id="Parent">
-            <Child myDetails={myDetails}/>
+            <Child/>
         </div>
     )
 }

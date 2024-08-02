@@ -1,7 +1,7 @@
 import React from "react";
 import { UserInfoContextConsumer } from "./usercontext";
 
-const GrandChild = ({myDetails}) => {
+const GrandChild = () => {
     return(
         <div id="GrandChild">
             <UserInfoContextConsumer>

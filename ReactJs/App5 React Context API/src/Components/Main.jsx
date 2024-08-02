@@ -10,12 +10,12 @@ const Main = () => {
 
     const [userInformation, setuserInformation] = useState({
         Salary: 1000000,
-        Roll: "Full stack develeper"
-    })
+        Roll: "Full stack develeper yes it is"
+    })  
     return(
         <div id='mainComp'>
             <UserInfoContextProvider value={userInformation}>
-            <GrandParent myDetails={myDetails}/>
+            <GrandParent/>
             </UserInfoContextProvider>
             
         </div>

@@ -1,10 +1,10 @@
 import React from "react";
 import Parent from "./Parent";
 
-const GrandParent = ({myDetails}) => {
+const GrandParent = () => {
     return(
         <div id="GrandParent">
-            <Parent myDetails={myDetails}/>
+            <Parent/>
         </div>
     )
 }

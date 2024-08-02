@@ -32,39 +32,43 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
 }
 
-#mainComp{
+#Main1Comp {
   width: 900px;
   height: 900px;
-  background: lightseagreen;
+  background: blue;
   margin: 0 auto;
   display: flex;
   text-align: center;
   align-items: center;
 }
-#GrandParent{
+
+#world {
   width: 700px;
   height: 700px;
-  background: lightcoral;
+  background: red;
   margin: 0 auto;
   display: flex;
   text-align: center;
   align-items: center;
 }
-#Parent{
+
+#Asia {
   width: 500px;
   height: 500px;
-  background: lightblue;
+  background: darkmagenta;
   margin: 0 auto;
   display: flex;
   text-align: center;
   align-items: center;
 }
-#Child{
+
+#India {
   width: 300px;
   height: 300px;
   background: lightgreen;
@@ -73,7 +77,8 @@
   text-align: center;
   align-items: center;
 }
-#GrandChild{
+
+#Chittoor {
   width: 150px;
   height: 150px;
   background: lightslategray;
@@ -83,5 +88,3 @@
   align-items: center;
   color: white;
 }
-
-
