@@ -17,7 +17,7 @@ const RenderMain = () => {
         return <NewChildComp />
     }
     return (
-        <div>  13:00
+        <div> 
             <h2>Welcome to RenderMain Component..!!</h2>
             <hr />
             <RenderChild message={message} person={person} students={students} createNewComp={createNewComp} />
