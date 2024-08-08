@@ -20,7 +20,7 @@ const Users = () => {
         setuser(newuser)
     }
     const create = async () => {
-        const response = await fetch("http://localhost:3000/users", {
+        const response = await fetch("http://localhost:3001/data", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -33,7 +33,7 @@ const Users = () => {
     }
     const read = async() => {
        
-            const response = await(await fetch("http://localhost:3000/users")).json(); 
+            const response = await(await fetch("http://localhost:3001/data")).json(); 
             setallusers(response)
 
                
@@ -45,7 +45,7 @@ const Users = () => {
         setisedit(true)
       }
     const update = async(usr) => { 
-        const response = await fetch("http://localhost:3000/users"+usr.id,{
+        const response = await fetch("http://localhost:3001/data"+usr.id,{
             method:"PUT",
             body:JSON.stringify(users),
             headers:{
@@ -59,7 +59,7 @@ const Users = () => {
     }
     const deluser = async(usr) => {
         console.log(usr)
-        const response =await fetch("http://localhost:3000/users"+usr.id,{
+        const response =await fetch("http://localhost:3001/data"+usr.id,{
             method:"DELETE"
         })
         read()
