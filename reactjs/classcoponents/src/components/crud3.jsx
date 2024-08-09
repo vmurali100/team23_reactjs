@@ -16,16 +16,16 @@ export class UsersClass extends Component {
             index: null,
         };
     }
-    
-    handleDelete = async(usr) => {
-        console.log(usr)
-        const response =await fetch("http://localhost:3001/data"+usr.id,{
-            method:"DELETE"
-        })
-        
-     }
 
-   handleChange = (e) => {
+    handleDelete = async (usr) => {
+        console.log(usr)
+        const response = await fetch("http://localhost:3001/user" + usr.fname, {
+            method: "DELETE"
+        })
+
+    }
+
+    handleChange = (e) => {
         const copiedState = { ...this.state };
         const copiedObject = { ...this.state.singleUser };
         copiedObject[e.target.name] = e.target.value;
@@ -39,14 +39,26 @@ export class UsersClass extends Component {
         this.setState(copiedState);
         this.clearForm();
     };
-     read = async() => {
-       
-        const response = await(await fetch("http://localhost:3001/data")).json(); 
+    create = async (usr) => {
+        const response = await fetch("http://localhost:3001/user", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(this.state.allUsers)
+        })
+
+        this.read()
+        this.clearForm()
+    }
+    read = async () => {
+
+        const response = await (await fetch("http://localhost:3001/user")).json();
         this.setState(response)
 
-           
 
- }
+
+    }
 
     clearForm = () => {
         const copiedState = { ...this.state };
@@ -65,15 +77,21 @@ export class UsersClass extends Component {
         this.setState(copiedState);
     };
 
-    handleUpdate = async(usr) => { 
-        const response = await fetch("http://localhost:3001/data"+usr.id,{
-            method:"PUT",
-            body:JSON.stringify(this.users),
-            headers:{
-                "Content-Type":"application.json",
+    handleUpdate = async (usr) => {
+        const response = await fetch("http://localhost:3001/user", {
+            method: "PUT",
+            body: JSON.stringify(this.state.allUsers),
+            headers: {
+                "Content-Type": "application.json",
 
             }
-        })}
+
+        })
+        this.clearForm()
+
+        this.read()
+
+    }
     render() {
         return (
             <div>
@@ -95,11 +113,11 @@ export class UsersClass extends Component {
                     />{" "}
                     <br />
                     {this.state.index === null ? (
-                        <button type="button" onClick={this.handleSubmit}>
+                        <button type="button" onClick={this.handleSubmit()}>
                             Add User
                         </button>
                     ) : (
-                        <button type="button" onClick={this.handleUpdate}>
+                        <button type="button" onClick={this.handleUpdate()}>
                             Update User
                         </button>
                     )}
