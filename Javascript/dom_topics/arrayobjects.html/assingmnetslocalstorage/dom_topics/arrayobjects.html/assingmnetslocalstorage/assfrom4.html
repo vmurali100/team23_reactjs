@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        form{
+            align-items: center;
+            padding: 10px;
+            margin-left:30px;
+        }
+        
+        #aaa{
+            align-items: center;
+            margin-left: 480px;
+            border: 2px solid black;
+            width: 350px;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center;">Registration form</h1>
+    <div id="aaa">
+    <form action="" style="align-items: center;">
+        <label>ID:</label>
+        <input type="NUMBER" name="" id="no"><br>
+        <label>NAME:</label>
+        <input type="TEXT" name="" id="name"><br>
+        <label>COURSE:</label>
+        <input type="TEXT" name="" id="course"><br>
+        <label>BRANCH:</label>
+        <input type="TEXT" name="" id="branch"><br>
+        <label>ROLLNO:</label>
+        <input type="NUMBER" name="" id="rollno"><br>
+        <label>Email_adress</label>
+        <input type="email" name="" id="email"><br>
+        <label>user_name/label>
+        <input type="TEXT" name="" id="username"><br>
+        <label>About_us</label>
+        <input type="TEXT" name="" id="about"><br>
+        <label>password</label>
+        <input type="TEXT" name="" id="password"><br>
+        <button type="button" onclick="users()">Add</button>
+        
+
+
+    </form>
+</div>
+<script>
+    var data = JSON.parse(localStorage.getItem('data'));
+    function users() {
+        
+        
+        var customers = {
+            id:document.getElementById('no').value,
+            name: document.getElementById('name').value,
+            course: document.getElementById('course').value,
+            branch: document.getElementById('branch').value,
+            rollno: document.getElementById("rollno").value,
+            email: document.getElementById("email").value,
+            about_us: document.getElementById("about").value,
+            password: document.getElementById("password").value
+
+        }
+        data.push(customers)
+       // console.log(data)
+        localStorage.setItem('data', JSON.stringify(data))
+        console.log(data)
+
+
+    }
+    users()
+</script>
+    
+</body>
+</html>

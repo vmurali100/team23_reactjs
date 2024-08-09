@@ -1,0 +1,363 @@
+* {
+    margin: 0px;
+    padding: 0px;
+
+}
+
+.header {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: 100px;
+    background-color: black;
+ 
+    margin: auto;
+}
+
+.hgroup {
+    color: beige;
+    width: 960px;
+    height: 100px;
+    background-color: black;
+
+    margin: auto;
+
+
+
+}
+
+#basic {
+    width: 150px;
+    height: 50px;
+    background-color: black;
+    margin: auto;
+    float: left;
+    padding-left: 10px;
+    margin-top: 15px;
+
+
+
+}
+
+#basic p {
+
+    color: white;
+    width: 200px;
+    height:50px;
+
+    margin-left: 10px;
+
+
+}
+
+#nav {
+    width: 400px;
+    height: 20px;
+    background-color: darkgrey;
+    margin: auto;
+    padding: 20px;
+    float: right;
+    border: 2px solid black;
+    margin-top: 15px
+}
+
+#nav ul li {
+    display: inline;
+    font-size: 20px;
+    padding: 32px;
+}
+
+
+ul li a {
+    text-decoration: none;
+}
+
+a:hover {
+    color: yellow;
+}
+
+
+.slider  {
+    height: 360px;
+    width: 960px;
+    border: 2px solid;
+    margin: auto;
+    margin-top: 50px;
+}
+.slider  img {
+    height: 360px;
+    width: 960px;
+   
+}
+
+.slider h1 {
+    text-align: center;
+    padding: 150px;
+
+}
+
+.sli {
+    width: 960px;
+    height: 300px;
+     margin: auto;
+     margin-top: 50px;
+    
+    
+    }
+    #one{
+        width: 300px;
+        height: 150px;
+       
+        float:left;
+
+
+    }
+
+
+    #one  img{
+        width: 280px;
+        height: 150px;
+        border:2px solid red;
+        padding: 5px;
+        
+      }
+
+      #two{
+        width: 300px;
+        height: 150px;
+       
+        float:left;
+        margin-left: 20px;
+
+
+    }
+
+
+    #two  img{
+        width: 280px;
+        height: 150px;
+        border:2px solid red;
+        padding: 5px;
+      }
+
+ #three{
+    width: 280px;
+    height: 150px;
+   
+    float: right;
+
+
+}
+
+
+#three  img{
+    width: 280px;
+    height: 150px;
+    border:2px solid red;
+    padding: 5px;
+  }
+#one p{
+    width:300px;
+    
+   
+}
+#two p{
+    width: 300px;
+}
+#three p{
+    width: 300px;
+}
+.sli a{
+    float: right;
+    color: orange;
+}
+a:hover{
+    color: blue;
+}
+
+
+
+
+.sli h1 {
+    text-align: center;
+    margin-top: 50px;
+
+}
+
+p {
+    font-style: oblique;
+}
+
+ 
+
+.sec {
+    width: 960px;
+    height: 300px;
+  
+    margin: auto;
+    margin-top: 50px;
+
+
+
+}
+
+#box {
+    width: 470px;
+    height: 250px;
+    float:left;
+
+    margin-top: 10px;
+
+}
+#box a{
+    margin-bottom: 0px;
+    float: right;
+    color: orange;
+}
+#box a:hover{
+    color:blue
+}
+
+#iii {
+    width: 430px;
+    height: 250px;
+   
+
+    margin-top: 10px;
+    float: right;
+
+}
+
+#iii  img{
+    width: 450px;
+    height:250px;
+    border:2px solid red;
+    padding: 5px;
+    margin-left: 20px;
+}
+
+.foot {
+    width: 100%;
+    height: 200px;
+    background-color: grey;
+
+    margin-top: 5px;
+}
+#in {
+ 
+    width:960px;
+    height: 200px;
+    background-color:grey;
+    margin: auto;
+   
+
+    margin-top: 10px;
+    display: flex;
+   
+    
+
+
+}
+#l1 {
+    width: 230px;
+    height: 100px;
+    margin: auto;
+    margin-top: 10px;
+   
+    text-align: center;
+ 
+
+}
+#l2 {
+    width: 230px;
+    height: 100px;
+    margin: auto;
+    margin-top: 10px;
+  
+    text-align: center;
+   
+}
+#l3 {
+    width: 230px;
+    height: 100px;
+    margin: auto;
+    margin-top: 10px;
+
+    text-align: center;
+    float:right;
+}
+#l4 {
+    width: 230px;
+    height: 100px;
+    margin: auto;
+    margin-top: 10px;
+
+    text-align: center;
+    
+}
+
+
+
+.foot ul   {
+    display: inline;
+    font-size: 20px;
+    padding: 10px;
+    list-style-type: none;
+}
+#in a:hover{
+    color:orange;
+}
+#in h3{
+    color: antiquewhite;
+    text-decoration: none;
+    
+}
+ footer{
+    width: 100%;
+    height: 60px;
+    background-color: black;
+   
+    margin: auto;
+
+
+
+
+}
+.last{
+    display: flex;
+}
+#lmsg{
+    
+    width: 200px;
+    height: 20px;
+    margin-left: 100px;
+    /* background-color: antiquewhite; */
+    padding: 20px;
+    color: aliceblue;
+
+    
+
+
+}
+#rmsg{
+   
+    width: 200px;
+    height: 20px;
+    margin-right: 10px;
+    /* background-color: antiquewhite; */
+    padding: 20px;
+   background-color:black;
+   color:white;
+   margin-left: 200px;
+
+    
+    
+}
+#red {
+  
+  
+    color:aliceblue;
+    border: 2px  wheat;
+    margin-top: 20px;
+}

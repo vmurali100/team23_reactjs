@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estimate Information</title>
+
+    <style>
+        body {
+            font-family: sans-serif;
+            background-color: rgba(255, 217, 0, 0.953)
+        }
+
+        h1,
+        h2 {
+            margin-bottom: 10px;
+        }
+
+
+        .block1 {
+            margin-left: 50px;
+            width: 400px;
+            height: auto;
+            padding: 50px;
+        }
+
+        .customer-info,
+        .estimate-info {
+            padding: 50px
+        }
+
+        .estimate-info {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div style="display: flex;">
+    
+    <div class="block1">
+        <div class="customer-info" style="background-color: burlywood;">
+            <form action="">
+                <label for="">customer name:</label>
+                <input type="text" id="name"><br>
+                <label for="">Part name:</label>
+                <input type="text" id="pname"><br>
+                <label for="">Part Print name:</label>
+                <input type="text" id="ppname"><br>
+                <label for="">Revision:</label>
+                <input type="text" id="Revision"><br>
+                <label for="">PartNumber:</label>
+                <input type="no" id="pnumber"><br>
+
+                <label for="">Date Of estimation:</label>
+                <input type="date" id="doe"><br><br>
+                <label for="">Estimator Name:</label>
+                <input type="text" id="Estimator"><br>
+
+                <label for="">Buyer name:</label>
+                <input type="text" id="bname">
+                <label for="">Estimate base Number:</label>
+                <input type="number" id="ebn"><br>
+                <label for="">Scrap Percentage:</label>
+                <input type="percentage" id="spercentage"><br>
+                <label for="">Costs Associated with Scrap:</label><br>
+                <input type="checkbox" name="cost" value="Material">Material
+                <input type="checkbox" name="cost" value="Tooling">Tooling
+                <input type="checkbox" name="cost" value="Labour">Labour
+                <input type="checkbox" name="cost" value="Non-Macting">Non-Macting <br>
+                <button type="button" onclick="create()" id="submitBtn">submit</button>
+                <button type="button"  style="display:none" id="updateBtn" onclick="updatesuit()">update </button>
+                
+            </form>
+        </div>
+
+
+        <!-- <div class="estimate-info" style="background-color: rgb(255, 115, 0);">
+            <form action="">
+                <label for="">Estimate base Number:</label>
+                <input type="number" id="ebn"><br>
+                <label for="">Scrap Percentage:</label>
+                <input type="percentage" id="spercentage"><br>
+                <label for="">Costs Associated with Scrap:</label><br>
+                <input type="checkbox" name="cost" value="Material">Material
+                <input type="checkbox" name="cost" value="Tooling">Tooling
+                <input type="checkbox" name="cost" value="Labour">Labour
+                <input type="checkbox" name="cost" value="Non-Macting">Non-Macting <br>
+                <button type="button" onclick="create()" id="submitBtn">submit</button>
+                <button type="button"  style="display:none" id="updateBtn" onclick="updatesuit()">update </button>
+                
+            </form>
+        </div> -->
+
+
+
+    </div>
+    <div>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>name</th>
+                    <th>pname</th>
+                    <th>ppname</th>
+                    <th>Revision</th>
+                    <th>pnumber</th>
+                    <th>doe</th>
+                
+                <th>Estimator</th>
+                    <th>bname</th>
+                    <th>ebn</th>  
+                    <th>spercentage</th>
+                    <th>cost</th>
+                    <th>edit</th>
+                    <th>delete</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+</div>
+    <script>
+        var costs = document.getElementsByName("cost")
+        
+        function create() {
+            var suit = {
+                name: '',
+                pname: '',
+                ppname: '',
+                Revision: '',
+                pnumber: '',
+                doe: '',
+                Estimator: '',
+                bname: '',
+                ebn: '',
+                spercentage: '',
+                cost: []
+            }
+            //console.log(radio.length)
+            for (a in suit) {
+                if (a !== 'cost') {
+                    suit[a] = document.getElementById(a).value;
+
+                } else if (a === "cost") {
+                    // Read Values from Checkboxes
+                    for (i = 0; i < costs.length; i++) {
+                        if (costs[i].checked) {
+                            suit[a].push(costs[i].value)
+                        }
+                    }
+                }
+            }
+        
+        function clearCheckBox() {
+            for (i = 0; i < costs.length; i++) {
+                costs[i].checked = false;
+            }
+        }
+    
+    
+    var postUser=new XMLHttpRequest;
+    postUser.open("POST", "http://localhost:3000/suits");
+    postUser.setRequestHeader("Content-Type","application/json")
+    postUser.send(JSON.stringify(suit));
+    postUser.onreadystatechange =function(){
+        if( postUser.readyState ==4 && postUser.status==201){
+            console.log("suits added sucessfully")
+        }
+    }
+        }
+    var suits =[];
+    function getdata (){
+        var postUser=new XMLHttpRequest;
+        postUser.open("POST", "http://localhost:3000/suits");
+//postUser.setRequestHeader("Content-Type","application/json")
+        postUser.send();
+        postUser.onreadystatechange =function(){
+            if( postUser.readyState ==4 && postUser.status==200){
+                suits=JSON.parse(postUser.response)
+            }
+            readdetails()
+        }
+    }
+     
+               
+
+        
+     
+    function readdetails() {
+        suits.forEach((usr, i) => {
+            var myTr = document.createElement("tr")
+            for (a in usr) {
+                var myTd = document.createElement("td");
+                myTd.innerHTML = usr[a]
+                myTr.appendChild(myTd)
+            }
+            // Edit Button
+            var editTd = document.createElement("td");
+            var editButton = document.createElement("button");
+            editButton.setAttribute("onclick", "editUser(" + i + ")")
+            editButton.setAttribute("class", "btn btn-warning")
+            editButton.innerHTML = "Edit User"
+            editTd.appendChild(editButton);
+            // Delete Button 
+            var deleteTd = document.createElement("td");
+            var deleteButton = document.createElement("button");
+            deleteButton.setAttribute("onclick", "deleteUser(" + i + ")");
+            deleteButton.innerHTML = "Delete User"
+            deleteTd.appendChild(deleteButton);
+            deleteButton.setAttribute("class", "btn btn-danger")
+
+            myTr.appendChild(editTd);
+            myTr.appendChild(deleteTd)
+            document.querySelector("tbody").appendChild(myTr)
+        })
+    };
+  function clear() {
+            var suit = {
+                name: '',
+                pname: '',
+                ppname: '',
+                Revision: '',
+                pnumber: '',
+                doe: '',
+                Estimator: '',
+                bname: '',
+                ebn: '',
+                spercentage: '',
+                cost: []
+            }
+           
+            
+            }
+        
+
+        var index = null;
+        function editsuit(i) {
+            index = i;
+            var userToEdit = suits[i];
+            for (a in userToEdit) {
+                if (a !== "id") {
+                    document.getElementById(a).value = userToEdit[a]
+                }
+    
+            }
+            document.getElementById("updateBtn").style.display = "block"
+            document.getElementById("submitBtn").style.display = "none"
+        };
+        function updatesuit(){
+            var suit = {
+                name: '',
+                pname: '',
+                ppname: '',
+                Revision: '',
+                pnumber: '',
+                doe: '',
+                Estimator: '',
+                bname: '',
+                ebn: '',
+                spercentage: '',
+                cost: []
+            }
+            //console.log(radio.length)
+            for (a in suit) {
+                if (a !== 'cost') {
+                    suit[a] = document.getElementById(a).value;
+
+                } else if (a === "cost") {
+                    // Read Values from Checkboxes
+                    for (i = 0; i < costs.length; i++) {
+                        if (costs[i].checked) {
+                            suit[a].push(costs[i].value)
+                        }
+                    }
+                }
+            }
+           // suits.push(suit);
+
+        
+        function clearCheckBox() {
+            for (i = 0; i < costs.length; i++) {
+                costs[i].checked = false;
+            }
+        }
+        var postUser=new XMLHttpRequest;
+        postUser.open("POST", "http://localhost:3000/suits"+suits[i]+id);
+        postUser.setRequestHeader("Content-Type","application/json")
+        postUser.send(JSON.stringify(suit));
+        postUser.onreadystatechange =function(){
+            if( postUser.readyState ==4 && postUser.status==201){
+                suits = JSON.parse(postUser.response);
+                readdetails();
+                document.getElementById("updateBtn").style.display = "none"
+                     document.getElementById("submitBtn").style.display = "block"
+                    
+            }
+    
+        }
+    }
+        function deletesuit (){
+            var postUser = new XMLHttpRequest;
+            postUser.open("DELETE", "http://localhost:3000/suits/" + suits[i].id);
+            postUser.send();
+            postUser.onreadystatechange = function () {
+                if (postUser.readyState == 4 && postUser.status == 200) {
+                    suits = JSON.parse(postUser.response);
+                    getdata();
+                }
+            }
+        };
+        
+        getdata()
+
+
+        
+      //  readdetails()
+    </script>
+
+</body>
+
+</html>

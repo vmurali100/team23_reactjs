@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="">
+        <label for="">Vocabulary :</label>
+        <input type="text" id="vocabulary" class="vocabulary" name="vocabulary"> <br><br>
+
+        <label for="">Words :</label>
+        <input type="text" id="words" class="words" name="words"> <br><br>
+
+        <label for=""> Definitions :</label>
+        <input type="text" id="definitions" class="definitions" name="definitions"> <br><br>
+
+        <label for=""> Example Sentences :</label>
+        <input type="text" id="sentences" class="sentences" name="sentences"> <br><br>
+
+        <button type="button" onclick="languagelearning()">Learning Activities</button>
+
+    </form>
+
+    <script>
+        // Method 1 with querySelector
+        // function languagelearning(){
+        //     var LearningActivities = {
+        //         vocabulary:document.querySelector("#vocabulary").value,
+        //         words:document.querySelector("#words").value,
+        //         definitions:document.querySelector("#definitions").value,
+        //         sentences:document.querySelector("#sentences").value, 
+        //     }
+        //     console.log(LearningActivities)
+        // }
+
+        // Method 2 querySelectorAll
+        // function languagelearning(){
+        //     var LearningActivities = {
+        //         vocabulary:document.querySelectorAll("#vocabulary")[0].value,
+        //         words:document.querySelectorAll("#words")[0].value,
+        //         definitions:document.querySelectorAll("#definitions")[0].value,
+        //         sentences:document.querySelectorAll("#sentences")[0].value,
+        //     }
+        //     console.log(LearningActivities)
+        // }
+
+        // Method 3 getElementsByTagName
+        // function languagelearning(){
+        //     var LearningActivities = {
+        //         vocabulary:document.getElementsByTagName("input")[0].value,
+        //         words:document.getElementsByTagName("input")[1].value,
+        //         definitions:document.getElementsByTagName("input")[2].value,
+        //         sentences:document.getElementsByTagName("input")[3].value,
+        //     }
+        //     console.log(LearningActivities)
+        // }
+
+        // Method 4 getElementById
+        // function languagelearning(){
+        //     var LearningActivities = {
+        //         vocabulary:document.getElementById("vocabulary").value,
+        //         words:document.getElementById("words").value,
+        //         definitions:document.getElementById("definitions").value,
+        //         sentences:document.getElementById("sentences").value,
+        //     }
+        //     console.log(LearningActivities)
+        // }
+
+        // Method 5 getElementsByClassName
+        // function languagelearning(){
+        //     var LearningActivities = {
+        //         vocabulary:document.getElementsByClassName("vocabulary")[0].value,
+        //         words:document.getElementsByClassName("words")[0].value,
+        //         definitions:document.getElementsByClassName("definitions")[0].value,
+        //         sentences:document.getElementsByClassName("sentences")[0].value,
+        //     }
+        //     console.log(LearningActivities)
+        // }
+
+        // Method 6 getElementsByName
+        function languagelearning() {
+            var LearningActivities = {
+                vocabulary: document.getElementsByName("vocabulary")[0].value,
+                words: document.getElementsByName("words")[0].value,
+                definitions: document.getElementsByName("definitions")[0].value,
+                sentences: document.getElementsByName("sentences")[0].value,
+            }
+            console.log(LearningActivities)
+        }
+
+
+    </script>
+</body>
+
+</html>

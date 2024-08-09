@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="">
+        <label for="">Name :</label>
+        <input type="text" id="name" class="name" name="name"> <br><br>
+
+        <label for="">Level :</label>
+        <input type="text" id="level" class="level" name="level"> <br><br>
+
+        <label for=""> Health :</label>
+        <input type="text" id="health" class="health" name="health"> <br><br>
+
+        <label for=""> Points :</label>
+        <input type="text" id="points" class="points" name="points"> <br><br>
+
+        <button type="button" onclick="gameCharacter()">A Game Character</button>
+
+    </form>
+
+    <script>
+        // Method 1 with querySelector
+        // function gameCharacter(){
+        //     var AGameCharacter = {
+        //         name:document.querySelector("#name").value,
+        //         level:document.querySelector("#level").value,
+        //         health:document.querySelector("#health").value,
+        //         points:document.querySelector("#points").value,
+        //     }
+        //     console.log(AGameCharacter)
+        // }
+
+        // Method 2 querySelectorAll
+        // function gameCharacter(){
+        //     var AGameCharacter = {
+        //         name:document.querySelectorAll("#name")[0].value,
+        //         level:document.querySelectorAll("#level")[0].value,
+        //         health:document.querySelectorAll("#health")[0].value,
+        //         points:document.querySelectorAll("#points")[0].value
+        //     }
+        //     console.log(AGameCharacter)
+        // }
+
+        // Method 3 getElementsByTagName
+        // function gameCharacter(){
+        //     var AGameCharacter = {
+        //         name:document.getElementsByTagName("input")[0].value,
+        //         level:document.getElementsByTagName("input")[1].value,
+        //         health:document.getElementsByTagName("input")[2].value,
+        //         points:document.getElementsByTagName("input")[3].value
+        //     }
+        //     console.log(AGameCharacter)
+        // }
+
+        // Method 4 getElementById
+        // function gameCharacter(){
+        //     var AGameCharacter = {
+        //         name:document.getElementById("name").value,
+        //         level:document.getElementById("level").value,
+        //         health:document.getElementById("health").value,
+        //         points:document.getElementById("points").value
+        //     }
+        //     console.log(AGameCharacter)
+        // }
+
+        // Method 5 getElementsByClassName
+        // function gameCharacter(){
+        //     var AGameCharacter = {
+        //         name:document.getElementsByClassName("name")[0].value,
+        //         level:document.getElementsByClassName("level")[0].value,
+        //         health:document.getElementsByClassName("health")[0].value,
+        //         points:document.getElementsByClassName("points")[0].value
+        //     }
+        //     console.log(AGameCharacter)
+        // }
+
+        // Method 6 getElementsByName
+        function gameCharacter() {
+            var AGameCharacter = {
+                name: document.getElementsByName("name")[0].value,
+                level: document.getElementsByName("level")[0].value,
+                health: document.getElementsByName("health")[0].value,
+                points: document.getElementsByName("points")[0].value
+            }
+            console.log(AGameCharacter)
+        }
+
+
+    </script>
+</body>
+
+</html>

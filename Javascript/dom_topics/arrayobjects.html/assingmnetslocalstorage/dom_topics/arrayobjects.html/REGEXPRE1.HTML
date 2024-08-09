@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <label>
+            AGE
+        </label>
+        <input type="number" id="age">
+        <p  id="ageerror"></p>
+        <button type="button" onclick="validate()">submit</button>
+    </form>
+    <script>
+       
+       
+            age :document.getElementById("age")
+            //document.write(age)
+        
+       
+        var agepattern=/[0-9]/
+       function validate(){
+        document.write(agepattern.test(age))
+        if(agepattern.test(age)){
+           // user.push(users)
+            //localStorage.setItem("users" ,JSON.stringify(users))
+             document.getElementById("ageerror").style.display="none";
+             document.write("user age =",age);
+        } else{
+            document.getElementById("ageerror").style.color="red"
+            document.getElementById("ageerror").innerHTML="please enter the corect age"
+        }
+       // document.write(result)
+       }
+        //if (result== ){ }
+
+        var firstname="vishal is a good boy";
+        var pattern= /Boy/i;
+        //var result=firstname.match(pattern)
+        //document.write(pattern.test(firstname))
+        var emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+        var email="vishal@gmial.com"
+      //  document.write(emailRegex.test(email))
+      validate()
+
+    </script>
+</body>
+</html>

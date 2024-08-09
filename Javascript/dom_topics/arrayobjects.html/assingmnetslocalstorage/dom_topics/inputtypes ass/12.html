@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <label >temparature</label>
+        <br>
+        <input type="number" name="temp" id="clim1" class="temp1">
+        <br>
+        <label >humidity</label>
+        <br>
+        <input type="number" name="temp" id="clim2" class="temp2">
+        <br>
+        <label >wind_speed</label>
+        <br>
+        <input type="number" name="temp" id="wspeed" class="temp3">
+        <br>
+        <button type="button" onclick="climate()"> submit</button>
+    </form>
+    <script>
+        //metod1
+        function climate (){
+            //console.log("user 1 called");
+            //var weather = document.querySelector('input').value
+            //console.log("the climate is: ",weather ) 
+
+
+        //metod2
+        //var weather = document.querySelectorAll('input')[1].value
+        //console.log("the climate is: ",weather )
+        //METOD 3
+        //var weather = document.getElementsByTagName('input')[0].value
+        //console.log("the climate is: ",weather )
+        //metod 4
+        //var weather = document.getElementById('clim2').value
+        //console.log("the climate is: ",weather )
+
+        //metod 5
+        //var weather = document.getElementsByClassName('temp2')[0].value
+        //console.log("the climate is: ",weather )
+
+
+        //metod6
+        var weather = document.getElementsByName('temp')[2].value
+        console.log("the climate is: ",weather )
+
+
+        }
+    </script>
+</body>
+</html>

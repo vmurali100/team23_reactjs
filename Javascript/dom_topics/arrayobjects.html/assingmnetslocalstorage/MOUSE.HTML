@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    
+    <button onclick="alertHello()">Click Me</button> <br><br>
+    <button ondblclick="OnDBClick()">Click Me - DB</button> <br> <br>
+    <button onmouseover="OnHover()">Hover On Me</button><br> <br>
+    <button onmouseout="OnMouseOut()">Hover Out On Me</button><br> <br>
+    <button onmousemove="OnMouseMove()">Mouse Move On Me</button><br> <br>
+    <button onmouseDown="OnMouseDown()">Mouse Down On Me</button><br> <br>
+    <button onmouseup="OnMouseUp()">Mouse Up On Me</button>
+
+    <script>
+        
+        function alertHello() {
+            alert("ALERET HELLO")
+        }
+
+        function OnDBClick() {
+            alert(" Hello On Doble Click..!!!")
+        }
+
+        function OnHover() {
+            alert("Welcome to Event Handlers on Hover !!!");
+        }
+
+        function OnMouseOut() {
+            alert("Ok .. TATA bye bye")
+        }
+        function OnMouseMove() {
+            console.log("You Are moving the  Mouse")
+        }
+
+        function OnMouseDown(){
+            console.log("You Just performed Mouse DOWN !!!!")
+        }
+
+        function OnMouseUp(){
+            console.log("You Just performed Mouse Up Event  !!!!")
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Circular Graph</title>
+    <style>
+        .chart-container {
+            align-items: center;
+        }
+
+        #outer {
+
+            border: 2px solid black;
+            padding: 26px;
+            border-radius: 50%;
+            width: 115px;
+            height: 110px;
+
+        }
+
+        #inner {
+            border: 2px solid black;
+            padding: 24px;
+            border-radius: 50%;
+          
+            height: 60px;
+        }
+
+        #no {
+            position: absolute;
+            margin-top: 40px;
+            margin-left: 40px;
+        }
+        circle{
+
+            fill: none;
+            
+            stroke: url(#GradientColor);
+            
+            stroke-width: 20px;
+            
+            stroke-dasharray: 472;
+            
+            stroke-dashoffset: 472;
+            
+            animation: anim 2s linear forwards;
+            
+            
+            
+            }
+            
+            svg{
+            
+            position: absolute;
+            
+            top: 70px;
+            
+           margin-left: 4px;
+            
+            }
+            
+            @keyframes anim{
+            
+            100%{
+            
+            stroke-dashoffset: 165;
+            
+            }
+            
+            }
+    </style>
+</head>
+
+<body>
+    <u><div style="margin-right: 20px;color:red;text-align:center"><h2>25.CIRCULAR BAR</h2></div></u>
+  
+    <div class="chart-container">
+        <div id="outer">
+            <div id="no">65%</div>
+            <div id="inner">
+
+            </div>
+        </div>
+    </div>
+    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="160px" height="160px">
+        <defs>
+            <linearGradient id="GradientColor">
+                <stop offset="0%" stop-color="#e91e63" />
+
+                <stop offset="100%" stop-color="#673ab7" />
+
+            </linearGradient>
+
+        </defs>
+        <circle cx="80" cy="80" r="70" stroke-linecap="round" />
+
+
+</body>
+
+</html>

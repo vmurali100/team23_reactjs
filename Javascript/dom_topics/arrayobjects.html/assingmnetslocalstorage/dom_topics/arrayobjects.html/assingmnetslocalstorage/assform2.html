@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: rgba(0, 149, 255, 0.753);
+        }
+        
+        .container {
+            width: 600px;
+            margin: 50px auto;
+            border: 1px solid #ccc;
+            padding: 125px;
+            
+        } 
+        
+        h1 {
+            text-align: center;
+        }
+        
+        .form-group {
+            margin-bottom: 15px;
+        }
+        
+        label {
+            display: inline;
+            margin-bottom: 5px;
+            input[type="text"],
+            input[type="number"],
+            input[type="url"] {
+                width: 100%;
+                padding: 8px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+            }
+        
+       
+        }
+        
+        select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4;
+        }
+        #register{
+            color:white;
+             margin-left:300px  ;
+            
+        }
+        
+    </style>
+</head>
+<body>
+    <h4 id="register" style="position: absolute;">Registration Details</h4>
+    <div class="container">
+       
+        <form id="regForm">
+            <div class="form-group">
+                <label for="university">University:</label>
+                <input type="text" name="university" id="university" required>
+            </div>
+            <div class="form-group">
+                <label for="institute">Institute:</label>
+                <input type="text" name="institute" id="institute" required>
+            </div>
+            <div class="form-group">
+                <label for="branch">Branch:</label>
+                <select name="branch" id="branch" required>
+                    <option value="">- - select - -</option>
+                    <option value="CSE">CSE</option>
+                    <option value="ECE">ECE</option>
+                    <option value="MECH">MECH</option>
+                    <option value="CIVIL">CIVIL</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="degree">Degree:</label>
+                <select name="degree" id="degree" required>
+                    <option value="">- - select - -</option>
+                    <option value="BE">BE</option>
+                    <option value="B.Tech">B.Tech</option>
+                    <option value="M.Tech">M.Tech</option>
+                </select>
+                <div class="radio-group">
+                    <input type="radio" name="degreeStatus" id="pursuing" value="pursuing" required>
+                    <label for="pursuing">Pursuing</label>
+                    <input type="radio" name="degreeStatus" id="completed" value="completed">
+                    <label for="completed">Completed</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="cgpa">Average CPI:</label>
+                <input type="number" name="cgpa" id="cgpa"  required><br><br>
+                <label for="semester">Upto:</label>
+                <input type="number" name="semester" id="semester" required>
+                <label for="semester">th Semester</label>
+            </div>
+            <div class="form-group">
+                <label for="experience">Experience:</label>
+                <input type="number" name="experience" id="experience" required>
+                <label for="experience">Years</label>
+            </div>
+            <div class="form-group">
+                <label for="website">Your Website Or Blog:</label>
+                <input type="url" name="website" id="website" placeholder="http://">
+            </div>
+            <button  onclick="create()" type="button">Submit</button>
+        </form>
+    </div>
+    <script >
+       // var drag1=document.getElementsByName("branch").value;
+        //var drag2=document.getElementsByName("degree").value;
+        var radio =document.getElementsByName("degreeStatus");
+        var users=JSON.parse(localStorage.getItem("users"))
+        function create(){
+            var user={
+                university:'',
+                institute:'',
+                branch:'',
+                degree:'',
+                degreeStatus:'',
+                cgpa:'',
+                semester:'',
+                experience:'',
+                website:''
+            }
+            //console.log(radio.length)
+            for (a in user){
+                if( a!=='degreeStatus'){
+                    user[a]=document.getElementById(a).value;
+
+                }else if(a ==="degreeStatus") {
+                    for (i = 0; i <radio.length; i++) {
+                        if (radio[i].checked) {
+                            user[a] = radio[i].value
+                        }
+                    }
+                }
+
+            }
+            //users.push(user)
+            localStorage.setItem('users', JSON.stringify(users));
+            console.log(user)
+
+        }
+   
+
+    </script>
+</body>
+</html>

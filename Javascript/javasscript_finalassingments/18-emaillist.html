@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    
+    #main{
+        margin-left: 500px;
+       
+        margin-top: 50px;
+    }
+
+</style>
+<body>
+    <u><div style="margin-right: 20px;color:red;text-align:center"><h2>18. Email response</h2></div></u>
+  
+   <div id="main">
+    <form name="submit-to-google-sheet">
+        <input name="email" type="email" placeholder="Email" required>
+        <button type="submit" style="background-color:red; color:white">subscribe</button>
+      </form>
+      <span id="msg"> </span>
+      <h4 id="msg1"> To verify   <a style="color: red;" href="https://docs.google.com/spreadsheets/d/1pxqGZ55DKOEMInwysQwFXdHYcsqk6O1MsqEdtCUQLMI/edit?gid=0#gid=0"> click here</a></h4>
+      
+   </div>
+      <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbzil6gtA73tBDAzmfkru7WkEamYW2ahE84i86OAdcyrx2kN3SqMk38xn028fEgLEJDl/exec'
+        const form = document.forms['submit-to-google-sheet']
+        var msg = document.getElementById("msg")
+       // var msg1 = document.getElementById("msg1")
+      
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => {
+                msg.innerHTML="Thanks for subscribing"
+               // msg1.innerHTML=URL("https://docs.google.com/spreadsheets/d/1pxqGZ55DKOEMInwysQwFXdHYcsqk6O1MsqEdtCUQLMI/edit?gid=0#gid=0")
+                
+               
+                setTimeout( function(){
+                    msg.innerHTML="" 
+                },5000)
+                form.reset()
+            })
+            .catch(error => console.error('Error!', error.message))
+        })
+      </script>
+    
+</body>
+</html>
