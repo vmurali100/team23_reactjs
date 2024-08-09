@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var student = {
+            fname:'ram',
+            lname:'krishna',
+            language:'telugu',
+            fullname:function(){},
+            isPasss:true,
+            fname:'kiran',
+            age:99999,
+            house:null
+        }
+
+        student.email="ram@gmail.com"  // Adding a Property with . notation
+        student['state'] = "Telangana"
+
+        // document.write(student.fname+"<br>")
+        // document.write(student.lname+"<br>")
+        // document.write(student.email+"<br>")
+        // document.write(student.state+"<br>")
+
+        for (abc in student){
+            document.write(student[abc]+"<br>")
+        }
+
+        console.log(student)
+    </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var friends = ["Ram", "Ravi", "Kiran", "Kumar", "Ravi", "Ram", "Sam", "Sam", "Kumar"]
+        // var results = {
+        //     "Ram": 2,
+        //     "Ravi": 2,
+        //     "Kiran": 1,
+        //     "Kumar": 2,
+        //     "Sam": 2
+        // }
+
+        const wordsCount = friends.reduce(function (acc, word) {
+            if (acc[word]) {
+                acc[word]++
+            } else {
+                acc[word] = 1;
+            }
+            return acc;
+        }, {})
+
+        console.log(wordsCount)
+    </script>
+</body>
+
+</html>

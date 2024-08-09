@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form onsubmit="handleSubmit()">
+        <input type="text" 
+            onblur="handleBlurEvent()" 
+            onfocus="handleFocusEvent()" 
+            onchange="handleInputValueChange()" 
+            oninput="handleInputEvent()"
+            >
+        <br> <br>
+        <select name="" id="" onchange="handleDropDownChange()">
+            <option value="">Val 1</option>
+            <option value="">Val 2</option>
+            <option value="">Val 3</option>
+        </select> <br>
+        <button type="submit">Add User</button>
+    </form>
+
+    <script>
+        function handleSubmit() {
+            alert("Success ...  Form Submitted !!")
+        }
+
+        function handleDropDownChange() {
+            console.log("You changed values in Drop down")
+        }
+
+        function handleInputValueChange() {
+            console.log("You just Changed the Value in Input !!!")
+        }
+
+        function handleFocusEvent() {
+            console.log("You Just Focued On Input field !!")
+        }
+
+        function handleBlurEvent() {
+            console.log("You Just Blurred On Input field !!")
+
+        }
+
+        function handleInputEvent(){
+            console.log("You Just handled Input")
+
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class StudentDefaltDetails{
+            constructor(institute,city,course){
+                this.institute = "VMR INFOTECH";
+                this.city = "Chittoor";
+                this.course = "Front End Development";
+            }
+        }
+
+        class StudentInfo extends StudentDefaltDetails{
+            constructor(studentName,studentEmail,studentPhone){
+                super()
+                this.studentName = studentName;
+                this.studentEmail = studentEmail;
+                this.studentPhone = studentPhone;
+            }
+        }
+
+        var std1 = new StudentInfo("Vishal","vishal@gmail.com",99999999);
+        var std2 = new StudentInfo("Shekar","Shekar@gmail.com",98989898);
+        var std3 = new StudentInfo("Jaswanth","Jaswanth@gmail.com",99899899);
+        console.log(std1);
+        console.log(std2);
+        console.log(std3);
+    </script>
+</body>
+</html>

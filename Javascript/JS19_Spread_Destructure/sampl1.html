@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var person = {
+            fname: "Ram",
+            email: "ram@gmail.com"
+        }
+        // Destructering 
+        // var { fname, email } = person;
+        // console.log(email);
+        // console.log(fname);
+
+        // var numbers = [10, 20, 30]
+        // var [n1,n2] = numbers
+
+        // console.log(n1);
+        // console.log(n2)
+
+        // var person2 = { ...person };
+
+        // person2.fname = "Murali";
+
+        // console.log(person)
+
+        // var myNos = [100, 200, 300]
+
+        // var [n1, n2, n3] = myNos
+        // console.log(n3)
+        // console.log(myNos[2])
+
+        function useStateFunctionDemo() {
+            function sampleFunction() {
+
+            }
+            return [100, sampleFunction]
+        }
+
+        var [n1,sFunc] = useStateFunctionDemo();
+        console.log(n1);
+        console.log(sFunc)
+    </script>
+</body>
+
+</html>
