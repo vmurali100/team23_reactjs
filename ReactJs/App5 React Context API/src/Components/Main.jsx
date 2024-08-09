@@ -17,7 +17,6 @@ const Main = () => {
             <UserInfoContextProvider value={userInformation}>
             <GrandParent/>
             </UserInfoContextProvider>
-            
         </div>
     )
 }

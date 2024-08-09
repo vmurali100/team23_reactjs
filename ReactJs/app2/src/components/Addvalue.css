@@ -1,0 +1,9 @@
+li {
+    display: block;
+    background: gray;
+    margin: 2px;
+    color:  red;
+    padding: 5px; 
+    width: 200px;
+    list-style: none;
+  }
