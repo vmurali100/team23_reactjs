@@ -11,8 +11,7 @@ const Usersform = ({users ,handlecange,create,isedit,update}) => {
                     value={users.Name} 
                     id="Name"
                     onChange={handlecange} />
-                    <div  className="form-text">We'll never share your email with anyone else.</div>
-                </div>
+                       </div>
                 <div className="mb-3">
                     <label className="form-label">Rollno</label>
                     <input type="number" value={users.rollno}
