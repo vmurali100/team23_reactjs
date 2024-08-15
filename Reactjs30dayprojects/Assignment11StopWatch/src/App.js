@@ -1,11 +1,11 @@
 import logo from './logo.svg';
 import './App.css';
-import NoteApp from './components/note';
+import Stopwatch from './components/StopWatch';
 
 function App() {
   return (
     <div className="App">
-      <NoteApp/>
+      <Stopwatch/>
     </div>
   );
 }
