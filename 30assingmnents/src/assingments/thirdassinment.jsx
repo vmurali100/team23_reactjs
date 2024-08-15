@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './third.css'; // Create this file or use inline styles
+//import './third.css'; // Create this file or use inline styles
 
 const questions = [
   {
