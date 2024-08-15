@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
+import "./468-thumbnail.png"
 
-//import "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css";
 
 function MusicPlayer() {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -48,11 +48,10 @@ function MusicPlayer() {
           <div className="circle">
             <i className="fa-solid fa-bars"></i>
           </div>
-          <img src=""></img>
         </nav>
         <img src="./468-thumbnail.png" alt="Song Thumbnail" className="song-img" />
         <h1>Despacito</h1>
-        <p>Lusi Fonsi Ft. Puerto Rican</p>
+        <p>Telugu  song is playing </p>
         <audio ref={audioRef} id="song">
           <source src="./song2.mp3" type="audio/mp3" />
         </audio>
