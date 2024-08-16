@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-// Define styles outside the component
+
 const styles = {
     container: {
         display: 'flex',

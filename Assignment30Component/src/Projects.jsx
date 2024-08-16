@@ -8,6 +8,10 @@ import DragAndDrop from './Components/DragAndDrop';
 import PasswordStrengthIndicator from './Components/PasswordStranth';
 import QuizApp from './Components/Quiz_App';
 import CircularProgressBar from './Components/CircularBar';
+import WedSiteLunch from './Components/WebsiteLunch';
+import DarkTheme from './Components/DarkThime';
+import PasswordInputEye from './Components/PasswordInputEye';
+import PopupNotification from './Components/PopUpNotification';
 
 
 export default class Projects extends Component {
@@ -24,6 +28,10 @@ export default class Projects extends Component {
                 { name: "DragAndDrop", value: "DragAndDrop" },
                 { name: "PasswordStrengthIndicator", value: "PasswordStrengthIndicator" },
                 { name: "CircularProgressBar", value: "CircularProgressBar" },
+                { name: "WedSiteLunch", value: "WedSiteLunch" },
+                { name: "DarkTheme", value: "DarkTheme" },
+                { name: "PasswordInputEye", value: "PasswordInputEye" },
+                { name: "PopupNotification", value: "PopupNotification" },
             ],
             SelectProject: "ToDoList"
         };
@@ -52,6 +60,14 @@ export default class Projects extends Component {
                 return <PasswordStrengthIndicator />;
             case "CircularProgressBar":
                 return <CircularProgressBar />;
+            case "WedSiteLunch":
+                return <WedSiteLunch />;
+            case "DarkTheme":
+                return <DarkTheme />;
+            case "PasswordInputEye":
+                return <PasswordInputEye />;
+                case "PopupNotification":
+                return <PopupNotification />;
             default:
                 return null;
         }
