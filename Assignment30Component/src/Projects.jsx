@@ -5,6 +5,9 @@ import Weather_App from './Components/Weather_App';
 import Stopwatch from './Components/StopWatchs';
 import Calculator from './Components/Calculater';
 import DragAndDrop from './Components/DragAndDrop';
+import PasswordStrengthIndicator from './Components/PasswordStranth';
+import QuizApp from './Components/Quiz_App';
+import CircularProgressBar from './Components/CircularBar';
 
 
 export default class Projects extends Component {
@@ -14,11 +17,13 @@ export default class Projects extends Component {
         this.state = {
             projects: [
                 { name: "todo_list", value: "ToDoList" },
-                { name: "quiz_app", value: "Quiz_App" },
+                { name: "QuizApp", value: "QuizApp" },
                 { name: "weather_app", value: "Weather_App" },
                 { name: "stopWatch", value: "Stopwatch" },
                 { name: "Calculator", value: "Calculator" },
-                { name: "DragAndDrop", value: "DragAndDrop" }
+                { name: "DragAndDrop", value: "DragAndDrop" },
+                { name: "PasswordStrengthIndicator", value: "PasswordStrengthIndicator" },
+                { name: "CircularProgressBar", value: "CircularProgressBar" },
             ],
             SelectProject: "ToDoList"
         };
@@ -33,8 +38,8 @@ export default class Projects extends Component {
         switch (this.state.SelectProject) {
             case "ToDoList":
                 return <ToDoList />;
-            case "Quiz_App":
-                return <Quiz_App />;
+            case "QuizApp":
+                return <QuizApp />;
             case "Weather_App":
                 return <Weather_App />;
             case "Stopwatch":
@@ -43,6 +48,10 @@ export default class Projects extends Component {
                 return <Calculator />;
             case "DragAndDrop":
                 return <DragAndDrop />;
+            case "PasswordStrengthIndicator":
+                return <PasswordStrengthIndicator />;
+            case "CircularProgressBar":
+                return <CircularProgressBar />;
             default:
                 return null;
         }
