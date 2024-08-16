@@ -40,7 +40,7 @@ class SimpleCalendar extends Component {
       <div>
         <u style={{ color: 'red' }}>
           <h1 style={{ color: 'rgb(0, 76, 255)', textAlign: 'center' }} id="title">
-            23. Simple Calendar
+            Simple Calendar
           </h1>
         </u>
         <div id="c1" style={styles.container}>
@@ -60,7 +60,8 @@ class SimpleCalendar extends Component {
 
 const styles = {
   container: {
-    marginLeft: '450px',
+    marginLeft: '720px',
+    marginRight:'750px',
     marginTop: '150px',
     display: 'flex',
     border: '2px solid black',

@@ -11,6 +11,11 @@ import SimpleCalendar from './SimpleCalendar';
 import QuoteBox from './QuoteGenerator';
 import PasswordGenerator from './RandomPassword';
 import NotePad from './NotesApp';
+import TextToSpeech from './Texttospeech';
+import DateTimeDisplay from './Date';
+import DragAndDrop from './Draganddrop';
+import EmailResponseForm from './emailist';
+import CircularGraph from './circularbar';
 //import TodoApp from '../../../../30assingmnents/src/assingments/secondassingment';
 
 export default class Main extends Component {
@@ -28,11 +33,17 @@ export default class Main extends Component {
                 { name: "PasswordGenerator", value: "PasswordGenerator" },
                 { name: "NotePad ", value: "NotePad" },
                 { name: " AgeCalculator", value: "AgeCalculator" },
+                { name: " TextToSpeech", value: "TextToSpeech" },
+                { name: "DateTimeDisplay", value: "DateTimeDisplay" },
+                { name: "DragAndDrop", value: "DragAndDrop" },
+
 
                 { name: "QuoteBox", value: "QuoteBox" },
                 { name: "ImageSearchApp", value: "ImageSearchApp" },
                 { name: "SimpleCalendar", value: "SimpleCalendar" },
+                { name: "EmailResponseForm", value: "EmailResponseForm" },
 
+                { name: "CircularGraph", value: "CircularGraph" },
 
             ],
             seletedproject: "",
@@ -50,7 +61,11 @@ export default class Main extends Component {
             case "PasswordGenerator":
                 return <PasswordGenerator />
             case "NotePad":
-                return <NotePad/>
+                return <NotePad />
+            case "TextToSpeech":
+                return <TextToSpeech />
+            case "DateTimeDisplay":
+                return <DateTimeDisplay />
 
             case "AgeCalculator":
                 return <AgeCalculator />
@@ -59,7 +74,13 @@ export default class Main extends Component {
             case "ImageSearchApp":
                 return <ImageSearchApp />
             case "SimpleCalendar":
-                return <SimpleCalendar/>
+                return <SimpleCalendar />
+            case "DragAndDrop":
+                return <DragAndDrop />
+            case "EmailResponseForm":
+                return <EmailResponseForm />
+            case "CircularGraph":
+                return <CircularGraph />
 
 
         }
@@ -70,17 +91,24 @@ export default class Main extends Component {
         newStateObject.seletedproject = e.target.value;
         this.setState(newStateObject);
     };
+
     render() {
+        const arrayLength = this.state.allprojects.length
         return (
             <div>
+                <h2>There are {arrayLength} of projects in this Dropdown File</h2>
+
                 <form >
-                    <b><label style={{fontSize:"20px",color:"red"}}> select project</label></b>
+                    <b><label style={{ fontSize: "20px", color: "red" }}> select project to view</label></b><br />
                     <select name="form-select" onChange={this.handleChange}>
                         <option selected style={styles.selectprj} id="selectprj"><select name=" a project" id="">select a prj</select> </option>
+
+
                         {this.state.allprojects.map((prj) => (
                             <option value={prj.value}>{prj.name}</option>
                         ))}
                     </select>
+
                 </form>
                 {this.selectedcomponent()}
 
@@ -91,9 +119,9 @@ export default class Main extends Component {
     }
 
 }
-const styles={
+const styles = {
     selectprj: {
-        padding : '20px'
+        padding: '20px'
     }
 
 
