@@ -12,6 +12,8 @@ import WedSiteLunch from './Components/WebsiteLunch';
 import DarkTheme from './Components/DarkThime';
 import PasswordInputEye from './Components/PasswordInputEye';
 import PopupNotification from './Components/PopUpNotification';
+import ClockComponent from './Components/DigitalClock';
+import ToastNotification from './Components/ToastNatifications';
 
 
 export default class Projects extends Component {
@@ -32,6 +34,8 @@ export default class Projects extends Component {
                 { name: "DarkTheme", value: "DarkTheme" },
                 { name: "PasswordInputEye", value: "PasswordInputEye" },
                 { name: "PopupNotification", value: "PopupNotification" },
+                { name: "ClockComponent", value: "ClockComponent" },
+                { name: "ToastNotification", value: "ToastNotification" },
             ],
             SelectProject: "ToDoList"
         };
@@ -66,8 +70,12 @@ export default class Projects extends Component {
                 return <DarkTheme />;
             case "PasswordInputEye":
                 return <PasswordInputEye />;
-                case "PopupNotification":
+            case "PopupNotification":
                 return <PopupNotification />;
+            case "ClockComponent":
+                return <ClockComponent />;
+            case "ToastNotification":
+                return <ToastNotification />;
             default:
                 return null;
         }
