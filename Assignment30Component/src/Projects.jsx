@@ -14,6 +14,7 @@ import PasswordInputEye from './Components/PasswordInputEye';
 import PopupNotification from './Components/PopUpNotification';
 import ClockComponent from './Components/DigitalClock';
 import ToastNotification from './Components/ToastNatifications';
+import AgeCalculator from './Components/AgeCalculater';
 
 
 export default class Projects extends Component {
@@ -36,6 +37,7 @@ export default class Projects extends Component {
                 { name: "PopupNotification", value: "PopupNotification" },
                 { name: "ClockComponent", value: "ClockComponent" },
                 { name: "ToastNotification", value: "ToastNotification" },
+                { name: "AgeCalculator", value: "AgeCalculator" },
             ],
             SelectProject: "ToDoList"
         };
@@ -76,6 +78,8 @@ export default class Projects extends Component {
                 return <ClockComponent />;
             case "ToastNotification":
                 return <ToastNotification />;
+            case "AgeCalculator":
+                return <AgeCalculator />;
             default:
                 return null;
         }
