@@ -2,10 +2,9 @@ import React, { Component } from 'react'
 import WeatherApp from './WeatherApp';
 import ToDoList from './ToDoList';
 import QuizApp from './QuizApp';
-import RandomPassword from './RandomPassword';
-import NotesApp from './NotesApp';
+
 import AgeCalculator from './AgeCalculator';
-import QuoteGenerator from './QuoteGenerator';
+
 import ImageSearchApp from './ImageSearchApp';
 import SimpleCalendar from './SimpleCalendar';
 import QuoteBox from './QuoteGenerator';
@@ -16,6 +15,17 @@ import DateTimeDisplay from './Date';
 import DragAndDrop from './Draganddrop';
 import EmailResponseForm from './emailist';
 import CircularGraph from './circularbar';
+import Darktheme from './Darktheme';
+import FormValidation from './formvalidate';
+import Stopwatch from './Stopwacth';
+import SocialMediaDropdown from './dropdown';
+import PasswordStrengthChecker from './passwordstrength';
+import QRCodeGenerator from './qrcodegenerator';
+import Calculator from './calculator';
+import PopupDesign from './popup';
+import ToastNotification from './Toast';
+import CountdownTimer from './websitesoon';
+//import ProductPage from './project 26/26_ecommerce';
 //import TodoApp from '../../../../30assingmnents/src/assingments/secondassingment';
 
 export default class Main extends Component {
@@ -44,7 +54,18 @@ export default class Main extends Component {
                 { name: "EmailResponseForm", value: "EmailResponseForm" },
 
                 { name: "CircularGraph", value: "CircularGraph" },
-
+                { name: "Darktheme", value: "Darktheme" },
+                { name: "FormValidation", value: "FormValidation" },
+                { name: "Stopwatch", value: "Stopwatch" },
+                { name: "SocialMediaDropdown", value: "SocialMediaDropdown" },
+                { name: "PasswordStrengthChecker", value: "PasswordStrengthChecker" },
+                { name: "QRCodeGenerator", value: "QRCodeGenerator" },
+                { name: "PopupDesign", value: "PopupDesign" },
+                { name: "Calculator", valoe: "Calculator" },
+                { name: "ToastNotification", value: "ToastNotification" },
+                { name: "websitecomingsoon", value: "CountdownTimer" },
+                {name:"SimpleCalendar",value:"SimpleCalendar"}
+                //     { name: "ProductPage", value: "ProductPage" }
             ],
             seletedproject: "",
         };
@@ -81,7 +102,31 @@ export default class Main extends Component {
                 return <EmailResponseForm />
             case "CircularGraph":
                 return <CircularGraph />
+            case "Darktheme":
+                return <Darktheme />
+            case "FormValidation":
+                return <FormValidation />
+            case "Stopwatch":
+                return <Stopwatch />
+            case "SocialMediaDropdown":
+                return <SocialMediaDropdown />
+            case "PasswordStrengthChecker":
+                return <PasswordStrengthChecker />
+            case "QRCodeGenerator":
+                return <QRCodeGenerator />
+            case "PopupDesign":
+                return <PopupDesign />
+            case "Calculator":
+                return <Calculator />
+            case "ToastNotification":
+                return <ToastNotification />
+            case "CountdownTimer":
+                return <CountdownTimer />
+            case "SimpleCalendar":
+                return<SimpleCalendar/>
 
+            // case "ProductPage":
+            //     return <ProductPage />
 
         }
     }
@@ -93,15 +138,15 @@ export default class Main extends Component {
     };
 
     render() {
-        const arrayLength = this.state.allprojects.length
+        // const arrayLength = this.state.allprojects.length
         return (
             <div>
-                <h2>There are {arrayLength} of projects in this Dropdown File</h2>
+                <h2>There are {this.state.allprojects.length} of projects in this Dropdown File</h2>
 
                 <form >
                     <b><label style={{ fontSize: "20px", color: "red" }}> select project to view</label></b><br />
                     <select name="form-select" onChange={this.handleChange}>
-                        <option selected style={styles.selectprj} id="selectprj"><select name=" a project" id="">select a prj</select> </option>
+                        <option selected ><select name=" a project" id="">select a prj</select> </option>
 
 
                         {this.state.allprojects.map((prj) => (
@@ -119,10 +164,4 @@ export default class Main extends Component {
     }
 
 }
-const styles = {
-    selectprj: {
-        padding: '20px'
-    }
 
-
-}
