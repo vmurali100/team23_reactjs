@@ -1,28 +1,16 @@
 {
   "users": [
     {
-      "fullName": "Murali VVMM",
-      "email": "vmurali100@gmail.com",
-      "password": "1234567",
+      "fullName": "Murali Veesambattu",
+      "email": "murali.veesambattu@gmail.com",
+      "password": "123456",
       "id": 1
     },
     {
-      "fullName": "Ram VVMM",
+      "fullName": "Ram",
       "email": "ram@gmail.com",
-      "password": "222",
+      "password": "12345333",
       "id": 2
-    },
-    {
-      "fullName": "Murali V",
-      "email": "murali.veesambattu@gmail.com",
-      "password": "2233",
-      "id": 4
-    },
-    {
-      "fullName": "Kiran Kumar",
-      "email": "murali.veesambattu@gmail.com",
-      "password": "2233",
-      "id": 5
     }
   ]
 }
