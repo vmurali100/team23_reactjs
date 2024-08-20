@@ -49,10 +49,12 @@ const Stopwatch = () => {
   return (
     <div className="stopWatch">
       <h1 id="displayTime">
+        SSSS
         {formatTime(time.hours)}:{formatTime(time.minutes)}:{formatTime(time.seconds)}
       </h1>
+      <img src="./background.png" alt="" />
       <div className="buttons">
-        <img src={stop_icon} alt="Stop" onClick={stopWatch} />
+        <img src="./background.png" alt="Stop" onClick={stopWatch} />
         <img src={start_icon} alt="Start" onClick={startWatch} />
         <img src={reset_icon} alt="Reset" onClick={resetWatch} />
       </div>

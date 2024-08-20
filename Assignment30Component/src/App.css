@@ -27,7 +27,7 @@
 .App-link {
   color: #61dafb;
 }
-
+ 
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -50,7 +50,7 @@
   min-height: 100vh;
   background: linear-gradient(135deg, #cf9aff, #95c0ff);
   color: #fff;
-  padding-top: 4%;
+  padding-top: 5%;
   padding-left: 10%;
 }
 
@@ -99,6 +99,10 @@
   bottom: 15px;
   right: 15px;
   cursor: pointer;
+}
+
+.form-select {
+
 }
 
 

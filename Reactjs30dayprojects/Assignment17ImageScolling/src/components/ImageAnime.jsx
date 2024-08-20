@@ -9,7 +9,7 @@ import image_6 from './images/image-6.png'
 import image_7 from './images/next.png'
 
 const Gallery = () => {
-    const scrollContainerRef = useRef(null);
+    const scrollContainerRef = useRef(null);    
 
     const handleScroll = (direction) => {
         if (scrollContainerRef.current) {
