@@ -79,7 +79,14 @@
     }
   ],
   "buyers": [],
-  "users": [],
+  "users": [
+    {
+      "id": "6ecc",
+      "fullName": "Jeswanth",
+      "email": "jeswanth.k@gmail.com",
+      "password": "123456"
+    }
+  ],
   "persons": [
     {
       "id": "f2d8",
