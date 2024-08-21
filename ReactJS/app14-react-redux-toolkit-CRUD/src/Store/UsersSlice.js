@@ -14,9 +14,15 @@ const UsersSlice = createSlice({
     deleteUserAction: (state, action) => {
       state.users.splice(action.payload.index, 1);
     },
+    addUserAction: (state, action) => {
+      state.users.push(action.payload);
+    },
+    updateUserAction: (state, action) => {
+      state.users[action.payload.index] = action.payload.user;
+    },
   },
   initialState,
 });
 
 export default UsersSlice.reducer;
-export const { deleteUserAction } = UsersSlice.actions;
+export const { deleteUserAction, addUserAction,updateUserAction } = UsersSlice.actions;
