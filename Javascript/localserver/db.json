@@ -4,13 +4,29 @@
       "fullName": "Murali Veesambattu",
       "email": "murali.veesambattu@gmail.com",
       "password": "123456",
-      "id": 1
+      "id": 1,
+      "name": "mKMK",
+      "age": "kkmkmk"
     },
     {
       "fullName": "Ram",
       "email": "ram@gmail.com",
       "password": "12345333",
-      "id": 2
+      "id": 2,
+      "age": "43",
+      "name": "raju j"
+    },
+    {
+      "id": "3",
+      "name": "Murali Krishna",
+      "age": "35",
+      "email": "vmurali100@gmail.com"
+    },
+    {
+      "id": "4",
+      "name": "Leanne Graham",
+      "age": "24",
+      "email": "vmurali100@gmail.com"
     }
   ]
 }
