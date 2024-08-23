@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  users: [
+  students: [
     { id: 1, name: "Jeswanth", age: 32, email: "jeswanth@gmail.com" },
     { id: 2, name: "Vishal", age: 21, email: "vishal@gmail.com" },
     { id: 3, name: "Sekhar", age: 30, email: "sekhar@gmail.com" },
@@ -10,22 +10,22 @@ const initialState = {
   ]
 };
 
-const UsersSlice = createSlice({
-  name: "users",
+const StudentsSlice = createSlice({
+  name: "students",
   initialState,
   reducers: {
     deleteUserAction: (state, action) => {
-      state.users.splice(action.payload.index, 1);
+      state.students.splice(action.payload.index, 1);
     },
     addUserAction: (state, action) => {
-      state.users.push(action.payload);
+      state.students.push(action.payload);
     },
     updateUserAction: (state, action) => {
-      const { index, user } = action.payload;
-      state.users[index] = user;
+      const { index, student } = action.payload;
+      state.students[index] = student;
     }
   }
 });
 
-export default UsersSlice.reducer;
-export const { deleteUserAction, addUserAction, updateUserAction } = UsersSlice.actions;
+export default StudentsSlice.reducer;
+export const { deleteUserAction, addUserAction, updateUserAction } = StudentsSlice.actions;

@@ -1,35 +1,35 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { addUserAction, deleteUserAction, updateUserAction } from "../Store/UsersSlice";
+import { addUserAction, deleteUserAction, updateUserAction } from "../Store/StudentsSlice";
 
-const UserDetails = () => {
-  const { users } = useSelector((state) => state.users);
-  const [user, setUser] = useState({ id: "", name: "", age: "", email: "" });
+const StudentDetails = () => {
+  const { students } = useSelector((state) => state.students);
+  const [student, setStudent] = useState({ id: "", name: "", age: "", email: "" });
   const [index, setIndex] = useState(null);
   const dispatch = useDispatch();
 
   const handleChange = (e) => {
-    const newUser = { ...user };
-    newUser[e.target.name] = e.target.value;
-    setUser(newUser);
+    const newStudent = { ...student };
+    newStudent[e.target.name] = e.target.value;
+    setStudent(newStudent);
   };
 
   const clearForm = () => {
-    setUser({ id: "", name: "", age: "", email: "" });
+    setStudent({ id: "", name: "", age: "", email: "" });
   };
 
   const handleAddUser = () => {
-    dispatch(addUserAction(user));
+    dispatch(addUserAction(student));
     clearForm();
   };
 
   const handleEdit = (usr, i) => {
-    setUser(usr);
+    setStudent(usr);
     setIndex(i);
   };
 
   const handleUpdateUser = () => {
-    dispatch(updateUserAction({ index, user }));
+    dispatch(updateUserAction({ index, student }));
     clearForm();
     setIndex(null);
   };
@@ -42,20 +42,20 @@ const UserDetails = () => {
     <div>
       <form>
         <label htmlFor="">ID</label>
-        <input type="text" name="id" value={user.id} onChange={handleChange} /><br />
+        <input type="text" name="id" value={student.id} onChange={handleChange} /><br />
         <label htmlFor="">Name</label>
-        <input type="text" name="name" value={user.name} onChange={handleChange} /><br />
+        <input type="text" name="name" value={student.name} onChange={handleChange} /><br />
         <label htmlFor="">Age</label>
-        <input type="text" name="age" value={user.age} onChange={handleChange} /><br />
+        <input type="text" name="age" value={student.age} onChange={handleChange} /><br />
         <label htmlFor="">Email</label>
-        <input type="text" name="email" value={user.email} onChange={handleChange} /><br />
+        <input type="text" name="email" value={student.email} onChange={handleChange} /><br />
         {index === null ? (
           <button type="button" onClick={handleAddUser}>
-            Add User
+            Add Student
           </button>
         ) : (
           <button type="button" onClick={handleUpdateUser}>
-            Update User
+            Update Student
           </button>
         )}
       </form>
@@ -71,17 +71,17 @@ const UserDetails = () => {
           </tr>
         </thead>
         <tbody>
-          {users.map((usr, i) => (
+          {students.map((usr, i) => (
             <tr key={i}>
               <td>{usr.id}</td>
               <td>{usr.name}</td>
               <td>{usr.age}</td>
               <td>{usr.email}</td>
               <td>
-                <button onClick={() => handleEdit(usr, i)}>Edit User</button>
+                <button onClick={() => handleEdit(usr, i)}>Edit Student</button>
               </td>
               <td>
-                <button onClick={() => handleDelete(i)}>Delete User</button>
+                <button onClick={() => handleDelete(i)}>Delete Student</button>
               </td>
             </tr>
           ))}
@@ -91,4 +91,4 @@ const UserDetails = () => {
   );
 };
 
-export default UserDetails;
+export default StudentDetails;

@@ -1,7 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
-import StudentsSlice from "./StudentsSlice";
+import PersonsSlice from "./PersonsSlice";
 export const Store = configureStore({
     reducer: {
-        students: StudentsSlice
-    },
+        persons: PersonsSlice
+    }
 });
