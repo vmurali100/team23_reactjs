@@ -12,9 +12,10 @@ export const getAllPersonsAsync = createAsyncThunk(
         return getLatestPersons();
     }
 );
+
 export const deletePersonsAsync = createAsyncThunk(
     "persons/deletePersonsAsync",
-    async () => {
+    async (person) => {
         const response = await fetch("http://localhost:3002/persons/" + person.id, {
             method: "DELETE"
         });
@@ -75,6 +76,12 @@ const PersonsSlice = createSlice({
         builder.addCase(deletePersonsAsync.fulfilled, (state, action) => {
             state.persons = action.payload
         });
+
+        // //Handle update User
+
+        // builder.addCase(updatePersonsAsync.fulfilled, (state, action) => {
+        //     state.persons = action.payload
+        // });
 
     },
 });
