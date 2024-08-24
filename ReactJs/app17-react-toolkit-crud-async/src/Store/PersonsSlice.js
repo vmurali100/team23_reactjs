@@ -58,12 +58,12 @@ const PersonsSlice = createSlice({
         builder.addCase(getAllPersonsAsync.fulfilled, (state, action) => {
             state.persons = action.payload
         });
-        builder.addCase(getAllPersonsAsync.rejected, (state, action) => {
-            console.log(action.payload);
-        });
-        builder.addCase(getAllPersonsAsync.pending, (state, action) => {
-            console.log(action.payload);
-        });
+        // builder.addCase(getAllPersonsAsync.rejected, (state, action) => {
+        //     console.log(action.payload);
+        // });
+        // builder.addCase(getAllPersonsAsync.pending, (state, action) => {
+        //     console.log(action.payload);
+        // });
 
         // Handle Create User
 

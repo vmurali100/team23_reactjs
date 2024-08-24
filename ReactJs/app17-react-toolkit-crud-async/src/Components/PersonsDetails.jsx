@@ -61,7 +61,7 @@ const PersonsDetails = () => {
                 <label htmlFor="">Last Name</label>
                 <input
                     type="text"
-                    name="l0name"
+                    name="lname"
                     value={person.lname}
                     onChange={handleChange}
                 />{" "} <br />
