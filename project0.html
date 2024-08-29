@@ -156,6 +156,7 @@
             localStorage.setItem("users", JSON.stringify(users));
             readUsers();
             clearForm();
+            console.log(users)
         }
 
         function clearForm() {
@@ -232,7 +233,7 @@
                         if (allRadioBtns[j].value == usrToBeEdit.Gender) {
                             allRadioBtns[j].checked = true;
                         }
-                    }
+                    }   
                 } else if (a == "Select") {
                     clearCheckBox();
                     usrToBeEdit.Select.forEach((val) => {

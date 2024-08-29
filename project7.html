@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">FullName</label>
+            <input type="text" class="form-control" id="Fname">
+        </div><br>
+
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="email" aria-describedby="emailHelp">
+        </div><br>
+
+        <div class="mb-3">
+            <select class="form-select" id="languages">
+                <option selected>Open this select menu</option>
+                <option value="Python">Python</option>
+                <option value="JavaScript">JavaScript</option>
+                <option value="HTML">HTML</option>
+            </select>
+        </div><br>
+
+        <div class="mb-3">
+            <div class="form-check">
+                <label for="">Gender</label><br>
+                <input class="form-check-input" type="radio" name="Gender" id="exampleRadios1" name="Gender"
+                    value="Male">
+                <label class="form-check-label" for="exampleRadios1">
+                    Male
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="Gender" id="exampleRadios2" name="Gender"
+                    value="Female">
+                <label class="form-check-label" for="exampleRadios2">
+                    Female
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="Gender" id="exampleRadios3" name="Gender"
+                    value="option3">
+                <label class="form-check-label" for="exampleRadios3">
+                    Others
+                </label>
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <div class="form-check">
+                <label for="">Courses</label><br><br>
+                <input class="form-check-input" type="checkbox" value="HTML" name="Courses">
+                <label class="form-check-label" for="flexCheckDefault">
+                    HTML
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="CSS" name="Courses">
+                <label class="form-check-label" for="flexCheckChecked">
+                    CSS
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="JavaScript" name="Courses" placeholder="">
+                <label class="form-check-label" for="flexCheckChecked">
+                    JavaScript
+                </label>
+            </div>
+        </div><br>
+        <button type="button" class="btn btn-primary" onclick="createUsers()" id="submit">Submit</button>
+        <button type="button" class="btn btn-primary" onclick="updateUsers()" id="update" style="display: none;">Update</button><br><br>
+
+    </form>
+    <table class="table" border="1">
+        <thead>
+            <tr>
+                <th>Fname</th>
+                <th>Email</th>
+                <th>Gender</th>
+                <th>Courses</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+    <script>
+        var allRadioBtn = document.getElementsByName("Gender")
+        var allCheckBoxes = document.getElementsByName("Courses")
+        var users = JSON.parse(localStorage.getItem("users")) || []
+        var index
+
+        function createUsers() {
+            var user = {
+                Fname: "",
+                email: "",
+                languages: "",
+                Gender: "",
+                Courses: [],
+            }
+            for (a in user) {
+                if (a !== "Gender" && a !== "Courses") {
+                    user[a] = document.getElementById(a).value;
+                } else if (a === "Gender") {
+                    for (i = 0; i < allRadioBtn.length; i++) {
+                        if (allRadioBtn[i].checked) {
+                            user[a] = allRadioBtn[i].value;
+                        }
+                    }
+                } else if (a === "Courses") {
+                    for (i = 0; i < allCheckBoxes.length; i++) {
+                        if (allCheckBoxes[i].checked) {
+                            user[a].push(allCheckBoxes[i].value)
+                        }
+                    }
+                }
+
+            }
+            users.push(user);
+            localStorage.setItem("users", JSON.stringify(users))
+            console.log(users)
+            clearForm()
+            readUsers()
+        }
+
+        function clearForm() {
+            var user = {
+                Fname: "",
+                email: "",
+                languages: "",
+                Gender: "",
+                Courses: [],
+            }
+            for (a in user) {
+                if (a !== "Gender" && a !== "Courses") {
+                    user[a] = document.getElementById(a).value = "";
+                } else {
+                    clearCheckBox()
+                    clearRodioBTN()
+                }
+            }
+        }
+
+        function clearCheckBox() {
+            for (i = 0; i < allCheckBoxes.length; i++) {
+                allCheckBoxes[i].checked = false
+            }
+        }
+        function clearRodioBTN() {
+            for (i = 0; i < allRadioBtn.length; i++) {
+                allRadioBtn[i].checked = false
+            }
+        }
+
+        function readUsers() {
+            document.querySelector("tbody").innerHTML = "";
+            users.forEach((usr, i) => {
+                var tr = document.createElement("tr");
+                for (a in usr) {
+                    var td = document.createElement("td");
+                    td.innerHTML = usr[a]
+                    tr.appendChild(td)
+                }
+
+                var edittd = document.createElement("td");
+                var editbtn = document.createElement("button");
+                editbtn.innerHTML = "Edit"
+                editbtn.setAttribute("onclick", "editUser(" + i + ")")
+                edittd.appendChild(editbtn);
+                tr.appendChild(edittd);
+
+
+                var deltd = document.createElement("td");
+                var deltbtn = document.createElement("button");
+                deltbtn.innerHTML = "Delete";
+                deltbtn.setAttribute("onclick", "deleteUser(" + i + ")")
+                deltd.appendChild(deltbtn)
+                tr.appendChild(deltd)
+
+                document.querySelector("tbody").appendChild(tr)
+            })
+        }
+
+        function deleteUser(i) {
+            users.splice(i, 1);
+            localStorage.setItem("users", JSON.stringify(users))
+            readUsers()
+        }
+        readUsers()
+
+        
+        function editUser(i) {
+            index = i;
+            var usrtobeedit = users[i];
+            for (a in usrtobeedit) {
+                if (a !== "Gender" && a !== "Courses") {
+                    document.getElementById(a).value = usrtobeedit[a];
+                } else if (a == "Gender") {
+                    for (j = 0; j < allRadioBtn.length; j++) {
+                        if (allRadioBtn[j].value == usrtobeedit.Gender) {
+                            allRadioBtn[j].checked = true;
+                        }
+                    }
+                } else if (a == "Courses") {
+                    clearCheckBox()
+                    usrtobeedit.Courses.forEach((val) => {
+                        for (k = 0; k < allCheckBoxes.length; k++) {
+                            if (allCheckBoxes[k].value == val) {
+                                allCheckBoxes[k].checked = true;
+                            }
+                        }
+                    })
+                }
+            }
+            
+            console.log(usrtobeedit)
+            document.getElementById("update").style.display = "block";
+            document.getElementById("submit").style.display = "none";
+        }
+
+        function updateUsers() {
+            var user = {
+                Fname: "",
+                email: "",
+                languages: "",
+                Gender: "",
+                Courses: [],
+            }
+            for (a in user) {
+                if (a !== "Gender" && a !== "Courses") {
+                    user[a] = document.getElementById(a).value;
+                } else if (a === "Gender") {
+                    for (i = 0; i < allRadioBtn.length; i++) {
+                        if (allRadioBtn[i].checked) {
+                            user[a] = allRadioBtn[i].value;
+                        }
+                    }
+                } else if (a === "Courses") {
+                    for (i = 0; i < allCheckBoxes.length; i++) {
+                        if (allCheckBoxes[i].checked) {
+                            user[a].push(allCheckBoxes[i].value)
+                        }
+                    }
+                }
+
+            }
+            users[index] = user
+            localStorage.setItem("users", JSON.stringify(users))
+            clearForm()
+            readUsers()
+            document.getElementById("update").style.display = "none";
+            document.getElementById("submit").style.display = "block";
+        }
+
+
+    </script>
+</body>
+
+</html>

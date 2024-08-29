@@ -7,7 +7,7 @@ const Calculator = () => {
     if (value === 'AC') {
       setDisplay('');
     } else if (value === 'DC') {
-      setDisplay(display.slice(0, -1));
+      setDisplay(display.slice(0, -1));         
     } else if (value === '=') {
       try {
         setDisplay(eval(display).toString());

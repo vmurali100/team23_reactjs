@@ -5,13 +5,13 @@ import TableComponent from "./TableComponent";
 const ParentComponent = () => {
     const [User, setUser] = useState({
         fname: "",
-        lname: "",
+        lname: "",  
         gmail: ""
     });
 
     const handleChange = (e) => {
         const newUser = { ...User };
-        newUser[e.target.name] = e.target.value;
+        newUser[e.target.name] = e.target.value;   
         setUser(newUser)
         ValidateFrom();
     };

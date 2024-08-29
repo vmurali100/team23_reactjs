@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <label for="">First Name</label>
+        <input type="text" id="Lname"><br>
+
+        <label for="">Email</label>
+        <input type="email" id="Email"><br>
+
+        <label for="">Password</label>
+        <input type="password" id="password"><br>
+
+        <button onclick="createUser()" id="submitbtn">AddUser</button>
+        <button onclick="updateUser()" id="updatebtn">EditUser</button>
+
+    </div>
+    <div>
+        <hr><br>
+
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>FirstName</th>
+                    <th>Email</th>
+                    <th>Password</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+    <script>
+        var users = JSON.parse(localStorage.getItem("users")) || []
+        var index
+
+        function createUser() {
+            var user = {
+                Lname: "",
+                Email: "",
+                password: "",
+
+            }
+            for (a in user) {
+                user[a] = document.getElementById(a).value
+            };
+            users.push(user)
+            localStorage.setItem("users", JSON.stringify(users))
+            clearForms()
+            readUser()
+        }
+
+        function updateUser() {
+            var user = {
+                Lname: "",
+                Email: "",
+                password: "",
+
+            }
+            for (a in user) {
+                user[a] = document.getElementById(a).value
+            }
+            users[index] = user
+            localStorage.setItem("users", JSON.stringify(users))
+            clearForms()
+            readUser()
+            document.getElementById("submitbtn").style.display = "block"
+            document.getElementById("updatebtn").style.display = "none"
+        }
+
+        function clearForms() {
+            var user = {
+                Lname: "",
+                Email: "",
+                password: "",
+            }
+            for (a in user) {
+                user[a] = document.getElementById(a).value = "";
+            }
+        }
+
+        function readUser() {
+            document.querySelector("tbody").innerHTML = "";
+            users.forEach((usr, i) => {
+                var tr = document.createElement('tr')
+                for (a in usr) {
+                    var td = document.createElement("td");
+                    td.innerHTML = usr[a]
+                    tr.appendChild(td)
+                }
+
+                var Edittd = document.createElement("td");
+                var Editbtn = document.createElement("button");
+                Editbtn.setAttribute("onclick", "EditUser(" + i + ")");
+                Editbtn.innerHTML = "Edit";
+                Edittd.appendChild(Editbtn)
+                tr.appendChild(Edittd);
+
+                var deltd = document.createElement("td");
+                var deltbtn = document.createElement("button");
+                deltbtn.setAttribute("onclick", "deleteUser("+ i +")")
+                deltbtn.innerHTML = "delete"
+                deltd.appendChild(deltbtn);
+                tr.appendChild(deltd)
+
+                document.querySelector("tbody").appendChild(tr)
+            })
+        }
+
+        function deleteUser(i) {
+            users.splice(i, 1)
+            localStorage.setItem("users", JSON.stringify(users))
+            readUser()
+        }
+
+        readUser()
+        function EditUser(i) {
+            index = i
+            var usersToBeEdit = users[i]
+            for(a in usersToBeEdit) {
+                document.getElementById(a).value = usersToBeEdit[a]
+            }
+            document.getElementById("submitbtn").style.display = "none"
+            document.getElementById("updatebtn").style.display = "block"
+        }
+
+
+
+
+    </script>
+</body>
+
+</html>
