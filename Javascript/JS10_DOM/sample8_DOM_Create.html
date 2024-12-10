@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creating A Object</title>
+</head>
+
+<body>
+    <form>
+        <label for="">First Name : </label>
+        <input type="text" id="fname"> <br>
+        <label for="">Last Name : </label>
+        <input type="text" id="lname"> <br>
+        <label for="">Email</label>
+        <input type="text" id="email"> <br>
+        <button type="button" onclick="readValuesFromForm()">Add User</button>
+    </form>
+    <hr>
+    <table border="1">
+        <thead>
+            <tr>
+                <td>First Name</td>
+                <td>Last Name</td>
+                <td>Email </td>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+    <script>
+        var users = [];
+
+                // Reading the Data from A HTML 
+
+        function readValuesFromForm() {
+
+            // var person = {
+            //     fname: document.getElementById('fname').value,
+            //     lname: document.getElementById('lname').value,
+            //     email: document.getElementById('email').value
+            // }
+
+            // person.fname = document.getElementById('fname').value;
+            // person.lname = document.getElementById('lname').value;
+            // person.email = document.getElementById('email').value;
+
+            var person = {
+                fname: "",
+                lname: "",
+                email: ""
+            }
+
+            for (a in person) {
+                person[a] = document.getElementById(a).value
+            }
+
+            users.push(person); // will add a vallue to the Array 
+            console.log(users);
+            displayUsers();
+            clearForm() // to Clear the Form 
+
+        }
+
+        function clearForm() {
+            document.getElementById('fname').value = "";
+            document.getElementById('lname').value = "";
+            document.getElementById('email').value = ""
+        }
+
+        function displayUsers() {
+            document.querySelector("tbody").innerHTML = ""; 
+            for (i = 0; i < users.length; i++) {
+                var userObject = users[i];
+                var myTr = document.createElement('tr');
+                for (a in userObject) {
+                    var myTd = document.createElement('td');
+                    myTd.innerHTML = userObject[a]
+                    myTr.appendChild(myTd)
+                }
+                document.querySelector("tbody").appendChild(myTr)
+            }
+        }
+
+        // C - Create; Completed on 7th 
+        // R - Read;
+        // U - Update;
+        // D - Delete;
+    </script>
+</body>
+
+</html>

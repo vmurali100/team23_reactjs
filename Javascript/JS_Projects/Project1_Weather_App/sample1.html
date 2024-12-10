@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <label for="">City Name : </label>
+        <input type="text" name="" id="cityName"> <br>
+        <button onclick="searchCityWeather()" type="button">Search</button>
+    </form>
+    <h2 id="cityName"></h2>
+    <script>
+        function searchCityWeather(){
+            var userInput = document.getElementById()
+            const xhr = new XMLHttpRequest();
+                xhr.addEventListener('readystatechange', function () {
+                    if (this.readyState === this.DONE) {
+                        var info = JSON.parse(this.responseText)
+                        document.getElementById("cityName").innerHTML = "City Name is : "+info.name
+                    }
+                });
+
+                xhr.open('GET', 'https://open-weather13.p.rapidapi.com/city/' + userInput + '/EN');
+                xhr.setRequestHeader('x-rapidapi-key', 'IXEUAUo6gSmshyDa71pLNljSwKHRp1xt8bqjsn089SWjJ1GyuX');
+                xhr.setRequestHeader('x-rapidapi-host', 'open-weather13.p.rapidapi.com');
+                xhr.send();
+            document.getElementById("cityName").innerHTML = "City Name is : "
+        }
+        
+    </script>
+</body>
+</html>

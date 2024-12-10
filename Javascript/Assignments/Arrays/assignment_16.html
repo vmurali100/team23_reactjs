@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        const users = [
+            { name: 'Alice', age: 17 },
+            { name: 'Bob', age: 22 },
+            { name: 'Charlie', age: 19 },
+            { name: 'David', age: 15 },
+            { name: 'Eve', age: 21 }
+        ];
+
+        var filteredUsers = users.filter((usr)=>{
+            return usr.age >=18
+        }).map((user)=>{
+            return user.name+" ("+user.age+")";
+        });
+
+        console.log(filteredUsers)
+
+    </script>
+</body>
+
+</html>

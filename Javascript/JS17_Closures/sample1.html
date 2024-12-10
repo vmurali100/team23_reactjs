@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var xyz = "I am From Global Scope !!"
+        function outerFunction(){
+            var outerVariable = "I am Outer Function Value"
+            function innerFunction (){
+                var abd = "I am From Inner Function !!"
+                console.log(outerVariable);
+                console.log(abd);
+                console.log(xyz)
+            }
+
+            return innerFunction
+        }
+
+        var closureEx = outerFunction()
+        console.log(closureEx())
+    </script>
+</body>
+</html>

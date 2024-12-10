@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- <h2 style="color: red;" id="myHeading" class="some">Hello World !!!</h2> -->
+    <!-- onclick IS a event Handler  -->
+    <button onclick="showHello()">Click Me</button> <br>
+    <button ondblclick="showHelloOnDBClick()">Click Me - DB</button> <br> <br>
+    <button onmouseover="showMessageOnHover()">Hover On Me</button><br> <br>
+    <button onmouseout="showMessageOnMouseOut()">Hover Out On Me</button><br> <br>
+    <button onmousemove="showMessageOnMouseMove()">Mouse Move On Me</button><br> <br>
+    <button onmouseDown="showMessageOnMouseDown()">Mouse Down On Me</button><br> <br>
+    <button onmouseup="showMessageOnMouseUp()">Mouse Up On Me</button>
+
+    <script>
+        // Events  are user Actions 
+        // Event Handlers
+
+        function showHello() {
+            alert("Welcome to Events Topic !!")
+        }
+
+        function showHelloOnDBClick() {
+            alert("Welcome to Events Topic !! from showHelloOnDBClick")
+        }
+
+        function showMessageOnHover() {
+            alert("Welcome to Event Handlers on Hover !!!");
+        }
+
+        function showMessageOnMouseOut() {
+            alert("Ok .. TATA bye bye")
+        }
+        function showMessageOnMouseMove() {
+            console.log("You Are moving the  Mouse")
+        }
+
+        function showMessageOnMouseDown(){
+            console.log("You Just performed Mouse DOWN !!!!")
+        }
+
+        function showMessageOnMouseUp(){
+            console.log("You Just performed Mouse Up Event  !!!!")
+        }
+    </script>
+</body>
+
+</html>

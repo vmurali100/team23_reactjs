@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var message = "Welcome to Javascript Methods . You are going to Learn all Javascript methods in this Class";
+        var fname="Ram Kumar";
+        var lname=" Krishna ";
+        var studentName = "Ram";
+        var middleName = "V";
+        var age = 42;
+        var convertedString = age.toString()
+        console.log(message.length);
+        console.log(message.charAt(22))
+        console.log(message.charCodeAt(22))
+        console.log(fname.concat(lname,middleName));
+        console.log(fname.endsWith("S"))
+        console.log(String.fromCharCode(77));
+        console.log(message.includes("to"));
+        console.log(message.indexOf("Javascript"));
+        console.log(message.lastIndexOf("Javascript"));
+        console.log(fname.localeCompare(studentName));
+        // console.log(age.padStart(9,0));
+        // console.log(age.padEnd(9,0));
+        // console.log(age.repeat(5));
+        console.log(fname.replace("Kumar","Reddy"));
+        console.log(message.replaceAll("Javascript","JS"))
+        console.log(message.slice(11,21));
+        console.log(studentName.split(""));
+        console.log(message.split(" "));
+        console.log(message.startsWith("Welcome"))
+        console.log(message.endsWith("Class"));
+        console.log(message.substr(11,10)); // Index and Length 
+        console.log(message.substring(11,21)) // Starting Index and Ending Index
+        console.log(message.toLocaleUpperCase());
+        console.log(message.toLocaleLowerCase());
+        console.log(age.toString())
+        console.log(typeof age) // Typeof method will help to find the Data Type 
+        console.log(lname.length);
+        console.log(lname.trimStart().length)
+    </script>
+</body>
+</html>

@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Two Column Layout with Form and Table</title>
+    <style>
+        body {
+            display: flex;
+            flex-wrap: wrap;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .column {
+            flex: 50%;
+            box-sizing: border-box;
+            padding: 20px;
+        }
+
+        .form-container,
+        .table-container {
+            background-color: #f4f4f4;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            margin-top: 0;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="button"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        input[type="button"] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid #ddd;
+        }
+
+        th,
+        td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        p {
+            color: red;
+            display: none;
+        }
+
+        input:disabled {
+            background-color: #999;
+            border-color: #999;
+            color: #999;
+            cursor: not-allowed;
+            color: white;
+        }
+        #updateBtn{
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="column">
+        <div class="form-container">
+            <h2>Simple Form</h2>
+            <form>
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" onkeyup="validate()">
+                <p id="nameError">Please Enter Name . Minumum 6 Characters </p>
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" onkeyup="validate()">
+                <p id="emailError">Please Enter Email </p>
+                <label for="email">Password</label>
+                <input type="email" id="password" name="password" onkeyup="validate()">
+                <p id="passwordError">Please Enter Password . Minumum 6 Characters </p>
+                <label for="email">Confirm Password</label>
+                <input type="email" id="cpassword" name="cpassword" onkeyup="validate()">
+                <p id="cpasswordError">Please Enter Confirm Password . Minumum 6 Characters </p>
+                <input type="button" id="submitBtn" value="Submit" onclick="handleSubmit()" disabled>
+                <input type="button" id="updateBtn" value="Update" onclick="handleUpdate()" >
+            </form>
+        </div>
+    </div>
+    <div class="column">
+        <div class="table-container">
+            <h2>Simple Table</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Password</th>
+                        <th>Confirm Password</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script>
+        var persons = JSON.parse(localStorage.getItem("persons"));
+        if (persons === null) {
+            persons = []
+        }
+        function handleSubmit() {
+            var person = {
+                name: document.getElementById("name").value,
+                email: document.getElementById("email").value,
+                password: document.getElementById("password").value,
+                cpassword: document.getElementById("cpassword").value,
+            }
+            validate();
+            persons.push(person);
+            localStorage.setItem("persons", JSON.stringify(persons))
+            readUser();
+            clearUser();
+        }
+
+        function validate() {
+            var person = {
+                name: document.getElementById("name").value,
+                email: document.getElementById("email").value,
+                password: document.getElementById("password").value,
+                cpassword: document.getElementById("cpassword").value,
+            }
+            document.getElementById("submitBtn").removeAttribute("disabled")
+
+            for (a in person) {
+                if (a !== "email") {
+                    if (person[a].length < 6) {
+                        document.getElementById("submitBtn").setAttribute("disabled", true)
+                        document.getElementById(a + "Error").style.display = "block"
+                    } else {
+                        document.getElementById(a + "Error").style.display = "none";
+                        document.getElementById("submitBtn").removeAttribute("disabled")
+                    }
+                } else if (a == "email") {
+                    var emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
+                    if (emailPattern.test(person[a])) {
+                        document.getElementById(a + "Error").style.display = "none";
+                        document.getElementById("submitBtn").removeAttribute("disabled")
+                    } else {
+                        document.getElementById("submitBtn").setAttribute("disabled", true)
+                        document.getElementById(a + "Error").style.display = "block"
+                    }
+                }
+            }
+
+
+        }
+        function readUser() {
+            document.querySelector("tbody").innerHTML = "";
+            persons.forEach((usr, i) => {
+                var myTr = document.createElement("tr");
+                for (a in usr) {
+                    var myTd = document.createElement("td");
+                    myTd.innerHTML = usr[a]
+                    myTr.appendChild(myTd);
+                }
+                // Edit Button
+                var editTd = document.createElement("td");
+                var editButton = document.createElement("button");
+                editButton.setAttribute("onclick", "editUser(" + i + ")")
+                editButton.innerHTML = "Edit User"
+                editTd.appendChild(editButton);
+                // Delete Button 
+                var deleteTd = document.createElement("td");
+                var deleteButton = document.createElement("button");
+                deleteButton.setAttribute("onclick", "deleteUser(" + i + ")");
+                deleteButton.innerHTML = "Delete User"
+                deleteTd.appendChild(deleteButton);
+                myTr.appendChild(editTd);
+                myTr.appendChild(deleteTd)
+                document.querySelector("tbody").appendChild(myTr)
+            })
+        };
+        function clearUser() {
+            document.getElementById("name").value = "";
+            document.getElementById("email").value = "";
+            document.getElementById("password").value = "";
+            document.getElementById("cpassword").value = "";
+        }
+        function deleteUser(i) {
+            console.log("deleteUser Called !!!", i);
+            persons.splice(i, 1);
+            localStorage.setItem('persons', JSON.stringify(persons));
+            readUser();
+        };
+
+        function editUser(i) {
+            index = i;
+            var userTobeEdit = persons[i];
+            for (a in userTobeEdit) {
+                document.getElementById(a).value = userTobeEdit[a]
+            }
+
+            document.getElementById("updateBtn").style.display = "block";
+            document.getElementById("submitBtn").style.display = "none";
+        }
+        function handleUpdate() {
+            var person = {
+                name: document.getElementById("name").value,
+                email: document.getElementById("email").value,
+                password: document.getElementById("password").value,
+                cpassword: document.getElementById("cpassword").value,
+            }
+
+            persons[index] = person;
+            localStorage.setItem('persons', JSON.stringify(persons));
+            readUser();
+            clearUser();
+            document.getElementById("submitBtn").style.display = "block";
+            document.getElementById("updateBtn").style.display = "none";
+        };
+       
+        readUser();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+       
+    </ul>
+
+    <script>
+        // 1. Create An Element 
+        // 2. Add any Attribute 
+        // 3. Add inside Body 
+
+        for(i=0;i<100;i++){
+           var myLi = document.createElement("li") 
+           myLi.innerHTML = "List Item - "+i;
+           document.querySelector("ul").appendChild(myLi)
+        }
+    </script>
+</body>
+</html>

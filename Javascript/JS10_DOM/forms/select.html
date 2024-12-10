@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <label for="">Select State : </label>
+    <select name="state" id="stateName" onchange="getStateName()">
+        <option value="AP">AP</option>
+        <option value="Telangana">Telangana</option>
+        <option value="Tamilnadu">Tamilnadu</option>
+        <option value="Karnataka">Karnataka</option>
+        <option value="Kerala">Kerala</option>
+    </select>
+
+    <button onclick="setSelectedState()">Set Selected State</button>
+    <script>
+        function getStateName() {
+            var selectedState =document.getElementById("stateName").value;
+            console.log(selectedState);
+        }
+
+        function setSelectedState(){
+            document.getElementById("stateName").value = "Karnataka"
+        }
+    </script>
+</body>
+
+</html>

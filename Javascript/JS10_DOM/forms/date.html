@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <label for="">Select Date : </label>
+        <input type="date" name="" id="selectDate"> <br>
+        <button onclick="getSelectedDate()" type="button">Select Date</button>
+        <button onclick="setSelectedDate()" type="button">Set Select Date</button>
+
+    </form>
+
+    <script>
+        function getSelectedDate(){
+            var selectedDate= document.getElementById("selectDate").value ;
+            console.log(selectedDate);
+        }
+
+        function setSelectedDate(){
+            var todaysDate = "2024-07-15";
+            document.getElementById("selectDate").value = todaysDate;
+        }
+    </script>
+</body>
+</html>

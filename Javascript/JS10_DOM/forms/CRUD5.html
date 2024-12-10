@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            display: flex;
+            width: 100%;
+            padding: 20px;
+        }
+        .form-container, .table-container {
+            width: 45%;
+        }
+        .form-container {
+            padding-right: 20px;
+            border-right: 1px solid #ccc;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid #ccc;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Left Column: Registration Form -->
+        <div class="form-container">
+            <h2>Registration Form</h2>
+            <form>
+                <div class="form-group">
+                    <label for="firstName">First Name:</label>
+                    <input type="text" id="firstName" name="firstName" required>
+                </div>
+                <div class="form-group">
+                    <label for="lastName">Last Name:</label>
+                    <input type="text" id="lastName" name="lastName" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <div class="form-group">
+                    <label for="confirmPassword">Confirm Password:</label>
+                    <input type="password" id="confirmPassword" name="confirmPassword" required>
+                </div>
+                <div class="form-group">
+                    <label for="dob">Date of Birth:</label>
+                    <input type="date" id="dob" name="dob" required>
+                </div>
+                <div class="form-group">
+                    <label for="gender">Gender:</label>
+                    <select id="gender" name="gender" required>
+                        <option value="">Select</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="address">Address:</label>
+                    <textarea id="address" name="address" rows="4" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="city">City:</label>
+                    <input type="text" id="city" name="city" required>
+                </div>
+                <div class="form-group">
+                    <label for="state">State:</label>
+                    <input type="text" id="state" name="state" required>
+                </div>
+                <div class="form-group">
+                    <label for="zip">Zip Code:</label>
+                    <input type="text" id="zip" name="zip" required>
+                </div>
+                <div class="form-group">
+                    <label for="country">Country:</label>
+                    <input type="text" id="country" name="country" required>
+                </div>
+                <button type="submit">Register</button>
+            </form>
+        </div>
+        
+        <!-- Right Column: Table -->
+        <div class="table-container">
+            <h2>Sample Data</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Field</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>First Name</td>
+                        <td>User's first name</td>
+                    </tr>
+                    <tr>
+                        <td>Last Name</td>
+                        <td>User's last name</td>
+                    </tr>
+                    <tr>
+                        <td>Email</td>
+                        <td>User's email address</td>
+                    </tr>
+                    <tr>
+                        <td>Password</td>
+                        <td>User's password</td>
+                    </tr>
+                    <tr>
+                        <td>Date of Birth</td>
+                        <td>User's date of birth</td>
+                    </tr>
+                    <tr>
+                        <td>Gender</td>
+                        <td>User's gender</td>
+                    </tr>
+                    <tr>
+                        <td>Address</td>
+                        <td>User's address</td>
+                    </tr>
+                    <tr>
+                        <td>City</td>
+                        <td>User's city of residence</td>
+                    </tr>
+                    <tr>
+                        <td>State</td>
+                        <td>User's state of residence</td>
+                    </tr>
+                    <tr>
+                        <td>Zip Code</td>
+                        <td>User's postal code</td>
+                    </tr>
+                    <tr>
+                        <td>Country</td>
+                        <td>User's country of residence</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

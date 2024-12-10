@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var students = ["Ram", "Ravi", "Sam", "Sundar","Abi","Balu"];
+
+        var newStudents = students.map(function(stdname){
+            // document.write(stdname+"<br/>")
+            return stdname+" - VMR InfoTech";
+        })
+
+        newStudents.map(function(val){
+            document.write(val+"<br/>")
+        })
+
+        // For Each Statement Can only Iterate through the array Values .
+        // But , Map Statement Can Iterate and Create a New Array 
+        // Iteration
+        // document.write(newStudents)
+    </script>
+</body>
+</html>
