@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <label >employee_name</label>
+        <br>
+        <input type="text" name="time_tracker" id="name" class="tname">
+        <br>
+        <label >date</label>
+        <br>
+        <input type="date" name="time_tracker" id="date" class="tdate">
+        <br>
+        <label >start_time</label>
+        <br>
+        <input type="time" name="time_tracker" id="startt" class="timer1">
+        <br>
+        <label >end_time</label>
+        <br>
+        <input type="time" name="time_tracker" id="stopt" class="timer2">
+        <br>
+        <button type="button" onclick="timer()"> submit</button>
+    </form>
+    <script>
+        //metod1
+        function timer (){
+            //console.log("user 1 called");
+            //var time = document.querySelector('input').value
+            //console.log("employee work hours is: ",time ) 
+
+
+        //metod2
+        //var time = document.querySelectorAll('input')[1].value
+        //console.log("employee work hoursis: ",time )
+        //METOD 3
+        //var time = document.getElementsByTagName('input')[0].value
+        //console.log("employee work hours is: ",time )
+        //metod 4
+        //var time = document.getElementById('stopt').value
+        //console.log("employee work hours is: ",time )
+
+        //metod 5
+        //var time = document.getElementsByClassName('timer1')[0].value
+        //console.log("employee work hours is: ",time )
+
+
+        //metod6
+        var time = document.getElementsByName('time_tracker')[3].value
+        console.log("employee work hours is: ",time )
+
+
+        }
+    </script>
+</body>
+</html>

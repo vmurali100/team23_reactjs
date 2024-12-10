@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Age</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+    <script>
+        var users = []
+        function getDataFromServer( displayUsers) {
+            // XMLHttpRequest 
+            var getData = new XMLHttpRequest;
+            getData.open("GET", "http://localhost:3000/users"); 
+            getData.send();
+           
+            getData.onreadystatechange = function () {
+                if (getData.readyState === 4 && getData.status === 200) {
+                    users = JSON.parse(getData.response);
+                    displayUsers()
+                }
+            }
+        }
+        function displayUsers() {
+            document.querySelector("tbody").innerHTML = ""
+            users.forEach((usr, i) => {
+                var myTr = document.createElement("tr");
+                for (a in usr) {
+                    var myTd = document.createElement("td");
+                    myTd.innerHTML = usr[a]
+                    myTr.appendChild(myTd);
+                }
+                // Edit Button
+                var editTd = document.createElement("td");
+                var editButton = document.createElement("button");
+                editButton.setAttribute("onclick", "editUser(" + i + ")")
+                editButton.innerHTML = "Edit User"
+                editTd.appendChild(editButton);
+                // Delete Button 
+                var deleteTd = document.createElement("td");
+                var deleteButton = document.createElement("button");
+                deleteButton.setAttribute("onclick", "deleteUser(" + i + ")");
+                deleteButton.innerHTML = "Delete User"
+                deleteTd.appendChild(deleteButton);
+                myTr.appendChild(editTd);
+                myTr.appendChild(deleteTd)
+                document.querySelector("tbody").appendChild(myTr)
+            })
+        };
+        
+        getDataFromServer(displayUsers);
+        
+    </script>
+</body>
+
+</html>

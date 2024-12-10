@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX_FORM1</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        #updateBtn {
+            display: none;
+        }
+    </style>
+</head>
+
+<body class="container">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-3">
+                <form>
+                    <div class="mb-3">
+                        <label for="id" class="form-label">ID</label>
+                        <input type="text" class="form-control" id="id">
+                    </div>
+                    <div class="mb-3">
+                        <label for="Name" class="form-label">Name</label>
+                        <input type="text" class="form-control" id="Name">
+                    </div>
+                    <div class="mb-3">
+                        <label for="Course" class="form-label">Course</label>
+                        <input type="text" class="form-control" id="Course">
+                    </div>
+                    <div class="mb-3">
+                        <label for="Branch" class="form-label">Branch</label>
+                        <input type="text" class="form-control" id="Branch">
+                    </div>
+                    <div class="mb-3">
+                        <label for="RollNo" class="form-label">Roll No</label>
+                        <input type="text" class="form-control" id="RollNo">
+                    </div>
+                    <div class="mb-3">
+                        <label for="Email" class="form-label">Email address</label>
+                        <input type="email" class="form-control" id="Email">
+                    </div>
+                    <div class="mb-3">
+                        <label for="Username" class="form-label">User Name</label>
+                        <input type="text" class="form-control" id="Username">
+                    </div>
+                    <div class="mb-3">
+                        <label for="About" class="form-label">About Us</label>
+                        <textarea class="form-control" id="About"></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="Password" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="Password">
+                    </div>
+                    <button type="button" onclick="createUser()" id="submitbtn" class="btn btn-primary">Submit</button>
+                    <button type="button" onclick="updateUser()" id="updatebtn" class="btn btn-primary"
+                        style="display:none;">Update</button>
+                </form>
+            </div>
+            <div class="col-9">
+                <table class="table table-bordered border-primary">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Course</th>
+                            <th>Branch</th>
+                            <th>Roll No</th>
+                            <th>Email</th>
+                            <th>User Name</th>
+                            <th>About Us</th>
+                            <th>Password</th>
+                            <th>Edit</th>
+                            <th>Delete</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <form action="">
+
+    </form>
+    <script>
+        function createUser() {
+            var student = {
+                id: document.getElementById("id").value,
+                Name: document.getElementById("Name").value,
+                Course: document.getElementById("Course").value,
+                Branch: document.getElementById("Branch").value,
+                RollNo: document.getElementById("RollNo").value,
+                Email: document.getElementById("Email").value,
+                Username: document.getElementById("Username").value,
+                About: document.getElementById("About").value,
+                Password: document.getElementById("Password").value
+            };
+
+            var postUser = new XMLHttpRequest;
+            postUser.open("POST", "http://localhost:3000/students");
+            postUser.setRequestHeader("Content-Type", "application/json");
+            postUser.send(JSON.stringify(student));
+            postUser.onreadystatechange = function () {
+                if (postUser.readyState == 4 && postUser.status == 201) {
+                    console.log("Students Added Successfully !!!");
+                }
+            }
+            clearForm()
+        };
+        var students = []
+        function getDataFromServer() {
+            var postUser = new XMLHttpRequest;
+            postUser.open("GET", "http://localhost:3000/students");
+            postUser.send();
+            postUser.onreadystatechange = function () {
+                if (postUser.readyState == 4 && postUser.status == 200) {
+                    students = JSON.parse(postUser.response);
+                    readUser()
+                }
+            }
+        }
+        function readUser() {
+            students.forEach((usr, i) => {
+                var myTr = document.createElement("tr")
+                for (a in usr) {
+                    var myTd = document.createElement("td");
+                    myTd.innerHTML = usr[a]
+                    myTr.appendChild(myTd)
+                }
+                // Edit Button
+                var editTd = document.createElement("td");
+                var editButton = document.createElement("button");
+                editButton.setAttribute("onclick", "editUser(" + i + ")")
+                editButton.setAttribute("class", "btn btn-warning")
+                editButton.innerHTML = "Edit User"
+                editTd.appendChild(editButton);
+                // Delete Button 
+                var deleteTd = document.createElement("td");
+                var deleteButton = document.createElement("button");
+                deleteButton.setAttribute("onclick", "deleteUser(" + i + ")");
+                deleteButton.innerHTML = "Delete User"
+                deleteTd.appendChild(deleteButton);
+                deleteButton.setAttribute("class", "btn btn-danger")
+
+                myTr.appendChild(editTd);
+                myTr.appendChild(deleteTd)
+                document.querySelector("tbody").appendChild(myTr)
+            })
+        };
+        var index = null;
+        function editUser(i) {
+            index = i;
+            var userToEdit = students[i];
+            for (a in userToEdit) {
+                if (a !== "id") {
+                    document.getElementById(a).value = userToEdit[a]
+                }
+
+            }
+            document.getElementById("updateBtn").style.display = "block"
+            document.getElementById("submitBtn").style.display = "none"
+        };
+        function updateUser() {
+            var student = {
+                id: document.getElementById("id").value,
+                Name: document.getElementById("Name").value,
+                Course: document.getElementById("Course").value,
+                Branch: document.getElementById("Branch").value,
+                RollNo: document.getElementById("RollNo").value,
+                Email: document.getElementById("Email").value,
+                Username: document.getElementById("Username").value,
+                About: document.getElementById("About").value,
+                Password: document.getElementById("Password").value
+            }
+            var postUser = new XMLHttpRequest;
+            postUser.open("PUT", "http://localhost:3000/students/" + students[index].id);
+            postUser.setRequestHeader("Content-Type","Application/json")
+            postUser.send(JSON.stringify(student));
+            postUser.onreadystatechange = function () {
+                if (postUser.readyState == 4 && postUser.status == 200) {
+                    students = JSON.parse(postUser.response);
+                    readUser();
+                    document.getElementById("updateBtn").style.display = "none"
+                    document.getElementById("submitBtn").style.display = "block"
+                }
+            }
+
+        };
+        function clearForm() { 
+            document.getElementById("id").value = "",
+            document.getElementById("Name").value = "",
+            document.getElementById("Course").value = "",
+            document.getElementById("Branch").value = "",
+            document.getElementById("RollNo").value = "",
+            document.getElementById("Email").value = "",
+            document.getElementById("Username").value = "",
+            document.getElementById("About").value = "",
+            document.getElementById("password").value=""
+        };
+        function deleteUser(i) {
+            var postUser = new XMLHttpRequest;
+            postUser.open("DELETE", "http://localhost:3000/students/" + students[i].id);
+            postUser.send();
+            postUser.onreadystatechange = function () {
+                if (postUser.readyState == 4 && postUser.status == 200) {
+                    students = JSON.parse(postUser.response);
+                    getDataFromServer();
+                }
+            }
+        };
+
+        getDataFromServer()
+    </script>
+</body>
+
+</html>

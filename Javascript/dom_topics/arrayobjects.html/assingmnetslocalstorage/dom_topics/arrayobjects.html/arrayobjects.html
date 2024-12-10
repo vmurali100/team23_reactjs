@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul {
+            background: red;
+            margin: 5px;
+            border: 2px solid black;
+            padding: 5px;
+        }
+
+        li {
+            list-style: none;
+        }
+    </style>
+</head>
+
+<body>
+   
+    <script>
+        var array_objects = [
+        {
+            "id": 32,
+            "name": "vishal",
+            "courses_enrolled": 3
+        },
+        {
+            "current_song": "na saami",
+            "playlist": "puspa"
+
+        },
+        {
+            "sender": "send",
+            "reciver": "recieve",
+            "message": "hi"
+        },
+        {
+            "name": "vishal",
+            "quantity": 2,
+            "available": 4,
+            "price": 80
+        },
+        {
+            "event_name": "dance",
+            "date": 25,
+            "time": 4,
+            "location": "ctr",
+
+        },
+        {
+
+            "director": "vishakl",
+            "release_year": 2024,
+            "title": "cinema"
+        },
+        {
+            name: "vis",
+            level: 100,
+            health_points: 23
+        },
+        {
+            items: 5,
+            quantity: 45,
+            price: 50,
+        },
+        {
+            words: "rma",
+            definitions: 'left',
+            example_sentences: 5
+        },
+        {
+            task_name: 'write',
+            due_date: 20,
+            priority: 5
+        },
+        {
+            temperature: 32,
+            humidity: 4,
+            wind_speed: 100
+        },
+        {
+            room_number: 208,
+            guest_name: 'tankk',
+            checkin_date: 20,
+            checkout_date: 24
+        },
+        {
+            employee_name: 'ram',
+            date: 21,
+            start_time: 2.230,
+            end_time: 5.00
+        },
+        {
+            ingredients: 3,
+            instructions: 4,
+        },
+        {
+            flightnumber: '45',
+            departure_city: 'delhi',
+            arrival_city: 'us',
+            departure_time: 5
+        },
+        {
+            band_members: 3,
+            upcoming_gigs: 'books',
+            setlist: 'animal'
+        },
+        {
+            post_title: 'titians',
+            author: 'vishal',
+            content: 'serious',
+            tags: 'none',
+        },
+        {
+            challenge_name: 'shotting',
+            participants: 3,
+            start_date:18,
+            end_date: 28.6,
+        },
+        {
+            property_type: 'land',
+            price: 4000,
+            location: 'tpt',
+        },
+        {
+            project_name: 'assingment',
+            description: 'students',
+            team_members: 4,
+            deadlines: 'monady',
+        },
+        {
+            subscription_name: '',
+            price: 300,
+            renewal_date: 2.32
+        },
+        {
+            pet_name: 'dog',
+            breed: 'hhusky',
+            age: 2,
+            adoption_status: 'none'
+        },
+        {
+            likeitem_name: 'cake',
+            priority_level: 5,
+            price: 2000,
+        },
+        {
+            source_language: 'all',
+            target_language: 'english',
+            texttotranslate: 'telugu',
+        }
+    ]
+
+
+        for (i = 0; i < array_objects.length; i++) {
+            var storage1 = array_objects[i];
+            console.log(storage1);
+            var myUl = document.createElement("ul");
+
+            for (a in storage1) {
+                var myLi = document.createElement("li");
+               // document.write(a+":-"+storage1[a]+"<br>")
+               
+
+                myLi.innerHTML = a + ":-" + storage1[a] + "<br>";
+                myUl.appendChild(myLi)
+            }
+             //myUl.innerHTML = a + ":-" + storage1[a] + "<br>";
+            document.body.appendChild(myUl)
+           //
+
+        }
+    </script>
+</body>
+
+</html>

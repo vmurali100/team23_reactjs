@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="">
+        <label for="">NAME</label>
+        <input type="text" id="name"><br>
+        <label for="">ROLLNO</label>
+        <input type="number" id="rollno"><br>
+        <label for="">AGE</label>
+        <input type="number" id="age"><br>
+        <button type="button" onclick="adduser()" id="addstu">submit</button>
+        <button type="button" onclick="updatestu()" id="update">update</button>
+
+
+    </form>
+    <table border="1">
+        <thead>
+            <tr>
+                <td>NAME</td>
+                <td>ROLLNO</td>
+                <td>AGE</td>
+                <td>EDIT</td>
+                <td>DELETE</td>
+
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+    <script>
+        var data = JSON.parse(localStorage.getItem('data'));
+        if (data==null) {
+            data=[]
+        }
+        function adduser() {
+        
+            var stu = {
+                name: document.getElementById('name').value,
+                rollno: document.getElementById('rollno').value,
+                age: document.getElementById('age').value
+
+            }
+            data.push(stu);
+            localStorage.setItem('data', JSON.stringify(data))
+            displaystudents()
+
+           // clearForm()
+        }
+        function clearForm() {
+             document.getElementById('name').value = "",
+                document.getElementById('rollno').value = "",
+                document.getElementById('age').value = ""
+        }
+        function displaystudents() {
+            document.querySelector("tbody").innerHTML = ""
+            for (i = 0; i < data.length; i++) {
+                var student = data[i];
+                var row = document.createElement("tr");
+                for (a in student) {
+                    var desk = document.createElement("td");
+                    desk.innerHTML = student[a]
+
+                    row.appendChild(desk);
+
+                }
+                var editTD = document.createElement("td");
+                var editbutton = document.createElement("BUTTON");
+                editbutton.innerHTML = "EDIT STUDENT";
+                editTD.appendChild(editbutton)
+                editbutton.setAttribute("onclick","editstu(" + i + ")");
+
+
+                var deltd = document.createElement("td")
+                var delbutton = document.createElement("BUTTON");
+                delbutton.innerHTML = "delete STUDENT";
+                delbutton.setAttribute("onclick", "deletestu(" + i + ")");
+                deltd.appendChild(delbutton)
+                row.appendChild(editTD)
+                row.appendChild(deltd)
+                document.querySelector("tbody").appendChild(row)
+
+
+            }
+        }
+        function deletestu(i) {
+            console.log("deleted user", i);
+            data.splice(i, 1);
+            localStorage.setItem('data', JSON.stringify(data))
+            displaystudents();
+
+        }
+        var index;
+        function editstu(i) { 
+            //console.log (data[i])
+           // index=i
+            var tobeedited = data[i];
+            //console.log(studenttobeedited[i])
+            for (a in tobeedited ){
+                document.getElementById(a).value =tobeedited[a]
+            }
+            document.getElementById("addstu").style.display="none";
+            document.getElementById("update").style.display="block";
+        }
+        function updatestu() {
+            var upstu={
+                name: document.getElementById('name').value,
+                rollno: document.getElementById('rollno').value,
+                age: document.getElementById('age').value,
+                
+            }
+            data[index]=upstu;
+            localStorage.setItem('data', JSON.stringify(data))
+            displaystudents();
+            clearForm();
+            document.getElementById("addstu").style.display="block";
+            document.getElementById("update").style.display="none";
+
+        }
+
+
+
+        displaystudents()
+
+
+    </script>
+
+</body>
+
+</html>

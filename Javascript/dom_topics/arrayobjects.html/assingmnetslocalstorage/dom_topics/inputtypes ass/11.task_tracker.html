@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <label >taskname</label>
+        <br>
+        <input type="text" name="task" id="name" clas="tname">
+        <br>
+        <label >task_date</label>
+        <br>
+        <input type="number" name="task" id="date" class="tdate">
+        <br>
+        <label >priority</label>
+        <br>
+        <input type="number" name="task" id="prioror" class="tprior">
+        <br>
+        <button type="button" onclick="user()"> submit</button>
+    </form>
+    <script>
+        //metod1
+        function user (){
+            //console.log("user 1 called");
+            //var IVALUE = document.querySelector('input').value
+            //console.log("te user namer is: ",IVALUE ) 
+
+
+        //metod2
+        //var IVALUE = document.querySelectorAll('input')[1].value
+        //console.log("te user namer is: ",IVALUE )
+        //METOD 3
+        //var IVALUE = document.getElementsByTagName('input')[0].value
+        //console.log("the user namer is: ",IVALUE )
+        //metod 4
+        //var IVALUE = document.getElementById('date').value
+        //console.log("the user namer is: ",IVALUE )
+
+        //metod 5
+        //var IVALUE = document.getElementsByClassName('tprior')[0].value
+        //console.log("te user namer is: ",IVALUE )
+
+
+        //metod6
+        var IVALUE = document.getElementsByName('task')[2].value
+        console.log("te user namer is: ",IVALUE )
+
+
+        }
+    </script>
+</body>
+</html>

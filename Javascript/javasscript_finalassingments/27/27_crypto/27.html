@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-image: url(./background.png);
+           
+             margin: 0;
+            padding: 0;
+           height: 100vh;
+          
+           
+            background-size: cover; /* This makes the background cover the entire screen */
+            background-position: center; /* This centers the background image */
+            background-repeat: no-repeat;
+            color: white;
+        }
+        header{
+           display: flex;
+           width: 100%;
+           margin-left: 150px;
+           margin-top: 30px;
+        }
+       header ul li{
+            display: inline;
+            text-decoration: none;
+            margin: 10px;
+            width: 500px;
+        }
+        #main{
+            display:flex;
+            margin-left: 200px;
+        }
+        #block2{
+           
+            display:flex;
+            margin-left: 500px;
+            width:600px;
+            margin-top: 150px;
+        }
+        #block2.div{
+            width:400px;
+            
+        }
+        .one{
+
+            margin: 20px;
+            padding: 10px;
+            border: 2px solid grey;
+            border-radius: 20px;
+        }
+        .two{
+            margin-top: 20px;
+            margin-left: 20px;
+        }
+
+        
+    </style>
+</head>
+<body>
+    <header>
+        <div style="margin-right: 200px;">
+           <ul >
+            <li>Market</li>
+            <li> Features</li>
+            <li>White paper</li>
+            <li>About us</li>
+           </ul>
+        </div>
+        <div >
+            <h4  style="margin-left:300px;width:30px;border:2px solid grey;padding: 10PX;border-radius:10px">EN</h4>
+        </div>
+
+    </header>
+    <div  id="main">
+        <div id="block1">
+            <h1>Buy &</h1>
+            <h1>SELL <span style="color:rgb(243, 161, 10)">Crypto</span></h1>
+            <p>worlds biggest cryptocurrency excange avaliable on web <br> as well as mobile phone</p>
+            <h4 style="border:2px solid white;border-radius:10px;width:150px;padding:10px;background-color:orange">EXPLORE MORE</h4>
+
+        </div>
+       
+    </div>
+    <div id="block2" >
+        <div  class="one" style="display: flex;">
+           <div><img src="./bitcoin.png" alt=""></div>
+           <div  class="two">
+            $484111<br>
+            Bitcoin
+           </div>
+        </div>
+        <div class="one" style="display: flex;">
+            <div><img src="./ethereum.png" alt=""></div>
+            <div class="two">
+             $3873.4<br>
+             ethereum
+            
+            </div>
+         </div>
+         <div class="one" style="display: flex;">
+            <div><img src="./dogecoin.png" alt=""></div>
+            <div class="two">
+             $o.179935<br>
+             dogecoin
+            </div>
+         </div>
+    </div>
+</body>
+</html>

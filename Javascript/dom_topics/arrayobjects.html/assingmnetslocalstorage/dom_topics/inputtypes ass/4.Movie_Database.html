@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <label for="">Movie Title :</label>
+        <input type="text" id="movieTitle" class="movieTitle" name="movieTitle"> <br><br>
+        
+        <label for="">Director :</label>
+        <input type="text" id="director" class="director" name="director"> <br><br>
+
+        <label for="">Release Year :</label>
+        <input type="text" id="releaseYear" class="releaseYear" name="releaseYear"> <br><br>
+
+        <button type="button" onclick="addNewMovie()">Add NewMovie</button>
+
+    </form>
+
+    <script>
+        // Method 1 with querySelector
+        // function addNewMovie(){
+        //     var movie = {
+        //         movieTitle:document.querySelector("#movieTitle").value,
+        //         director:document.querySelector("#director").value,
+        //         releaseYear:document.querySelector("#releaseYear").value,
+        //     }
+        //     console.log(movie)
+        // }
+
+        // Method 2 querySelectorAll
+        // function addNewMovie(){
+        //     var movie = {
+        //         movieTitle:document.querySelectorAll("#movieTitle")[0].value,
+        //         director:document.querySelectorAll("#director")[0].value,
+        //         releaseYear:document.querySelectorAll("#releaseYear")[0].value
+        //     }
+        //     console.log(movie)
+        // }
+
+        // Method 3 getElementsByTagName
+        // function addNewMovie(){
+        //     var movie = {
+        //         movieTitle:document.getElementsByTagName("input")[0].value,
+        //         director:document.getElementsByTagName("input")[1].value,
+        //         releaseYear:document.getElementsByTagName("input")[2].value
+        //     }
+        //     console.log(movie)
+        // }
+
+        // Method 4 getElementById
+        // function addNewMovie(){
+        //     var movie = {
+        //         movieTitle:document.getElementById("movieTitle").value,
+        //         director:document.getElementById("director").value,
+        //         releaseYear:document.getElementById("releaseYear").value
+        //     }
+        //     console.log(movie)
+        // }
+
+        // Method 5 getElementsByClassName
+        // function addNewMovie(){
+        //     var movie = {
+        //         movieTitle:document.getElementsByClassName("movieTitle")[0].value,
+        //         director:document.getElementsByClassName("director")[0].value,
+        //         releaseYear:document.getElementsByClassName("releaseYear")[0].value
+        //     }
+        //     console.log(movie)
+        // }
+
+        // Method 6 getElementsByName
+        function addNewMovie(){
+            var movie = {
+                movieTitle:document.getElementsByName("movieTitle")[0].value,
+                director:document.getElementsByName("director")[0].value,
+                releaseYear:document.getElementsByName("releaseYear")[0].value
+            }
+            console.log(movie)
+        }
+
+
+    </script>
+</body>
+</html>

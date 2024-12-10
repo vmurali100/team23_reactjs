@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <label for="">Recipe Name :</label>
+        <input type="text" id="recipeName" class="recipeName" name="recipeName"> <br><br>
+        
+        <label for="">Ingredients :</label>
+        <input type="text" id="ingredients" class="ingredients" name="ingredients"> <br><br>
+
+        <label for="">Instructions :</label>
+        <input type="text" id="instructions" class="instructions" name="instructions"> <br><br>
+
+        <button type="button" onclick="addRecipe()">Add Recipe</button>
+
+    </form>
+
+    <script>
+        // Method 1 with querySelector
+        // function addRecipe(){
+        //     var recipe = {
+        //         recipeName:document.querySelector("#recipeName").value,
+        //         ingredients:document.querySelector("#ingredients").value,
+        //         instructions:document.querySelector("#instructions").value,
+        //     }
+        //     console.log(recipe)
+        // }
+
+        // Method 2 querySelectorAll
+        // function addRecipe(){
+        //     var recipe = {
+        //         recipeName:document.querySelectorAll("#recipeName")[0].value,
+        //         ingredients:document.querySelectorAll("#ingredients")[0].value,
+        //         instructions:document.querySelectorAll("#instructions")[0].value
+        //     }
+        //     console.log(recipe)
+        // }
+
+        // Method 3 getElementsByTagName
+        // function addRecipe(){
+        //     var recipe = {
+        //         recipeName:document.getElementsByTagName("input")[0].value,
+        //         ingredients:document.getElementsByTagName("input")[1].value,
+        //         instructions:document.getElementsByTagName("input")[2].value
+        //     }
+        //     console.log(recipe)
+        // }
+
+        // Method 4 getElementById
+        // function addRecipe(){
+        //     var recipe = {
+        //         recipeName:document.getElementById("recipeName").value,
+        //         ingredients:document.getElementById("ingredients").value,
+        //         instructions:document.getElementById("instructions").value
+        //     }
+        //     console.log(recipe)
+        // }
+
+        // Method 5 getElementsByClassName
+        // function addRecipe(){
+        //     var recipe = {
+        //         recipeName:document.getElementsByClassName("recipeName")[0].value,
+        //         ingredients:document.getElementsByClassName("ingredients")[0].value,
+        //         instructions:document.getElementsByClassName("instructions")[0].value
+        //     }
+        //     console.log(recipe)
+        // }
+
+        // Method 6 getElementsByName
+        function addRecipe(){
+            var recipe = {
+                recipeName:document.getElementsByName("recipeName")[0].value,
+                ingredients:document.getElementsByName("ingredients")[0].value,
+                instructions:document.getElementsByName("instructions")[0].value
+            }
+            console.log(recipe)
+        }
+
+
+    </script>
+</body>
+</html>

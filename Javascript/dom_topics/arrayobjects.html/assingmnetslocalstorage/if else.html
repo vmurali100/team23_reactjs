@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var a= Number( prompt("enter the frist number"))
+        var b =Number(prompt("enter the second value"))
+        var action= prompt("should i do add,mul,sub,div");
+        var result;
+
+     
+        if(action=="add"){
+           result=a+b
+        }else if(action=="sub"){
+            result=a-b
+        }else if(action=="mul"){
+            result=a*b
+        }else{
+          result=a/b
+        }
+        document.write(action)
+        document.write("The result of two numbers is",+result)
+    </script>
+    
+</body>
+</html>

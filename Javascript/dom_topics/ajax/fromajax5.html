@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        form{
+            align-items: center;
+            padding: 10px;
+            margin-left:30px;
+        }
+        
+        #aaa{
+            align-items: center;
+            margin-left: 480px;
+            border: 2px solid black;
+            width: 350px;
+        }
+    </style>
+     
+</head>
+<body>
+    <h1 style="text-align: center;">Registration form</h1>
+    <div id="aaa">
+    <form action="" style="align-items: center;">
+        <label>ID:</label>
+        <input type="NUMBER" name="" id="no"><br>
+        <label>NAME:</label>
+        <input type="TEXT" name="" id="name"><br>
+        <label>COURSE:</label>
+        <input type="TEXT" name="" id="course"><br>
+        <label>BRANCH:</label>
+        <input type="TEXT" name="" id="branch"><br>
+        <label>ROLLNO:</label>
+        <input type="NUMBER" name="" id="rollno"><br>
+        <label>Email_adress</label>
+        <input type="email" name="" id="email"><br>
+        <label>user_name/label>
+        <input type="TEXT" name="" id="username"><br>
+        <label>About_us</label>
+        <input type="TEXT" name="" id="about"><br>
+        <label>password</label>
+        <input type="TEXT" name="" id="password"><br>
+        <button type="button" id="addstu" onclick="users()">Add</button>
+       
+        <button type="button"id="update" onclick="editstu()" disabled="none">update</button>
+        
+
+
+    </form>
+</div>
+<div>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>name</th>
+                <th>course</th>
+                <th>branch</th>
+                <th>rollno</th>
+                <th>email</th>
+                <th>aboutus</th>
+                <th>password</th>
+                <th>edit</th>
+                <th>delete</th>
+               
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+</div>
+<script>
+    var data = JSON.parse(localStorage.getItem('data'));
+    function users() {
+        
+        
+        var customers = {
+            id:document.getElementById('no').value,
+            name: document.getElementById('name').value,
+            course: document.getElementById('course').value,
+            branch: document.getElementById('branch').value,
+            rollno: document.getElementById("rollno").value,
+            email: document.getElementById("email").value,
+            about_us: document.getElementById("about").value,
+            password: document.getElementById("password").value
+
+        }
+        data.push(customers)
+       // console.log(data)
+        localStorage.setItem('data', JSON.stringify(data))
+       // console.log(data)
+        readUser()
+        clearForm() 
+
+
+    }
+    function clearForm() {
+        document.getElementById('no').value,
+             document.getElementById('name').value = "",
+            document.getElementById('course').value = "",
+             document.getElementById('branch').value = "",
+             document.getElementById("rollno").value = "",
+            document.getElementById("email").value = "",
+             document.getElementById("about").value = "",
+             document.getElementById("password").value = ""
+       
+   }
+    function readUser() {
+        document.querySelector("tbody").innerHTML = "";
+        data.forEach((usr, i )=> {
+            var myTr = document.createElement("tr");
+            for (a in usr) {
+                var myTd = document.createElement("td");
+                myTd.innerHTML = usr[a]
+                myTr.appendChild(myTd);
+            }
+            // Edit Button
+            var editTd = document.createElement("td");
+            var editButton = document.createElement("button");
+            editButton.setAttribute("onclick", "editstu(" + i + ")")
+            editButton.setAttribute("class", "btn btn-warning")
+            editButton.innerHTML = "Edit "
+            editTd.appendChild(editButton);
+            // Delete Button 
+            var deleteTd = document.createElement("td");
+            var deleteButton = document.createElement("button");
+            deleteButton.setAttribute("onclick", "deletestu(" + i + ")");
+            deleteButton.setAttribute("class", "btn btn-danger")
+            deleteButton.innerHTML = "Delete "
+            deleteTd.appendChild(deleteButton);
+            myTr.appendChild(editTd);
+            myTr.appendChild(deleteTd)
+            document.querySelector("tbody").appendChild(myTr);
+        })
+    };
+     var index;
+    function editstu(i) { 
+        //console.log (data[i])
+       index=i
+        var tobeedited = data[i];
+        //console.log(studenttobeedited[i])
+        for (a in tobeedited ){
+            document.getElementById(a).value =tobeedited[a]
+        }
+        document.getElementById("addstu").style.display="none";
+        document.getElementById("update").style.display="block";
+    }
+    function deletestu(i) {
+        console.log("deleted user", i);
+        data.splice(i, 1);
+        localStorage.setItem('data', JSON.stringify(data))
+        readUser();
+    }
+    function updatestu() {
+        var customers={
+            id:document.getElementById('no').value,
+            name: document.getElementById('name').value,
+            course: document.getElementById('course').value,
+            branch: document.getElementById('branch').value,
+            rollno: document.getElementById("rollno").value,
+            email: document.getElementById("email").value,
+            about_us: document.getElementById("about").value,
+            password: document.getElementById("password").value
+
+            
+        }
+        data[index]=upstu;
+        localStorage.setItem('data', JSON.stringify(data))
+        readUser();
+        clearForm();
+        document.getElementById("addstu").style.display="block";
+        document.getElementById("update").style.display="none";
+
+    }
+   
+
+    
+
+            
+
+        
+    
+    readUser()
+</script>
+    
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <label >room_number</label>
+        <br>
+        <input type="number" name="reservation" id="room" class="reservation1">
+        <br>
+        <label >guest_name</label>
+        <br>
+        <input type="text" name="reservation" id="name" class="reservation2">
+        <br>
+        <label >check_in_date</label>
+        <br>
+        <input type="number" name="reservation" id="indate" class="reservation3">
+        <br>
+        <label >check_out_date</label>
+        <br>
+        <input type="number" name="reservation" id="outdate" class="reservation4">
+        <br>
+        <button type="button" onclick="hotelreservation()"> submit</button>
+    </form>
+    <script>
+        //metod1
+        function hotelreservation (){
+            //console.log("hotel reserved");
+            //var hotel = document.querySelector('input').value
+            //console.log("hotel reserved: ",hotel ) 
+
+
+        //metod2
+        //var hotel = document.querySelectorAll('input')[1].value
+        //console.log("hotel reserved: ",hotel )
+        //METOD 3
+        //var hotel = document.getElementsByTagName('input')[0].value
+        //console.log("hotel reserved: ",hotel )
+        //metod 4
+        //var hotel = document.getElementById('name').value
+        //console.log("hotel reserved: ",hotel )
+
+        //metod 5
+        //var hotel = document.getElementsByClassName('reservation1')[0].value
+        //console.log("hotel reserved: ",hotel )
+
+
+        //metod6
+        var hotel = document.getElementsByName('reservation')[0].value
+        console.log("hotel reserved: ",hotel )
+
+
+        }
+    </script>
+</body>
+</html>

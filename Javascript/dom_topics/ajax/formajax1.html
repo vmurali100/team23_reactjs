@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        background-color: greenyellow;
+    }
+
+    #first {
+        border: 2px solid black;
+        margin-left: 50px;
+        width: 400px;
+        margin-right: 100px;
+    }
+
+    h2 {
+        color: red;
+        text-align: center;
+    }
+
+    .one {
+        align-items: center;
+        margin: 25px;
+        padding: 10px;
+        width: 300px;
+    }
+</style>
+
+<body>
+   <div style="display: flex;">
+    <div id="first">
+        <div class="one">
+            <h2>Personal Details</h2>
+            <form action="">
+                <label for="">Name:</label>
+                <input type="text" id="name"><br>
+                <label for="">Password:</label>
+                <input type="password" id="password"><br>
+                <label for="">Email:</label>
+                <input type="email" id="email"><br>
+                <label for="">Gender: </label>
+                <input type="radio"  name="gender">male
+                <input type="radio" name="gender">female<br>
+                <label for="">contact us: </label>
+                <input type="numbers" id="contact">
+                <h2>
+                    Educational qualifications
+                </h2>
+                <label for="" id="degree">Degree:</label>
+                <select id="degree" name="degree">
+                    <option  name="" value="">Select Degree</option>
+                    <option value="engineering">Engineering</option>
+                    <option value="bscIT">B.Sc. IT</option>
+                    <option value="bscIS">B.Sc. IS</option>
+                    <option value="bscCS">B.Sc. CS</option>
+                </select><br>
+
+                <label for="" id="Engeeneering">Engeeneering:</label>
+                <select id="Engeeneering" name="Engeeneering">
+                    <option value="">Select group</option>
+                    <option value="CSE-AIML">CSE-AIML</option>
+                    <option value="CSE">CSE</option>
+                    <option value="ECE">ECE</option>
+                    <option value="EEE">EEE</option>
+                    <option value="MECH">MECH</option>
+                </select><br>
+
+                <label for="">Hobbie</label>
+                <input type="checkbox" name="hobbie">playing chess
+                <input type="checkbox" name="hobbie">reading
+                <h2>
+                    Address
+
+                </h2>
+                <label for="address"> Address:</label>
+                <textarea id="address" name="address" rows="4" cols="40"
+                    placeholder="Enter your address"></textarea><br>
+
+                <label for="resume">Attach Resume:</label>
+                <input type="file" id="resume" name="resume"><br>
+
+                <button type="button" onclick="create()">submit</button>
+
+
+            </form>
+        </div>
+    </div>
+    <div>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>name</th>
+                    <th>password</th>
+                    <th>email</th>
+                    <th>gender</th>
+                    <th>contact</th>
+                    <th>degree</th>
+                    <th>Engeeneering</th>
+                    <th>hobbies</th>
+                    <th>adress</th>
+                    <th>resume</th>
+                    <th>edit</th>
+                    <th>delete</th>
+                    
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
+   </div>
+    <script>
+        var allRadioBtns = document.getElementsByName("gender");
+        var allCheckBoxes = document.getElementsByName("degree");
+        var CheckBoxes2 = document.getElementsByName("Engeeneering");
+        var CheckBoxes3 = document.getElementsByName("hobbie");
+
+        
+        function create(){
+        var database= {
+            name:'',
+            password:'',
+            email:'',
+            gender:'',
+            contact:'',
+            degree:[],
+            Engeeneering:[],
+            hobbies:[],
+            adress:'',
+            resume:''
+        }
+        
+        for (a in database) {
+            if (a !== "gender" && a !== "degree"  && a !== "Engeeneering" && a !== "hobbies" && a !== "resume" ) {
+               // console.log(database[a])
+                database[a] = document.getElementById(a).value;
+            } else if (a === "gender") {
+                // Read Values from Radio Btns
+
+                for (i = 0; i < allRadioBtns.length; i++) {
+                    if (allRadioBtns[i].checked) {
+                        database[a] = allRadioBtns[i].value
+                    }
+                }
+            } else if (a === "degree") {
+                // Read Values from Checkboxes
+                for (i = 0; i < allCheckBoxes.length; i++) {
+                    if (allCheckBoxes[i].checked) {
+                        database[a].push(allCheckBoxes[i].value)
+                    }
+                }
+            }else if (a === "Engeeneering") {
+                // Read Values from Checkboxes
+                for (i = 0; i < CheckBoxes2.length; i++) {
+                    if ( CheckBoxes2[i].checked) {
+                        database[a].push( CheckBoxes2[i].value)
+                    }
+                }
+            }
+            else if (a === "hobbie") {
+                // Read Values from Checkboxes
+                for (i = 0; i < CheckBoxes3.length; i++) {
+                    if ( CheckBoxes3[i].checked) {
+                        database[a].push( CheckBoxes3[i].value)
+                    }
+                }
+            }else if(a === "resume"){
+                var file = fileInput.files[0];
+
+            if (file) {
+                fileNameDisplay.textContent = `Selected file: ${file.name}`;
+            } else {
+                fileNameDisplay.textContent = 'No file selected.';
+            }
+            }
+           
+        }
+   
+        var postdata=new XMLHttpRequest;
+        postdata.open("POST", "http://localhost:3000/databases");
+        postdata.setRequestHeader("Content-Type","application/json")
+        postdata.send(JSON.stringify(database));
+        postdata.onreadystatechange =function(){
+            if( postdata.readyState ==4 && postdata.status==201){
+                console.log("db added sucessfully")
+            }
+
+        }
+        readdata()
+        cleardata()
+    }
+   var databases= [];
+   function getdata () {
+    var postdata=new XMLHttpRequest;
+   postdata.open("GET", "http://localhost:3000/databases");
+   
+   postdata.send();
+   postdata.onreadystatechange =function(){
+       if( postdata.readyState ==4 && postdata.status==200){
+           databases=JSON.parse(postdata.response);
+       }
+
+   }
+   }
+   function cleardata(){
+    var database= {
+        name:'',
+        password:'',
+        email:'',
+        gender:'',
+        contact:'',
+        degree:[],
+        Engeeneering:[],
+        hobbies:[],
+        adress:'',
+        resume:''
+    }
+
+   }
+   function readdata (){  
+    databases.forEach((usr, i) => {
+        var myTr = document.createElement("tr")
+        for (a in usr) {
+            var myTd = document.createElement("td");
+            myTd.innerHTML = usr[a]
+            myTr.appendChild(myTd)
+        }
+        // Edit Button
+        var editTd = document.createElement("td");
+        var editButton = document.createElement("button");
+        editButton.setAttribute("onclick", "editUser(" + i + ")")
+        editButton.setAttribute("class", "btn btn-warning")
+        editButton.innerHTML = "Edit User"
+        editTd.appendChild(editButton);
+        // Delete Button 
+        var deleteTd = document.createElement("td");
+        var deleteButton = document.createElement("button");
+        deleteButton.setAttribute("onclick", "deleteUser(" + i + ")");
+        deleteButton.innerHTML = "Delete User"
+        deleteTd.appendChild(deleteButton);
+        deleteButton.setAttribute("class", "btn btn-danger")
+
+        myTr.appendChild(editTd);
+        myTr.appendChild(deleteTd)
+        document.querySelector("tbody").appendChild(myTr)
+    })
+
+
+
+
+   }
+   var index = null;
+   function editUser(i) {
+       index = i;
+       var userToEdit = databases[i];
+       for (a in userToEdit) {
+           if (a !== "id") {
+               document.getElementById(a).value = userToEdit[a]
+           }
+
+       }
+       document.getElementById("updateBtn").style.display = "block"
+       document.getElementById("submitBtn").style.display = "none"
+   };
+   function updateUser() {
+    var database= {
+        name:'',
+        password:'',
+        email:'',
+        gender:'',
+        contact:'',
+        degree:[],
+        Engeeneering:[],
+        hobbies:[],
+        adress:'',
+        resume:''
+    }
+    
+    for (a in database) {
+        if (a !== "gender" && a !== "degree"  && a !== "Engeeneering" && a !== "hobbies" && a !== "resume" ) {
+           // console.log(database[a])
+            database[a] = document.getElementById(a).value;
+        } else if (a === "gender") {
+            // Read Values from Radio Btns
+
+            for (i = 0; i < allRadioBtns.length; i++) {
+                if (allRadioBtns[i].checked) {
+                    database[a] = allRadioBtns[i].value
+                }
+            }
+        } else if (a === "degree") {
+            // Read Values from Checkboxes
+            for (i = 0; i < allCheckBoxes.length; i++) {
+                if (allCheckBoxes[i].checked) {
+                    database[a].push(allCheckBoxes[i].value)
+                }
+            }
+        }else if (a === "Engeeneering") {
+            // Read Values from Checkboxes
+            for (i = 0; i < CheckBoxes2.length; i++) {
+                if ( CheckBoxes2[i].checked) {
+                    database[a].push( CheckBoxes2[i].value)
+                }
+            }
+        }
+        else if (a === "hobbie") {
+            // Read Values from Checkboxes
+            for (i = 0; i < CheckBoxes3.length; i++) {
+                if ( CheckBoxes3[i].checked) {
+                    database[a].push( CheckBoxes3[i].value)
+                }
+            }
+        }else if(a === "resume"){
+            var file = fileInput.files[0];
+
+        if (file) {
+            fileNameDisplay.textContent = `Selected file: ${file.name}`;
+        } else {
+            fileNameDisplay.textContent = 'No file selected.';
+        }
+        }
+       
+    }
+       var postUser = new XMLHttpRequest;
+       postUser.open("PUT", "http://localhost:3000/databases/" + db[i].id);
+       postUser.setRequestHeader("Content-Type","Application/json")
+       postUser.send(JSON.stringify(database));
+       postUser.onreadystatechange = function () {
+           if (postUser.readyState == 4 && postUser.status == 200) {
+               databases = JSON.parse(postUser.response);
+               readdetails();
+               document.getElementById("updateBtn").style.display = "none"
+               document.getElementById("submitBtn").style.display = "block"
+           }
+       }
+
+   };
+   function deleteUser(i) {
+       var postUser = new XMLHttpRequest;
+       postUser.open("DELETE", "http://localhost:3000/databases/" + databases[i].id);
+       postUser.send();
+       postUser.onreadystatechange = function () {
+           if (postUser.readyState == 4 && postUser.status == 200) {
+               databases = JSON.parse(postUser.response);
+               getdata();
+           }
+       }
+   };
+  
+
+   getdata()
+   
+
+    </script>
+
+</body>
+
+</html>

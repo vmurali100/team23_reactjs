@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="">
+        <label for="">Items :</label>
+        <input type="text" id="items" class="items" name="items"> <br><br>
+
+        <label for="">Quantity :</label>
+        <input type="text" id="quantity" class="quantity" name="quantity"> <br><br>
+
+        <label for=""> Price :</label>
+        <input type="text" id="price" class="price" name="price"> <br><br>
+
+        <button type="button" onclick="shoppingCart()">A Shopping Cart</button>
+
+    </form>
+
+    <script>
+        // Method 1 with querySelector
+        // function shoppingCart(){
+        //     var AShoppingCart = {
+        //         items:document.querySelector("#items").value,
+        //         quantity:document.querySelector("#quantity").value,
+        //         price:document.querySelector("#price").value,
+        //     }
+        //     console.log(AShoppingCart)
+        // }
+
+        // Method 2 querySelectorAll
+        // function shoppingCart(){
+        //     var AShoppingCart = {
+        //         items:document.querySelectorAll("#items")[0].value,
+        //         quantity:document.querySelectorAll("#quantity")[0].value,
+        //         price:document.querySelectorAll("#price")[0].value,
+        //     }
+        //     console.log(AShoppingCart)
+        // }
+
+        // Method 3 getElementsByTagName
+        // function shoppingCart(){
+        //     var AShoppingCart = {
+        //         items:document.getElementsByTagName("input")[0].value,
+        //         quantity:document.getElementsByTagName("input")[1].value,
+        //         price:document.getElementsByTagName("input")[2].value,
+        //     }
+        //     console.log(AShoppingCart)
+        // }
+
+        // Method 4 getElementById
+        // function shoppingCart(){
+        //     var AShoppingCart = {
+        //         items:document.getElementById("items").value,
+        //         quantity:document.getElementById("quantity").value,
+        //         price:document.getElementById("price").value,
+        //     }
+        //     console.log(AShoppingCart)
+        // }
+
+        // Method 5 getElementsByClassName
+        // function shoppingCart(){
+        //     var AShoppingCart = {
+        //         items:document.getElementsByClassName("items")[0].value,
+        //         quantity:document.getElementsByClassName("quantity")[0].value,
+        //         price:document.getElementsByClassName("price")[0].value,
+        //     }
+        //     console.log(AShoppingCart)
+        // }
+
+        // Method 6 getElementsByName
+        function shoppingCart() {
+            var AShoppingCart = {
+                items: document.getElementsByName("items")[0].value,
+                quantity: document.getElementsByName("quantity")[0].value,
+                price: document.getElementsByName("price")[0].value,
+            }
+            console.log(AShoppingCart)
+        }
+
+
+    </script>
+</body>
+
+</html>

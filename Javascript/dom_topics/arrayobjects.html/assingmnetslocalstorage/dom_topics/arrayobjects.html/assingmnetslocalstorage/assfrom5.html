@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .customer {
+
+            border: 2px solid black;
+            width: 300px;
+            margin-top: 150px;
+            margin-left: 450px;
+            background-color: aliceblue;
+            align-items: center;
+
+        }
+
+        input {
+            margin-left: 20px;
+            text-align: justify;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="customer">
+        <h3>CUSTOMER:</h3>
+        <form action="">
+            <label>NAME:</label>
+            <input type="text" name="" id="name" ><br>
+            <label>EMAIL:</label>
+            <input type="email" name="" id="email"><br>
+            <label >INVESTMENT:</label>
+            <select name="" id="invest" >
+                <option value=""  style="color: grey;">enter your amount</option>
+                <option value="" >10000</option>
+                <option value="">20000</option>
+                <option value="">30000</option>
+                
+            </select><br>
+
+
+            <label>DATE JOINED:</label>
+            <input type="date" name="" id="date"><br>
+            <label>ACTIVE:</label>
+            <input type="checkbox" name="" id="active"><br>
+            <button type="button" onclick="users()">ok</button>
+            <button type="button" onclick="clearuser()">cancel</button>
+
+
+        </form>
+    </div>
+
+</body>
+<script>
+    function users() {
+        var data = JSON.parse(localStorage.getItem('data'));
+        if (data === null) {
+            data = []
+        }
+        var customers = {
+            name: document.getElementById('name').value,
+            email: document.getElementById('email').value,
+            investment: document.getElementById("invest").value,
+            date: document.getElementById("date").value,
+            active: document.getElementById("active").value
+
+        }
+        data.push(customers)
+        console.log(data)
+        localStorage.setItem('data', JSON.stringify(data))
+
+
+    }
+    function clearuser() {
+        document.getElementById('name').value = "",
+            document.getElementById('email').value = "",
+            document.getElementById("invest").value = "",
+            document.getElementById("date").value = "",
+            document.getElementById("active").value = ""
+
+    }
+
+    users()
+
+
+
+</script>
+
+</html>

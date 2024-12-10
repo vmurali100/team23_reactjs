@@ -1,0 +1,15 @@
+#bbb{
+    border: 5px solid black;
+    
+    padding: 10px; 
+    margin: 20px;
+    overflow: hidden;
+}
+.eee{
+    border: 5px solid black;
+    padding: 10px; 
+    margin: 20px;
+    float:left;
+   
+    overflow: hidden;
+}
